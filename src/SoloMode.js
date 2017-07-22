@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './styles/solomode.css'
-const socket = io({transports: ['websocket'], upgrade: false});
+
 
 class SoloMode extends Component {
   constructor() {
