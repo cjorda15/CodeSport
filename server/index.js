@@ -3,9 +3,15 @@ const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const path = require('path')
+const routes = require('./routes')
 const port = process.env.PORT || 3000;
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.json())
 
 app.use("/build", express.static(path.join(__dirname,"/../build")))
+
+app.use('/api/v1',routes)
 
 app.get('/*', function(req,res){
   res.sendFile(path.join(__dirname + '/../public/index.html'));
@@ -14,6 +20,8 @@ app.get('/*', function(req,res){
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname + '/../public/index.html'));
 });
+
+
 
 io.on('connection', function(socket){
   console.log("socket id has connected", socket.id)
