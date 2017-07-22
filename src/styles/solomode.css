@@ -1,0 +1,49 @@
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+#left-side {
+  height: 100%;
+}
+
+#terminal {
+  text-align: left;
+  height: 90%;
+  width: 60vw;
+  background-color: #444;
+  color: #FFF;
+}
+
+#run-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  background-color: #FF6347;
+  width: 60vw;
+}
+
+#run-button {
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 50%;
+}
+
+#right-side {
+  height: 100%;
+  width: 40vw;
+ 
+}
+
+#repl {
+  height: 50%;
+  background-color: #000; 
+}
+
+#scoreboard {
+  height: 50%;
+  background-color: #aaa;
+}
+
