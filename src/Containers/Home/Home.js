@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import socket from '../../websocket'
 
 class Home extends Component{
   constructor(props){
@@ -10,6 +11,7 @@ class Home extends Component{
   }
 
   handleClick(input){
+    console.log(socket,"from home page")
     if(input==="create"){
     fetch('/api/v1/account',{
       method:"POST",
@@ -20,9 +22,11 @@ class Home extends Component{
       })
     })
     .then(res => res.json())
-    .then(data => this.props.handleLogin(data),
+    .then(data => {this.props.handleLogin(data)
+          console.log(data,"username")
+          socket.emit('logged in',data)
           this.props.history.history.replace('/destiny')
-      )
+        })
     .catch(err => console.log(err,"error"))
   }else{
     fetch('/api/v1/account',{
@@ -30,9 +34,11 @@ class Home extends Component{
       headers:{Authorization:JSON.stringify({username:this.state.username,password:this.state.password})}
   })
   .then(res => (res).json())
-  .then(data => this.props.handleLogin(data),
+  .then(data => {this.props.handleLogin(data)
+  console.log(data,"username")
+  socket.emit('logged in',data)
   this.props.history.history.replace('/destiny')
-  )
+  })
   .catch(err => console.log(err,"error"))
 }
 }

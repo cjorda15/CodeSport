@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import socket from '../../websocket'
 
 class WarRoom extends Component{
   constructor(props){
@@ -10,8 +11,14 @@ class WarRoom extends Component{
 
 
   handleRandom(){
-    this.props.history.history.replace('/battle')
-
+    socket.emit('random match request',this.props.user.username)
+    socket.on('connected random 1v1',(msg) => {
+      console.log(msg,"CONNECTED RANDOM")
+    })
+    socket.on('awaiting random 1v1',(msg) => {
+      console.log(msg,"CONNECTED RANDOM")
+    })
+       this.props.history.history.replace('/battle')
   }
 
   handleSetMatch(){
