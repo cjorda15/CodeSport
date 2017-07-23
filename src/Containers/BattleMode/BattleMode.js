@@ -21,8 +21,9 @@ class BattleMode extends Component {
           if(test.name==="chris"){
             console.log("WINNER")
             socket.emit("point won",challenger)
-            let updateQuestion = question+1
-            setState({currentQuestion:updateQuestion})
+            const updateQuestion = question+1
+            const updateMyPoints = this.state.myPoints+1
+            setState({currentQuestion:updateQuestion,myPoints}:updateMyPoints)
           }else{
             console.log("try again")
           }
@@ -107,7 +108,11 @@ class BattleMode extends Component {
   }
 
  challengerPoint() {
-    console.log("from challenger")
+   const updateChallegerPoints = this.state.opponentsPoints+1
+   const updateQuestion = this.state.currentQuestion+1
+
+
+    this.setState({currentQuestion:updateQuestion,opponentsPoints:updateChallegerPoints})
     }
 
   render() {

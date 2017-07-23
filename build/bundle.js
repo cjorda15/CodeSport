@@ -29371,7 +29371,8 @@ var BattleMode = function (_Component) {
           console.log("WINNER");
           _websocket2.default.emit("point won", challenger);
           var updateQuestion = question + 1;
-          setState({ currentQuestion: updateQuestion });
+          var updateMyPoints = this.state.myPoints + 1;
+          setState({ currentQuestion: updateQuestion, myPoints: myPoints });
         } else {
           console.log("try again");
         }
@@ -29455,7 +29456,10 @@ var BattleMode = function (_Component) {
   }, {
     key: 'challengerPoint',
     value: function challengerPoint() {
-      console.log("from challenger");
+      var updateChallegerPoints = this.state.opponentsPoints + 1;
+      var updateQuestion = this.state.currentQuestion + 1;
+
+      this.setState({ currentQuestion: updateQuestion, opponentsPoints: updateChallegerPoints });
     }
   }, {
     key: 'render',
