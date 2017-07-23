@@ -21,7 +21,7 @@ class Home extends Component{
     })
     .then(res => res.json())
     .then(data => this.props.handleLogin(data),
-          this.props.history.history.replace('/warroom')
+          this.props.history.history.replace('/destiny')
       )
     .catch(err => console.log(err,"error"))
   }else{
@@ -31,7 +31,7 @@ class Home extends Component{
   })
   .then(res => (res).json())
   .then(data => this.props.handleLogin(data),
-  this.props.history.history.replace('/warroom')
+  this.props.history.history.replace('/destiny')
   )
   .catch(err => console.log(err,"error"))
 }

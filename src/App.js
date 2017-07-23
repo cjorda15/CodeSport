@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import SoloMode from './SoloMode'
 import Home from './Home/HomeContainer'
 import WarRoom from './WarRoom/WarRoomContainer'
+import Destiny from './Destiny/DestinyContainer'
 const socket = io({transports: ['websocket'], upgrade: false});
 
 
@@ -24,6 +25,9 @@ class App extends Component {
     return (
       <section>
         <Switch>
+          <Route exact path='/destiny' render={(history) => {
+            return (<Destiny history={history}/>)
+            }}/>
           <Route exact path='/warroom' render={(history) => {
             return (<WarRoom history={history}/>)
           }}/>
