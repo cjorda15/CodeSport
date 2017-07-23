@@ -5,7 +5,7 @@ import SoloMode from '../SoloMode/SoloModeContainer'
 import Home from '../Home/HomeContainer'
 import WarRoom from '../WarRoom/WarRoomContainer'
 import Destiny from '../Destiny/DestinyContainer'
-import BattleMode from '../WarRoom/WarRoomContainer'
+import BattleMode from '../BattleMode/BattleModeContainer'
 const socket = io({transports: ['websocket'], upgrade: false});
 
 socket.on('userConnection', (msg) => {

@@ -10,7 +10,7 @@ class WarRoom extends Component{
 
 
   handleRandom(){
-    this.props.history.history.replace('/solo')
+    this.props.history.history.replace('/battle')
 
   }
 
