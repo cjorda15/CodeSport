@@ -6,16 +6,6 @@ import Home from '../Home/HomeContainer'
 import WarRoom from '../WarRoom/WarRoomContainer'
 import Destiny from '../Destiny/DestinyContainer'
 import BattleMode from '../BattleMode/BattleModeContainer'
-const socket = io({transports: ['websocket'], upgrade: false});
-
-socket.on('userConnection', (msg) => {
-  console.log(msg,"MESSAGE FROM SERVER!!!!!!")
-  socket.emit('hello',"sup from " )
-})
-
-socket.on('hi', (msg) => {
-  console.log(msg,"MESSAGE FROM OTHER USER")
-})
 
 class App extends Component {
   render() {

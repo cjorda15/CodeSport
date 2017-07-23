@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 289);
+/******/ 	return __webpack_require__(__webpack_require__.s = 290);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -5106,7 +5106,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(288);
+var	fixUrls = __webpack_require__(289);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -13040,7 +13040,7 @@ var _reactDom = __webpack_require__(143);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-__webpack_require__(286);
+__webpack_require__(287);
 
 var _AppContainer = __webpack_require__(264);
 
@@ -13060,7 +13060,12 @@ var _createBrowserHistory = __webpack_require__(71);
 
 var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
 
+__webpack_require__(280);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// const socket = io({transports: ['websocket'], upgrade: false});
+
 
 var history = (0, _createBrowserHistory2.default)();
 var store = (0, _configStore.configureStore)();
@@ -28307,7 +28312,7 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(284);
+__webpack_require__(285);
 
 var _reactRouterDom = __webpack_require__(103);
 
@@ -28338,17 +28343,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var socket = io({ transports: ['websocket'], upgrade: false });
-
-socket.on('userConnection', function (msg) {
-  console.log(msg, "MESSAGE FROM SERVER!!!!!!");
-  socket.emit('hello', "sup from ");
-});
-
-socket.on('hi', function (msg) {
-  console.log(msg, "MESSAGE FROM OTHER USER");
-});
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -28435,7 +28429,7 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(285);
+__webpack_require__(286);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28882,7 +28876,7 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(287);
+__webpack_require__(288);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29378,15 +29372,19 @@ function unregister() {
 /* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(39)(undefined);
-// imports
+"use strict";
 
 
-// module
-exports.push([module.i, "/* script {\n    display: block;\n} */\n\n\n", ""]);
+var socket = io({ transports: ['websocket'], upgrade: false });
 
-// exports
+socket.on('userConnection', function (msg) {
+  console.log(msg, "MESSAGE FROM SERVER!!!!!!");
+  socket.emit('hello', "sup from ");
+});
 
+socket.on('hi', function (msg) {
+  console.log(msg, "MESSAGE FROM OTHER USER");
+});
 
 /***/ }),
 /* 281 */
@@ -29397,7 +29395,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: none;\n  border-radius: 10px;\n  height: 40px;\n  width: 50%;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n}\n\n#scoreboard {\n  height: 50%;\n  background-color: #aaa;\n}\n", ""]);
+exports.push([module.i, "/* script {\n    display: block;\n} */\n\n\n", ""]);
 
 // exports
 
@@ -29411,7 +29409,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "#root {\n  height: 100%;\n}\n\nbody {\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n\n\n", ""]);
+exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: none;\n  border-radius: 10px;\n  height: 40px;\n  width: 50%;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n}\n\n#scoreboard {\n  height: 50%;\n  background-color: #aaa;\n}\n", ""]);
 
 // exports
 
@@ -29425,7 +29423,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: none;\n  border-radius: 10px;\n  height: 40px;\n  width: 50%;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n \n}\n\n#repl {\n  height: 50%;\n  background-color: #000; \n}\n\n#scoreboard {\n  height: 50%;\n  background-color: #aaa;\n}\n\n", ""]);
+exports.push([module.i, "#root {\n  height: 100%;\n}\n\nbody {\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n\n\n", ""]);
 
 // exports
 
@@ -29434,32 +29432,15 @@ exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#l
 /* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+exports = module.exports = __webpack_require__(39)(undefined);
+// imports
 
-// load the styles
-var content = __webpack_require__(280);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
 
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(40)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./App.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./App.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
+// module
+exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: none;\n  border-radius: 10px;\n  height: 40px;\n  width: 50%;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n \n}\n\n#repl {\n  height: 50%;\n  background-color: #000; \n}\n\n#scoreboard {\n  height: 50%;\n  background-color: #aaa;\n}\n\n", ""]);
+
+// exports
+
 
 /***/ }),
 /* 285 */
@@ -29482,8 +29463,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./App.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./App.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29513,8 +29494,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29544,6 +29525,37 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 288 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(284);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(40)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
 		module.hot.accept("!!../../../node_modules/css-loader/index.js!./solomode.css", function() {
 			var newContent = require("!!../../../node_modules/css-loader/index.js!./solomode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
@@ -29555,7 +29567,7 @@ if(false) {
 }
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports) {
 
 
@@ -29650,7 +29662,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(113);
