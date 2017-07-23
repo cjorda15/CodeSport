@@ -29416,9 +29416,9 @@ var BattleMode = function (_Component) {
         }
       }]
     };
+
     _websocket2.default.on('challenger point', function () {
       _this.challengerPoint();
-      console.log('!!!!!!!!!!!');
     });
 
     return _this;
