@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import './styles/solomode.css'
 
+import '../../styles/battlemode.css'
 
-class SoloMode extends Component {
+class BattleMode extends Component {
   constructor() {
     super()
     this.state = {
       text:"",
       currentQuestion: 0,
-      description:["make a object constructor with the property name having a value of chris","make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)","make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned","make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name property's value"],
+      description:["make a object constructor with the property name having a value of chris","make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)","make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned","make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"],
       questions : [
         function test1(arg,question,setState){
           if(arg == "error"){
@@ -117,4 +117,4 @@ class SoloMode extends Component {
   }
 }
 
-export default SoloMode
+export default BattleMode
