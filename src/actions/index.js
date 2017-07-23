@@ -10,3 +10,10 @@ export const logout = () => {
     type:"LOGOUT"
   }
 }
+
+export const opponentName = (name) => {
+  return {
+    type: "OPPONENT_NAME",
+    payload:name
+  }
+}
