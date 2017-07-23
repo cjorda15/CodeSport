@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './styles/App.css';
+import '../../styles/App.css';
 import { Route, Switch } from 'react-router-dom'
-import SoloMode from './SoloMode'
-import Home from './Home/HomeContainer'
-import WarRoom from './WarRoom/WarRoomContainer'
-import Destiny from './Destiny/DestinyContainer'
+import SoloMode from '../SoloMode/SoloModeContainer'
+import Home from '../Home/HomeContainer'
+import WarRoom from '../WarRoom/WarRoomContainer'
+import Destiny from '../Destiny/DestinyContainer'
+import BattleMode from '../WarRoom/WarRoomContainer'
 const socket = io({transports: ['websocket'], upgrade: false});
-
 
 socket.on('userConnection', (msg) => {
   console.log(msg,"MESSAGE FROM SERVER!!!!!!")
@@ -16,9 +16,6 @@ socket.on('userConnection', (msg) => {
 socket.on('hi', (msg) => {
   console.log(msg,"MESSAGE FROM OTHER USER")
 })
-
-
-
 
 class App extends Component {
   render() {
@@ -33,6 +30,9 @@ class App extends Component {
           }}/>
           <Route exact path='/solo' render={(history) => {
             return (<SoloMode history={history}/>)
+          }}/>
+          <Route exact path='/battle' render={(history) => {
+            return (<BattleMode history={history}/>)
           }}/>
           <Route exact path='/' render={(history) => {
             return(<Home history={history}/>)

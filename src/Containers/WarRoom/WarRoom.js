@@ -8,11 +8,9 @@ class WarRoom extends Component{
     }
   }
 
-  handleSolo(){
-    this.props.history.history.replace('/solo')
-  }
 
   handleRandom(){
+    this.props.history.history.replace('/solo')
 
   }
 
@@ -23,7 +21,6 @@ class WarRoom extends Component{
   render(){
     return(
       <div className="war-room-container">
-        <button onClick={()=>{this.handleSolo()}}>solo training</button>
         <button onClick={()=>{this.handleRandom()}}>random match</button>
         <button onClick={()=>{this.handleSetMatch()}}>setup match</button>
         <input
