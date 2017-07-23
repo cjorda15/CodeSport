@@ -53,7 +53,11 @@ io.on('connection', function(socket){
       socketDb.randomMatches.push({username:msg, socket:socketDb.users[msg]})
       console.log(socketDb.users[msg])
       io.sockets.connected[socketDb.users[msg]].emit('awaiting random 1v1',"wait until another user joins random mathches")
-
     }
+  })
+
+  socket.on('point won', (msg) => {
+    console.log(msg,"from point won in server")
+    io.sockets.connected[socketDb.users[msg]].emit('challenger point')
   })
 });
