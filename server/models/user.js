@@ -7,7 +7,7 @@ const login = (req, res) => {
 
   database('users').where('username',username).andWhere('password',password).select()
   .then((user) => {
-    res.json(user[0].username)
+    res.json({username: user[0].username})
   })
 }
 

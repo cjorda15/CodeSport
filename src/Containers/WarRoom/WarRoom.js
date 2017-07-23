@@ -14,6 +14,7 @@ class WarRoom extends Component{
     socket.emit('random match request',this.props.user.username)
     socket.on('connected random 1v1',(msg) => {
       console.log(msg,"CONNECTED RANDOM")
+      this.props.handleOpponentName(msg)
     })
     socket.on('awaiting random 1v1',(msg) => {
       console.log(msg,"CONNECTED RANDOM")
