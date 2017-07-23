@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import { Route, Switch } from 'react-router-dom'
 import SoloMode from './SoloMode'
-import Home from './Home'
+import Home from './Home/HomeContainer'
+import WarRoom from './WarRoom/WarRoomContainer'
 const socket = io({transports: ['websocket'], upgrade: false});
 
 
@@ -23,13 +24,14 @@ class App extends Component {
     return (
       <section>
         <Switch>
-          <Route exact path='/solo' render={() => {
-            return (
-              <SoloMode/>
-            )
+          <Route exact path='/warroom' render={(history) => {
+            return (<WarRoom history={history}/>)
           }}/>
-          <Route exact path='/' render={() => {
-            return(<Home/>)
+          <Route exact path='/solo' render={(history) => {
+            return (<SoloMode history={history}/>)
+          }}/>
+          <Route exact path='/' render={(history) => {
+            return(<Home history={history}/>)
           }}/>
         </Switch>
       </section>
