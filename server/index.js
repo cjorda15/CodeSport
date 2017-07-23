@@ -39,6 +39,8 @@ io.on('connection', function(socket){
 
 });
 
-http.listen(port, function(){
-  console.log('listening on *:' + port);
-});
+http.listen(port, () => {
+  process.stdout.write('\033c')
+  console.log()
+  console.log('listening on *:' + port)
+})
