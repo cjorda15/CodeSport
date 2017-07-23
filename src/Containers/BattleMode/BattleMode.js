@@ -12,7 +12,7 @@ class BattleMode extends Component {
       currentQuestion: 0,
       description:["make a object constructor with the property name having a value of chris","make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)","make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned","make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"],
       questions : [
-        function test1(arg,question,setState,challenger){
+        function test1(arg,state,setState,challenger){
           if(arg == "error"){
             console.log("sorry error in creating user Function")
             return
@@ -21,9 +21,9 @@ class BattleMode extends Component {
           if(test.name==="chris"){
             console.log("WINNER")
             socket.emit("point won",challenger)
-            const updateQuestion = question+1
-            const updateMyPoints = this.state.myPoints+1
-            setState({currentQuestion:updateQuestion,myPoints}:updateMyPoints)
+            const updateQuestion = state.currentQuestion+1
+            const updateMyPoints = state.myPoints+1
+            setState({currentQuestion:updateQuestion,myPoints:updateMyPoints})
           }else{
             console.log("try again")
           }
@@ -104,14 +104,12 @@ class BattleMode extends Component {
     if (!this.state.text) return
     const userFunction = this.createFunction(this.state.text)
     const question = this.state.questions[this.state.currentQuestion]
-    question(userFunction,this.state.currentQuestion,this.setState.bind(this),this.props.battle)
+    question(userFunction,this.state,this.setState.bind(this),this.props.battle)
   }
 
  challengerPoint() {
    const updateChallegerPoints = this.state.opponentsPoints+1
    const updateQuestion = this.state.currentQuestion+1
-
-
     this.setState({currentQuestion:updateQuestion,opponentsPoints:updateChallegerPoints})
     }
 
