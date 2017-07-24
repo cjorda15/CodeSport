@@ -7,7 +7,7 @@ const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser')
 const socketDb =  require('./socketDB')
-
+app.locals.usersInWarRoom = []
 app.use(bodyParser.json())
 
 app.use("/build", express.static(path.join(__dirname,"/../build")))
@@ -56,4 +56,19 @@ io.on('connection', function(socket){
   socket.on('point won', (msg) => {
     io.sockets.connected[socketDb.users[msg]].emit('challenger point')
   })
+
+  socket.on('warroom', (msg) => {
+      socket.broadcast.emit('joined', msg)
+      if (warRoomUsers.length < 1) {
+        warRoomUsers.unshift(msg)
+      } else {
+        socket.emit('allWarroomUsers', warRoomUsers)
+        warRoomUsers.unshift(msg)
+      }
+  })
 });
+
+let warRoomUsers = []
+
+
+

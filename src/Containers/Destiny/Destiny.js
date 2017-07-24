@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../../styles/destiny.css'
 
 class Destiny extends Component {
   constructor(props) {
@@ -12,15 +13,26 @@ class Destiny extends Component {
 
   render() {
     return (
-      <div>
-        <button
-          onClick={()=>{this.handleClick("/solo")}}>
-          Lone Wolf
-        </button>
-        <button
-          onClick={()=>{this.handleClick("/warroom")}}>
-          War Room
-        </button>
+      <div className="destiny">
+        <div className="destiny-body">
+          <h2>Choose Your Destiny</h2>
+          <button
+            onClick={()=>{this.handleClick("/solo")}}>
+            Interview Prep
+          </button>
+          <button
+            onClick={()=>{this.handleClick("/warroom")}}>
+            Battle
+          </button>
+          <button
+            onClick={()=>{this.handleClick("/pair")}}>
+            Pair
+          </button>
+          <button
+            onClick={()=>{this.handleClick("/learn")}}>
+            Learn
+          </button>
+        </div>
       </div>
     )
   }
