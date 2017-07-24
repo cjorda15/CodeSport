@@ -29361,22 +29361,19 @@ var BattleMode = function (_Component) {
       text: "",
       currentQuestion: 0,
       description: ["make a object constructor with the property name having a value of chris", "make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)", "make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned", "make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"],
-      questions: [function test1(arg, state, setState, challenger) {
+      questions: [function test1(arg) {
         if (arg == "error") {
           console.log("sorry error in creating user Function");
+          ///compoent should explain there was a issue creating the function
           return;
         }
         var test = new arg();
         if (test.name === "chris") {
-          console.log("WINNER");
-          _websocket2.default.emit("point won", challenger);
-          var updateQuestion = state.currentQuestion + 1;
-          var updateMyPoints = state.myPoints + 1;
-          setState({ currentQuestion: updateQuestion, myPoints: updateMyPoints });
+          return true;
         } else {
-          console.log("try again");
+          return false;
         }
-      }, function test2(arg, question, setState) {
+      }, function test2(arg) {
         if (arg == "error") {
           console.log("sorry error in creating user Function");
           return;
@@ -29384,11 +29381,9 @@ var BattleMode = function (_Component) {
         var test = new arg();
         if (!test.shout) return "please make the shout method for the object constructor";
         if (test.shout() === "chris is shouting") {
-          console.log("another win!");
-          var updateQuestion = question + 1;
-          setState({ currentQuestion: updateQuestion });
+          return true;
         } else {
-          console.log("woops no good!");
+          return false;
         }
       }, function test3(arg, question, setState) {
         if (arg == "error") {
@@ -29398,11 +29393,9 @@ var BattleMode = function (_Component) {
         var test = new arg();
         test.changeName("rob");
         if (test.name == "rob") {
-          var updateQuestion = question + 1;
-          setState({ currentQuestion: updateQuestion });
-          console.log("win win win");
+          return true;
         } else {
-          console.log("Bummmer");
+          return false;
         }
       }, function test4(arg) {
         if (arg == "error") {
@@ -29411,9 +29404,9 @@ var BattleMode = function (_Component) {
         }
         var test = new arg("j");
         if (test.name == "j") {
-          console.log("game over you bastard");
+          return true;
         } else {
-          console.log("but why!!!");
+          return false;
         }
       }]
     };
@@ -29421,7 +29414,6 @@ var BattleMode = function (_Component) {
     _websocket2.default.on('challenger point', function () {
       _this.challengerPoint();
     });
-
     return _this;
   }
 
@@ -29437,10 +29429,7 @@ var BattleMode = function (_Component) {
     value: function createFunction(arg) {
       if (arg.slice(0, 8) !== "function") return "error";
       var splitArg = arg.split("");
-      //  const name = splitArg.splice(arg.indexOf("ion"),arg.indexOf("(")-arg.indexOf("ion"))
-      var args = splitArg.splice(splitArg.indexOf("(") + 1, splitArg.indexOf(")") - splitArg.indexOf("(") - 1).filter(function (val) {
-        return val !== ",";
-      });
+      var args = splitArg.splice(splitArg.indexOf("(") + 1, splitArg.indexOf(")") - splitArg.indexOf("(") - 1).join("");
       var body = splitArg.splice(splitArg.indexOf("{") + 1, splitArg.length - 1);
       var useBody = body.splice(0, body.length - 2).join('');
       return new Function(args, useBody);
@@ -29451,7 +29440,14 @@ var BattleMode = function (_Component) {
       if (!this.state.text) return;
       var userFunction = this.createFunction(this.state.text);
       var question = this.state.questions[this.state.currentQuestion];
-      question(userFunction, this.state, this.setState.bind(this), this.props.battle);
+      var outcome = question(userFunction);
+      if (outcome) {
+        console.log("WINNER");
+        _websocket2.default.emit("point won", this.props.battle);
+        var updateQuestion = this.state.currentQuestion + 1;
+        var updateMyPoints = this.state.myPoints + 1;
+        this.setState({ currentQuestion: updateQuestion, myPoints: updateMyPoints });
+      }
     }
   }, {
     key: 'challengerPoint',

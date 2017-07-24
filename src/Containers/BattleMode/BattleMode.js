@@ -12,23 +12,20 @@ class BattleMode extends Component {
       currentQuestion: 0,
       description:["make a object constructor with the property name having a value of chris","make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)","make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned","make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"],
       questions : [
-        function test1(arg,state,setState,challenger){
+        function test1(arg){
           if(arg == "error"){
             console.log("sorry error in creating user Function")
+            ///compoent should explain there was a issue creating the function
             return
           }
           const test = new arg()
           if(test.name==="chris"){
-            console.log("WINNER")
-            socket.emit("point won",challenger)
-            const updateQuestion = state.currentQuestion+1
-            const updateMyPoints = state.myPoints+1
-            setState({currentQuestion:updateQuestion,myPoints:updateMyPoints})
+            return true
           }else{
-            console.log("try again")
+            return false
           }
       },
-      function test2(arg,question,setState){
+      function test2(arg){
         if(arg == "error"){
           console.log("sorry error in creating user Function")
           return
@@ -36,11 +33,9 @@ class BattleMode extends Component {
         const test = new arg()
         if(!test.shout) return "please make the shout method for the object constructor"
         if(test.shout()==="chris is shouting"){
-          console.log("another win!")
-          let updateQuestion = question+1
-          setState({currentQuestion:updateQuestion})
+          return true
         }else{
-          console.log("woops no good!")
+          return false
         }
       },
       function test3(arg,question,setState){
@@ -51,11 +46,9 @@ class BattleMode extends Component {
         const test = new arg()
         test.changeName("rob")
         if(test.name == "rob"){
-          let updateQuestion = question+1
-          setState({currentQuestion:updateQuestion})
-          console.log("win win win")
+          return true
         }else{
-          console.log("Bummmer")
+          return false
         }
 
       },
@@ -66,11 +59,10 @@ class BattleMode extends Component {
         }
         const test = new arg("j")
         if(test.name=="j"){
-          console.log("game over you bastard")
+          return true
         }else{
-          console.log("but why!!!")
+          return false
         }
-
       }
       ]
     }
@@ -78,10 +70,7 @@ class BattleMode extends Component {
     socket.on('challenger point',() => {
       this.challengerPoint()
     })
-
   }
-
-
 
   getCode(e) {
     if(!e) return
@@ -92,8 +81,7 @@ class BattleMode extends Component {
   createFunction(arg){
    if(arg.slice(0,8)!=="function")return "error";
    const splitArg =  arg.split("")
-  //  const name = splitArg.splice(arg.indexOf("ion"),arg.indexOf("(")-arg.indexOf("ion"))
-   const args = splitArg.splice(splitArg.indexOf("(")+1,(splitArg.indexOf(")") - splitArg.indexOf("("))-1).filter(val=> val!==",")
+   const args = splitArg.splice(splitArg.indexOf("(")+1,(splitArg.indexOf(")") - splitArg.indexOf("("))-1).join("")
    const body = splitArg.splice(splitArg.indexOf("{")+1,splitArg.length-1)
    const useBody = body.splice(0,body.length-2).join('')
    return new Function(args,useBody)
@@ -104,7 +92,14 @@ class BattleMode extends Component {
     if (!this.state.text) return
     const userFunction = this.createFunction(this.state.text)
     const question = this.state.questions[this.state.currentQuestion]
-    question(userFunction,this.state,this.setState.bind(this),this.props.battle)
+    let outcome = question(userFunction)
+      if(outcome){
+        console.log("WINNER")
+        socket.emit("point won",this.props.battle)
+        const updateQuestion = this.state.currentQuestion+1
+        const updateMyPoints = this.state.myPoints+1
+        this.setState({currentQuestion:updateQuestion,myPoints:updateMyPoints})
+      }
   }
 
  challengerPoint() {
