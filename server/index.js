@@ -35,6 +35,7 @@ io.on('connection', function(socket){
   let disconnectUser = Object.keys(socketDb.users).filter(i => socketDb.users[i]===socket.id)
   socketDb.warRoomUsers.splice(disconnectUser[0],1)
   delete socketDb.users[disconnectUser[0]]
+  io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
 })
 
   socket.on('logged in', (msg) => {

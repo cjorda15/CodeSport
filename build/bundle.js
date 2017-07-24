@@ -28970,14 +28970,6 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     var _this = this;
 
     return _asyncToGenerator(function* () {
-      //maybe instead have a button that ask user to join the warroom?
-
-      //warroom should just be inform serverside socket that someone left or entered, and whenever that occurs,
-      //it should provide the same standard message to all users in the warroom who is in the warroom, I think that
-      //that would be a nice standard catch all and pretty much just be heres your new fresh state after anyone enters or
-      //leaves the warroom from the server side socket perspective
-
-      // NOTE there was another error tied to this that made me think it was async, it may not be needed -Dev
       let username = yield _this.props.user.username;
       __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('user entering warroom', username);
     })();
