@@ -43,21 +43,17 @@ io.on('connection', function(socket){
   })
 
   socket.on('random match request', (msg) => {
-    console.log(msg,"message from random request by client socket")
       if(socketDb.randomMatches.length>0){
         io.sockets.connected[socketDb.randomMatches[0].socket].emit('connected random 1v1', msg)
         io.sockets.connected[socketDb.users[msg]].emit('connected random 1v1',socketDb.randomMatches[0].username)
         socketDb.randomMatches.shift()
-        console.log(socketDb.randomMatches)
       }else{
       socketDb.randomMatches.push({username:msg, socket:socketDb.users[msg]})
-      console.log(socketDb.users[msg])
       io.sockets.connected[socketDb.users[msg]].emit('awaiting random 1v1',"wait until another user joins random mathches")
     }
   })
 
   socket.on('point won', (msg) => {
-    console.log(msg,"from point won in server")
     io.sockets.connected[socketDb.users[msg]].emit('challenger point')
   })
 
