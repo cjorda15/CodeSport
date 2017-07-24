@@ -1,0 +1,13 @@
+.destiny {
+  display: flex;
+  justify-content: center;
+}
+
+.destiny-body {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-bottom: 30px;
+}
