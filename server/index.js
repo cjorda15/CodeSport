@@ -69,11 +69,14 @@ io.on('connection', function(socket){
   })
 
   socket.on('requestBattle', (msg) => {
-    console.log(msg, 'this is the battle request')
     io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequest', msg.user)
   })
 
   socket.on('acceptBattleRequest', (msg) => {
+    console.log(socketDb.warRoomUsers,"!#@$!@$!@#$")
+    socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.user),1)
+    socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.opponent),1)
+    io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
     io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequestAccepted', msg.user)
   })
 
