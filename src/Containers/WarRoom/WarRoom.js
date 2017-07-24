@@ -43,10 +43,13 @@ class WarRoom extends Component{
   }
 
   users() {
+    if (this.state.users[0] != null) {
     let users = this.state.users.map((user, index) => {
-      return (<div key={index}>{user}</div>)
+      return (<div className="user" key={index}>{user}</div>)
     })
-    return users
+      return users
+    } 
+    return 
   }
   
   render(){
