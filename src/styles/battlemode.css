@@ -40,9 +40,23 @@
 #repl {
   height: 50%;
   background-color: #000;
+  color: #FFF;
 }
 
 #scoreboard {
   height: 50%;
   background-color: #aaa;
+}
+
+.scoreboard-title {
+  margin: 0;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 24px;
+  color: #673ab7;
+}
+
+.scores {
+  display: flex;
+  justify-content: space-around;
 }

@@ -85,7 +85,7 @@ class BattleMode extends Component {
    const body = splitArg.splice(splitArg.indexOf("{")+1,splitArg.length-1)
    const useBody = body.splice(0,body.length-2).join('')
    return new Function(args,useBody)
-}
+  }
 
 
   make() {
@@ -106,7 +106,7 @@ class BattleMode extends Component {
    const updateChallegerPoints = this.state.opponentsPoints+1
    const updateQuestion = this.state.currentQuestion+1
     this.setState({currentQuestion:updateQuestion,opponentsPoints:updateChallegerPoints})
-    }
+  }
 
   render() {
     return (
@@ -118,8 +118,17 @@ class BattleMode extends Component {
           </div>
          </div>
          <div id="right-side">
-            <div id="repl"></div>
-            <div id="scoreboard"></div>
+            <div id="repl">
+             >
+            </div>
+            <div id="scoreboard">
+              <h4 className="scoreboard-title">Scoreboard</h4>
+              <div className="scores">
+                <p>Your Score: {this.state.myPoints}</p>
+                <p>Opponents Score: {this.state.opponentsPoints}</p>                
+              </div>
+              <p className="current-question">{this.state.description[this.state.currentQuestion]}</p>
+            </div>
          </div>
         <pre id="code"></pre>
       </div>
