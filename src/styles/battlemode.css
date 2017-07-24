@@ -60,3 +60,17 @@
   display: flex;
   justify-content: space-around;
 }
+
+.line-wrapper {
+  display: flex;
+}
+
+.line-num {
+  margin: 0;
+
+}
+
+.line {
+  margin: 0 0 0 30px;
+  width: 100%;
+}

@@ -29238,6 +29238,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   constructor(props) {
     super(props);
     this.state = {
+      lineNumber: 1,
       myPoints: 0,
       opponentsPoints: 0,
       text: "",
@@ -29299,7 +29300,11 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   }
 
   getCode(e) {
-    if (!e) return;
+    if (e.key === 'Enter') {
+      let addLine = this.state.lineNumber + 1;
+      this.setState({ lineNumber: addLine });
+    }
+    if (!e) return; //Note do we still need this?
     let text = e.target.innerText;
     this.setState({ text: text });
   }
@@ -29333,6 +29338,23 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     this.setState({ currentQuestion: updateQuestion, opponentsPoints: updateChallegerPoints });
   }
 
+  addLine() {
+    let test = [];
+    for (let i = 1; i <= this.state.lineNumber; i++) {
+      let newLine = document.createElement('p');
+      newLine.innerText += i;
+      test.push(newLine);
+    }
+    let test2 = test.map(line => {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'p',
+        null,
+        line.innerHTML
+      );
+    });
+    return test2;
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
@@ -29340,9 +29362,26 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { id: 'left-side' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { id: 'terminal', onKeyUp: e => {
-            this.getCode(e);
-          }, contentEditable: true }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { id: 'terminal' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'line-wrapper' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'line-num' },
+                this.addLine()
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', { className: 'line', onKeyUp: e => {
+                this.getCode(e);
+              }, contentEditable: true })
+          )
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { id: 'run-button-div' },
@@ -29439,7 +29478,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: none;\n  border-radius: 10px;\n  height: 40px;\n  width: 50%;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#scoreboard {\n  height: 50%;\n  background-color: #aaa;\n}\n\n.scoreboard-title {\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #673ab7;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}", ""]);
+exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: none;\n  border-radius: 10px;\n  height: 40px;\n  width: 50%;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#scoreboard {\n  height: 50%;\n  background-color: #aaa;\n}\n\n.scoreboard-title {\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #673ab7;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n}\n\n.line-num {\n  margin: 0;\n\n}\n\n.line {\n  margin: 0 0 0 30px;\n  width: 100%;\n}", ""]);
 
 // exports
 
