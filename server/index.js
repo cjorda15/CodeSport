@@ -30,23 +30,11 @@ http.listen(port, () => {
 })
 
 io.on('connection', function(socket){
-  console.log("socket id has connected", socket.id)
-  console.log('user total after connection', io.engine.clientsCount)
 
   socket.on('disconnect', function () {
-    console.log(socket.id,"disconnected")
-    console.log(socketDb.users,"USERS")
-    console.log(socketDb.warRoomUsers,"WARRROOM")
-
-
-let disconnectUser = Object.keys(socketDb.users).filter(i => socketDb.users[i]===socket.id)
-
-console.log(disconnectUser[0],"user to be thrown out")
-
-socketDb.warRoomUsers.splice(disconnectUser[0],1)
-delete socketDb.users[disconnectUser[0]]
-console.log(socketDb.users,"USERS")
-console.log(socketDb.warRoomUsers,"WARRROOM")
+  let disconnectUser = Object.keys(socketDb.users).filter(i => socketDb.users[i]===socket.id)
+  socketDb.warRoomUsers.splice(disconnectUser[0],1)
+  delete socketDb.users[disconnectUser[0]]
 })
 
   socket.on('logged in', (msg) => {
@@ -84,7 +72,6 @@ console.log(socketDb.warRoomUsers,"WARRROOM")
   })
 
   socket.on('acceptBattleRequest', (msg) => {
-    console.log(socketDb.warRoomUsers,"!#@$!@$!@#$")
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.user),1)
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.opponent),1)
     io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
