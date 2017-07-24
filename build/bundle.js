@@ -25249,8 +25249,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -26682,8 +26682,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./App.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./App.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./App.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./App.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28759,8 +28759,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./solomode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./solomode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./solomode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./solomode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28946,12 +28946,20 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     super(props);
     this.state = {
       challenge: "",
-      users: []
+      users: [],
+      alertBattleRequest: false,
+      opponentRequestingBattle: ''
     };
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('warRoomUsers', msg => {
       // this.setState({users: users})
       console.log(msg, "warroom users total recieved from server side socket");
       this.setState({ users: msg });
+    });
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestAccepted', msg => {});
+
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequest', msg => {
+      console.log(msg, 'this is the opponents battle req');
+      this.setState({ alertBattleRequest: true, opponentRequestingBattle: msg });
     });
     // socket.on('joined',(msg) => {
     //   let allUsers = this.state.users.concat(msg)
@@ -28986,14 +28994,17 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     this.props.history.history.replace('/battle');
   }
 
-  handleSetMatch() {}
+  handleSetMatch(opponentUsername) {
+    if (opponentUsername === this.props.user.username) return;
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('requestBattle', { opponent: opponentUsername, user: this.props.user.username });
+  }
 
   users() {
     if (this.state.users[0] != null) {
       let users = this.state.users.map((user, index) => {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'user', key: index },
+          { onClick: () => this.handleSetMatch(`${user}`), className: 'user', key: index },
           user
         );
       });
@@ -29002,10 +29013,51 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     return;
   }
 
+  respondToBattleRequest(input) {
+    if (input) {
+      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('acceptBattleRequest', { opponent: opponentUsername, user: this.props.user.username });
+    }
+  }
+
+  displayBattleRequest() {
+    if (this.state.alertBattleRequest) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h4',
+          null,
+          this.state.opponentRequestingBattle[0],
+          ' wants to battle!'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'button',
+            { onClick: () => this.respondToBattleRequest(true) },
+            'Accept'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'button',
+            { onClick: () => this.respondToBattleRequest(false) },
+            'Reject'
+          )
+        )
+      );
+    }
+    return;
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'war-room-container' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h3',
+        null,
+        this.props.user.username
+      ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'button',
         { onClick: () => {
@@ -29023,6 +29075,7 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'users' },
+        this.displayBattleRequest(),
         this.users()
       )
     );
@@ -29052,8 +29105,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./warroom.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./warroom.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./warroom.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./warroom.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29186,8 +29239,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./destiny.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./destiny.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./destiny.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./destiny.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29465,8 +29518,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

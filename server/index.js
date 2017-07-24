@@ -67,4 +67,9 @@ io.on('connection', function(socket){
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg),1)
     io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
   })
+
+  socket.on('requestBattle', (msg) => {
+    console.log(msg, 'this is the battle request')
+    io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequest', msg.user)
+  })
 });
