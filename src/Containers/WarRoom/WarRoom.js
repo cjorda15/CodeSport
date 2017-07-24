@@ -31,14 +31,6 @@ class WarRoom extends Component{
   }
 
   async componentWillMount() {
-    //maybe instead have a button that ask user to join the warroom?
-
-    //warroom should just be inform serverside socket that someone left or entered, and whenever that occurs,
-    //it should provide the same standard message to all users in the warroom who is in the warroom, I think that
-    //that would be a nice standard catch all and pretty much just be heres your new fresh state after anyone enters or
-    //leaves the warroom from the server side socket perspective
-
-    // NOTE there was another error tied to this that made me think it was async, it may not be needed -Dev
     let username = await this.props.user.username
     socket.emit('user entering warroom', username)
 
