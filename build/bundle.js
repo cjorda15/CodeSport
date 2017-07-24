@@ -29376,10 +29376,10 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   createFunction(arg) {
     if (arg.slice(0, 8) !== "function") return "error";
     const splitArg = arg.split("");
-    const args = splitArg.splice(splitArg.indexOf("(") + 1, splitArg.indexOf(")") - splitArg.indexOf("(") - 1).join("");
+    const userArguments = splitArg.splice(splitArg.indexOf("(") + 1, splitArg.indexOf(")") - splitArg.indexOf("(") - 1).join("");
     const body = splitArg.splice(splitArg.indexOf("{") + 1, splitArg.length - 1);
     const useBody = body.splice(0, body.length - 2).join('');
-    return new Function(args, useBody);
+    return new Function(userArguments, useBody);
   }
 
   make() {
@@ -29398,8 +29398,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
   challengerPoint() {
     const updateChallegerPoints = this.state.opponentsPoints + 1;
-    const updateQuestion = this.state.currentQuestion + 1;
-    this.setState({ currentQuestion: updateQuestion, opponentsPoints: updateChallegerPoints });
+    this.setState({ opponentsPoints: updateChallegerPoints });
   }
 
   addLine() {
