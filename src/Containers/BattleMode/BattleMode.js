@@ -39,7 +39,7 @@ class BattleMode extends Component {
           return false
         }
       },
-      function test3(arg,question,setState){
+      function test3(arg){
         if(arg == "error"){
           console.log("sorry error in creating user Function")
           return
@@ -117,11 +117,11 @@ class BattleMode extends Component {
     let test = []
     for (let i = 1; i <= this.state.lineNumber; i++) {
       let newLine = document.createElement('p')
-      newLine.innerText += i 
+      newLine.innerText += i
       test.push(newLine)
     }
-    let test2 = test.map(line => {
-      return <p>{line.innerHTML}</p>
+    let test2 = test.map((line,id) => {
+      return <p id={key}>{line.innerHTML}</p>
     })
     return test2
   }
@@ -148,7 +148,7 @@ class BattleMode extends Component {
               <h4 className="scoreboard-title">Scoreboard</h4>
               <div className="scores">
                 <p>Your Score: {this.state.myPoints}</p>
-                <p>Opponents Score: {this.state.opponentsPoints}</p>                
+                <p>Opponents Score: {this.state.opponentsPoints}</p>
               </div>
               <p className="current-question">{this.state.description[this.state.currentQuestion]}</p>
             </div>

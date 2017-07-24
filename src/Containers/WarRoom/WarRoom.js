@@ -9,31 +9,39 @@ class WarRoom extends Component{
       challenge: "",
       users: []
     }
-    socket.on('allWarroomUsers', (users) => {
-      this.setState({users: users})
+    socket.on('warRoomUsers', (msg) => {
+      // this.setState({users: users})
+      console.log(msg,"warroom users total recieved from server side socket")
+      this.setState({users:msg})
     })
-    socket.on('joined',(msg) => {
-      let allUsers = this.state.users.concat(msg)
-      this.setState({users: allUsers})
-    })
+    // socket.on('joined',(msg) => {
+    //   let allUsers = this.state.users.concat(msg)
+    //   this.setState({users: allUsers})
+    // })
+
   }
 
   async componentWillMount() {
+    //maybe instead have a button that ask user to join the warroom?
+
+    //warroom should just be inform serverside socket that someone left or entered, and whenever that occurs,
+    //it should provide the same standard message to all users in the warroom who is in the warroom, I think that
+    //that would be a nice standard catch all and pretty much just be heres your new fresh state after anyone enters or
+    //leaves the warroom from the server side socket perspective
+
     // NOTE there was another error tied to this that made me think it was async, it may not be needed -Dev
     let username = await this.props.user.username
-    console.log(username)
-    socket.emit('warroom', username)
+    socket.emit('user entering warroom', username)
 
   }
 
   handleRandom(){
+    socket.emit('user left warroom', this.props.user.username)
     socket.emit('random match request',this.props.user.username)
     socket.on('connected random 1v1',(msg) => {
-      console.log(msg,"CONNECTED RANDOM")
       this.props.handleOpponentName(msg)
     })
     socket.on('awaiting random 1v1',(msg) => {
-      console.log(msg,"CONNECTED RANDOM")
     })
        this.props.history.history.replace('/battle')
   }
@@ -48,10 +56,10 @@ class WarRoom extends Component{
       return (<div className="user" key={index}>{user}</div>)
     })
       return users
-    } 
-    return 
+    }
+    return
   }
-  
+
   render(){
     return(
       <div className="war-room-container">

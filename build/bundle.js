@@ -25249,8 +25249,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -26682,8 +26682,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./App.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./App.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./App.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./App.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28759,8 +28759,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./solomode.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./solomode.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./solomode.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./solomode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28948,35 +28948,41 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       challenge: "",
       users: []
     };
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('allWarroomUsers', users => {
-      this.setState({ users: users });
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('warRoomUsers', msg => {
+      // this.setState({users: users})
+      console.log(msg, "warroom users total recieved from server side socket");
+      this.setState({ users: msg });
     });
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('joined', msg => {
-      let allUsers = this.state.users.concat(msg);
-      this.setState({ users: allUsers });
-    });
+    // socket.on('joined',(msg) => {
+    //   let allUsers = this.state.users.concat(msg)
+    //   this.setState({users: allUsers})
+    // })
   }
 
   componentWillMount() {
     var _this = this;
 
     return _asyncToGenerator(function* () {
+      //maybe instead have a button that ask user to join the warroom?
+
+      //warroom should just be inform serverside socket that someone left or entered, and whenever that occurs,
+      //it should provide the same standard message to all users in the warroom who is in the warroom, I think that
+      //that would be a nice standard catch all and pretty much just be heres your new fresh state after anyone enters or
+      //leaves the warroom from the server side socket perspective
+
       // NOTE there was another error tied to this that made me think it was async, it may not be needed -Dev
       let username = yield _this.props.user.username;
-      console.log(username);
-      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('warroom', username);
+      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('user entering warroom', username);
     })();
   }
 
   handleRandom() {
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('user left warroom', this.props.user.username);
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('random match request', this.props.user.username);
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('connected random 1v1', msg => {
-      console.log(msg, "CONNECTED RANDOM");
       this.props.handleOpponentName(msg);
     });
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('awaiting random 1v1', msg => {
-      console.log(msg, "CONNECTED RANDOM");
-    });
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('awaiting random 1v1', msg => {});
     this.props.history.history.replace('/battle');
   }
 
@@ -29046,8 +29052,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./warroom.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./warroom.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./warroom.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./warroom.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29180,8 +29186,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./destiny.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./destiny.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./destiny.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./destiny.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29268,7 +29274,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         } else {
           return false;
         }
-      }, function test3(arg, question, setState) {
+      }, function test3(arg) {
         if (arg == "error") {
           console.log("sorry error in creating user Function");
           return;
@@ -29345,10 +29351,10 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       newLine.innerText += i;
       test.push(newLine);
     }
-    let test2 = test.map(line => {
+    let test2 = test.map((line, id) => {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'p',
-        null,
+        { id: key },
         line.innerHTML
       );
     });
@@ -29459,8 +29465,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
