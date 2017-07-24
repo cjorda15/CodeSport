@@ -8,7 +8,6 @@ const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser')
 const socketDb =  require('./socketDB')
 
-// app.locals.usersInWarRoom = []
 
 app.use(bodyParser.json())
 
@@ -33,7 +32,7 @@ io.on('connection', function(socket){
 
   socket.on('disconnect', function () {
   let disconnectUser = Object.keys(socketDb.users).filter(i => socketDb.users[i]===socket.id)
-  socketDb.warRoomUsers.splice(disconnectUser[0],1)
+  socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(disconnectUser[0]),1)
   delete socketDb.users[disconnectUser[0]]
   io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
 })
