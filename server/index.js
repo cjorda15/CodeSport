@@ -34,9 +34,20 @@ io.on('connection', function(socket){
   console.log('user total after connection', io.engine.clientsCount)
 
   socket.on('disconnect', function () {
-    console.log("socket id has disconncted", socket.id)
-    console.log("user total after disconnect", io.engine.clientsCount)
-  })
+    console.log(socket.id,"disconnected")
+    console.log(socketDb.users,"USERS")
+    console.log(socketDb.warRoomUsers,"WARRROOM")
+
+
+let disconnectUser = Object.keys(socketDb.users).filter(i => socketDb.users[i]===socket.id)
+
+console.log(disconnectUser[0],"user to be thrown out")
+
+socketDb.warRoomUsers.splice(disconnectUser[0],1)
+delete socketDb.users[disconnectUser[0]]
+console.log(socketDb.users,"USERS")
+console.log(socketDb.warRoomUsers,"WARRROOM")
+})
 
   socket.on('logged in', (msg) => {
     socketDb.users[msg.username] = socket.id
