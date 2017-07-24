@@ -12,23 +12,22 @@ class WarRoom extends Component{
       opponentRequestingBattle: ''
     }
     socket.on('warRoomUsers', (msg) => {
-      // this.setState({users: users})
       console.log(msg,"warroom users total recieved from server side socket")
       this.setState({users:msg})
     })
     socket.on('battleRequestAccepted', (msg) => {
+      this.props.handleOpponentName(msg)
+      this.props.history.history.replace('/battle')
+
+    })
+
+    socket.on('battleRequestDeclined', (msg) => {
 
     })
 
     socket.on('battleRequest', (msg) => {
-      console.log(msg, 'this is the opponents battle req')
       this.setState({alertBattleRequest: true, opponentRequestingBattle: msg})
     })
-    // socket.on('joined',(msg) => {
-    //   let allUsers = this.state.users.concat(msg)
-    //   this.setState({users: allUsers})
-    // })
-
   }
 
   async componentWillMount() {
@@ -57,7 +56,7 @@ class WarRoom extends Component{
   }
 
   handleSetMatch(opponentUsername) {
-    if (opponentUsername === this.props.user.username) return 
+    if (opponentUsername === this.props.user.username) return
     socket.emit('requestBattle', { opponent: opponentUsername, user: this.props.user.username })
   }
 
@@ -73,7 +72,13 @@ class WarRoom extends Component{
 
   respondToBattleRequest(input) {
     if (input) {
-      socket.emit('acceptBattleRequest', { opponent: opponentUsername, user: this.props.user.username })
+      socket.emit('acceptBattleRequest', { opponent: this.state.opponentRequestingBattle, user: this.props.user.username })
+      this.setState({alertBattleRequest:false})
+      this.props.handleOpponentName(this.state.opponentRequestingBattle)
+      this.props.history.history.replace('/battle')
+    }else{
+      socket.emit('declineBattleRequest',{ opponent: this.state.opponentRequestingBattle, user: this.props.user.username })
+      this.setState({alertBattleRequest:false})
     }
   }
 
@@ -89,7 +94,7 @@ class WarRoom extends Component{
         </div>
       )
     }
-    return 
+    return
   }
 
   render(){

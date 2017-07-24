@@ -72,4 +72,12 @@ io.on('connection', function(socket){
     console.log(msg, 'this is the battle request')
     io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequest', msg.user)
   })
+
+  socket.on('acceptBattleRequest', (msg) => {
+    io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequestAccepted', msg.user)
+  })
+
+  socket.on('declineBattleRequest', (msg) => {
+    io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequestDeclined', msg.user)
+  })
 });

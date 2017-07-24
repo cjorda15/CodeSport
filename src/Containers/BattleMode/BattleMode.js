@@ -121,7 +121,7 @@ class BattleMode extends Component {
       test.push(newLine)
     }
     let test2 = test.map((line,id) => {
-      return <p id={key}>{line.innerHTML}</p>
+      return <p key={id}>{line.innerHTML}</p>
     })
     return test2
   }

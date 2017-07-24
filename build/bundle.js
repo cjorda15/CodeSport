@@ -25249,8 +25249,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -26682,8 +26682,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./App.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./App.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./App.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./App.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28759,8 +28759,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./solomode.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./solomode.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./solomode.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./solomode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28951,20 +28951,19 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       opponentRequestingBattle: ''
     };
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('warRoomUsers', msg => {
-      // this.setState({users: users})
       console.log(msg, "warroom users total recieved from server side socket");
       this.setState({ users: msg });
     });
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestAccepted', msg => {});
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestAccepted', msg => {
+      this.props.handleOpponentName(msg);
+      this.props.history.history.replace('/battle');
+    });
+
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestDeclined', msg => {});
 
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequest', msg => {
-      console.log(msg, 'this is the opponents battle req');
       this.setState({ alertBattleRequest: true, opponentRequestingBattle: msg });
     });
-    // socket.on('joined',(msg) => {
-    //   let allUsers = this.state.users.concat(msg)
-    //   this.setState({users: allUsers})
-    // })
   }
 
   componentWillMount() {
@@ -29015,7 +29014,13 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
   respondToBattleRequest(input) {
     if (input) {
-      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('acceptBattleRequest', { opponent: opponentUsername, user: this.props.user.username });
+      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('acceptBattleRequest', { opponent: this.state.opponentRequestingBattle, user: this.props.user.username });
+      this.setState({ alertBattleRequest: false });
+      this.props.handleOpponentName(this.state.opponentRequestingBattle);
+      this.props.history.history.replace('/battle');
+    } else {
+      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('declineBattleRequest', { opponent: this.state.opponentRequestingBattle, user: this.props.user.username });
+      this.setState({ alertBattleRequest: false });
     }
   }
 
@@ -29105,8 +29110,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./warroom.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./warroom.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./warroom.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./warroom.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29239,8 +29244,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./destiny.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./destiny.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./destiny.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./destiny.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29407,7 +29412,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     let test2 = test.map((line, id) => {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'p',
-        { id: key },
+        { key: id },
         line.innerHTML
       );
     });
@@ -29518,8 +29523,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
