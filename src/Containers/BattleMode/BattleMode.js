@@ -6,6 +6,7 @@ class BattleMode extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      lineNumber: 1,
       myPoints:0,
       opponentsPoints:0,
       text:"",
@@ -73,7 +74,11 @@ class BattleMode extends Component {
   }
 
   getCode(e) {
-    if(!e) return
+    if (e.key === 'Enter') {
+      let addLine = this.state.lineNumber + 1
+      this.setState({lineNumber: addLine})
+    }
+    if(!e) return //Note do we still need this?
     let text = e.target.innerText
     this.setState({text: text})
   }
@@ -85,7 +90,7 @@ class BattleMode extends Component {
    const body = splitArg.splice(splitArg.indexOf("{")+1,splitArg.length-1)
    const useBody = body.splice(0,body.length-2).join('')
    return new Function(args,useBody)
-}
+  }
 
 
   make() {
@@ -106,20 +111,47 @@ class BattleMode extends Component {
    const updateChallegerPoints = this.state.opponentsPoints+1
    const updateQuestion = this.state.currentQuestion+1
     this.setState({currentQuestion:updateQuestion,opponentsPoints:updateChallegerPoints})
+  }
+
+  addLine() {
+    let test = []
+    for (let i = 1; i <= this.state.lineNumber; i++) {
+      let newLine = document.createElement('p')
+      newLine.innerText += i 
+      test.push(newLine)
     }
+    let test2 = test.map(line => {
+      return <p>{line.innerHTML}</p>
+    })
+    return test2
+  }
 
   render() {
     return (
       <div className="app">
         <div id="left-side">
-          <div id="terminal" onKeyUp={(e) => {this.getCode(e)}} contentEditable={true}></div>
+          <div id="terminal" >
+            <div className="line-wrapper">
+              <div><div className="line-num">{this.addLine()}</div></div>
+              <p className="line" onKeyUp={(e) => {this.getCode(e)}} contentEditable={true}></p>
+            </div>
+          </div>
           <div id="run-button-div">
             <button id="run-button" onClick={() => this.make()}>Run</button>
           </div>
          </div>
          <div id="right-side">
-            <div id="repl"></div>
-            <div id="scoreboard"></div>
+            <div id="repl">
+             >
+            </div>
+            <div id="scoreboard">
+              <h4 className="scoreboard-title">Scoreboard</h4>
+              <div className="scores">
+                <p>Your Score: {this.state.myPoints}</p>
+                <p>Opponents Score: {this.state.opponentsPoints}</p>                
+              </div>
+              <p className="current-question">{this.state.description[this.state.currentQuestion]}</p>
+            </div>
          </div>
         <pre id="code"></pre>
       </div>
