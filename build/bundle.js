@@ -29452,14 +29452,13 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       questions: [function test1(arg) {
         if (arg == "error") {
           console.log("sorry error in creating user Function");
-          ///compoent should explain there was a issue creating the function
-          return;
+          return false;
         }
         const test = new arg();
         if (test.name === "chris") {
           return true;
         } else {
-          return false;
+          return;
         }
       }, function test2(arg) {
         if (arg == "error") {
@@ -29479,6 +29478,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           return;
         }
         const test = new arg();
+        if (!this.test.changeName) return "please make the changeName method for the object constructor";
         test.changeName("rob");
         if (test.name == "rob") {
           return true;
@@ -29534,24 +29534,29 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   }
 
   test(outcome) {
-    console.log(this.state.currentQuestion);
     if (outcome) {
-      console.log("WINNER");
       __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit("point won", this.props.battle);
+    }
+  }
+
+  checkTestResults(userFunction, questions) {
+    let results = questions.map(question => {
+      return question(userFunction);
+    });
+    this.setState({ testsStatus: results });
+    if (!results.every(result => result)) {
+      results.find((result, index) => {
+        if (!result) {
+          this.setState({ currentQuestion: index });
+        }
+      });
+    } else {
       let updateQuestion = this.state.currentQuestion;
       let updateMyPoints = this.state.myPoints;
       updateQuestion += 1;
       updateMyPoints += 1;
       this.setState({ currentQuestion: updateQuestion, myPoints: updateMyPoints });
     }
-  }
-
-  checkTestResults(userFunction, questions) {
-    console.log(questions, 'these are the friggin questions');
-    let results = questions.map(question => {
-      return question(userFunction);
-    });
-    this.setState({ testsStatus: results });
     return results.every(result => result);
   }
 
