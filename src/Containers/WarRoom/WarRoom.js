@@ -77,14 +77,14 @@ class WarRoom extends Component{
 
   displayBattleRequest() {
     if (this.state.alertBattleRequest) {
-      return this.state.opponentRequestingBattle.map(opponent => {
+      return this.state.opponentRequestingBattle.map((opponent,i) => {
         return (
-          <div className="battle-request">
-          <h4>{opponent} wants to battle!</h4>
-          <div>
-          <button onClick={() => this.respondToBattleRequest(true,opponent)}>Accept</button>
-          <button onClick={() => this.respondToBattleRequest(false,opponent)}>Reject</button>
-          </div>
+          <div key={i} className="battle-request">
+            <h4>{opponent} wants to battle!</h4>
+            <div>
+            <button onClick={() => this.respondToBattleRequest(true,opponent)}>Accept</button>
+            <button onClick={() => this.respondToBattleRequest(false,opponent)}>Reject</button>
+            </div>
           </div>
         )
       })

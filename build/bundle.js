@@ -29151,10 +29151,10 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
   displayBattleRequest() {
     if (this.state.alertBattleRequest) {
-      return this.state.opponentRequestingBattle.map(opponent => {
+      return this.state.opponentRequestingBattle.map((opponent, i) => {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'battle-request' },
+          { key: i, className: 'battle-request' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h4',
             null,
