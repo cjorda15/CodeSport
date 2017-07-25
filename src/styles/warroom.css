@@ -24,9 +24,11 @@
   color: #e8cc2e;
   display: flex;
   font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
   justify-content: center;
-  height: 50px;
+  height: 58px;
   margin: 10px 5px;
+  overflow: scroll;
   text-align: center;
   width: 260px;
 }
@@ -69,12 +71,16 @@
 }
 
 .battle-request-container{
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 25%;
+  /*background: #afada3;
+  border: 5px solid #000;
+  border-radius: 8px;
+  left: 1%;
+  padding: 40px;
+  max-width: 400px;
+  width: 95%;
+  min-width: 300px;*/
 }
+
 
 .war-room-container h3{
   color:#e8cc2e;
@@ -94,5 +100,6 @@
 .battle-request h4{
   color:#e8cc2e;
   font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
   text-align: center;
 }
