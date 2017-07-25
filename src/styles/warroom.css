@@ -24,11 +24,26 @@
   color: #e8cc2e;
   display: flex;
   font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
   justify-content: center;
-  height: 50px;
+  height: 58px;
   margin: 10px 5px;
+  overflow: scroll;
   text-align: center;
   width: 260px;
+}
+
+.user:hover{
+  background: #423f3f;
+  border:5px solid #afada3;
+  text-decoration: underline;
+  transition: all 1s;
+}
+
+.war-room-container button:hover, .battle-request button:hover{
+  border: 5px solid #423f3f;
+  background: #000;
+  transition: all 1s;
 }
 
 .war-room-btn-container{
@@ -55,9 +70,22 @@
   width: 90%;
 }
 
+.battle-request-container{
+  /*background: #afada3;
+  border: 5px solid #000;
+  border-radius: 8px;
+  left: 1%;
+  padding: 40px;
+  max-width: 400px;
+  width: 95%;
+  min-width: 300px;*/
+}
+
+
 .war-room-container h3{
   color:#e8cc2e;
   font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 .battle-request{
@@ -66,13 +94,12 @@
   border-radius: 8px;
   left: 1%;
   padding: 40px;
-  position: absolute;
-  top: 25%;
 }
 
 
 .battle-request h4{
   color:#e8cc2e;
   font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
   text-align: center;
 }

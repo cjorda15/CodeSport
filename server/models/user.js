@@ -19,7 +19,7 @@ const createAccount = (req, res) => {
     res.status(201).json({username: returnedUser[0]})
   })
   .catch(error => {
-    console.log('error', error);
+    console.log('error!!!!!!!', error);
     res.sendStatus(500).send('Username taken')
   })
 }

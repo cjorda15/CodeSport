@@ -29079,7 +29079,6 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     this.state = {
       challenge: "",
       users: [],
-      alertBattleRequest: false,
       opponentRequestingBattle: []
     };
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('warRoomUsers', msg => {
@@ -29093,9 +29092,9 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestDeclined', msg => {});
 
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequest', msg => {
-      let opponent = [msg, ...this.state.opponentRequestingBattle];
-      opponent.push(msg);
-      this.setState({ alertBattleRequest: true, opponentRequestingBattle: opponent });
+      let opponent = this.state.opponentRequestingBattle.slice(0, this.state.opponentRequestingBattle.length);
+      opponent.unshift(msg);
+      this.setState({ opponentRequestingBattle: opponent });
     });
   }
 
@@ -29140,17 +29139,21 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   respondToBattleRequest(input, opponent) {
     if (input) {
       __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('acceptBattleRequest', { opponent: opponent, user: this.props.user.username });
-      this.setState({ alertBattleRequest: false });
       this.props.handleOpponentName(this.state.opponentRequestingBattle);
       this.props.history.history.replace('/battle');
+      this.setState({ opponentRequestingBattle: [] });
+      //might cause an error setting opponet state back to a empty array
     } else {
       __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('declineBattleRequest', { opponent: opponent, user: this.props.user.username });
-      this.setState({ alertBattleRequest: false });
+      let updateOpponents = this.state.opponentRequestingBattle.slice(0, this.state.opponentRequestingBattle.length);
+      console.log(opponent, "OPPOENT");
+      updateOpponents.splice(updateOpponents.indexOf(opponent), 1);
+      this.setState({ opponentRequestingBattle: updateOpponents });
     }
   }
 
   displayBattleRequest() {
-    if (this.state.alertBattleRequest) {
+    if (this.state.opponentRequestingBattle.length) {
       return this.state.opponentRequestingBattle.map((opponent, i) => {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
@@ -29210,7 +29213,11 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           'setup match'
         )
       ),
-      this.displayBattleRequest(),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'battle-request-container' },
+        this.displayBattleRequest()
+      ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'users' },
@@ -29262,7 +29269,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  font-family: 'Press Start 2P', cursive;\n  justify-content: center;\n  height: 50px;\n  margin: 10px 5px;\n  text-align: center;\n  width: 260px;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.war-room-container h3{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n  position: absolute;\n  top: 25%;\n}\n\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 12px;\n  justify-content: center;\n  height: 58px;\n  margin: 10px 5px;\n  overflow: scroll;\n  text-align: center;\n  width: 260px;\n}\n\n.user:hover{\n  background: #423f3f;\n  border:5px solid #afada3;\n  text-decoration: underline;\n  transition: all 1s;\n}\n\n.war-room-container button:hover, .battle-request button:hover{\n  border: 5px solid #423f3f;\n  background: #000;\n  transition: all 1s;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.battle-request-container{\n  /*background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n  max-width: 400px;\n  width: 95%;\n  min-width: 300px;*/\n}\n\n\n.war-room-container h3{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n}\n\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 14px;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -29445,14 +29452,13 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       questions: [function test1(arg) {
         if (arg == "error") {
           console.log("sorry error in creating user Function");
-          ///compoent should explain there was a issue creating the function
-          return;
+          return false;
         }
         const test = new arg();
         if (test.name === "chris") {
           return true;
         } else {
-          return false;
+          return;
         }
       }, function test2(arg) {
         if (arg == "error") {
@@ -29472,6 +29478,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           return;
         }
         const test = new arg();
+        if (!this.test.changeName) return "please make the changeName method for the object constructor";
         test.changeName("rob");
         if (test.name == "rob") {
           return true;
@@ -29527,24 +29534,29 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   }
 
   test(outcome) {
-    console.log(this.state.currentQuestion);
     if (outcome) {
-      console.log("WINNER");
       __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit("point won", this.props.battle);
+    }
+  }
+
+  checkTestResults(userFunction, questions) {
+    let results = questions.map(question => {
+      return question(userFunction);
+    });
+    this.setState({ testsStatus: results });
+    if (!results.every(result => result)) {
+      results.find((result, index) => {
+        if (!result) {
+          this.setState({ currentQuestion: index });
+        }
+      });
+    } else {
       let updateQuestion = this.state.currentQuestion;
       let updateMyPoints = this.state.myPoints;
       updateQuestion += 1;
       updateMyPoints += 1;
       this.setState({ currentQuestion: updateQuestion, myPoints: updateMyPoints });
     }
-  }
-
-  checkTestResults(userFunction, questions) {
-    console.log(questions, 'these are the friggin questions');
-    let results = questions.map(question => {
-      return question(userFunction);
-    });
-    this.setState({ testsStatus: results });
     return results.every(result => result);
   }
 

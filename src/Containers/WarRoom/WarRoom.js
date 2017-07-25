@@ -8,7 +8,6 @@ class WarRoom extends Component{
     this.state={
       challenge: "",
       users: [],
-      alertBattleRequest: false,
       opponentRequestingBattle: []
     }
     socket.on('warRoomUsers', (msg) => {
@@ -25,9 +24,9 @@ class WarRoom extends Component{
     })
 
     socket.on('battleRequest', (msg) => {
-      let opponent = [msg,...this.state.opponentRequestingBattle]
-      opponent.push(msg)
-      this.setState({alertBattleRequest: true, opponentRequestingBattle: opponent})
+      let opponent = this.state.opponentRequestingBattle.slice(0,this.state.opponentRequestingBattle.length)
+      opponent.unshift(msg)
+      this.setState({opponentRequestingBattle: opponent})
     })
   }
 
@@ -66,17 +65,21 @@ class WarRoom extends Component{
   respondToBattleRequest(input,opponent) {
     if (input) {
       socket.emit('acceptBattleRequest', { opponent: opponent, user: this.props.user.username })
-      this.setState({alertBattleRequest:false})
       this.props.handleOpponentName(this.state.opponentRequestingBattle)
       this.props.history.history.replace('/battle')
+      this.setState({opponentRequestingBattle:[]})
+      //might cause an error setting opponet state back to a empty array
     }else{
       socket.emit('declineBattleRequest',{ opponent: opponent, user: this.props.user.username })
-      this.setState({alertBattleRequest:false})
+      let updateOpponents = this.state.opponentRequestingBattle.slice(0,this.state.opponentRequestingBattle.length)
+      console.log(opponent,"OPPOENT")
+      updateOpponents.splice(updateOpponents.indexOf(opponent),1)
+      this.setState({opponentRequestingBattle:updateOpponents})
     }
   }
 
   displayBattleRequest() {
-    if (this.state.alertBattleRequest) {
+    if (this.state.opponentRequestingBattle.length) {
       return this.state.opponentRequestingBattle.map((opponent,i) => {
         return (
           <div key={i} className="battle-request">
@@ -101,7 +104,9 @@ class WarRoom extends Component{
           <button  onClick={()=>{this.handleSetMatch()}}>setup match
           </button>
         </div>
-        {this.displayBattleRequest()}
+        <div className="battle-request-container">
+          {this.displayBattleRequest()}
+        </div>
         <div className="users">
           {this.users()}
         </div>
