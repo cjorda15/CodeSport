@@ -12,27 +12,29 @@
   animation-delay:0s;
   animation-fill-mode: forwards;
   color:#e8cc2e;
-  font-size: 20px;
+  font-size: 22px;
   font-family: 'Press Start 2P', cursive;
   font-weight: 100;
   position: absolute;
+  text-align: center;
   top: 10px;
 }
 
 .form-container{
   align-items: center;
-  border: 5px solid black;
+  border: 5px solid #000;
   border-radius: 5px;
   background: #afada3;
   display: flex;
   flex-direction: column;
+  max-width: 600px;
   justify-content: center;
   padding: 40px;
   width: 90%;
 }
 
 .form-container input{
-  border: 5px solid black;
+  border: 5px solid #000;
   border-radius: 3px;  height: 60px;
   font-size: 16px;
   font-family: 'Press Start 2P', cursive;
@@ -46,7 +48,7 @@
 .form-container button {
   color:#e8cc2e;
   background: #423f3f;
-  border: 5px solid black;
+  border: 5px solid #000;
   border-radius: 5px;
   font-family: 'Press Start 2P', cursive;
   font-size: 17px;
@@ -68,7 +70,7 @@
 
 .options-container{
   background: #afada3;
-  border: 5px solid black;
+  border: 5px solid #000;
   display: flex;
   flex-direction: column;
   max-width: 280px;
@@ -79,7 +81,7 @@
 .options-container button{
   color:#e8cc2e;
   background: #423f3f;
-  border: 5px solid black;
+  border: 5px solid #000;
   border-radius: 5px;
   font-family: 'Press Start 2P', cursive;
   font-size: 17px;

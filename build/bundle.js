@@ -25268,7 +25268,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, "*{\n  box-sizing: border-box;\n}\n\n#root {\n  height: 100%;\n}\n\nbody {\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n", ""]);
+exports.push([module.i, "*{\n  box-sizing: border-box;\n}\n\n#root {\n  height: 100%;\n}\n\nbody {\n  background: #423f3f;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n", ""]);
 
 // exports
 
@@ -29026,7 +29026,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".home-container{\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  height:100vh;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.home-container p{\n  animation: fill 2s;\n  animation-delay:0s;\n  animation-fill-mode: forwards;\n  color:#e8cc2e;\n  font-size: 20px;\n  font-family: 'Press Start 2P', cursive;\n  font-weight: 100;\n  position: absolute;\n  top: 10px;\n}\n\n.form-container{\n  align-items: center;\n  border: 5px solid black;\n  border-radius: 5px;\n  background: #afada3;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  padding: 40px;\n  width: 90%;\n}\n\n.form-container input{\n  border: 5px solid black;\n  border-radius: 3px;  height: 60px;\n  font-size: 16px;\n  font-family: 'Press Start 2P', cursive;\n  margin-bottom: 20px;\n  max-width: 440px;\n  min-width: 230px;\n  padding-left: 10px;\n  width: 90%;\n}\n\n.form-container button {\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid black;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  margin-top: 15px;\n  max-width: 275px;\n  transition: all .5s;\n  outline:none;\n  width: 95%;\n}\n\n.form-container button:hover, .options-container button:hover{\n  background: #000;\n  border: 3px solid #423f3f;\n  transition: all 1s;\n\n}\n\n.options-container{\n  background: #afada3;\n  border: 5px solid black;\n  display: flex;\n  flex-direction: column;\n  max-width: 280px;\n  padding: 10px;\n  width: 90%;\n}\n\n.options-container button{\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid black;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 95%;\n}\n\n@keyframes fill {\n    0%   {\n          display: none;\n          opacity: 0;\n         }\n    25%  {\n          display: block;\n          opacity: 0.4;\n         }\n\n    50%  {\n      display: none;\n\n         }\n\n    75%   {\n      display: block;\n      opacity: 0.7;\n\n          }\n\n    100% {\n      opacity: 1.0;\n\n    }\n}\n", ""]);
+exports.push([module.i, ".home-container{\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  height:100vh;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.home-container p{\n  animation: fill 2s;\n  animation-delay:0s;\n  animation-fill-mode: forwards;\n  color:#e8cc2e;\n  font-size: 22px;\n  font-family: 'Press Start 2P', cursive;\n  font-weight: 100;\n  position: absolute;\n  text-align: center;\n  top: 10px;\n}\n\n.form-container{\n  align-items: center;\n  border: 5px solid #000;\n  border-radius: 5px;\n  background: #afada3;\n  display: flex;\n  flex-direction: column;\n  max-width: 600px;\n  justify-content: center;\n  padding: 40px;\n  width: 90%;\n}\n\n.form-container input{\n  border: 5px solid #000;\n  border-radius: 3px;  height: 60px;\n  font-size: 16px;\n  font-family: 'Press Start 2P', cursive;\n  margin-bottom: 20px;\n  max-width: 440px;\n  min-width: 230px;\n  padding-left: 10px;\n  width: 90%;\n}\n\n.form-container button {\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  margin-top: 15px;\n  max-width: 275px;\n  transition: all .5s;\n  outline:none;\n  width: 95%;\n}\n\n.form-container button:hover, .options-container button:hover{\n  background: #000;\n  border: 3px solid #423f3f;\n  transition: all 1s;\n\n}\n\n.options-container{\n  background: #afada3;\n  border: 5px solid #000;\n  display: flex;\n  flex-direction: column;\n  max-width: 280px;\n  padding: 10px;\n  width: 90%;\n}\n\n.options-container button{\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 95%;\n}\n\n@keyframes fill {\n    0%   {\n          display: none;\n          opacity: 0;\n         }\n    25%  {\n          display: block;\n          opacity: 0.4;\n         }\n\n    50%  {\n      display: none;\n\n         }\n\n    75%   {\n      display: block;\n      opacity: 0.7;\n\n          }\n\n    100% {\n      opacity: 1.0;\n\n    }\n}\n", ""]);
 
 // exports
 
@@ -29080,10 +29080,9 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       challenge: "",
       users: [],
       alertBattleRequest: false,
-      opponentRequestingBattle: ''
+      opponentRequestingBattle: []
     };
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('warRoomUsers', msg => {
-      console.log(msg, "warroom users total recieved from server side socket");
       this.setState({ users: msg });
     });
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestAccepted', msg => {
@@ -29094,7 +29093,9 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestDeclined', msg => {});
 
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequest', msg => {
-      this.setState({ alertBattleRequest: true, opponentRequestingBattle: msg });
+      let opponent = [msg, ...this.state.opponentRequestingBattle];
+      opponent.push(msg);
+      this.setState({ alertBattleRequest: true, opponentRequestingBattle: opponent });
     });
   }
 
@@ -29136,44 +29137,46 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     return;
   }
 
-  respondToBattleRequest(input) {
+  respondToBattleRequest(input, opponent) {
     if (input) {
-      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('acceptBattleRequest', { opponent: this.state.opponentRequestingBattle, user: this.props.user.username });
+      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('acceptBattleRequest', { opponent: opponent, user: this.props.user.username });
       this.setState({ alertBattleRequest: false });
       this.props.handleOpponentName(this.state.opponentRequestingBattle);
       this.props.history.history.replace('/battle');
     } else {
-      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('declineBattleRequest', { opponent: this.state.opponentRequestingBattle, user: this.props.user.username });
+      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('declineBattleRequest', { opponent: opponent, user: this.props.user.username });
       this.setState({ alertBattleRequest: false });
     }
   }
 
   displayBattleRequest() {
     if (this.state.alertBattleRequest) {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h4',
-          null,
-          this.state.opponentRequestingBattle[0],
-          ' wants to battle!'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      return this.state.opponentRequestingBattle.map(opponent => {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          null,
+          { className: 'battle-request' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            { onClick: () => this.respondToBattleRequest(true) },
-            'Accept'
+            'h4',
+            null,
+            opponent,
+            ' wants to battle!'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            { onClick: () => this.respondToBattleRequest(false) },
-            'Reject'
+            'div',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'button',
+              { onClick: () => this.respondToBattleRequest(true, opponent) },
+              'Accept'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'button',
+              { onClick: () => this.respondToBattleRequest(false, opponent) },
+              'Reject'
+            )
           )
-        )
-      );
+        );
+      });
     }
     return;
   }
@@ -29185,26 +29188,32 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h3',
         null,
-        this.props.user.username
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'button',
-        { onClick: () => {
-            this.handleRandom();
-          } },
-        'random match'
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'button',
-        { onClick: () => {
-            this.handleSetMatch();
-          } },
-        'setup match'
+        'Prepare yourself ',
+        this.props.user.username,
+        '!'
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
+        { className: 'war-room-btn-container' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { onClick: () => {
+              this.handleRandom();
+            } },
+          'random match'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { onClick: () => {
+              this.handleSetMatch();
+            } },
+          'setup match'
+        )
+      ),
+      this.displayBattleRequest(),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
         { className: 'users' },
-        this.displayBattleRequest(),
         this.users()
       )
     );
@@ -29253,7 +29262,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".war-room-container {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.users {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.user {\n  border: 1px solid #000;\n  width: 300px;\n  height: 30px;\n  margin-bottom: 30px;\n}", ""]);
+exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  font-family: 'Press Start 2P', cursive;\n  justify-content: center;\n  height: 50px;\n  margin: 10px 5px;\n  text-align: center;\n  width: 260px;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.war-room-container h3{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n  position: absolute;\n  top: 25%;\n}\n\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -29301,13 +29310,13 @@ class Destiny extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       'div',
       { className: 'destiny' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h2',
+        null,
+        'Choose Your Destiny'
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'destiny-body' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h2',
-          null,
-          'Choose Your Destiny'
-        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
           {
@@ -29387,7 +29396,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".destiny {\n  display: flex;\n  justify-content: center;\n}\n\n.destiny-body {\n  display: flex;\n  flex-direction: column;\n}\n\n.destiny-body button {\n  margin-bottom: 30px;\n}\n", ""]);
+exports.push([module.i, ".destiny {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  flex-direction: column;\n  height:100vh;\n  justify-content: center;\n}\n\n.destiny-body {\n  background: #afada3;\n  border-radius: 10px;\n  border: 10px solid #000;\n  display: flex;\n  flex-direction: column;\n  height: 465px;\n  padding: 25px;\n}\n\n.destiny-body button {\n  margin-bottom: 30px;\n}\n\n.destiny h2{\n  font-size: 36px;\n  text-align: center;\n}\n\n\n.destiny h2, .destiny-body button{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n}\n\n.destiny-body button{\n  background:#423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.destiny-body button:hover{\n  background: #000;\n  border: 5px solid #423f3f;\n  transition: all 1s;\n\n}\n", ""]);
 
 // exports
 
