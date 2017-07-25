@@ -29478,7 +29478,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           return;
         }
         const test = new arg();
-        if (!this.test.changeName) return "please make the changeName method for the object constructor";
+        if (!test.changeName) return "please make the changeName method for the object constructor";
         test.changeName("rob");
         if (test.name == "rob") {
           return true;
