@@ -10,8 +10,14 @@ class BattleMode extends Component {
       myPoints:0,
       opponentsPoints:0,
       text:"",
+      testsStatus: [],
       currentQuestion: 0,
-      description:["make a object constructor with the property name having a value of chris","make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)","make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned","make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"],
+      description: [
+        "make a object constructor with the property name having a value of chris",
+        "make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)",
+        "make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned",
+        "make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"
+      ],
       questions : [
         function test1(arg){
           if(arg == "error"){
@@ -95,16 +101,34 @@ class BattleMode extends Component {
 
   make() {
     if (!this.state.text) return
-    const userFunction = this.createFunction(this.state.text)
-    const question = this.state.questions[this.state.currentQuestion]
-    let outcome = question(userFunction)
-      if(outcome){
-        console.log("WINNER")
-        socket.emit("point won",this.props.battle)
-        const updateQuestion = this.state.currentQuestion+1
-        const updateMyPoints = this.state.myPoints+1
-        this.setState({currentQuestion:updateQuestion,myPoints:updateMyPoints})
-      }
+    const userFunction = this.createFunction(this.state.text)    
+    let test = this.state.questions
+    let currentQuestion = this.state.currentQuestion
+    currentQuestion+=1
+    let outcome = this.checkTestResults(userFunction, test.slice(0, currentQuestion))
+    this.test(outcome)
+  }
+
+  test(outcome) {
+    console.log(this.state.currentQuestion)
+    if(outcome){
+      console.log("WINNER")
+      socket.emit("point won",this.props.battle)
+      let updateQuestion = this.state.currentQuestion
+      let updateMyPoints = this.state.myPoints
+      updateQuestion+=1
+      updateMyPoints+=1
+      this.setState({currentQuestion:updateQuestion,myPoints:updateMyPoints})
+    }
+  }
+
+  checkTestResults(userFunction, questions) {
+    console.log(questions, 'these are the friggin questions')
+    let results = questions.map(question => {
+      return question(userFunction)
+    })
+    this.setState({testsStatus: results})
+    return results.every(result => result)
   }
 
  challengerPoint() {

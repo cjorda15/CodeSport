@@ -25249,8 +25249,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -26682,8 +26682,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./App.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./App.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./App.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./App.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28759,8 +28759,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./solomode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./solomode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./solomode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./solomode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29102,8 +29102,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./warroom.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./warroom.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./warroom.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./warroom.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29236,8 +29236,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./destiny.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./destiny.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./destiny.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./destiny.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29298,6 +29298,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       myPoints: 0,
       opponentsPoints: 0,
       text: "",
+      testsStatus: [],
       currentQuestion: 0,
       description: ["make a object constructor with the property name having a value of chris", "make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)", "make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned", "make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"],
       questions: [function test1(arg) {
@@ -29377,15 +29378,33 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   make() {
     if (!this.state.text) return;
     const userFunction = this.createFunction(this.state.text);
-    const question = this.state.questions[this.state.currentQuestion];
-    let outcome = question(userFunction);
+    let test = this.state.questions;
+    let currentQuestion = this.state.currentQuestion;
+    currentQuestion += 1;
+    let outcome = this.checkTestResults(userFunction, test.slice(0, currentQuestion));
+    this.test(outcome);
+  }
+
+  test(outcome) {
+    console.log(this.state.currentQuestion);
     if (outcome) {
       console.log("WINNER");
       __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit("point won", this.props.battle);
-      const updateQuestion = this.state.currentQuestion + 1;
-      const updateMyPoints = this.state.myPoints + 1;
+      let updateQuestion = this.state.currentQuestion;
+      let updateMyPoints = this.state.myPoints;
+      updateQuestion += 1;
+      updateMyPoints += 1;
       this.setState({ currentQuestion: updateQuestion, myPoints: updateMyPoints });
     }
+  }
+
+  checkTestResults(userFunction, questions) {
+    console.log(questions, 'these are the friggin questions');
+    let results = questions.map(question => {
+      return question(userFunction);
+    });
+    this.setState({ testsStatus: results });
+    return results.every(result => result);
   }
 
   challengerPoint() {
@@ -29514,8 +29533,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
