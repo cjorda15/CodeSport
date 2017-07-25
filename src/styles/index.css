@@ -1,12 +1,15 @@
+*{
+  box-sizing: border-box;
+}
+
 #root {
   height: 100%;
 }
 
 body {
+  background: #423f3f;
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
-
-

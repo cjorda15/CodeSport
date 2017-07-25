@@ -4,7 +4,7 @@ module.exports = {
   entry:["./src/index.js"],
   output:{
     path: path.resolve(__dirname,"build"),
-    filename:"bundle.js"
+    filename:"bundle.js",
   },
   module:{
     loaders:[
@@ -17,16 +17,14 @@ module.exports = {
       {test:/\.css$/,
        loaders:"style-loader!css-loader"},
        {test: /\.scss$/,
-        loaders: "style-loader!css-loader!sass-loader!postcss-loader"
+        loaders: "style-loader!css-loader!"
       },
-       {
-  test: /\.(jpg|png|svg)$/,
-  loader: 'url-loader',
-  options: {
-    limit: 25000,
+      {
+            test: /\.jpg$/,
+            loader: "file-loader"
+        },]
   },
-},
-
-    ]
-  }
+  resolve: {
+  extensions: ['.js', '.jsx', '.json', '.scss', '.css']
+}
 }

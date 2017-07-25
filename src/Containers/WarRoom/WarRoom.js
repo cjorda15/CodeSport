@@ -9,10 +9,9 @@ class WarRoom extends Component{
       challenge: "",
       users: [],
       alertBattleRequest: false,
-      opponentRequestingBattle: ''
+      opponentRequestingBattle: []
     }
     socket.on('warRoomUsers', (msg) => {
-      console.log(msg,"warroom users total recieved from server side socket")
       this.setState({users:msg})
     })
     socket.on('battleRequestAccepted', (msg) => {
@@ -26,7 +25,9 @@ class WarRoom extends Component{
     })
 
     socket.on('battleRequest', (msg) => {
-      this.setState({alertBattleRequest: true, opponentRequestingBattle: msg})
+      let opponent = [msg,...this.state.opponentRequestingBattle]
+      opponent.push(msg)
+      this.setState({alertBattleRequest: true, opponentRequestingBattle: opponent})
     })
   }
 
@@ -62,29 +63,31 @@ class WarRoom extends Component{
     return
   }
 
-  respondToBattleRequest(input) {
+  respondToBattleRequest(input,opponent) {
     if (input) {
-      socket.emit('acceptBattleRequest', { opponent: this.state.opponentRequestingBattle, user: this.props.user.username })
+      socket.emit('acceptBattleRequest', { opponent: opponent, user: this.props.user.username })
       this.setState({alertBattleRequest:false})
       this.props.handleOpponentName(this.state.opponentRequestingBattle)
       this.props.history.history.replace('/battle')
     }else{
-      socket.emit('declineBattleRequest',{ opponent: this.state.opponentRequestingBattle, user: this.props.user.username })
+      socket.emit('declineBattleRequest',{ opponent: opponent, user: this.props.user.username })
       this.setState({alertBattleRequest:false})
     }
   }
 
   displayBattleRequest() {
     if (this.state.alertBattleRequest) {
-      return (
-        <div>
-          <h4>{this.state.opponentRequestingBattle[0]} wants to battle!</h4>
-          <div>
-            <button onClick={() => this.respondToBattleRequest(true)}>Accept</button>
-            <button onClick={() => this.respondToBattleRequest(false)}>Reject</button>
+      return this.state.opponentRequestingBattle.map((opponent,i) => {
+        return (
+          <div key={i} className="battle-request">
+            <h4>{opponent} wants to battle!</h4>
+            <div>
+            <button onClick={() => this.respondToBattleRequest(true,opponent)}>Accept</button>
+            <button onClick={() => this.respondToBattleRequest(false,opponent)}>Reject</button>
+            </div>
           </div>
-        </div>
-      )
+        )
+      })
     }
     return
   }
@@ -92,11 +95,14 @@ class WarRoom extends Component{
   render(){
     return(
       <div className="war-room-container">
-        <h3>{this.props.user.username}</h3>
-        <button onClick={()=>{this.handleRandom()}}>random match</button>
-        <button onClick={()=>{this.handleSetMatch()}}>setup match</button>
+        <h3>Prepare yourself {this.props.user.username}!</h3>
+        <div className="war-room-btn-container">
+          <button onClick={()=>{this.handleRandom()}}>random match</button>
+          <button  onClick={()=>{this.handleSetMatch()}}>setup match
+          </button>
+        </div>
+        {this.displayBattleRequest()}
         <div className="users">
-          {this.displayBattleRequest()}
           {this.users()}
         </div>
       </div>
