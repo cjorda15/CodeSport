@@ -31,6 +31,19 @@
   width: 260px;
 }
 
+.user:hover{
+  background: #423f3f;
+  border:5px solid #afada3;
+  text-decoration: underline;
+  transition: all 1s;
+}
+
+.war-room-container button:hover, .battle-request button:hover{
+  border: 5px solid #423f3f;
+  background: #000;
+  transition: all 1s;
+}
+
 .war-room-btn-container{
   background: #afada3;
   border-radius: 5px;
@@ -55,9 +68,18 @@
   width: 90%;
 }
 
+.battle-request-container{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 25%;
+}
+
 .war-room-container h3{
   color:#e8cc2e;
   font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 .battle-request{
@@ -66,8 +88,6 @@
   border-radius: 8px;
   left: 1%;
   padding: 40px;
-  position: absolute;
-  top: 25%;
 }
 
 

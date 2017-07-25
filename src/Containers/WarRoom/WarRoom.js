@@ -25,8 +25,8 @@ class WarRoom extends Component{
     })
 
     socket.on('battleRequest', (msg) => {
-      let opponent = [msg,...this.state.opponentRequestingBattle]
-      opponent.push(msg)
+      let opponent = this.state.opponentRequestingBattle.slice(0,this.state.opponentRequestingBattle.length)
+      opponent.unshift(msg)
       this.setState({alertBattleRequest: true, opponentRequestingBattle: opponent})
     })
   }
@@ -101,7 +101,9 @@ class WarRoom extends Component{
           <button  onClick={()=>{this.handleSetMatch()}}>setup match
           </button>
         </div>
-        {this.displayBattleRequest()}
+        <div className="battle-request-container">
+          {this.displayBattleRequest()}
+        </div>
         <div className="users">
           {this.users()}
         </div>
