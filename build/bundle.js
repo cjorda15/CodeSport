@@ -29184,6 +29184,11 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     return;
   }
 
+  handleRoute(e) {
+    e.preventDefault();
+    this.props.history.history.replace('/destiny');
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
@@ -29211,6 +29216,13 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
               this.handleSetMatch();
             } },
           'setup match'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { onClick: e => {
+              this.handleRoute(e);
+            } },
+          'back to destiny room'
         )
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -29269,7 +29281,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 12px;\n  justify-content: center;\n  height: 58px;\n  margin: 10px 5px;\n  overflow: scroll;\n  text-align: center;\n  width: 260px;\n}\n\n.user:hover{\n  background: #423f3f;\n  border:5px solid #afada3;\n  text-decoration: underline;\n  transition: all 1s;\n}\n\n.war-room-container button:hover, .battle-request button:hover{\n  border: 5px solid #423f3f;\n  background: #000;\n  transition: all 1s;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.battle-request-container{\n  /*background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n  max-width: 400px;\n  width: 95%;\n  min-width: 300px;*/\n}\n\n\n.war-room-container h3{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n}\n\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 14px;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 12px;\n  justify-content: center;\n  height: 58px;\n  margin: 10px 5px;\n  overflow: scroll;\n  text-align: center;\n  width: 260px;\n}\n\n.user:hover{\n  background: #423f3f;\n  border:5px solid #afada3;\n  text-decoration: underline;\n  transition: all 1s;\n}\n\n.war-room-container button:hover, .battle-request button:hover{\n  border: 5px solid #423f3f;\n  background: #000;\n  transition: all 1s;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.war-room-container h3{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n}\n\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 14px;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -29448,6 +29460,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       text: "",
       testsStatus: [],
       currentQuestion: 0,
+      gameover: false,
       description: ["make a object constructor with the property name having a value of chris", "make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)", "make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned", "make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"],
       questions: [function test1(arg) {
         if (arg == "error") {
@@ -29478,7 +29491,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           return;
         }
         const test = new arg();
-        if (!this.test.changeName) return "please make the changeName method for the object constructor";
+        if (!test.changeName) return "please make the changeName method for the object constructor";
         test.changeName("rob");
         if (test.name == "rob") {
           return true;
@@ -29524,6 +29537,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   }
 
   make() {
+    if (this.state.gameover) return;
     if (!this.state.text) return;
     const userFunction = this.createFunction(this.state.text);
     let test = this.state.questions;
@@ -29536,6 +29550,10 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   test(outcome) {
     if (outcome) {
       __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit("point won", this.props.battle);
+      let myPoints = this.state.myPoints;
+      if (myPoints + 1 == this.state.questions.length) {
+        this.setState({ gameover: true });
+      }
     }
   }
 
@@ -29563,6 +29581,9 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   challengerPoint() {
     const updateChallegerPoints = this.state.opponentsPoints + 1;
     this.setState({ opponentsPoints: updateChallegerPoints });
+    if (this.state.questions.length == updateChallegerPoints) {
+      this.setState({ gameover: true });
+    }
   }
 
   addLine() {
@@ -29580,6 +29601,28 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       );
     });
     return test2;
+  }
+
+  gameover() {
+    if (this.state.gameover) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'gameover-message' },
+        'GAMEOVER',
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { onClick: e => {
+              this.handleRoute(e);
+            } },
+          'back to war'
+        )
+      );
+    }
+  }
+
+  handleRoute(e) {
+    e.preventDefault();
+    this.props.history.history.replace('/warroom');
   }
 
   render() {
@@ -29658,6 +29701,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           )
         )
       ),
+      this.gameover(),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('pre', { id: 'code' })
     );
   }
@@ -29705,7 +29749,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: none;\n  border-radius: 10px;\n  height: 40px;\n  width: 50%;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#scoreboard {\n  height: 50%;\n  background-color: #aaa;\n}\n\n.scoreboard-title {\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #673ab7;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n}\n\n.line-num {\n  margin: 0;\n\n}\n\n.line {\n  margin: 0 0 0 30px;\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n}\n\n.scoreboard-title {\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #673ab7;\n}\n\n.gameover-message{\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  top: 10%;\n}\n\n.gameover-message button{\n  background: #000;\n  border: none;\n  border-radius: 8px;\n  color: #e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  height: 55px;\n  font-size: 20px;\n  margin-top: 20px;\n}\n\n.gameover-message button{\n  border: 5px solid #e8cc2e;\n  transition: all 1s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n}\n\n.line-num {\n  margin: 0;\n\n}\n\n.line {\n  margin: 0 0 0 30px;\n  width: 100%;\n}\n\n@media (max-width:620px) {\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
 
 // exports
 

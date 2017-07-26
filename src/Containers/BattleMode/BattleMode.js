@@ -12,6 +12,7 @@ class BattleMode extends Component {
       text:"",
       testsStatus: [],
       currentQuestion: 0,
+      gameover:false,
       description: [
         "make a object constructor with the property name having a value of chris",
         "make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)",
@@ -100,6 +101,7 @@ class BattleMode extends Component {
 
 
   make() {
+    if(this.state.gameover) return
     if (!this.state.text) return
     const userFunction = this.createFunction(this.state.text)
     let test = this.state.questions
@@ -112,6 +114,10 @@ class BattleMode extends Component {
   test(outcome) {
     if(outcome){
       socket.emit("point won",this.props.battle)
+      let myPoints = this.state.myPoints
+      if(myPoints+1==this.state.questions.length){
+        this.setState({gameover:true})
+      }
     }
   }
 
@@ -139,6 +145,9 @@ class BattleMode extends Component {
  challengerPoint() {
    const updateChallegerPoints = this.state.opponentsPoints+1
     this.setState({opponentsPoints:updateChallegerPoints})
+    if(this.state.questions.length==updateChallegerPoints){
+      this.setState({gameover:true})
+    }
   }
 
   addLine() {
@@ -152,6 +161,22 @@ class BattleMode extends Component {
       return <p key={id}>{line.innerHTML}</p>
     })
     return test2
+  }
+
+  gameover(){
+    if(this.state.gameover){
+      return(
+        <div className="gameover-message">
+          GAMEOVER
+          <button onClick={(e)=>{this.handleRoute(e)}}>back to war</button>
+        </div>
+      )
+    }
+  }
+
+  handleRoute(e){
+    e.preventDefault()
+    this.props.history.history.replace('/warroom')
   }
 
   render() {
@@ -181,6 +206,7 @@ class BattleMode extends Component {
               <p className="current-question">{this.state.description[this.state.currentQuestion]}</p>
             </div>
          </div>
+         {this.gameover()}
         <pre id="code"></pre>
       </div>
   )}

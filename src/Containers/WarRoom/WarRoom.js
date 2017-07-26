@@ -95,6 +95,11 @@ class WarRoom extends Component{
     return
   }
 
+  handleRoute(e){
+    e.preventDefault()
+    this.props.history.history.replace('/destiny')
+  }
+
   render(){
     return(
       <div className="war-room-container">
@@ -103,6 +108,7 @@ class WarRoom extends Component{
           <button onClick={()=>{this.handleRandom()}}>random match</button>
           <button  onClick={()=>{this.handleSetMatch()}}>setup match
           </button>
+          <button onClick={(e)=>{this.handleRoute(e)}}>back to destiny room</button>
         </div>
         <div className="battle-request-container">
           {this.displayBattleRequest()}
