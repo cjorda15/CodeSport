@@ -25,10 +25,16 @@
 }
 
 #run-button {
-  border: none;
+  border: 5px solid #000;
   border-radius: 10px;
+  font-family: 'Press Start 2P', cursive;
   height: 40px;
   width: 50%;
+}
+
+#run-button:hover{
+  border: 7px solid #000;
+  transition: all 1s;
 }
 
 #right-side {
@@ -44,8 +50,15 @@
 }
 
 #scoreboard {
-  height: 50%;
   background-color: #aaa;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 13px;
+  height: 50%;
+  text-align: center;
+}
+
+.current-question{
+  text-align: center;
 }
 
 .scoreboard-title {
@@ -54,6 +67,35 @@
   padding-top: 20px;
   font-size: 24px;
   color: #673ab7;
+}
+
+.gameover-message{
+  background: #423f3f;
+  border: 5px solid #e8cc2e;
+  border-radius: 5px;
+  color: #e8cc2e;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 41px;
+  left: 2%;
+  padding: 30px;
+  position: absolute;
+  top: 10%;
+}
+
+.gameover-message button{
+  background: #000;
+  border: none;
+  border-radius: 8px;
+  color: #e8cc2e;
+  font-family: 'Press Start 2P', cursive;
+  height: 55px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.gameover-message button{
+  border: 5px solid #e8cc2e;
+  transition: all 1s;
 }
 
 .scores {
@@ -73,4 +115,13 @@
 .line {
   margin: 0 0 0 30px;
   width: 100%;
+}
+
+@media (max-width:620px) {
+  .scores{
+    flex-direction: column;
+  }
+  .scoreboard-title{
+    font-size: 12px;
+  }
 }
