@@ -84,6 +84,18 @@
   padding: 40px;
 }
 
+.decline-battle-request, .request-error{
+  background: #afada3;
+  border: 5px solid #000;
+  color:#e8cc2e;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  padding: 30px;
+  position: absolute;
+  top:200px;
+  left:20px;
+}
+
 
 .battle-request h4{
   color:#e8cc2e;

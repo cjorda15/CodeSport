@@ -11,13 +11,18 @@ class Home extends Component{
       showOptions:true,
       username:"",
       email:"",
-      password:""
+      password:"",
+      showError:false
     }
   }
 
   handleClick(input,e){
     e.preventDefault()
    if(input==="create"){
+     if(this.state.password.length<6){
+       this.showError()
+       return
+     }
     fetch('/api/v1/account',{
       method:"POST",
       headers:{"Content-Type":"application/json"},
@@ -69,6 +74,7 @@ signUp(){
       onChange={(e)=>{this.setState({password:e.target.value})}}/>
       <button onClick={(e)=>{this.handleClick("create",e)}}>submit</button>
       <button onClick={()=>{this.handleGoBack()}}>go back</button>
+      <div className="error-message">{this.state.showError?"password must be at least 6 characters long":null}</div>
     </form>
   )
  }
@@ -103,6 +109,11 @@ showOptions(){
       </div>
     )
   }
+}
+
+showError(){
+  this.setState({showError:true})
+  setTimeout(() => { this.setState({showError:false})}, 4000)
 }
 
   render(){

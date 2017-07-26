@@ -28832,13 +28832,18 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       showOptions: true,
       username: "",
       email: "",
-      password: ""
+      password: "",
+      showError: false
     };
   }
 
   handleClick(input, e) {
     e.preventDefault();
     if (input === "create") {
+      if (this.state.password.length < 6) {
+        this.showError();
+        return;
+      }
       fetch('/api/v1/account', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -28904,6 +28909,11 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
               this.handleGoBack();
             } },
           'go back'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'error-message' },
+          this.state.showError ? "password must be at least 6 characters long" : null
         )
       );
     }
@@ -28967,6 +28977,13 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     }
   }
 
+  showError() {
+    this.setState({ showError: true });
+    setTimeout(() => {
+      this.setState({ showError: false });
+    }, 4000);
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
@@ -29026,7 +29043,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".home-container{\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  height:100vh;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.home-container p{\n  animation: fill 2s;\n  animation-delay:0s;\n  animation-fill-mode: forwards;\n  color:#e8cc2e;\n  font-size: 22px;\n  font-family: 'Press Start 2P', cursive;\n  font-weight: 100;\n  position: absolute;\n  text-align: center;\n  top: 10px;\n}\n\n.form-container{\n  align-items: center;\n  border: 5px solid #000;\n  border-radius: 5px;\n  background: #afada3;\n  display: flex;\n  flex-direction: column;\n  max-width: 600px;\n  justify-content: center;\n  padding: 40px;\n  width: 90%;\n}\n\n.form-container input{\n  border: 5px solid #000;\n  border-radius: 3px;  height: 60px;\n  font-size: 16px;\n  font-family: 'Press Start 2P', cursive;\n  margin-bottom: 20px;\n  max-width: 440px;\n  min-width: 230px;\n  padding-left: 10px;\n  width: 90%;\n}\n\n.form-container button {\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  margin-top: 15px;\n  max-width: 275px;\n  transition: all .5s;\n  outline:none;\n  width: 95%;\n}\n\n.form-container button:hover, .options-container button:hover{\n  background: #000;\n  border: 3px solid #423f3f;\n  transition: all 1s;\n\n}\n\n.options-container{\n  background: #afada3;\n  border: 5px solid #000;\n  display: flex;\n  flex-direction: column;\n  max-width: 280px;\n  padding: 10px;\n  width: 90%;\n}\n\n.options-container button{\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 95%;\n}\n\n@keyframes fill {\n    0%   {\n          display: none;\n          opacity: 0;\n         }\n    25%  {\n          display: block;\n          opacity: 0.4;\n         }\n\n    50%  {\n      display: none;\n\n         }\n\n    75%   {\n      display: block;\n      opacity: 0.7;\n\n          }\n\n    100% {\n      opacity: 1.0;\n\n    }\n}\n", ""]);
+exports.push([module.i, ".home-container{\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  height:100vh;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.home-container p{\n  animation: fill 2s;\n  animation-delay:0s;\n  animation-fill-mode: forwards;\n  color:#e8cc2e;\n  font-size: 22px;\n  font-family: 'Press Start 2P', cursive;\n  font-weight: 100;\n  position: absolute;\n  text-align: center;\n  top: 10px;\n}\n\n.form-container{\n  align-items: center;\n  border: 5px solid #000;\n  border-radius: 5px;\n  background: #afada3;\n  display: flex;\n  flex-direction: column;\n  max-width: 600px;\n  justify-content: center;\n  padding: 40px;\n  width: 90%;\n}\n\n.form-container input{\n  border: 5px solid #000;\n  border-radius: 3px;  height: 60px;\n  font-size: 16px;\n  font-family: 'Press Start 2P', cursive;\n  margin-bottom: 20px;\n  max-width: 440px;\n  min-width: 230px;\n  padding-left: 10px;\n  width: 90%;\n}\n\n.form-container button {\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  margin-top: 15px;\n  max-width: 275px;\n  transition: all .5s;\n  outline:none;\n  width: 95%;\n}\n\n.form-container button:hover, .options-container button:hover{\n  background: #000;\n  border: 3px solid #423f3f;\n  transition: all 1s;\n}\n\n.error-message{\n  background: #423f3f;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  margin-top: 10px;\n  text-align: center;\n}\n\n.options-container{\n  background: #afada3;\n  border: 5px solid #000;\n  display: flex;\n  flex-direction: column;\n  max-width: 280px;\n  padding: 10px;\n  width: 90%;\n}\n\n.options-container button{\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 95%;\n}\n\n@keyframes fill {\n    0%   {\n          display: none;\n          opacity: 0;\n         }\n    25%  {\n          display: block;\n          opacity: 0.4;\n         }\n\n    50%  {\n      display: none;\n\n         }\n\n    75%   {\n      display: block;\n      opacity: 0.7;\n\n          }\n\n    100% {\n      opacity: 1.0;\n\n    }\n}\n", ""]);
 
 // exports
 
@@ -29079,7 +29096,10 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     this.state = {
       challenge: "",
       users: [],
-      opponentRequestingBattle: []
+      opponentRequestingBattle: [],
+      showDecline: false,
+      userDecline: "",
+      requestError: false
     };
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('warRoomUsers', msg => {
       this.setState({ users: msg });
@@ -29089,7 +29109,12 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       this.props.history.history.replace('/battle');
     });
 
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestDeclined', msg => {});
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestDeclined', msg => {
+      this.setState({ showDecline: true, userDecline: msg });
+      setTimeout(() => {
+        this.setState({ showDecline: false });
+      }, 4000);
+    });
 
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequest', msg => {
       let opponent = this.state.opponentRequestingBattle.slice(0, this.state.opponentRequestingBattle.length);
@@ -29118,7 +29143,10 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   }
 
   handleSetMatch(opponentUsername) {
-    if (opponentUsername === this.props.user.username) return;
+    if (opponentUsername === this.props.user.username) {
+      this.errorMessage();
+      return;
+    }
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('requestBattle', { opponent: opponentUsername, user: this.props.user.username });
   }
 
@@ -29146,7 +29174,6 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     } else {
       __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('declineBattleRequest', { opponent: opponent, user: this.props.user.username });
       let updateOpponents = this.state.opponentRequestingBattle.slice(0, this.state.opponentRequestingBattle.length);
-      console.log(opponent, "OPPOENT");
       updateOpponents.splice(updateOpponents.indexOf(opponent), 1);
       this.setState({ opponentRequestingBattle: updateOpponents });
     }
@@ -29187,6 +29214,13 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   handleRoute(e) {
     e.preventDefault();
     this.props.history.history.replace('/destiny');
+  }
+
+  errorMessage() {
+    this.setState({ requestError: true });
+    setTimeout(() => {
+      this.setState({ requestError: false });
+    }, 4000);
   }
 
   render() {
@@ -29230,6 +29264,18 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         { className: 'battle-request-container' },
         this.displayBattleRequest()
       ),
+      this.state.showDecline ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'decline-battle-request' },
+        'Unfortunaly ',
+        this.state.userDecline,
+        ' is too scared to play with you right for now'
+      ) : null,
+      this.state.requestError ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'request-error' },
+        'You can not request yourself to be challenged silly bear, try solo mode in the destiny room if you want to play with yourself'
+      ) : null,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'users' },
@@ -29281,7 +29327,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 12px;\n  justify-content: center;\n  height: 58px;\n  margin: 10px 5px;\n  overflow: scroll;\n  text-align: center;\n  width: 260px;\n}\n\n.user:hover{\n  background: #423f3f;\n  border:5px solid #afada3;\n  text-decoration: underline;\n  transition: all 1s;\n}\n\n.war-room-container button:hover, .battle-request button:hover{\n  border: 5px solid #423f3f;\n  background: #000;\n  transition: all 1s;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.war-room-container h3{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n}\n\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 14px;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 12px;\n  justify-content: center;\n  height: 58px;\n  margin: 10px 5px;\n  overflow: scroll;\n  text-align: center;\n  width: 260px;\n}\n\n.user:hover{\n  background: #423f3f;\n  border:5px solid #afada3;\n  text-decoration: underline;\n  transition: all 1s;\n}\n\n.war-room-container button:hover, .battle-request button:hover{\n  border: 5px solid #423f3f;\n  background: #000;\n  transition: all 1s;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.war-room-container h3{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n}\n\n.decline-battle-request, .request-error{\n  background: #afada3;\n  border: 5px solid #000;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n  padding: 30px;\n  position: absolute;\n  top:200px;\n  left:20px;\n}\n\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 14px;\n  text-align: center;\n}\n", ""]);
 
 // exports
 

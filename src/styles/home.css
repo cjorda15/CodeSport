@@ -65,7 +65,14 @@
   background: #000;
   border: 3px solid #423f3f;
   transition: all 1s;
+}
 
+.error-message{
+  background: #423f3f;
+  color:#e8cc2e;
+  font-family: 'Press Start 2P', cursive;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .options-container{
