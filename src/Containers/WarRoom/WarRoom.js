@@ -8,7 +8,10 @@ class WarRoom extends Component{
     this.state={
       challenge: "",
       users: [],
-      opponentRequestingBattle: []
+      opponentRequestingBattle: [],
+      showDecline:false,
+      userDecline:"",
+      requestError:false
     }
     socket.on('warRoomUsers', (msg) => {
       this.setState({users:msg})
@@ -20,7 +23,8 @@ class WarRoom extends Component{
     })
 
     socket.on('battleRequestDeclined', (msg) => {
-
+      this.setState({showDecline:true, userDecline:msg})
+      setTimeout(() => { this.setState({showDecline:false})}, 4000)
     })
 
     socket.on('battleRequest', (msg) => {
@@ -48,7 +52,10 @@ class WarRoom extends Component{
   }
 
   handleSetMatch(opponentUsername) {
-    if (opponentUsername === this.props.user.username) return
+    if (opponentUsername === this.props.user.username){
+      this.errorMessage()
+      return
+    }
     socket.emit('requestBattle', { opponent: opponentUsername, user: this.props.user.username })
   }
 
@@ -72,7 +79,6 @@ class WarRoom extends Component{
     }else{
       socket.emit('declineBattleRequest',{ opponent: opponent, user: this.props.user.username })
       let updateOpponents = this.state.opponentRequestingBattle.slice(0,this.state.opponentRequestingBattle.length)
-      console.log(opponent,"OPPOENT")
       updateOpponents.splice(updateOpponents.indexOf(opponent),1)
       this.setState({opponentRequestingBattle:updateOpponents})
     }
@@ -100,6 +106,11 @@ class WarRoom extends Component{
     this.props.history.history.replace('/destiny')
   }
 
+  errorMessage(){
+    this.setState({requestError:true})
+    setTimeout(() => { this.setState({requestError:false})}, 4000)
+  }
+
   render(){
     return(
       <div className="war-room-container">
@@ -113,6 +124,8 @@ class WarRoom extends Component{
         <div className="battle-request-container">
           {this.displayBattleRequest()}
         </div>
+        {this.state.showDecline? <div className="decline-battle-request">Unfortunaly {this.state.userDecline} is too scared to play with you right for now</div>:null}
+        {this.state.requestError?<div className="request-error">You can not request yourself to be challenged silly bear, try solo mode in the destiny room if you want to play with yourself</div>:null}
         <div className="users">
           {this.users()}
         </div>
