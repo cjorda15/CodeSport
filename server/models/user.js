@@ -9,6 +9,10 @@ const login = (req, res) => {
   .then((user) => {
     res.json({username: user[0].username})
   })
+  .catch(error => {
+    //NOTE SEE ABOUT A 404 FOR USERS NOT FOUND
+    res.status(500).send('username either doesnt exist or password doesnt match')
+  })
 }
 
 const createAccount = (req, res) => {
