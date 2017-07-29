@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import '../../styles/App.css';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import SoloMode from '../SoloMode/SoloModeContainer'
 import Home from '../Home/HomeContainer'
 import WarRoom from '../WarRoom/WarRoomContainer'
 import Destiny from '../Destiny/DestinyContainer'
 import BattleMode from '../BattleMode/BattleModeContainer'
+
+//redirect to home Component if no
 
 class App extends Component {
   render() {
@@ -13,15 +15,27 @@ class App extends Component {
       <section>
         <Switch>
           <Route exact path='/destiny' render={(history) => {
-            return (<Destiny history={history}/>)
+            return !this.props.user.username
+            <Redirect to="/">
+            :
+             <Destiny history={history}/>)
             }}/>
           <Route exact path='/warroom' render={(history) => {
+            if(!this.props.user.username){
+              redirect(<Home/>)
+            }
             return (<WarRoom history={history}/>)
           }}/>
           <Route exact path='/solo' render={(history) => {
+            if(!this.props.user.username){
+              redirect(<Home/>)
+            }
             return (<SoloMode history={history}/>)
           }}/>
           <Route exact path='/battle' render={(history) => {
+            if(!this.props.user.username){
+              redirect(<Home/>)
+            }
             return (<BattleMode history={history}/>)
           }}/>
           <Route exact path='/' render={(history) => {

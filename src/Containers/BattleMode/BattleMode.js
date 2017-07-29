@@ -121,6 +121,7 @@ class BattleMode extends Component {
   }
 
   handleRoute(e){
+    this.props.handleClearOpponent()
     e.preventDefault()
     this.props.history.history.replace('/warroom')
   }

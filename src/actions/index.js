@@ -20,7 +20,7 @@ export const opponentName = (name) => {
 
 export const clearOpponent = () => {
   return {
-    
+    type:"CLEAR_OPPONENT"
   }
 
 }
