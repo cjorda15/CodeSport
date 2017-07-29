@@ -29894,11 +29894,9 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     if (!this.state.code) return;
     let results = [];
     for (let i = 0; i < 5; i++) {
-      console.log(this.state.tests[i]);
       let tester = new Function(`${this.state.code} ; ${this.state.tests[i]}`)();
       results.push(tester);
     }
-    console.log(results);
     let outcome = results.every(i => i);
     if (!outcome) {
       let badTests = results.filter(i => !i);
