@@ -25257,8 +25257,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -26700,8 +26700,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./App.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./App.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./App.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./App.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28777,8 +28777,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./solomode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./solomode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./solomode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./solomode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28851,7 +28851,9 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       username: "",
       email: "",
       password: "",
-      showError: false
+      showError: false,
+      errorUserNameTaken: false,
+      loginError: false
     };
   }
 
@@ -28878,7 +28880,10 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         console.log(data, "username");
         __WEBPACK_IMPORTED_MODULE_2__websocket__["a" /* default */].emit('logged in', data);
         this.props.history.history.replace('/destiny');
-      }).catch(err => console.log(err, "error"));
+      }).catch(err => {
+        console.log(err, "error");
+        this.nameOrEmailTaken();
+      });
     } else {
       fetch('/api/v1/account', {
         method: "GET",
@@ -28887,7 +28892,10 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         this.props.handleLogin(data);
         __WEBPACK_IMPORTED_MODULE_2__websocket__["a" /* default */].emit('logged in', data);
         this.props.history.history.replace('/destiny');
-      }).catch(err => console.log(err, "error"));
+      }).catch(err => {
+        this.loginError();
+        console.log(err, "error");
+      });
     }
   }
 
@@ -28900,24 +28908,32 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'form',
         { className: 'form-container' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'error-message' },
+          this.state.errorUserNameTaken ? "Username or email taken" : null
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
           value: this.state.username,
           placeholder: 'username',
           onChange: e => {
             this.setState({ username: e.target.value });
-          } }),
+          }
+        }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
           value: this.state.email,
           placeholder: 'email',
           onChange: e => {
             this.setState({ email: e.target.value });
-          } }),
+          }
+        }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
           value: this.state.password,
           placeholder: 'password',
           onChange: e => {
             this.setState({ password: e.target.value });
-          } }),
+          }
+        }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
           { onClick: e => {
@@ -28946,18 +28962,25 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'form',
         { className: 'form-container' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'error-message' },
+          this.state.loginError ? "Username/Password doesn't match" : null
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
           value: this.state.username,
           placeholder: 'username',
           onChange: e => {
             this.setState({ username: e.target.value });
-          } }),
+          }
+        }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
           value: this.state.password,
           placeholder: 'password',
           onChange: e => {
             this.setState({ password: e.target.value });
-          } }),
+          }
+        }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
           { onClick: e => {
@@ -29006,6 +29029,20 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     }, 4000);
   }
 
+  nameOrEmailTaken() {
+    this.setState({ errorUserNameTaken: true });
+    setTimeout(() => {
+      this.setState({ errorUserNameTaken: false });
+    }, 4000);
+  }
+
+  loginError() {
+    this.setState({ loginError: true });
+    setTimeout(() => {
+      this.setState({ loginError: false });
+    }, 4000);
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
@@ -29046,8 +29083,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./home.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./home.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./home.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./home.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29330,8 +29367,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./warroom.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./warroom.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./warroom.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./warroom.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29472,8 +29509,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./destiny.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./destiny.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./destiny.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./destiny.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29787,8 +29824,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
