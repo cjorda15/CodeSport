@@ -7,18 +7,37 @@ class CreateChallenge extends Component{
     super(props)
     this.state = {
       code:"",
-      test1:"",
-      test2:"",
-      test3:"",
-      test4:"",
-      test5:"",
+      tests: ['','','','',''],
       description1:"",
       description2:"",
       description3:"",
       description4:"",
       description5:"",
+      failedTests: []
     }
   }
+
+
+  runTests() {
+    if (!this.state.code) return 
+    let results = []
+    for (let i = 0; i < 5; i++) {
+      let tester = (new Function(`${this.state.code} ; ${this.state.tests[i]}`))()
+      results.push(tester)
+    }
+    let outcome = results.every(i => i)
+    if (!outcome) {
+      let badTests = results.filter(i => !i)
+      this.setState({failedTests: badTests})
+    }
+  }
+
+  createTestState(event, test) {
+    let tests = this.state.tests
+    tests[test] = event.target.value
+    this.setState({tests})
+  }
+
   render(){
     return(
       <div className="create-challenge-container">
@@ -29,8 +48,8 @@ class CreateChallenge extends Component{
               className="code-test"
               type="text"
               placeholder="type in your test 1"
-              value={this.state.test1}
-              onChange={(e)=>{this.setState({test1:e.target.value})}}
+              value={this.state.tests[0]}
+              onChange={(e) => this.createTestState(e, 0)}
               />
               <h6>write test 1 description here</h6>
               <input
@@ -38,7 +57,7 @@ class CreateChallenge extends Component{
                 type="text"
                 placeholder="test description"
                 value={this.state.description1}
-                onChange={(e)=>{this.setState({description1:e.target.value})}}
+                onChange={(e) => {this.setState({description1:e.target.value})}}
                 />
           </code>
           <code>
@@ -48,7 +67,7 @@ class CreateChallenge extends Component{
               type="text"
               placeholder="type in your test 2"
               value={this.state.test2}
-              onChange={(e)=>{this.setState({test2:e.target.value})}}
+              onChange={(e) => this.createTestState(e, 1)}
               />
             <h6>write test 2 description here</h6>
             <input
@@ -66,7 +85,7 @@ class CreateChallenge extends Component{
               type="text"
               placeholder="type in your test 3"
               value={this.state.test3}
-              onChange={(e)=>{this.setState({test3:e.target.value})}}
+              onChange={(e) => this.createTestState(e, 2)}
               />
             <h6>write test 3 description here</h6>
             <input
@@ -84,7 +103,7 @@ class CreateChallenge extends Component{
               type="text"
               placeholder="type in your test 4"
               value={this.state.test4}
-              onChange={(e)=>{this.setState({test4:e.target.value})}}
+              onChange={(e) => this.createTestState(e, 3)}
               />
             <h6>write test 4 description here</h6>
             <input
@@ -102,7 +121,7 @@ class CreateChallenge extends Component{
               type="text"
               placeholder="type in your test 5"
               value={this.state.test5}
-              onChange={(e)=>{this.setState({test5:e.target.value})}}
+              onChange={(e) => this.createTestState(e, 4)}
               />
             <h6>write test 5 description here</h6>
             <input
@@ -124,7 +143,9 @@ class CreateChallenge extends Component{
             onChange={(e)=>{this.setState({code:e.target.value})}}
             />
         </code>
+        <button onClick={() => this.runTests()}>Run</button>
         </section>
+
       </div>
     )
   }

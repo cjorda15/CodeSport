@@ -69,7 +69,7 @@ class BattleMode extends Component {
   }
 
   make(){
-    if(this.state.gameover||!this.state.text)return
+    if (this.state.gameover||!this.state.text)return
 
     let results = []
     let runTill = this.state.currentQuestion
@@ -179,8 +179,6 @@ class BattleMode extends Component {
             </div>
          </div>
          {this.gameover()}
-        <pre id="code"></pre>
-        <span id="code-container"></span>
       </div>
   )}
 }
