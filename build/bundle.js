@@ -25257,8 +25257,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -25276,7 +25276,7 @@ exports = module.exports = __webpack_require__(17)(undefined);
 
 
 // module
-exports.push([module.i, "*{\n  box-sizing: border-box;\n}\n\n#root {\n  height: 100%;\n}\n\nbody {\n  background: #423f3f;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n", ""]);
+exports.push([module.i, "*{\n  box-sizing: border-box;\n}\n\n#root {\n  height: 100%;\n}\n\nbody {\n  background: #423f3f;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  font-family: sans-serif;\n}\n", ""]);
 
 // exports
 
@@ -26700,8 +26700,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./App.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./App.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./App.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./App.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28777,8 +28777,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./solomode.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./solomode.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./solomode.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./solomode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29084,8 +29084,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./home.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./home.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./home.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./home.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29368,8 +29368,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./warroom.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./warroom.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./warroom.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./warroom.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29510,8 +29510,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./destiny.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./destiny.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./destiny.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./destiny.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29529,7 +29529,7 @@ exports = module.exports = __webpack_require__(17)(undefined);
 
 
 // module
-exports.push([module.i, ".destiny {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  flex-direction: column;\n  height:100vh;\n  justify-content: center;\n}\n\n.destiny-body {\n  background: #afada3;\n  border-radius: 10px;\n  border: 10px solid #000;\n  display: flex;\n  flex-direction: column;\n  height: 465px;\n  padding: 25px;\n}\n\n.destiny-body button {\n  margin-bottom: 30px;\n}\n\n.destiny h2{\n  font-size: 36px;\n  text-align: center;\n}\n\n\n.destiny h2, .destiny-body button{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n}\n\n.destiny-body button{\n  background:#423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.destiny-body button:hover{\n  background: #000;\n  border: 5px solid #423f3f;\n  transition: all 1s;\n\n}\n", ""]);
+exports.push([module.i, ".destiny {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  flex-direction: column;\n  height:100vh;\n  justify-content: center;\n}\n\n.destiny-body {\n  background: #afada3;\n  border-radius: 10px;\n  border: 10px solid #000;\n  display: flex;\n  flex-direction: column;\n  height: 465px;\n  padding: 25px;\n}\n\n.destiny-body button {\n  margin-bottom: 30px;\n}\n\n.destiny h2{\n  font-size: 36px;\n  text-align: center;\n}\n\n.destiny h2, .destiny-body button{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n}\n\n.destiny-body button{\n  background:#423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.destiny-body button:hover{\n  background: #000;\n  border: 5px solid #423f3f;\n  transition: all 1s;\n}\n", ""]);
 
 // exports
 
@@ -29823,8 +29823,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29915,6 +29915,11 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       'div',
       { className: 'create-challenge-container' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h6',
+        { className: 'title-page' },
+        'create test zone'
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'section',
         { className: 'create-test-container' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -29925,7 +29930,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             null,
             ' test 1 code'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
             className: 'code-test',
             type: 'text',
             placeholder: 'type in your test 1',
@@ -29937,8 +29942,8 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             null,
             'write test 1 description here'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-            className: 'code-example',
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
+            className: 'code-description',
             type: 'text',
             placeholder: 'test description',
             value: this.state.description1,
@@ -29955,7 +29960,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             null,
             ' test 2 code'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
             className: 'code-test',
             type: 'text',
             placeholder: 'type in your test 2',
@@ -29967,8 +29972,8 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             null,
             'write test 2 description here'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-            className: 'code-example',
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
+            className: 'code-description',
             type: 'text',
             placeholder: 'test description',
             value: this.state.description2,
@@ -29985,7 +29990,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             null,
             ' test 3 code'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
             className: 'code-test',
             type: 'text',
             placeholder: 'type in your test 3',
@@ -29997,8 +30002,8 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             null,
             'write test 3 description here'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-            className: 'code-example',
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
+            className: 'code-description',
             type: 'text',
             placeholder: 'test description',
             value: this.state.description3,
@@ -30015,7 +30020,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             null,
             ' test 4 code'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
             className: 'code-test',
             type: 'text',
             placeholder: 'type in your test 4',
@@ -30027,8 +30032,8 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             null,
             'write test 4 description here'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-            className: 'code-example',
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
+            className: 'code-description',
             type: 'text',
             placeholder: 'test description',
             value: this.state.description4,
@@ -30045,7 +30050,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             null,
             ' test 5 code'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
             className: 'code-test',
             type: 'text',
             placeholder: 'type in your test 5',
@@ -30057,8 +30062,8 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             null,
             'write test 5 description here'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-            className: 'code-example',
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
+            className: 'code-description',
             type: 'text',
             placeholder: 'test description',
             value: this.state.description5,
@@ -30070,11 +30075,11 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'section',
-        null,
+        { className: 'example-code-container' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'code',
           null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
             className: 'code-example',
             type: 'text',
             placeholder: 'type in your example solutions for all your test here',
@@ -30137,7 +30142,7 @@ exports = module.exports = __webpack_require__(17)(undefined);
 
 
 // module
-exports.push([module.i, ".create-challenge-container{\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n", ""]);
+exports.push([module.i, ".create-challenge-container{\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  margin-top: 140px;\n}\n\n.title-page{\n  background: #e8cc2e;\n  border: #000 9px solid;\n  border-radius: 16px;\n  padding: 10px;\n  position: absolute;\n  top: 15px;\n  font-size: 26px;\n  margin: 0px;\n}\n\n.title-page, .create-challenge-container h6{\n font-family: 'Press Start 2P', cursive;\n}\n\ntextarea{\n  resize:vertical;\n  font-family: monospace;\n  font-size: 21px;\n}\n\n.create-test-container, .example-code-container{\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  width: 50%;\n}\n\n.create-challenge-container code{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  margin: 10px;\n  padding: 10px;\n  width: 85%;\n}\n\n.create-test-container{\n\n}\n\n.example-code-container{\n\n}\n\n.example-code-container code{\n  height: 65%;\n}\n\n\n.create-challenge-container code{\n  width: 85%;\n}\n\n.code-test, .code-example, .code-description{\n  width: 100%;\n  max-width: 500px;\n}\n\n.code-example{\n  height: 100%;\n  padding: 10px;\n}\n", ""]);
 
 // exports
 

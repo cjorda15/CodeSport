@@ -2,4 +2,68 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-top: 140px;
+}
+
+.title-page{
+  background: #e8cc2e;
+  border: #000 9px solid;
+  border-radius: 16px;
+  padding: 10px;
+  position: absolute;
+  top: 15px;
+  font-size: 26px;
+  margin: 0px;
+}
+
+.title-page, .create-challenge-container h6{
+ font-family: 'Press Start 2P', cursive;
+}
+
+textarea{
+  resize:vertical;
+  font-family: monospace;
+  font-size: 21px;
+}
+
+.create-test-container, .example-code-container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.create-challenge-container code{
+  background: #e8cc2e;
+  border: 5px solid #000;
+  margin: 10px;
+  padding: 10px;
+  width: 85%;
+}
+
+.create-test-container{
+
+}
+
+.example-code-container{
+
+}
+
+.example-code-container code{
+  height: 65%;
+}
+
+
+.create-challenge-container code{
+  width: 85%;
+}
+
+.code-test, .code-example, .code-description{
+  width: 100%;
+  max-width: 500px;
+}
+
+.code-example{
+  height: 100%;
+  padding: 10px;
 }

@@ -41,107 +41,109 @@ class CreateChallenge extends Component{
   render(){
     return(
       <div className="create-challenge-container">
+        <h6 className="title-page">create test zone</h6>
         <section className="create-test-container">
           <code>
           <h6> test 1 code</h6>
-            <input
+            <textarea
               className="code-test"
               type="text"
               placeholder="type in your test 1"
               value={this.state.tests[0]}
               onChange={(e) => this.createTestState(e, 0)}
-              />
+              ></textarea>
               <h6>write test 1 description here</h6>
-              <input
-                className="code-example"
+              <textarea
+                className="code-description"
                 type="text"
                 placeholder="test description"
                 value={this.state.description1}
                 onChange={(e) => {this.setState({description1:e.target.value})}}
-                />
+                /></textarea>
           </code>
           <code>
           <h6> test 2 code</h6>
-            <input
+            <textarea
               className="code-test"
               type="text"
               placeholder="type in your test 2"
               value={this.state.test2}
               onChange={(e) => this.createTestState(e, 1)}
-              />
+              ></textarea>
             <h6>write test 2 description here</h6>
-            <input
-              className="code-example"
+            <textarea
+              className="code-description"
               type="text"
               placeholder="test description"
               value={this.state.description2}
               onChange={(e)=>{this.setState({description2:e.target.value})}}
-              />
+              ></textarea>
           </code>
           <code>
           <h6> test 3 code</h6>
-            <input
+            <textarea
               className="code-test"
               type="text"
               placeholder="type in your test 3"
               value={this.state.test3}
               onChange={(e) => this.createTestState(e, 2)}
-              />
+              ></textarea>
             <h6>write test 3 description here</h6>
-            <input
-              className="code-example"
+            <textarea
+              className="code-description"
               type="text"
               placeholder="test description"
               value={this.state.description3}
               onChange={(e)=>{this.setState({description3:e.target.value})}}
-              />
+              ></textarea>
           </code>
           <code>
           <h6> test 4 code</h6>
-            <input
+            <textarea
               className="code-test"
               type="text"
               placeholder="type in your test 4"
               value={this.state.test4}
               onChange={(e) => this.createTestState(e, 3)}
-              />
+              ></textarea>
             <h6>write test 4 description here</h6>
-            <input
-              className="code-example"
+            <textarea
+              className="code-description"
               type="text"
               placeholder="test description"
               value={this.state.description4}
               onChange={(e)=>{this.setState({description4:e.target.value})}}
-              />
+              ></textarea>
           </code>
           <code>
           <h6> test 5 code</h6>
-            <input
+            <textarea
               className="code-test"
               type="text"
               placeholder="type in your test 5"
               value={this.state.test5}
               onChange={(e) => this.createTestState(e, 4)}
-              />
+              ></textarea>
             <h6>write test 5 description here</h6>
-            <input
-              className="code-example"
+            <textarea
+              className="code-description"
               type="text"
               placeholder="test description"
               value={this.state.description5}
               onChange={(e)=>{this.setState({description5:e.target.value})}}
-              />
+              ></textarea>
           </code>
         </section>
-        <section>
+        <section className="example-code-container">
         <code>
-          <input
+          <textarea
             className="code-example"
             type="text"
             placeholder="type in your example solutions for all your test here"
             value={this.state.code}
             onChange={(e)=>{this.setState({code:e.target.value})}}
-            />
+            >
+            </textarea>
         </code>
         <button onClick={() => this.runTests()}>Run</button>
         </section>
