@@ -15,31 +15,31 @@ class App extends Component {
       <section>
         <Switch>
           <Route exact path='/destiny' render={(history) => {
-            return !this.props.user.username
-            <Redirect to="/">
-            :
-             <Destiny history={history}/>)
+            return !this.props.user.username?
+            <Redirect to="/"/>
+              :
+             <Destiny history={history}/>
             }}/>
           <Route exact path='/warroom' render={(history) => {
-            if(!this.props.user.username){
-              redirect(<Home/>)
-            }
-            return (<WarRoom history={history}/>)
+          return !this.props.user.username?
+            <Redirect to="/"/>
+              :
+            <WarRoom history={history}/>
           }}/>
           <Route exact path='/solo' render={(history) => {
-            if(!this.props.user.username){
-              redirect(<Home/>)
-            }
-            return (<SoloMode history={history}/>)
+            return !this.props.user.username?
+            <Redirect to="/"/>
+              :
+            <SoloMode history={history}/>
           }}/>
           <Route exact path='/battle' render={(history) => {
-            if(!this.props.user.username){
-              redirect(<Home/>)
-            }
-            return (<BattleMode history={history}/>)
+            return !this.props.user.username?
+            <Redirect to="/"/>
+              :
+             <BattleMode history={history}/>
           }}/>
           <Route exact path='/' render={(history) => {
-            return(<Home history={history}/>)
+            return<Home history={history}/>
           }}/>
         </Switch>
       </section>
