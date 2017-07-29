@@ -6,6 +6,7 @@ import Home from '../Home/HomeContainer'
 import WarRoom from '../WarRoom/WarRoomContainer'
 import Destiny from '../Destiny/DestinyContainer'
 import BattleMode from '../BattleMode/BattleModeContainer'
+import CreateChallenge from '../CreateChallenge/CreateChallengeContainer'
 
 //redirect to home Component if no
 
@@ -37,6 +38,12 @@ class App extends Component {
             <Redirect to="/"/>
               :
              <BattleMode history={history}/>
+          }}/>
+          <Route exact path='/create_challenge' render={(history) => {
+            // return !this.props.user.username?
+            // <Redirect to="/"/>
+            //   :
+            return <CreateChallenge history={history}/>
           }}/>
           <Route exact path='/' render={(history) => {
             return<Home history={history}/>

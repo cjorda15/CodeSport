@@ -26630,6 +26630,8 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__WarRoom_WarRoomContainer__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Destiny_DestinyContainer__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__BattleMode_BattleModeContainer__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__CreateChallenge_CreateChallengeContainer__ = __webpack_require__(298);
+
 
 
 
@@ -26660,6 +26662,12 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { exact: true, path: '/battle', render: history => {
             return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__BattleMode_BattleModeContainer__["a" /* default */], { history: history });
+          } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { exact: true, path: '/create_challenge', render: history => {
+            // return !this.props.user.username?
+            // <Redirect to="/"/>
+            //   :
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__CreateChallenge_CreateChallengeContainer__["a" /* default */], { history: history });
           } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { exact: true, path: '/', render: history => {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Home_HomeContainer__["a" /* default */], { history: history });
@@ -29427,6 +29435,14 @@ class Destiny extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
               this.handleClick("/learn");
             } },
           'Learn'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          {
+            onClick: () => {
+              this.handleClick("/create_challenge");
+            } },
+          'Create Challenge'
         )
       )
     );
@@ -29969,6 +29985,288 @@ const battle = (state = '', action) => {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (battle);
+
+/***/ }),
+/* 298 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CreateChallenge__ = __webpack_require__(299);
+
+
+
+const mapStateToProps = state => {
+  return state;
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, null)(__WEBPACK_IMPORTED_MODULE_1__CreateChallenge__["a" /* default */]));
+
+/***/ }),
+/* 299 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css__);
+
+
+
+class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      code: "",
+      test1: "",
+      test2: "",
+      test3: "",
+      test4: "",
+      test5: "",
+      description1: "",
+      description2: "",
+      description3: "",
+      description4: "",
+      description5: ""
+    };
+  }
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: 'create-challenge-container' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'section',
+        { className: 'create-test-container' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'code',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h6',
+            null,
+            ' test 1 code'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-test',
+            type: 'text',
+            placeholder: 'type in your test 1',
+            value: this.state.test1,
+            onChange: e => {
+              this.setState({ test1: e.target.value });
+            }
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h6',
+            null,
+            'write test 1 description here'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-example',
+            type: 'text',
+            placeholder: 'test description',
+            value: this.state.description1,
+            onChange: e => {
+              this.setState({ description1: e.target.value });
+            }
+          })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'code',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h6',
+            null,
+            ' test 2 code'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-test',
+            type: 'text',
+            placeholder: 'type in your test 2',
+            value: this.state.test2,
+            onChange: e => {
+              this.setState({ test2: e.target.value });
+            }
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h6',
+            null,
+            'write test 2 description here'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-example',
+            type: 'text',
+            placeholder: 'test description',
+            value: this.state.description2,
+            onChange: e => {
+              this.setState({ description2: e.target.value });
+            }
+          })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'code',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h6',
+            null,
+            ' test 3 code'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-test',
+            type: 'text',
+            placeholder: 'type in your test 3',
+            value: this.state.test3,
+            onChange: e => {
+              this.setState({ test3: e.target.value });
+            }
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h6',
+            null,
+            'write test 3 description here'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-example',
+            type: 'text',
+            placeholder: 'test description',
+            value: this.state.description3,
+            onChange: e => {
+              this.setState({ description3: e.target.value });
+            }
+          })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'code',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h6',
+            null,
+            ' test 4 code'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-test',
+            type: 'text',
+            placeholder: 'type in your test 4',
+            value: this.state.test4,
+            onChange: e => {
+              this.setState({ test4: e.target.value });
+            }
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h6',
+            null,
+            'write test 4 description here'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-example',
+            type: 'text',
+            placeholder: 'test description',
+            value: this.state.description4,
+            onChange: e => {
+              this.setState({ description4: e.target.value });
+            }
+          })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'code',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h6',
+            null,
+            ' test 5 code'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-test',
+            type: 'text',
+            placeholder: 'type in your test 5',
+            value: this.state.test5,
+            onChange: e => {
+              this.setState({ test5: e.target.value });
+            }
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h6',
+            null,
+            'write test 5 description here'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-example',
+            type: 'text',
+            placeholder: 'test description',
+            value: this.state.description5,
+            onChange: e => {
+              this.setState({ description5: e.target.value });
+            }
+          })
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'section',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'code',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            className: 'code-example',
+            type: 'text',
+            placeholder: 'type in your example solutions for all your test here',
+            value: this.state.code,
+            onChange: e => {
+              this.setState({ code: e.target.value });
+            }
+          })
+        )
+      )
+    );
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (CreateChallenge);
+
+/***/ }),
+/* 300 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(301);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(20)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./create_challenge.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./create_challenge.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 301 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(19)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".create-challenge-container{\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);
