@@ -18,11 +18,6 @@ class BattleMode extends Component {
         "make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"
       ],
       questions : [
-`if(a==10){
-  return true
-}`
-
-
      `let test = new Person()
         if(test.name==="chris"){
           return true

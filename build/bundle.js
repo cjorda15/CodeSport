@@ -29506,9 +29506,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       currentQuestion: 0,
       gameover: false,
       description: ["make a object constructor with the property name having a value of chris", "make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)", "make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned", "make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"],
-      questions: [`if(a==10){
-  return true
-}``let test = new Person()
+      questions: [`let test = new Person()
         if(test.name==="chris"){
           return true
         }else{
