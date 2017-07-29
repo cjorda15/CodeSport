@@ -70,10 +70,13 @@
 }
 
 .gameover-message{
+  align-items: center;
   background: #423f3f;
   border: 5px solid #e8cc2e;
   border-radius: 5px;
   color: #e8cc2e;
+  display: flex;
+  flex-direction: column;
   font-family: 'Press Start 2P', cursive;
   font-size: 41px;
   left: 2%;

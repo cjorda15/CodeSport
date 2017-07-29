@@ -29500,135 +29500,84 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   constructor(props) {
     super(props);
     this.state = {
-      lineNumber: 1,
-      myPoints: 0,
-      opponentsPoints: 0,
+      lineNumber: 1, opponentsPoints: 0,
       text: "",
       testsStatus: [],
       currentQuestion: 0,
       gameover: false,
       description: ["make a object constructor with the property name having a value of chris", "make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)", "make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned", "make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"],
-      questions: [function test1(arg) {
-        if (arg == "error") {
-          console.log("sorry error in creating user Function");
-          return false;
-        }
-        const test = new arg();
-        if (test.name === "chris") {
-          return true;
-        } else {
-          return;
-        }
-      }, function test2(arg) {
-        if (arg == "error") {
-          console.log("sorry error in creating user Function");
-          return;
-        }
-        const test = new arg();
-        if (!test.shout) return "please make the shout method for the object constructor";
-        if (test.shout() === "chris is shouting") {
-          return true;
-        } else {
-          return false;
-        }
-      }, function test3(arg) {
-        if (arg == "error") {
-          console.log("sorry error in creating user Function");
-          return;
-        }
-        const test = new arg();
-        if (!test.changeName) return "please make the changeName method for the object constructor";
-        test.changeName("rob");
-        if (test.name == "rob") {
-          return true;
-        } else {
-          return false;
-        }
-      }, function test4(arg) {
-        if (arg == "error") {
-          console.log("sorry error in creating user Function");
-          return;
-        }
-        const test = new arg("j");
-        if (test.name == "j") {
-          return true;
-        } else {
-          return false;
-        }
-      }]
+      questions: [`if(a==10){
+  return true
+}``let test = new Person()
+        if(test.name==="chris"){
+          return true
+        }else{
+          return false
+        }`, ` let test2 = new Person()
+        if(test2.shout()==="chris is shouting"){
+          return true
+        }else{
+        return false
+        }`, `
+        let test3 = new Person()
+        if(!test3.changeName) return false
+        test3.changeName("rob")
+        if(test3.name == "rob"){
+        return true
+        }else{
+        return false
+        }`, ` let test4 = new Person("j")
+        if(test4.name=="j"){
+        return true
+        }else{
+        return  false
+        }`]
     };
 
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('challenger point', () => {
-      this.challengerPoint();
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('challenger question', msg => {
+      this.setState({ opponentsPoints: msg });
+      if (msg == this.state.questions.length) {
+        this.setState({ gameover: true });
+      }
     });
   }
-
   getCode(e) {
     if (e.key === 'Enter') {
       let addLine = this.state.lineNumber + 1;
       this.setState({ lineNumber: addLine });
     }
-    if (!e) return; //Note do we still need this?
+    if (!e) return;
     let text = e.target.innerText;
     this.setState({ text: text });
   }
 
-  createFunction(arg) {
-    if (arg.slice(0, 8) !== "function") return "error";
-    const splitArg = arg.split("");
-    const userArguments = splitArg.splice(splitArg.indexOf("(") + 1, splitArg.indexOf(")") - splitArg.indexOf("(") - 1).join("");
-    const body = splitArg.splice(splitArg.indexOf("{") + 1, splitArg.length - 1);
-    const useBody = body.splice(0, body.length - 2).join('');
-    return new Function(userArguments, useBody);
-  }
-
   make() {
-    if (this.state.gameover) return;
-    if (!this.state.text) return;
-    const userFunction = this.createFunction(this.state.text);
-    let test = this.state.questions;
-    let currentQuestion = this.state.currentQuestion;
-    currentQuestion += 1;
-    let outcome = this.checkTestResults(userFunction, test.slice(0, currentQuestion));
-    this.test(outcome);
-  }
+    if (this.state.gameover || !this.state.text) return;
 
-  test(outcome) {
-    if (outcome) {
-      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit("point won", this.props.battle);
-      let myPoints = this.state.myPoints;
-      if (myPoints + 1 == this.state.questions.length) {
+    let results = [];
+    let runTill = this.state.currentQuestion;
+    runTill += 1;
+    for (let i = 0; i < runTill; i++) {
+      let tester = new Function(`${this.state.text} ; ${this.state.questions[i]}`)();
+      results.push(tester);
+    }
+    let outcome = results.every(i => i);
+    if (!outcome) {
+      let failedTest = [];
+      for (let i = 0; i < results.length; i++) {
+        if (!results[i]) {
+          this.setState({ currentQuestion: i });
+          __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit("current question", { question: i, challenger: this.props.battle });
+          break;
+        }
+      }
+    } else {
+      let updateQuestion = this.state.currentQuestion + 1;
+      this.setState({ currentQuestion: updateQuestion });
+      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit("current question", { question: updateQuestion, challenger: this.props.battle });
+      if (updateQuestion == this.state.questions.length) {
         this.setState({ gameover: true });
       }
-    }
-  }
-
-  checkTestResults(userFunction, questions) {
-    let results = questions.map(question => {
-      return question(userFunction);
-    });
-    this.setState({ testsStatus: results });
-    if (!results.every(result => result)) {
-      results.find((result, index) => {
-        if (!result) {
-          this.setState({ currentQuestion: index });
-        }
-      });
-    } else {
-      let updateQuestion = this.state.currentQuestion;
-      let updateMyPoints = this.state.myPoints;
-      updateQuestion += 1;
-      updateMyPoints += 1;
-      this.setState({ currentQuestion: updateQuestion, myPoints: updateMyPoints });
-    }
-    return results.every(result => result);
-  }
-
-  challengerPoint() {
-    const updateChallegerPoints = this.state.opponentsPoints + 1;
-    this.setState({ opponentsPoints: updateChallegerPoints });
-    if (this.state.questions.length == updateChallegerPoints) {
-      this.setState({ gameover: true });
     }
   }
 
@@ -29731,7 +29680,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
               'p',
               null,
               'Your Score: ',
-              this.state.myPoints
+              this.state.currentQuestion
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'p',
@@ -29748,7 +29697,8 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         )
       ),
       this.gameover(),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('pre', { id: 'code' })
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('pre', { id: 'code' }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { id: 'code-container' })
     );
   }
 }
@@ -29795,7 +29745,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n}\n\n.scoreboard-title {\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #673ab7;\n}\n\n.gameover-message{\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  top: 10%;\n}\n\n.gameover-message button{\n  background: #000;\n  border: none;\n  border-radius: 8px;\n  color: #e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  height: 55px;\n  font-size: 20px;\n  margin-top: 20px;\n}\n\n.gameover-message button{\n  border: 5px solid #e8cc2e;\n  transition: all 1s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n}\n\n.line-num {\n  margin: 0;\n\n}\n\n.line {\n  margin: 0 0 0 30px;\n  width: 100%;\n}\n\n@media (max-width:620px) {\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
+exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n}\n\n.scoreboard-title {\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #673ab7;\n}\n\n.gameover-message{\n  align-items: center;\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  top: 10%;\n}\n\n.gameover-message button{\n  background: #000;\n  border: none;\n  border-radius: 8px;\n  color: #e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  height: 55px;\n  font-size: 20px;\n  margin-top: 20px;\n}\n\n.gameover-message button{\n  border: 5px solid #e8cc2e;\n  transition: all 1s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n}\n\n.line-num {\n  margin: 0;\n\n}\n\n.line {\n  margin: 0 0 0 30px;\n  width: 100%;\n}\n\n@media (max-width:620px) {\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
 
 // exports
 

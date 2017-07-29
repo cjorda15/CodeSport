@@ -6,9 +6,7 @@ class BattleMode extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      lineNumber: 1,
-      myPoints:0,
-      opponentsPoints:0,
+      lineNumber: 1,      opponentsPoints:0,
       text:"",
       testsStatus: [],
       currentQuestion: 0,
@@ -20,135 +18,88 @@ class BattleMode extends Component {
         "make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"
       ],
       questions : [
-        function test1(arg){
-          if(arg == "error"){
-            console.log("sorry error in creating user Function")
-            return false
-          }
-          const test = new arg()
-          if(test.name==="chris"){
-            return true
-          }else{
-            return
-          }
-      },
-      function test2(arg){
-        if(arg == "error"){
-          console.log("sorry error in creating user Function")
-          return
-        }
-        const test = new arg()
-        if(!test.shout) return "please make the shout method for the object constructor"
-        if(test.shout()==="chris is shouting"){
-          return true
-        }else{
-          return false
-        }
-      },
-      function test3(arg){
-        if(arg == "error"){
-          console.log("sorry error in creating user Function")
-          return
-        }
-        const test = new arg()
-        if(!test.changeName) return "please make the changeName method for the object constructor"
-        test.changeName("rob")
-        if(test.name == "rob"){
-          return true
-        }else{
-          return false
-        }
+`if(a==10){
+  return true
+}`
 
-      },
-      function test4(arg){
-        if(arg == "error"){
-          console.log("sorry error in creating user Function")
-          return
-        }
-        const test = new arg("j")
-        if(test.name=="j"){
+
+     `let test = new Person()
+        if(test.name==="chris"){
           return true
         }else{
           return false
-        }
-      }
+        }`,
+
+      ` let test2 = new Person()
+        if(test2.shout()==="chris is shouting"){
+          return true
+        }else{
+        return false
+        }`,
+      `
+        let test3 = new Person()
+        if(!test3.changeName) return false
+        test3.changeName("rob")
+        if(test3.name == "rob"){
+        return true
+        }else{
+        return false
+        }`,
+      ` let test4 = new Person("j")
+        if(test4.name=="j"){
+        return true
+        }else{
+        return  false
+        }`
       ]
     }
 
-    socket.on('challenger point',() => {
-      this.challengerPoint()
+    socket.on('challenger question',(msg) => {
+      this.setState({opponentsPoints:msg})
+      if(msg==this.state.questions.length){
+        this.setState({gameover:true})
+      }
     })
   }
-
   getCode(e) {
     if (e.key === 'Enter') {
       let addLine = this.state.lineNumber + 1
       this.setState({lineNumber: addLine})
     }
-    if(!e) return //Note do we still need this?
+    if(!e) return
     let text = e.target.innerText
     this.setState({text: text})
   }
 
-  createFunction(arg){
-   if(arg.slice(0,8)!=="function")return "error";
-   const splitArg =  arg.split("")
-   const userArguments = splitArg.splice(splitArg.indexOf("(")+1,(splitArg.indexOf(")") - splitArg.indexOf("("))-1).join("")
-   const body = splitArg.splice(splitArg.indexOf("{")+1,splitArg.length-1)
-   const useBody = body.splice(0,body.length-2).join('')
-   return new Function(userArguments,useBody)
-  }
+  make(){
+    if(this.state.gameover||!this.state.text)return
 
-
-  make() {
-    if(this.state.gameover) return
-    if (!this.state.text) return
-    const userFunction = this.createFunction(this.state.text)
-    let test = this.state.questions
-    let currentQuestion = this.state.currentQuestion
-    currentQuestion+=1
-    let outcome = this.checkTestResults(userFunction, test.slice(0, currentQuestion))
-    this.test(outcome)
-  }
-
-  test(outcome) {
-    if(outcome){
-      socket.emit("point won",this.props.battle)
-      let myPoints = this.state.myPoints
-      if(myPoints+1==this.state.questions.length){
+    let results = []
+    let runTill = this.state.currentQuestion
+    runTill+=1
+    for(let i =0;i<runTill;i++){
+      let tester = (new Function(`${this.state.text} ; ${this.state.questions[i]}`))()
+      results.push(tester)
+     }
+    let outcome = results.every(i=> i)
+      if(!outcome){
+        let failedTest = []
+        for(let i = 0; i<results.length; i++){
+          if(!results[i]){
+            this.setState({currentQuestion:i})
+            socket.emit("current question",{question:i,challenger:this.props.battle})
+            break;
+          }
+        }
+      }else{
+      let updateQuestion = this.state.currentQuestion+1
+      this.setState({currentQuestion:updateQuestion})
+      socket.emit("current question",{question:updateQuestion,challenger:this.props.battle})
+      if(updateQuestion==this.state.questions.length){
         this.setState({gameover:true})
       }
-    }
-  }
-
-  checkTestResults(userFunction, questions) {
-    let results = questions.map(question => {
-      return question(userFunction)
-    })
-    this.setState({testsStatus: results})
-      if(!results.every(result => result)){
-        results.find((result,index) => {
-        if(!result){
-          this.setState({currentQuestion:index})
-        }
-      })
-      }else{
-        let updateQuestion = this.state.currentQuestion
-        let updateMyPoints = this.state.myPoints
-        updateQuestion+=1
-        updateMyPoints+=1
-        this.setState({currentQuestion:updateQuestion,myPoints:updateMyPoints})
-      }
-    return results.every(result => result)
-  }
-
- challengerPoint() {
-   const updateChallegerPoints = this.state.opponentsPoints+1
-    this.setState({opponentsPoints:updateChallegerPoints})
-    if(this.state.questions.length==updateChallegerPoints){
-      this.setState({gameover:true})
-    }
-  }
+     }
+   }
 
   addLine() {
     let test = []
@@ -179,7 +130,7 @@ class BattleMode extends Component {
     this.props.history.history.replace('/warroom')
   }
 
-  render() {
+  render(){
     return (
       <div className="app">
         <div id="left-side">
@@ -200,7 +151,7 @@ class BattleMode extends Component {
             <div id="scoreboard">
               <h4 className="scoreboard-title">Scoreboard</h4>
               <div className="scores">
-                <p>Your Score: {this.state.myPoints}</p>
+                <p>Your Score: {this.state.currentQuestion}</p>
                 <p>Opponents Score: {this.state.opponentsPoints}</p>
               </div>
               <p className="current-question">{this.state.description[this.state.currentQuestion]}</p>
@@ -208,8 +159,10 @@ class BattleMode extends Component {
          </div>
          {this.gameover()}
         <pre id="code"></pre>
+        <span id="code-container"></span>
       </div>
   )}
 }
+
 
 export default BattleMode
