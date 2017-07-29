@@ -28859,7 +28859,11 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           username: this.state.username,
-          password: this.state.password
+          email: this.state.email,
+          password: this.state.password,
+          total_score: 0,
+          total_matches: 0,
+          total_wins: 0
         })
       }).then(res => res.json()).then(data => {
         this.props.handleLogin(data);
@@ -29520,12 +29524,13 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   constructor(props) {
     super(props);
     this.state = {
-      lineNumber: 1, opponentsPoints: 0,
+      lineNumber: 1,
+      opponentsPoints: 0,
       text: "",
       testsStatus: [],
       currentQuestion: 0,
       gameover: false,
-      description: ["make a object constructor with the property name having a value of chris", "make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)", "make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned", "make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"],
+      description: ["make a function object constructor with the declared name being 'Person' with the property name having a value of chris", "make a method for the function object constructor named shout that when called, will have the user shout his name followed by is shouting (ex:chris is shouting)", "make a method named changeName that when run will allow the argument to reassign the object propety name's value", "make it so that when a object is intinitated with this function object constructor, it can have the first argument be assigned to the name's property's value"],
       questions: [`let test = new Person()
         if(test.name==="chris"){
           return true
@@ -29556,6 +29561,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       this.setState({ opponentsPoints: msg });
       if (msg == this.state.questions.length) {
         this.setState({ gameover: true });
+        this.handleApiCall("+ 0");
       }
     });
   }
@@ -29595,6 +29601,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit("current question", { question: updateQuestion, challenger: this.props.battle });
       if (updateQuestion == this.state.questions.length) {
         this.setState({ gameover: true });
+        this.handleApiCall("+ 1");
       }
     }
   }
@@ -29616,6 +29623,31 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     return test2;
   }
 
+  handleRoute(e) {
+    this.props.handleClearOpponent();
+    e.preventDefault();
+    this.props.history.history.replace('/warroom');
+  }
+
+  handleApiCall(win) {
+    const d = new Date();
+    const month = d.getMonth() + 1;
+    const day = d.getDate();
+    const year = d.getFullYear();
+    const score = this.state.currentQuestion == 0 ? 0 : this.state.currentQuestion + 1;
+    // win should be sent as a string with +1 or +0
+    fetch('/api/v1/score', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: `${this.props.user.username}`,
+        score: score,
+        win: win,
+        date: month + " " + day + " " + year
+      })
+    });
+  }
+
   gameover() {
     if (this.state.gameover) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -29631,12 +29663,6 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         )
       );
     }
-  }
-
-  handleRoute(e) {
-    this.props.handleClearOpponent();
-    e.preventDefault();
-    this.props.history.history.replace('/warroom');
   }
 
   render() {
@@ -29764,7 +29790,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n}\n\n.scoreboard-title {\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #673ab7;\n}\n\n.gameover-message{\n  align-items: center;\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  top: 10%;\n}\n\n.gameover-message button{\n  background: #000;\n  border: none;\n  border-radius: 8px;\n  color: #e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  height: 55px;\n  font-size: 20px;\n  margin-top: 20px;\n}\n\n.gameover-message button{\n  border: 5px solid #e8cc2e;\n  transition: all 1s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n}\n\n.line-num {\n  margin: 0;\n\n}\n\n.line {\n  margin: 0 0 0 30px;\n  width: 100%;\n}\n\n@media (max-width:620px) {\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
+exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n}\n\n.scoreboard-title {\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #673ab7;\n}\n\n.gameover-message{\n  align-items: center;\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  top: 10%;\n}\n\n.gameover-message button{\n  background: #000;\n  border: 5px solid #e8cc2e;\n  border-radius: 8px;\n  color: #e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  height: 55px;\n  font-size: 20px;\n  margin-top: 20px;\n}\n\n.gameover-message button:hover{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  color:#000;\n  transition: all 1s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n}\n\n.line-num {\n  margin: 0;\n\n}\n\n.line {\n  margin: 0 0 0 30px;\n  width: 100%;\n}\n\n@media (max-width:620px) {\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
 
 // exports
 

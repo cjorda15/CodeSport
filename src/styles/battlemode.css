@@ -87,7 +87,7 @@
 
 .gameover-message button{
   background: #000;
-  border: none;
+  border: 5px solid #e8cc2e;
   border-radius: 8px;
   color: #e8cc2e;
   font-family: 'Press Start 2P', cursive;
@@ -96,8 +96,10 @@
   margin-top: 20px;
 }
 
-.gameover-message button{
-  border: 5px solid #e8cc2e;
+.gameover-message button:hover{
+  background: #e8cc2e;
+  border: 5px solid #000;
+  color:#000;
   transition: all 1s;
 }
 

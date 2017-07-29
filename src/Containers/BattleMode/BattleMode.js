@@ -6,16 +6,17 @@ class BattleMode extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      lineNumber: 1,      opponentsPoints:0,
+      lineNumber: 1,
+      opponentsPoints:0,
       text:"",
       testsStatus: [],
       currentQuestion: 0,
       gameover:false,
       description: [
-        "make a object constructor with the property name having a value of chris",
-        "make a method named shout that when run, will have the user shout his name followed by is shouting (ex:chris is shouting)",
-        "make a method named changeName that when run will allow the argument to be the object propety name's value to be reassigned",
-        "make it so that when a object is intinitated with this object constructor, it can have the first argument be assigned to the name's property's value"
+        "make a function object constructor with the declared name being 'Person' with the property name having a value of chris",
+        "make a method for the function object constructor named shout that when called, will have the user shout his name followed by is shouting (ex:chris is shouting)",
+        "make a method named changeName that when run will allow the argument to reassign the object propety name's value",
+        "make it so that when a object is intinitated with this function object constructor, it can have the first argument be assigned to the name's property's value"
       ],
       questions : [
      `let test = new Person()
@@ -53,6 +54,7 @@ class BattleMode extends Component {
       this.setState({opponentsPoints:msg})
       if(msg==this.state.questions.length){
         this.setState({gameover:true})
+        this.handleApiCall("+ 0")
       }
     })
   }
@@ -92,6 +94,7 @@ class BattleMode extends Component {
       socket.emit("current question",{question:updateQuestion,challenger:this.props.battle})
       if(updateQuestion==this.state.questions.length){
         this.setState({gameover:true})
+        this.handleApiCall("+ 1")
       }
      }
    }
@@ -109,21 +112,43 @@ class BattleMode extends Component {
     return test2
   }
 
-  gameover(){
-    if(this.state.gameover){
-      return(
-        <div className="gameover-message">
-          GAMEOVER
-          <button onClick={(e)=>{this.handleRoute(e)}}>back to war</button>
-        </div>
-      )
-    }
-  }
 
   handleRoute(e){
     this.props.handleClearOpponent()
     e.preventDefault()
     this.props.history.history.replace('/warroom')
+  }
+
+  handleApiCall(win){
+    const d     = new Date()
+    const month = d.getMonth()+1
+    const day   = d.getDate()
+    const year  = d.getFullYear()
+    const score = this.state.currentQuestion==0? 0 :this.state.currentQuestion+1
+    // win should be sent as a string with +1 or +0
+    fetch('/api/v1/score', {
+      method:'PUT',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+          username:`${this.props.user.username}`,
+          score: score,
+          win: win,
+          date: month + " " + day + " " + year
+        })
+    })
+  }
+
+
+
+  gameover(){
+    if(this.state.gameover){
+      return(
+        <div className="gameover-message">
+        GAMEOVER
+        <button onClick={(e)=>{this.handleRoute(e)}}>back to war</button>
+        </div>
+      )
+    }
   }
 
   render(){
