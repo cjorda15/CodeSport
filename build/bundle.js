@@ -29795,9 +29795,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           )
         )
       ),
-      this.gameover(),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('pre', { id: 'code' }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { id: 'code-container' })
+      this.gameover()
     );
   }
 }
@@ -29882,18 +29880,36 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     super(props);
     this.state = {
       code: "",
-      test1: "",
-      test2: "",
-      test3: "",
-      test4: "",
-      test5: "",
+      tests: ['', '', '', '', ''],
       description1: "",
       description2: "",
       description3: "",
       description4: "",
-      description5: ""
+      description5: "",
+      failedTests: []
     };
   }
+
+  runTests() {
+    if (!this.state.code) return;
+    let results = [];
+    for (let i = 0; i < 5; i++) {
+      let tester = new Function(`${this.state.code} ; ${this.state.tests[i]}`)();
+      results.push(tester);
+    }
+    let outcome = results.every(i => i);
+    if (!outcome) {
+      let badTests = results.filter(i => !i);
+      this.setState({ failedTests: badTests });
+    }
+  }
+
+  createTestState(event, test) {
+    let tests = this.state.tests;
+    tests[test] = event.target.value;
+    this.setState({ tests });
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
@@ -29918,10 +29934,8 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             className: 'code-test',
             type: 'text',
             placeholder: 'type in your test 1',
-            value: this.state.test1,
-            onChange: e => {
-              this.setState({ test1: e.target.value });
-            }
+            value: this.state.tests[0],
+            onChange: e => this.createTestState(e, 0)
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h6',
@@ -29951,9 +29965,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             type: 'text',
             placeholder: 'type in your test 2',
             value: this.state.test2,
-            onChange: e => {
-              this.setState({ test2: e.target.value });
-            }
+            onChange: e => this.createTestState(e, 1)
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h6',
@@ -29983,9 +29995,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             type: 'text',
             placeholder: 'type in your test 3',
             value: this.state.test3,
-            onChange: e => {
-              this.setState({ test3: e.target.value });
-            }
+            onChange: e => this.createTestState(e, 2)
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h6',
@@ -30015,9 +30025,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             type: 'text',
             placeholder: 'type in your test 4',
             value: this.state.test4,
-            onChange: e => {
-              this.setState({ test4: e.target.value });
-            }
+            onChange: e => this.createTestState(e, 3)
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h6',
@@ -30047,9 +30055,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             type: 'text',
             placeholder: 'type in your test 5',
             value: this.state.test5,
-            onChange: e => {
-              this.setState({ test5: e.target.value });
-            }
+            onChange: e => this.createTestState(e, 4)
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h6',
@@ -30082,6 +30088,11 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
               this.setState({ code: e.target.value });
             }
           })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { onClick: () => this.runTests() },
+          'Run'
         )
       )
     );
@@ -30112,8 +30123,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./create_challenge.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./create_challenge.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./create_challenge.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./create_challenge.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
