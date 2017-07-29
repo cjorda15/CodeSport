@@ -32,6 +32,10 @@ class Destiny extends Component {
             onClick={()=>{this.handleClick("/learn")}}>
             Learn
           </button>
+          <button
+            onClick={()=>{this.handleClick("/create_challenge")}}>
+            Create Challenge
+          </button>
         </div>
       </div>
     )

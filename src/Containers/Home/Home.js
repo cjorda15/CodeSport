@@ -25,12 +25,17 @@ class Home extends Component{
        this.showError()
        return
      }
-    fetch('/api/v1/account', {
-      method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password
+    fetch('/api/v1/account',{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        username:this.state.username,
+        email: this.state.email,
+        password:this.state.password,
+        total_score:0,
+        total_matches:0,
+        total_wins:0
+
       })
     })
     .then(res => res.json())

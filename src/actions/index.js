@@ -17,3 +17,10 @@ export const opponentName = (name) => {
     payload:name
   }
 }
+
+export const clearOpponent = () => {
+  return {
+    type:"CLEAR_OPPONENT"
+  }
+
+}

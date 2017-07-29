@@ -71,6 +71,10 @@ io.on('connection', function(socket){
     io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequest', msg.user)
   })
 
+  socket.on('current question', (msg) => {
+    io.sockets.connected[socketDb.users[msg.challenger]].emit('challenger question',msg.question)
+  })
+
   socket.on('acceptBattleRequest', (msg) => {
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.user),1)
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.opponent),1)
