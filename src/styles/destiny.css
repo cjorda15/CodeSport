@@ -26,7 +26,6 @@
   text-align: center;
 }
 
-
 .destiny h2, .destiny-body button{
   color:#e8cc2e;
   font-family: 'Press Start 2P', cursive;
@@ -49,5 +48,4 @@
   background: #000;
   border: 5px solid #423f3f;
   transition: all 1s;
-
 }
