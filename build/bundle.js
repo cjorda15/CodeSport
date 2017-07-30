@@ -25257,8 +25257,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -26700,8 +26700,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./App.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./App.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./App.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./App.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -27750,8 +27750,10 @@ function pathToRegexp (path, keys, options) {
 /* 257 */
 /***/ (function(module, exports) {
 
+var toString = {}.toString;
+
 module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
+  return toString.call(arr) == '[object Array]';
 };
 
 
@@ -28777,8 +28779,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./solomode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./solomode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./solomode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./solomode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29084,8 +29086,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./home.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./home.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./home.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./home.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29368,8 +29370,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./warroom.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./warroom.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./warroom.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./warroom.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29510,8 +29512,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./destiny.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./destiny.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./destiny.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./destiny.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29823,8 +29825,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29886,12 +29888,14 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       description3: "",
       description4: "",
       description5: "",
-      failedTests: []
+      failedTests: [],
+      runButtonClicked: false
     };
   }
 
   runTests() {
     if (!this.state.code) return;
+    this.setState({ runButtonClicked: true });
     let results = [];
     for (let i = 0; i < 5; i++) {
       let tester = new Function(`${this.state.code} ; ${this.state.tests[i]}`)();
@@ -29910,6 +29914,29 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     this.setState({ tests });
   }
 
+  createChallenge() {
+    if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return; // SHOW ERROR MESSAGE
+    if (!this.checkDescriptions()) return; // SHOW MESSAGE SAYING MISSING DESCRIPTION
+    fetch('/api/v1/challenges', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        "tests": this.state.tests,
+        "descriptions": [this.state.description1, this.state.description2, this.state.description3, this.state.description4, this.state.description5],
+        "difficulty": "easy",
+        "challenge_name": "Boom",
+        "language": "Javascript",
+        "username": this.props.user.username
+      })
+    }).catch(err => {
+      console.log(err);
+    });
+  }
+
+  checkDescriptions() {
+    return this.state.description1 !== '' && this.state.description2 !== '' && this.state.description3 !== '' && this.state.description4 !== '' && this.state.description5 !== '';
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
@@ -29917,7 +29944,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h6',
         { className: 'title-page' },
-        'create test zone'
+        'create challenge zone'
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'section',
@@ -29964,7 +29991,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             className: 'code-test',
             type: 'text',
             placeholder: 'type in your test 2',
-            value: this.state.test2,
+            value: this.state.tests[1],
             onChange: e => this.createTestState(e, 1)
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -29994,7 +30021,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             className: 'code-test',
             type: 'text',
             placeholder: 'type in your test 3',
-            value: this.state.test3,
+            value: this.state.tests[2],
             onChange: e => this.createTestState(e, 2)
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -30024,7 +30051,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             className: 'code-test',
             type: 'text',
             placeholder: 'type in your test 4',
-            value: this.state.test4,
+            value: this.state.tests[3],
             onChange: e => this.createTestState(e, 3)
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -30054,7 +30081,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             className: 'code-test',
             type: 'text',
             placeholder: 'type in your test 5',
-            value: this.state.test5,
+            value: this.state.tests[4],
             onChange: e => this.createTestState(e, 4)
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -30092,7 +30119,12 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
           { onClick: () => this.runTests() },
-          'Run'
+          'Run Tests'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { onClick: () => this.createChallenge() },
+          'Create Challenge'
         )
       )
     );
