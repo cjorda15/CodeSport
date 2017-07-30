@@ -2,24 +2,47 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 140px;
   max-width: 1400px;
-  margin: 106px auto;
+  margin: 200px auto 40px;
 }
 
 #title-page{
+  align-items: center;
   background: #e8cc2e;
   border: #000 9px solid;
   border-radius: 16px;
-  padding: 20px;
-  position: absolute;
-  top: 15px;
+  display: flex;
+  flex-direction: column;
   font-size: 26px;
+  justify-content: space-between;
   margin: 0px;
+  padding: 18px;
+  position: absolute;
+  top: 10px;
+}
+
+#title-page button{
+  background: #000;
+  border: 2p;
+  border: #423f3f 3px solid;
+  border-radius: 6px;
+  color: #e8cc2e;
+  font-size: 17px;
+  margin-top: 15px;
+  padding: 7px;
+  width: 71%;
+}
+
+#title-page button:hover{
+  background: #e8cc2e;
+  border: #000 3px solid;
+  color: #000;
+  transition: all 1s;
+
 }
 
 .title-page, .create-challenge-container h6,
-.example-code-container button{
+.example-code-container button, #title-page button{
  font-family: 'Press Start 2P', cursive;
 }
 
@@ -101,7 +124,7 @@
   .create-challenge-container{
     align-items: center;
     flex-direction: column;
-    margin-top: 120px;
+    /*margin-top: 120px;*/
   }
   .create-test-container, .example-code-container {
     width: 99%

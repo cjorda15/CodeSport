@@ -22,5 +22,10 @@ export const clearOpponent = () => {
   return {
     type:"CLEAR_OPPONENT"
   }
+}
 
+export const acceptRequest = () => {
+  return{
+    type:"ACCEPT_REQUEST"
+  }
 }

@@ -8,7 +8,6 @@ const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser')
 const socketDb =  require('./socketDB')
 
-
 app.use(bodyParser.json())
 
 app.use("/build", express.static(path.join(__dirname,"/../build")))
@@ -30,15 +29,18 @@ http.listen(port, () => {
 
 io.on('connection', function(socket){
 
-  socket.on('disconnect', function () {
-  let disconnectUser = Object.keys(socketDb.users).filter(i => socketDb.users[i]===socket.id)
-  socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(disconnectUser[0]),1)
-  delete socketDb.users[disconnectUser[0]]
-  io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
-})
-
   socket.on('logged in', (msg) => {
     socketDb.users[msg.username] = socket.id
+  })
+
+  socket.on('user entering warroom', (msg) => {
+    socketDb.warRoomUsers.push(msg)
+    io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
+  })
+
+  socket.on('user left warroom', (msg) => {
+    socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg),1)
+    io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
   })
 
   socket.on('random match request', (msg) => {
@@ -52,18 +54,8 @@ io.on('connection', function(socket){
     }
   })
 
-  socket.on('user entering warroom', (msg) => {
-    if(!msg) return
-    socketDb.warRoomUsers.push(msg)
-    io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
-  })
-
-  socket.on('user left warroom', (msg) => {
-    socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg),1)
-    io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
-  })
-
   socket.on('requestBattle', (msg) => {
+    if(!socketDb.users[msg.opponent])return
     io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequest', msg.user)
   })
 
@@ -76,10 +68,12 @@ io.on('connection', function(socket){
   })
 
   socket.on('send code', (msg) => {
+    if(!socketDb.users[msg.challenger])return
     io.sockets.connected[socketDb.users[msg.challenger]].emit('challenger code',msg.code)
   })
 
   socket.on('acceptBattleRequest', (msg) => {
+    if(!socketDb.users[msg.opponent])return
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.user),1)
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.opponent),1)
     io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
@@ -87,6 +81,14 @@ io.on('connection', function(socket){
   })
 
   socket.on('declineBattleRequest', (msg) => {
+    if(!socketDb.users[msg.opponent])return
     io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequestDeclined', msg.user)
+  })
+
+  socket.on('disconnect', function () {
+    let disconnectUser = Object.keys(socketDb.users).filter(i => socketDb.users[i]===socket.id)
+    socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(disconnectUser[0]),1)
+    delete socketDb.users[disconnectUser[0]]
+    io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
   })
 });

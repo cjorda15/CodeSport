@@ -11,6 +11,11 @@ class Destiny extends Component {
     this.props.history.history.replace(input)
   }
 
+  logOut(){
+    this.props.handleLogOut()
+    this.handleClick('/')
+  }
+
   render() {
     return (
       <div className="destiny">
@@ -35,6 +40,10 @@ class Destiny extends Component {
           <button
             onClick={()=>{this.handleClick("/create_challenge")}}>
             Create Challenge
+          </button>
+          <button
+            onClick={()=>{this.logOut()}}>
+            Log Out
           </button>
         </div>
       </div>

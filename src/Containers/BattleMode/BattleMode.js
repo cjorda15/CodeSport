@@ -1,20 +1,18 @@
 import React, { Component } from 'react'
 import socket from '../../websocket'
 import '../../styles/battlemode.css'
-const ReactCountdownClock = require("react-countdown-clock")
 
 class BattleMode extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      startGame:false,
+      startGame: this.props.battleRequest ||false,
       lineNumber: 1,
       opponentsPoints:0,
       text:"",
       challengerLeft:false,
       testsStatus: [],
       currentQuestion: 0,
-      showTimer:true,
       gameover:false,
       showCode:false,
       challengerCode:"",
@@ -98,8 +96,9 @@ class BattleMode extends Component {
     if (this.state.gameover||!this.state.text)return
     if(!this.props.battle||!this.state.startGame)return
 
-    const results = []
-    const runTill = this.state.currentQuestion+1
+    let results = []
+    let runTill = this.state.currentQuestion
+    runTill+=1
     for(let i =0;i<runTill;i++){
       let tester = (new Function(`${this.state.text} ; ${this.state.questions[i]}`))()
       results.push(tester)
@@ -199,22 +198,9 @@ class BattleMode extends Component {
        null
     }
 
-    beginTimer(){
-      if(this.state.timer==0)return
-    setTimeout(function() {
-        this.setState({timer: 5})
-    }.bind(this), 1000);
-  }
-
   render(){
     return (
       <div className="app">
- {!this.state.startGame&&this.state.showTimer?null:
-      <ReactCountdownClock seconds={5}
-                     color="#e8cc2e"
-                     alpha={0.9}
-                     size={500}
-                     onComplete={this.setState({showTimer:false})} />}
         <div id="left-side">
          {!this.state.startGame?null:
           <div id="terminal" >
