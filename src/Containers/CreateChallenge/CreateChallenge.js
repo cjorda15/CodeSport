@@ -42,6 +42,20 @@ class CreateChallenge extends Component{
   createChallenge() {
     if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return // SHOW ERROR MESSAGE
     if(!this.checkDescriptions()) return // SHOW MESSAGE SAYING MISSING DESCRIPTION
+    fetch('/api/v1/challenges', {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        "tests": this.state.tests,
+        "descriptions": [this.state.description1, this.state.description2, this.state.description3, this.state.description4, this.state.description5],
+        "difficulty": "easy",
+        "challenge_name": "Boom",
+        "language": "Javascript",
+        "username": this.props.user.username
+      })
+    }).catch(err => {
+      console.log(err)
+    })
   }
 
   checkDescriptions() {
