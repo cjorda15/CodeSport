@@ -3,9 +3,9 @@
 # dependencies
 /node_modules
 
+.env
 # testing
 /coverage
-
 /yarn.lock
 
 # misc

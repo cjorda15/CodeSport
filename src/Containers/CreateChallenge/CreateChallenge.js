@@ -12,12 +12,13 @@ class CreateChallenge extends Component{
       description3:"",
       description4:"",
       description5:"",
-      failedTests: []
+      failedTests: [],
+      runButtonClicked: false
     }
   }
 
-  runTests() {
-    if (!this.state.code) return
+    if (!this.state.code) return 
+    this.setState({runButtonClicked: true})
     let results = []
     for (let i = 0; i < 5; i++) {
       let tester = (new Function(`${this.state.code} ; ${this.state.tests[i]}`))()
@@ -39,6 +40,32 @@ class CreateChallenge extends Component{
   handleReroute(e){
     e.preventDefault()
     this.props.history.history.replace('/destiny')
+  createChallenge() {
+    if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return // SHOW ERROR MESSAGE
+    if(!this.checkDescriptions()) return // SHOW MESSAGE SAYING MISSING DESCRIPTION
+    fetch('/api/v1/challenges', {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        "tests": this.state.tests,
+        "descriptions": [this.state.description1, this.state.description2, this.state.description3, this.state.description4, this.state.description5],
+        "difficulty": "easy",
+        "challenge_name": "Boom",
+        "language": "Javascript",
+        "username": this.props.user.username
+      })
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  checkDescriptions() {
+    return (
+      this.state.description1 !== '' && 
+      this.state.description2 !== '' && 
+      this.state.description3 !== '' && 
+      this.state.description4 !== '' && 
+      this.state.description5 !== '')
   }
 
   render(){
@@ -48,6 +75,7 @@ class CreateChallenge extends Component{
          create test zone
          <button onClick={(e)=>{this.handleReroute(e)}}>back to destiny room</button>
          </h6>
+
         <section className="create-test-container">
           <code>
           <h6> test 1 code</h6>
@@ -73,7 +101,7 @@ class CreateChallenge extends Component{
               className="code-test"
               type="text"
               placeholder="type in your test 2"
-              value={this.state.test2}
+              value={this.state.tests[1]}
               onChange={(e) => this.createTestState(e, 1)}
               ></textarea>
             <h6>write test 2 description here</h6>
@@ -91,7 +119,7 @@ class CreateChallenge extends Component{
               className="code-test"
               type="text"
               placeholder="type in your test 3"
-              value={this.state.test3}
+              value={this.state.tests[2]}
               onChange={(e) => this.createTestState(e, 2)}
               ></textarea>
             <h6>write test 3 description here</h6>
@@ -109,7 +137,7 @@ class CreateChallenge extends Component{
               className="code-test"
               type="text"
               placeholder="type in your test 4"
-              value={this.state.test4}
+              value={this.state.tests[3]}
               onChange={(e) => this.createTestState(e, 3)}
               ></textarea>
             <h6>write test 4 description here</h6>
@@ -127,7 +155,7 @@ class CreateChallenge extends Component{
               className="code-test"
               type="text"
               placeholder="type in your test 5"
-              value={this.state.test5}
+              value={this.state.tests[4]}
               onChange={(e) => this.createTestState(e, 4)}
               ></textarea>
             <h6>write test 5 description here</h6>
@@ -151,7 +179,8 @@ class CreateChallenge extends Component{
             >
             </textarea>
         </code>
-        <button onClick={() => this.runTests()}>Run</button>
+        <button onClick={() => this.runTests()}>Run Tests</button>
+        <button onClick={() => this.createChallenge()}>Create Challenge</button>
         </section>
       </div>
     )
