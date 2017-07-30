@@ -19,7 +19,7 @@ class CreateChallenge extends Component{
 
 
   runTests() {
-    if (!this.state.code) return 
+    if (!this.state.code) return
     let results = []
     for (let i = 0; i < 5; i++) {
       let tester = (new Function(`${this.state.code} ; ${this.state.tests[i]}`))()
@@ -41,7 +41,7 @@ class CreateChallenge extends Component{
   render(){
     return(
       <div className="create-challenge-container">
-        <h6 className="title-page">create test zone</h6>
+        <h6 id="title-page">create test zone</h6>
         <section className="create-test-container">
           <code>
           <h6> test 1 code</h6>
@@ -59,7 +59,7 @@ class CreateChallenge extends Component{
                 placeholder="test description"
                 value={this.state.description1}
                 onChange={(e) => {this.setState({description1:e.target.value})}}
-                /></textarea>
+                ></textarea>
           </code>
           <code>
           <h6> test 2 code</h6>

@@ -8,8 +8,6 @@ import Destiny from '../Destiny/DestinyContainer'
 import BattleMode from '../BattleMode/BattleModeContainer'
 import CreateChallenge from '../CreateChallenge/CreateChallengeContainer'
 
-//redirect to home Component if no
-
 class App extends Component {
   render() {
     return (
@@ -35,15 +33,15 @@ class App extends Component {
           }}/>
           <Route exact path='/battle' render={(history) => {
             return !this.props.user.username?
-            <Redirect to="/"/>
+              <Redirect to="/"/>
               :
              <BattleMode history={history}/>
           }}/>
           <Route exact path='/create_challenge' render={(history) => {
-            // return !this.props.user.username?
-            // <Redirect to="/"/>
-            //   :
-            return <CreateChallenge history={history}/>
+            return !this.props.user.username?
+            <Redirect to="/"/>
+              :
+            <CreateChallenge history={history}/>
           }}/>
           <Route exact path='/' render={(history) => {
             return<Home history={history}/>

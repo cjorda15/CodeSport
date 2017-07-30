@@ -52,10 +52,6 @@ io.on('connection', function(socket){
     }
   })
 
-  socket.on('point won', (msg) => {
-    io.sockets.connected[socketDb.users[msg]].emit('challenger point')
-  })
-
   socket.on('user entering warroom', (msg) => {
     if(!msg) return
     socketDb.warRoomUsers.push(msg)
@@ -72,7 +68,15 @@ io.on('connection', function(socket){
   })
 
   socket.on('current question', (msg) => {
-    io.sockets.connected[socketDb.users[msg.challenger]].emit('challenger question',msg.question)
+    if(!socketDb.users[msg.challenger]){
+      io.sockets.connected[socket.id].emit('challenger left')
+    }else{
+      io.sockets.connected[socketDb.users[msg.challenger]].emit('challenger question',msg.question)
+   }
+  })
+
+  socket.on('send code', (msg) => {
+    io.sockets.connected[socketDb.users[msg.challenger]].emit('challenger code',msg.code)
   })
 
   socket.on('acceptBattleRequest', (msg) => {

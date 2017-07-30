@@ -13096,9 +13096,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_index_css__ = __webpack_require__(217);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_index_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Containers_App_AppContainer__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registerServiceWorker__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registerServiceWorker__ = __webpack_require__(298);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_router_dom__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__configStore__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__configStore__ = __webpack_require__(299);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_redux__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_history_createBrowserHistory__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_history_createBrowserHistory__);
@@ -26630,7 +26630,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__WarRoom_WarRoomContainer__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Destiny_DestinyContainer__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__BattleMode_BattleModeContainer__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__CreateChallenge_CreateChallengeContainer__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__CreateChallenge_CreateChallengeContainer__ = __webpack_require__(294);
 
 
 
@@ -26640,8 +26640,6 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 
 
 
-
-//redirect to home Component if no
 
 class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   render() {
@@ -26664,10 +26662,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__BattleMode_BattleModeContainer__["a" /* default */], { history: history });
           } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { exact: true, path: '/create_challenge', render: history => {
-            // return !this.props.user.username?
-            // <Redirect to="/"/>
-            //   :
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__CreateChallenge_CreateChallengeContainer__["a" /* default */], { history: history });
+            return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__CreateChallenge_CreateChallengeContainer__["a" /* default */], { history: history });
           } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { exact: true, path: '/', render: history => {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Home_HomeContainer__["a" /* default */], { history: history });
@@ -29103,7 +29098,7 @@ exports = module.exports = __webpack_require__(17)(undefined);
 
 
 // module
-exports.push([module.i, ".home-container{\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  height:100vh;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.home-container p{\n  animation: fill 2s;\n  animation-delay:0s;\n  animation-fill-mode: forwards;\n  color:#e8cc2e;\n  font-size: 22px;\n  font-family: 'Press Start 2P', cursive;\n  font-weight: 100;\n  position: absolute;\n  text-align: center;\n  top: 10px;\n}\n\n.form-container{\n  align-items: center;\n  border: 5px solid #000;\n  border-radius: 5px;\n  background: #afada3;\n  display: flex;\n  flex-direction: column;\n  max-width: 600px;\n  justify-content: center;\n  padding: 40px;\n  width: 90%;\n}\n\n.form-container input{\n  border: 5px solid #000;\n  border-radius: 3px;  height: 60px;\n  font-size: 16px;\n  font-family: 'Press Start 2P', cursive;\n  margin-bottom: 20px;\n  max-width: 440px;\n  min-width: 230px;\n  padding-left: 10px;\n  width: 90%;\n}\n\n.form-container button {\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  margin-top: 15px;\n  max-width: 275px;\n  transition: all .5s;\n  outline:none;\n  width: 95%;\n}\n\n.form-container button:hover, .options-container button:hover{\n  background: #000;\n  border: 3px solid #423f3f;\n  transition: all 1s;\n}\n\n.error-message{\n  background: #423f3f;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  margin-top: 10px;\n  text-align: center;\n}\n\n.options-container{\n  background: #afada3;\n  border: 5px solid #000;\n  display: flex;\n  flex-direction: column;\n  max-width: 280px;\n  padding: 10px;\n  width: 90%;\n}\n\n.options-container button{\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 95%;\n}\n\n@keyframes fill {\n    0%   {\n          display: none;\n          opacity: 0;\n         }\n    25%  {\n          display: block;\n          opacity: 0.4;\n         }\n\n    50%  {\n      display: none;\n\n         }\n\n    75%   {\n      display: block;\n      opacity: 0.7;\n\n          }\n\n    100% {\n      opacity: 1.0;\n\n    }\n}\n", ""]);
+exports.push([module.i, ".home-container{\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  height:100vh;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.home-container p{\n  animation: fill 2s;\n  animation-delay:0s;\n  animation-fill-mode: forwards;\n  color:#e8cc2e;\n  font-size: 22px;\n  font-family: 'Press Start 2P', cursive;\n  font-weight: 100;\n  position: absolute;\n  text-align: center;\n  top: 10px;\n}\n\n.form-container{\n  align-items: center;\n  border: 5px solid #000;\n  border-radius: 5px;\n  background: #afada3;\n  display: flex;\n  flex-direction: column;\n  max-width: 600px;\n  justify-content: center;\n  padding: 40px;\n  width: 90%;\n}\n\n.form-container input{\n  border: 5px solid #000;\n  border-radius: 3px;  height: 60px;\n  font-size: 16px;\n  font-family: 'Press Start 2P', cursive;\n  margin-bottom: 20px;\n  max-width: 440px;\n  min-width: 230px;\n  padding-left: 10px;\n  width: 90%;\n}\n\n.form-container button {\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  margin-top: 15px;\n  max-width: 275px;\n  transition: all .5s;\n  outline:none;\n  width: 95%;\n}\n\n.form-container button:hover, .options-container button:hover{\n  background: #000;\n  border: 5px solid #e8cc2e;\n  transition: all 1s;\n}\n\n.error-message{\n  background: #423f3f;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  margin-top: 10px;\n  text-align: center;\n}\n\n.options-container{\n  background: #afada3;\n  border: 5px solid #000;\n  display: flex;\n  flex-direction: column;\n  max-width: 280px;\n  padding: 10px;\n  width: 90%;\n}\n\n.options-container button{\n  color:#e8cc2e;\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 95%;\n}\n\n@keyframes fill {\n    0%   {\n          display: none;\n          opacity: 0;\n         }\n    25%  {\n          display: block;\n          opacity: 0.4;\n         }\n\n    50%  {\n      display: none;\n\n         }\n\n    75%   {\n      display: block;\n      opacity: 0.7;\n\n          }\n\n    100% {\n      opacity: 1.0;\n\n    }\n}\n", ""]);
 
 // exports
 
@@ -29387,7 +29382,7 @@ exports = module.exports = __webpack_require__(17)(undefined);
 
 
 // module
-exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 12px;\n  justify-content: center;\n  height: 58px;\n  margin: 10px 5px;\n  overflow: scroll;\n  text-align: center;\n  width: 260px;\n}\n\n.user:hover{\n  background: #423f3f;\n  border:5px solid #afada3;\n  text-decoration: underline;\n  transition: all 1s;\n}\n\n.war-room-container button:hover, .battle-request button:hover{\n  border: 5px solid #423f3f;\n  background: #000;\n  transition: all 1s;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.war-room-container h3{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n}\n\n.decline-battle-request, .request-error{\n  background: #afada3;\n  border: 5px solid #000;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n  padding: 30px;\n  position: absolute;\n  top:200px;\n  left:20px;\n}\n\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 14px;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 12px;\n  justify-content: center;\n  height: 58px;\n  margin: 10px 5px;\n  overflow: scroll;\n  text-align: center;\n  width: 260px;\n}\n\n.user:hover{\n  background: #423f3f;\n  border:5px solid #afada3;\n  text-decoration: underline;\n  transition: all 1s;\n}\n\n.war-room-container button:hover, .battle-request button:hover{\n  border: 5px solid #e8cc2e;\n  background: #000;\n  transition: all 1s;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.war-room-container h3{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  left: 1%;\n  padding: 40px;\n}\n\n.decline-battle-request, .request-error{\n  background: #afada3;\n  border: 5px solid #000;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n  padding: 30px;\n  position: absolute;\n  top:200px;\n  left:20px;\n}\n\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 14px;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -29529,7 +29524,7 @@ exports = module.exports = __webpack_require__(17)(undefined);
 
 
 // module
-exports.push([module.i, ".destiny {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  flex-direction: column;\n  height:100vh;\n  justify-content: center;\n}\n\n.destiny-body {\n  background: #afada3;\n  border-radius: 10px;\n  border: 10px solid #000;\n  display: flex;\n  flex-direction: column;\n  height: 465px;\n  padding: 25px;\n}\n\n.destiny-body button {\n  margin-bottom: 30px;\n}\n\n.destiny h2{\n  font-size: 36px;\n  text-align: center;\n}\n\n.destiny h2, .destiny-body button{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n}\n\n.destiny-body button{\n  background:#423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.destiny-body button:hover{\n  background: #000;\n  border: 5px solid #423f3f;\n  transition: all 1s;\n}\n", ""]);
+exports.push([module.i, ".destiny {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  flex-direction: column;\n  height:100vh;\n  justify-content: center;\n}\n\n.destiny-body {\n  background: #afada3;\n  border-radius: 10px;\n  border: 10px solid #000;\n  display: flex;\n  flex-direction: column;\n  height: 465px;\n  padding: 25px;\n}\n\n.destiny-body button {\n  margin-bottom: 30px;\n}\n\n.destiny h2{\n  font-size: 36px;\n  text-align: center;\n}\n\n.destiny h2, .destiny-body button{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n}\n\n.destiny-body button{\n  background:#423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.destiny-body button:hover{\n  background: #000;\n  border: 5px solid #e8cc2e;\n  transition: all 1s;\n}\n", ""]);
 
 // exports
 
@@ -29573,17 +29568,23 @@ const mapDispatchToProps = dispatch => {
 
 
 
+const ReactCountdownClock = __webpack_require__(293);
 
 class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   constructor(props) {
     super(props);
     this.state = {
+      startGame: false,
       lineNumber: 1,
       opponentsPoints: 0,
       text: "",
+      challengerLeft: false,
       testsStatus: [],
       currentQuestion: 0,
+      showTimer: true,
       gameover: false,
+      showCode: false,
+      challengerCode: "",
       description: ["make a function object constructor with the declared name being 'Person' with the property name having a value of chris", "make a method for the function object constructor named shout that when called, will have the user shout his name followed by is shouting (ex:chris is shouting)", "make a method named changeName that when run will allow the argument to reassign the object propety name's value", "make it so that when a object is intinitated with this function object constructor, it can have the first argument be assigned to the name's property's value"],
       questions: [`let test = new Person()
         if(test.name==="chris"){
@@ -29610,17 +29611,37 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         return  false
         }`]
     };
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('connected random 1v1', () => {
+      this.setState({ startGame: true });
+    });
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('challenger left', () => {
+      this.setState({ gameover: true, challengerLeft: true });
+    });
+
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestAccepted', () => {
+      this.setState({ startGame: true });
+    });
 
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('challenger question', msg => {
       this.setState({ opponentsPoints: msg });
       if (msg == this.state.questions.length) {
         this.setState({ gameover: true });
         this.handleApiCall("+ 0");
+        __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('send code', {
+          code: this.state.text,
+          challenger: this.props.battle
+        });
       }
     });
+
+    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('challenger code', msg => {
+      this.setState({ challengerCode: msg });
+    });
   }
+
   getCode(e) {
     if (e.key === 'Enter') {
+      if (this.state.lineNumber == 27) return;
       let addLine = this.state.lineNumber + 1;
       this.setState({ lineNumber: addLine });
     }
@@ -29631,10 +29652,10 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
   make() {
     if (this.state.gameover || !this.state.text) return;
+    if (!this.props.battle || !this.state.startGame) return;
 
-    let results = [];
-    let runTill = this.state.currentQuestion;
-    runTill += 1;
+    const results = [];
+    const runTill = this.state.currentQuestion + 1;
     for (let i = 0; i < runTill; i++) {
       let tester = new Function(`${this.state.text} ; ${this.state.questions[i]}`)();
       results.push(tester);
@@ -29656,6 +29677,10 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       if (updateQuestion == this.state.questions.length) {
         this.setState({ gameover: true });
         this.handleApiCall("+ 1");
+        __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('send code', {
+          code: this.state.text,
+          challenger: this.props.battle
+        });
       }
     }
   }
@@ -29689,7 +29714,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     const day = d.getDate();
     const year = d.getFullYear();
     const score = this.state.currentQuestion == 0 ? 0 : this.state.currentQuestion + 1;
-    // win should be sent as a string with +1 or +0
+
     fetch('/api/v1/score', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -29708,6 +29733,17 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         'div',
         { className: 'gameover-message' },
         'GAMEOVER',
+        this.state.challengerLeft ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          null,
+          'challenger has fled the battle'
+        ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { onClick: () => {
+              this.handleCodeShow(true);
+            } },
+          'I want to see that other code!'
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
           { onClick: e => {
@@ -29719,14 +29755,49 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     }
   }
 
+  handleCodeShow(input) {
+    this.setState({ showCode: input });
+  }
+
+  showCode() {
+    return this.state.showCode ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: 'challenger-code' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        null,
+        this.state.challengerCode
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'button',
+        { onClick: () => {
+            this.handleCodeShow(false);
+          } },
+        'close'
+      )
+    ) : null;
+  }
+
+  beginTimer() {
+    if (this.state.timer == 0) return;
+    setTimeout(function () {
+      this.setState({ timer: 5 });
+    }.bind(this), 1000);
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'app' },
+      !this.state.startGame && this.state.showTimer ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(ReactCountdownClock, { seconds: 5,
+        color: '#e8cc2e',
+        alpha: 0.9,
+        size: 500,
+        onComplete: this.setState({ showTimer: false }) }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { id: 'left-side' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { id: 'terminal' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -29746,7 +29817,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
               }, contentEditable: true })
           )
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { id: 'run-button-div' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -29755,6 +29826,11 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
             'Run'
           )
         )
+      ),
+      this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'waiting-msg' },
+        'waiting on challenger'
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
@@ -29788,14 +29864,15 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
               this.state.opponentsPoints
             )
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'p',
             { className: 'current-question' },
             this.state.description[this.state.currentQuestion]
           )
         )
       ),
-      this.gameover()
+      this.gameover(),
+      this.showCode()
     );
   }
 }
@@ -29842,18 +29919,30 @@ exports = module.exports = __webpack_require__(17)(undefined);
 
 
 // module
-exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  text-align: left;\n  height: 90%;\n  width: 60vw;\n  background-color: #444;\n  color: #FFF;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n}\n\n.scoreboard-title {\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #673ab7;\n}\n\n.gameover-message{\n  align-items: center;\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  top: 10%;\n}\n\n.gameover-message button{\n  background: #000;\n  border: 5px solid #e8cc2e;\n  border-radius: 8px;\n  color: #e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  height: 55px;\n  font-size: 20px;\n  margin-top: 20px;\n}\n\n.gameover-message button:hover{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  color:#000;\n  transition: all 1s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n}\n\n.line-num {\n  margin: 0;\n\n}\n\n.line {\n  margin: 0 0 0 30px;\n  width: 100%;\n}\n\n@media (max-width:620px) {\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
+exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  background-color: #444;\n  color: #FFF;\n  font-size: 20px;\n  font-family: monospace;\n  height: 90%;\n  text-align: left;\n  width: 60vw;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  padding: 10px;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n}\n\n.scoreboard-title{\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #e8cc2e;\n}\n\n.gameover-message, .waiting-msg{\n  align-items: center;\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  top: 10%;\n}\n\n.gameover-message button{\n  background: #e8cc2e;\n  border: #aaa 3px solid;\n  border-radius: 5px;\n  height: 80px;\n  margin: 0px auto;\n  width: 114px;\n  font-size: 16px;\n}\n\n\n\n.gameover-message button:hover{\n  background: #e8cc2e;\n  border: 5px solid #e8cc2e;\n  color:#000;\n  transition: all 1s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n  height: 100%;\n}\n\n.line-num {\n  margin: 0;\n}\n\n.line-num p{\n  margin: 0px;\n}\n\n.line{\n  height: 100%;\n  margin: 0 0 0 30px;\n  outline: none;\n  width: 100%;\n}\n\n.challenger-code{\n  background: #000;\n  color: #fff;\n  display: flex;\n  height: 90%;\n  flex-direction: column;\n  font-size: 25px;\n  font-family: monospace;\n  padding: 10%;\n  position: absolute;\n  width: 100%;\n  z-index: 5;\n}\n\n.challenger-code button{\n  height: 55px;\n  margin: 0px auto;\n  width: 114px;\n  font-size: 16px;\n}\n\n@media (max-width:620px){\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 293 */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(t,e){ true?module.exports=e(__webpack_require__(4)):"function"==typeof define&&define.amd?define(["react"],e):"object"==typeof exports?exports.ReactCountdownClock=e(require("react")):t.ReactCountdownClock=e(t.React)}(this,function(t){return function(t){function e(r){if(n[r])return n[r].exports;var i=n[r]={i:r,l:!1,exports:{}};return t[r].call(i.exports,i,i.exports,e),i.l=!0,i.exports}var n={};return e.m=t,e.c=n,e.d=function(t,n,r){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:r})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="/Users/hugh/Dropbox/Development/Web/react-countdown-clock/build",e(e.s=2)}([function(e,n){e.exports=t},function(t,e,n){"use strict";function r(t,e,n,r,o,s,a,u){if(i(e),!t){var c;if(void 0===e)c=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var p=[n,r,o,s,a,u],h=0;c=new Error(e.replace(/%s/g,function(){return p[h++]})),c.name="Invariant Violation"}throw c.framesToPop=1,c}}var i=function(t){};t.exports=r},function(t,e,n){var r,i,o,s;o=n(0),i=n(3),r=n(7),s=r({_seconds:0,_radius:null,_fraction:null,_content:null,_canvas:null,_timeoutIds:[],displayName:"ReactCountdownClock",componentDidUpdate:function(t){if(t.seconds!==this.props.seconds&&(this._seconds=t.seconds,this._setupTimer()),t.color!==this.props.color&&(this._clearBackground(),this._drawBackground(),this._updateCanvas()),t.paused!==this.props.paused&&(this.props.paused||this._startTimer(),this.props.paused))return this._pauseTimer()},componentDidMount:function(){return this._seconds=this.props.seconds,this._setupTimer()},componentWillUnmount:function(){return this._cancelTimer()},_setupTimer:function(){if(this._setScale(),this._setupCanvases(),this._drawBackground(),this._drawTimer(),!this.props.paused)return this._startTimer()},_updateCanvas:function(){return this._clearTimer(),this._drawTimer()},_setScale:function(){return this._radius=this.props.size/2,this._fraction=2/this._seconds,this._tickPeriod=this._calculateTick(),this._innerRadius=this.props.weight?this._radius-this.props.weight:this._radius/1.8},_calculateTick:function(){var t,e;return e=1.8,t=this._seconds*e,t>1e3?1e3:t},_setupCanvases:function(){if(this._background=this.refs.background.getContext("2d"),this._timer=this.refs.timer.getContext("2d"),this._timer.textAlign="center",this._timer.textBaseline="middle",null!=this.props.onClick)return this.refs.component.addEventListener("click",this.props.onClick)},_startTimer:function(){return this._timeoutIds.push(setTimeout(function(t){return function(){return t._tick()}}(this),200))},_pauseTimer:function(){return this._stopTimer(),this._updateCanvas()},_stopTimer:function(){var t,e,n,r,i;for(n=this._timeoutIds,r=[],t=0,e=n.length;t<e;t++)i=n[t],r.push(clearTimeout(i));return r},_cancelTimer:function(){if(this._stopTimer(),null!=this.props.onClick)return this.refs.component.removeEventListener("click",this.props.onClick)},_tick:function(){var t;return t=Date.now(),this._timeoutIds.push(setTimeout(function(e){return function(){var n;return n=(Date.now()-t)/1e3,e._seconds-=n,e._seconds<=0?(e._seconds=0,e._handleComplete(),e._clearTimer()):(e._updateCanvas(),e._tick())}}(this),this._tickPeriod))},_handleComplete:function(){if(this.props.onComplete)return this.props.onComplete()},_clearBackground:function(){return this._background.clearRect(0,0,this.refs.timer.width,this.refs.timer.height)},_clearTimer:function(){return this._timer.clearRect(0,0,this.refs.timer.width,this.refs.timer.height)},_drawBackground:function(){return this._background.beginPath(),this._background.globalAlpha=this.props.alpha/3,this._background.fillStyle=this.props.color,this._background.arc(this._radius,this._radius,this._radius,0,2*Math.PI,!1),this._background.arc(this._radius,this._radius,this._innerRadius,2*Math.PI,0,!0),this._background.closePath(),this._background.fill()},_formattedTime:function(){var t,e,n,r,i,o,s,a,u;return t=null!=(o=this._seconds<=9.9&&this.props.showMilliseconds)?o:{1:0},"hms"===this.props.timeFormat?(e=parseInt(this._seconds/3600)%24,r=parseInt(this._seconds/60)%60,s=(this._seconds%60).toFixed(t),n=""+e,i=""+r,a=""+s,e<10&&(n="0"+e),r<10&&e>=1&&(i="0"+r),s<10&&(r>=1||e>=1)&&(a="0"+s),u=[],e>0&&u.push(n),(r>0||e>0)&&u.push(i),u.push(a),u.join(":")):this._seconds.toFixed(t)},_fontSize:function(t){var e;return"auto"===this.props.fontSize?(e=function(){switch(t.length){case 8:return 4;case 5:return 3;default:return 2}}(),this._radius/e+"px"):this.props.fontSize},_drawTimer:function(){var t,e,n;return e=this._fraction*this._seconds+1.5,t=this._formattedTime(),n=this.props.paused&&null!=this.props.pausedText?this.props.pausedText:t,this._timer.globalAlpha=this.props.alpha,this._timer.fillStyle=this.props.color,this._timer.font="bold "+this._fontSize(t)+" "+this.props.font,this._timer.fillText(n,this._radius,this._radius),this._timer.beginPath(),this._timer.arc(this._radius,this._radius,this._radius,1.5*Math.PI,Math.PI*e,!1),this._timer.arc(this._radius,this._radius,this._innerRadius,Math.PI*e,1.5*Math.PI,!0),this._timer.closePath(),this._timer.fill()},render:function(){return o.createElement("div",{ref:"component",className:"react-countdown-clock"},o.createElement("canvas",{ref:"background",style:{position:"absolute"},width:this.props.size,height:this.props.size}),o.createElement("canvas",{ref:"timer",style:{position:"absolute"},width:this.props.size,height:this.props.size}))}}),s.propTypes={seconds:i.number,size:i.number,weight:i.number,color:i.string,fontSize:i.string,font:i.string,alpha:i.number,timeFormat:i.string,onComplete:i.func,onClick:i.func,showMilliseconds:i.bool,paused:i.bool,pausedText:i.string},s.defaultProps={seconds:60,size:300,color:"#000",alpha:1,timeFormat:"hms",fontSize:"auto",font:"Arial",showMilliseconds:!0,paused:!1},t.exports=s},function(t,e,n){t.exports=n(4)()},function(t,e,n){"use strict";var r=n(5),i=n(1),o=n(6);t.exports=function(){function t(t,e,n,r,s,a){a!==o&&i(!1,"Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types")}function e(){return t}t.isRequired=t;var n={array:t,bool:t,func:t,number:t,object:t,string:t,symbol:t,any:t,arrayOf:e,element:t,instanceOf:e,node:t,objectOf:e,oneOf:e,oneOfType:e,shape:e};return n.checkPropTypes=r,n.PropTypes=n,n}},function(t,e,n){"use strict";function r(t){return function(){return t}}var i=function(){};i.thatReturns=r,i.thatReturnsFalse=r(!1),i.thatReturnsTrue=r(!0),i.thatReturnsNull=r(null),i.thatReturnsThis=function(){return this},i.thatReturnsArgument=function(t){return t},t.exports=i},function(t,e,n){"use strict";t.exports="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"},function(t,e,n){"use strict";var r=n(0),i=n(8);if(void 0===r)throw Error("create-react-class could not find the React object. If you are using script tags, make sure that React is being loaded before create-react-class.");var o=(new r.Component).updater;t.exports=i(r.Component,r.isValidElement,o)},function(t,e,n){"use strict";function r(t){return t}function i(t,e,n){function i(t,e){var n=g.hasOwnProperty(e)?g[e]:null;T.hasOwnProperty(e)&&a("OVERRIDE_BASE"===n,"ReactClassInterface: You are attempting to override `%s` from your class specification. Ensure that your method names do not overlap with React methods.",e),t&&a("DEFINE_MANY"===n||"DEFINE_MANY_MERGED"===n,"ReactClassInterface: You are attempting to define `%s` on your component more than once. This conflict may be due to a mixin.",e)}function c(t,n){if(n){a("function"!=typeof n,"ReactClass: You're attempting to use a component class or function as a mixin. Instead, just use a regular object."),a(!e(n),"ReactClass: You're attempting to use a component as a mixin. Instead, just use a regular object.");var r=t.prototype,o=r.__reactAutoBindPairs;n.hasOwnProperty(u)&&b.mixins(t,n.mixins);for(var s in n)if(n.hasOwnProperty(s)&&s!==u){var c=n[s],p=r.hasOwnProperty(s);if(i(p,s),b.hasOwnProperty(s))b[s](t,c);else{var h=g.hasOwnProperty(s),d="function"==typeof c,m=d&&!h&&!p&&!1!==n.autobind;if(m)o.push(s,c),r[s]=c;else if(p){var _=g[s];a(h&&("DEFINE_MANY_MERGED"===_||"DEFINE_MANY"===_),"ReactClass: Unexpected spec policy %s for key %s when mixing in component specs.",_,s),"DEFINE_MANY_MERGED"===_?r[s]=l(r[s],c):"DEFINE_MANY"===_&&(r[s]=f(r[s],c))}else r[s]=c}}}else;}function p(t,e){if(e)for(var n in e){var r=e[n];if(e.hasOwnProperty(n)){var i=n in b;a(!i,'ReactClass: You are attempting to define a reserved property, `%s`, that shouldn\'t be on the "statics" key. Define it as an instance property instead; it will still be accessible on the constructor.',n);var o=n in t;a(!o,"ReactClass: You are attempting to define `%s` on your component more than once. This conflict may be due to a mixin.",n),t[n]=r}}}function h(t,e){a(t&&e&&"object"==typeof t&&"object"==typeof e,"mergeIntoWithNoDuplicateKeys(): Cannot merge non-objects.");for(var n in e)e.hasOwnProperty(n)&&(a(void 0===t[n],"mergeIntoWithNoDuplicateKeys(): Tried to merge two objects with the same key: `%s`. This conflict may be due to a mixin; in particular, this may be caused by two getInitialState() or getDefaultProps() methods returning objects with clashing keys.",n),t[n]=e[n]);return t}function l(t,e){return function(){var n=t.apply(this,arguments),r=e.apply(this,arguments);if(null==n)return r;if(null==r)return n;var i={};return h(i,n),h(i,r),i}}function f(t,e){return function(){t.apply(this,arguments),e.apply(this,arguments)}}function d(t,e){var n=e.bind(t);return n}function m(t){for(var e=t.__reactAutoBindPairs,n=0;n<e.length;n+=2){var r=e[n],i=e[n+1];t[r]=d(t,i)}}function _(t){var e=r(function(t,r,i){this.__reactAutoBindPairs.length&&m(this),this.props=t,this.context=r,this.refs=s,this.updater=i||n,this.state=null;var o=this.getInitialState?this.getInitialState():null;a("object"==typeof o&&!Array.isArray(o),"%s.getInitialState(): must return an object or null",e.displayName||"ReactCompositeComponent"),this.state=o});e.prototype=new w,e.prototype.constructor=e,e.prototype.__reactAutoBindPairs=[],y.forEach(c.bind(null,e)),c(e,E),c(e,t),c(e,v),e.getDefaultProps&&(e.defaultProps=e.getDefaultProps()),a(e.prototype.render,"createClass(...): Class specification must implement a `render` method.");for(var i in g)e.prototype[i]||(e.prototype[i]=null);return e}var y=[],g={mixins:"DEFINE_MANY",statics:"DEFINE_MANY",propTypes:"DEFINE_MANY",contextTypes:"DEFINE_MANY",childContextTypes:"DEFINE_MANY",getDefaultProps:"DEFINE_MANY_MERGED",getInitialState:"DEFINE_MANY_MERGED",getChildContext:"DEFINE_MANY_MERGED",render:"DEFINE_ONCE",componentWillMount:"DEFINE_MANY",componentDidMount:"DEFINE_MANY",componentWillReceiveProps:"DEFINE_MANY",shouldComponentUpdate:"DEFINE_ONCE",componentWillUpdate:"DEFINE_MANY",componentDidUpdate:"DEFINE_MANY",componentWillUnmount:"DEFINE_MANY",updateComponent:"OVERRIDE_BASE"},b={displayName:function(t,e){t.displayName=e},mixins:function(t,e){if(e)for(var n=0;n<e.length;n++)c(t,e[n])},childContextTypes:function(t,e){t.childContextTypes=o({},t.childContextTypes,e)},contextTypes:function(t,e){t.contextTypes=o({},t.contextTypes,e)},getDefaultProps:function(t,e){t.getDefaultProps?t.getDefaultProps=l(t.getDefaultProps,e):t.getDefaultProps=e},propTypes:function(t,e){t.propTypes=o({},t.propTypes,e)},statics:function(t,e){p(t,e)},autobind:function(){}},E={componentDidMount:function(){this.__isMounted=!0}},v={componentWillUnmount:function(){this.__isMounted=!1}},T={replaceState:function(t,e){this.updater.enqueueReplaceState(this,t,e)},isMounted:function(){return!!this.__isMounted}},w=function(){};return o(w.prototype,t.prototype,T),_}var o=n(9),s=n(10),a=n(1),u="mixins";t.exports=i},function(t,e,n){"use strict";function r(t){if(null===t||void 0===t)throw new TypeError("Object.assign cannot be called with null or undefined");return Object(t)}/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+var i=Object.getOwnPropertySymbols,o=Object.prototype.hasOwnProperty,s=Object.prototype.propertyIsEnumerable;t.exports=function(){try{if(!Object.assign)return!1;var t=new String("abc");if(t[5]="de","5"===Object.getOwnPropertyNames(t)[0])return!1;for(var e={},n=0;n<10;n++)e["_"+String.fromCharCode(n)]=n;if("0123456789"!==Object.getOwnPropertyNames(e).map(function(t){return e[t]}).join(""))return!1;var r={};return"abcdefghijklmnopqrst".split("").forEach(function(t){r[t]=t}),"abcdefghijklmnopqrst"===Object.keys(Object.assign({},r)).join("")}catch(t){return!1}}()?Object.assign:function(t,e){for(var n,a,u=r(t),c=1;c<arguments.length;c++){n=Object(arguments[c]);for(var p in n)o.call(n,p)&&(u[p]=n[p]);if(i){a=i(n);for(var h=0;h<a.length;h++)s.call(n,a[h])&&(u[a[h]]=n[a[h]])}}return u}},function(t,e,n){"use strict";var r={};t.exports=r}])});
+//# sourceMappingURL=react-countdown-clock.js.map
+
+/***/ }),
+/* 294 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CreateChallenge__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CreateChallenge__ = __webpack_require__(295);
 
 
 
@@ -29864,13 +29953,13 @@ const mapStateToProps = state => {
 /* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, null)(__WEBPACK_IMPORTED_MODULE_1__CreateChallenge__["a" /* default */]));
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css__);
 
 
@@ -29916,7 +30005,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       { className: 'create-challenge-container' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h6',
-        { className: 'title-page' },
+        { id: 'title-page' },
         'create test zone'
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -30103,13 +30192,13 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony default export */ __webpack_exports__["a"] = (CreateChallenge);
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(296);
+var content = __webpack_require__(297);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -30123,8 +30212,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./create_challenge.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./create_challenge.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./create_challenge.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./create_challenge.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -30134,7 +30223,7 @@ if(false) {
 }
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(17)(undefined);
@@ -30142,13 +30231,13 @@ exports = module.exports = __webpack_require__(17)(undefined);
 
 
 // module
-exports.push([module.i, ".create-challenge-container{\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  margin-top: 140px;\n}\n\n.title-page{\n  background: #e8cc2e;\n  border: #000 9px solid;\n  border-radius: 16px;\n  padding: 10px;\n  position: absolute;\n  top: 15px;\n  font-size: 26px;\n  margin: 0px;\n}\n\n.title-page, .create-challenge-container h6{\n font-family: 'Press Start 2P', cursive;\n}\n\ntextarea{\n  resize:vertical;\n  font-family: monospace;\n  font-size: 21px;\n}\n\n.create-test-container, .example-code-container{\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  width: 50%;\n}\n\n.create-challenge-container code{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  margin: 10px;\n  padding: 10px;\n  width: 85%;\n}\n\n.create-test-container{\n\n}\n\n.example-code-container{\n\n}\n\n.example-code-container code{\n  height: 65%;\n}\n\n\n.create-challenge-container code{\n  width: 85%;\n}\n\n.code-test, .code-example, .code-description{\n  width: 100%;\n  max-width: 500px;\n}\n\n.code-example{\n  height: 100%;\n  padding: 10px;\n}\n", ""]);
+exports.push([module.i, ".create-challenge-container{\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  margin-top: 140px;\n  max-width: 1400px;\n  margin: 106px auto;\n}\n\n#title-page{\n  background: #e8cc2e;\n  border: #000 9px solid;\n  border-radius: 16px;\n  padding: 20px;\n  position: absolute;\n  top: 15px;\n  font-size: 26px;\n  margin: 0px;\n}\n\n.title-page, .create-challenge-container h6,\n.example-code-container button{\n font-family: 'Press Start 2P', cursive;\n}\n\n.create-challenge-container h6{\n  font-size: 16px;\n}\n\n.code-description, .code-test, .code-example{\n  border-radius: 3px;\n  font-family: monospace;\n  font-size: 21px;\n  resize:vertical;\n  padding: 10px;\n}\n\n.create-test-container, .example-code-container{\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  width: 50%;\n}\n\n.create-challenge-container code{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  margin: 10px;\n  padding: 10px;\n  width: 85%;\n}\n\n.create-test-container{\n\n}\n\n.example-code-container{\n\n}\n\n.example-code-container code{\n  /*max-height: 465px;\n  height: 65%;*/\n}\n\n\n.create-challenge-container code{\n  border-radius: 10px;\n  width: 85%;\n}\n\n.code-test, .code-example, .code-description{\n  width: 100%;\n  max-width: 500px;\n}\n\n.code-example{\n  height: 400px;\n  max-height: 100%;\n  padding: 10px;\n}\n\n.example-code-container button{\n  background: #000;\n  border: #e8cc2e 3px solid;\n  border-radius: 4px;\n  color: #e8cc2e;\n  height: 45px;\n  font-size: 16px;\n  width: 80%;\n}\n\n.example-code-container button:hover{\n  background: #e8cc2e;\n  border: #000 7px solid;\n  color: #000;\n  transition: all 1s;\n}\n\n@media (max-width:720px){\n  .create-challenge-container{\n    align-items: center;\n    flex-direction: column;\n    margin-top: 120px;\n  }\n  .create-test-container, .example-code-container {\n    width: 99%\n  }\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30251,12 +30340,12 @@ function unregister() {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_rootReducer__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_rootReducer__ = __webpack_require__(300);
 
 
 
@@ -30269,13 +30358,13 @@ const configureStore = () => {
 
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__battle__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__battle__ = __webpack_require__(302);
 
 
 
@@ -30287,7 +30376,7 @@ const rootReducer = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* combineRed
 /* harmony default export */ __webpack_exports__["a"] = (rootReducer);
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30305,7 +30394,7 @@ const user = (state = "", action) => {
 /* harmony default export */ __webpack_exports__["a"] = (user);
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

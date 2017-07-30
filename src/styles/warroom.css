@@ -41,7 +41,7 @@
 }
 
 .war-room-container button:hover, .battle-request button:hover{
-  border: 5px solid #423f3f;
+  border: 5px solid #e8cc2e;
   background: #000;
   transition: all 1s;
 }

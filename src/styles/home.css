@@ -63,7 +63,7 @@
 
 .form-container button:hover, .options-container button:hover{
   background: #000;
-  border: 3px solid #423f3f;
+  border: 5px solid #e8cc2e;
   transition: all 1s;
 }
 
