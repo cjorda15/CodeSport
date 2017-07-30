@@ -26,11 +26,19 @@
   font-family: 'Press Start 2P', cursive;
   font-size: 12px;
   justify-content: center;
-  height: 58px;
   margin: 10px 5px;
-  overflow: scroll;
+  padding: 15px;
   text-align: center;
-  width: 260px;
+}
+
+.select-user-message{
+  background: #423f3f;
+  border: 3px solid #000;
+  border-radius: 4px;
+  font-size: 20px;
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px;
+  color: #e8cc2e;
 }
 
 .user:hover{
@@ -41,7 +49,7 @@
 }
 
 .war-room-container button:hover, .battle-request button:hover{
-  border: 5px solid #423f3f;
+  border: 5px solid #e8cc2e;
   background: #000;
   transition: all 1s;
 }

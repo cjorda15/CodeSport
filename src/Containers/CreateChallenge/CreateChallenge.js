@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import '../../styles/create_challenge.css'
 
-
 class CreateChallenge extends Component{
   constructor(props){
     super(props)
@@ -18,7 +17,6 @@ class CreateChallenge extends Component{
     }
   }
 
-  runTests() {
     if (!this.state.code) return 
     this.setState({runButtonClicked: true})
     let results = []
@@ -39,6 +37,9 @@ class CreateChallenge extends Component{
     this.setState({tests})
   }
 
+  handleReroute(e){
+    e.preventDefault()
+    this.props.history.history.replace('/destiny')
   createChallenge() {
     if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return // SHOW ERROR MESSAGE
     if(!this.checkDescriptions()) return // SHOW MESSAGE SAYING MISSING DESCRIPTION
@@ -70,7 +71,11 @@ class CreateChallenge extends Component{
   render(){
     return(
       <div className="create-challenge-container">
-        <h6 className="title-page">create challenge zone</h6>
+         <h6 id="title-page">
+         create test zone
+         <button onClick={(e)=>{this.handleReroute(e)}}>back to destiny room</button>
+         </h6>
+
         <section className="create-test-container">
           <code>
           <h6> test 1 code</h6>
@@ -177,11 +182,9 @@ class CreateChallenge extends Component{
         <button onClick={() => this.runTests()}>Run Tests</button>
         <button onClick={() => this.createChallenge()}>Create Challenge</button>
         </section>
-
       </div>
     )
   }
-
 }
 
 export default CreateChallenge

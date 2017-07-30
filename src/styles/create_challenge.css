@@ -2,28 +2,60 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 140px;
+  max-width: 1400px;
+  margin: 200px auto 40px;
 }
 
-.title-page{
+#title-page{
+  align-items: center;
   background: #e8cc2e;
   border: #000 9px solid;
   border-radius: 16px;
-  padding: 10px;
-  position: absolute;
-  top: 15px;
+  display: flex;
+  flex-direction: column;
   font-size: 26px;
+  justify-content: space-between;
   margin: 0px;
+  padding: 18px;
+  position: absolute;
+  top: 10px;
 }
 
-.title-page, .create-challenge-container h6{
+#title-page button{
+  background: #000;
+  border: 2p;
+  border: #423f3f 3px solid;
+  border-radius: 6px;
+  color: #e8cc2e;
+  font-size: 17px;
+  margin-top: 15px;
+  padding: 7px;
+  width: 71%;
+}
+
+#title-page button:hover{
+  background: #e8cc2e;
+  border: #000 3px solid;
+  color: #000;
+  transition: all 1s;
+
+}
+
+.title-page, .create-challenge-container h6,
+.example-code-container button, #title-page button{
  font-family: 'Press Start 2P', cursive;
 }
 
-textarea{
-  resize:vertical;
+.create-challenge-container h6{
+  font-size: 16px;
+}
+
+.code-description, .code-test, .code-example{
+  border-radius: 3px;
   font-family: monospace;
   font-size: 21px;
+  resize:vertical;
+  padding: 10px;
 }
 
 .create-test-container, .example-code-container{
@@ -50,11 +82,13 @@ textarea{
 }
 
 .example-code-container code{
-  height: 65%;
+  /*max-height: 465px;
+  height: 65%;*/
 }
 
 
 .create-challenge-container code{
+  border-radius: 10px;
   width: 85%;
 }
 
@@ -64,6 +98,35 @@ textarea{
 }
 
 .code-example{
-  height: 100%;
+  height: 400px;
+  max-height: 100%;
   padding: 10px;
+}
+
+.example-code-container button{
+  background: #000;
+  border: #e8cc2e 3px solid;
+  border-radius: 4px;
+  color: #e8cc2e;
+  height: 45px;
+  font-size: 16px;
+  width: 80%;
+}
+
+.example-code-container button:hover{
+  background: #e8cc2e;
+  border: #000 7px solid;
+  color: #000;
+  transition: all 1s;
+}
+
+@media (max-width:720px){
+  .create-challenge-container{
+    align-items: center;
+    flex-direction: column;
+    /*margin-top: 120px;*/
+  }
+  .create-test-container, .example-code-container {
+    width: 99%
+  }
 }

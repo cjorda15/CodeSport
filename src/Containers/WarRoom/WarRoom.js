@@ -13,10 +13,14 @@ class WarRoom extends Component{
       userDecline:"",
       requestError:false
     }
+
     socket.on('warRoomUsers', (msg) => {
       this.setState({users:msg})
+      console.log(msg,"msg in warrom on users available")
     })
+
     socket.on('battleRequestAccepted', (msg) => {
+      this.props.handleAcceptRequest()
       this.props.handleOpponentName(msg)
       this.props.history.history.replace('/battle')
 
@@ -37,7 +41,6 @@ class WarRoom extends Component{
   async componentWillMount() {
     let username = await this.props.user.username
     socket.emit('user entering warroom', username)
-
   }
 
   handleRandom() {
@@ -48,7 +51,7 @@ class WarRoom extends Component{
     })
     socket.on('awaiting random 1v1',(msg) => {
     })
-       this.props.history.history.replace('/battle')
+    this.props.history.history.replace('/battle')
   }
 
   handleSetMatch(opponentUsername) {
@@ -71,12 +74,12 @@ class WarRoom extends Component{
 
   respondToBattleRequest(input,opponent) {
     if (input) {
+      this.props.handleAcceptRequest()
       socket.emit('acceptBattleRequest', { opponent: opponent, user: this.props.user.username })
       this.props.handleOpponentName(this.state.opponentRequestingBattle)
       this.props.history.history.replace('/battle')
       this.setState({opponentRequestingBattle:[]})
-      //might cause an error setting opponet state back to a empty array
-    }else{
+     }else{
       socket.emit('declineBattleRequest',{ opponent: opponent, user: this.props.user.username })
       let updateOpponents = this.state.opponentRequestingBattle.slice(0,this.state.opponentRequestingBattle.length)
       updateOpponents.splice(updateOpponents.indexOf(opponent),1)
@@ -91,8 +94,8 @@ class WarRoom extends Component{
           <div key={i} className="battle-request">
             <h4>{opponent} wants to battle!</h4>
             <div>
-            <button onClick={() => this.respondToBattleRequest(true,opponent)}>Accept</button>
-            <button onClick={() => this.respondToBattleRequest(false,opponent)}>Reject</button>
+             <button onClick={() => this.respondToBattleRequest(true,opponent)}>Accept</button>
+             <button onClick={() => this.respondToBattleRequest(false,opponent)}>Reject</button>
             </div>
           </div>
         )
@@ -102,6 +105,7 @@ class WarRoom extends Component{
   }
 
   handleRoute(e){
+    socket.emit('user left warroom', this.props.user.username)
     e.preventDefault()
     this.props.history.history.replace('/destiny')
   }
@@ -117,15 +121,24 @@ class WarRoom extends Component{
         <h3>Prepare yourself {this.props.user.username}!</h3>
         <div className="war-room-btn-container">
           <button onClick={()=>{this.handleRandom()}}>random match</button>
-          <button  onClick={()=>{this.handleSetMatch()}}>setup match
-          </button>
+          <button  onClick={()=>{this.handleSetMatch()}}>setup match</button>
           <button onClick={(e)=>{this.handleRoute(e)}}>back to destiny room</button>
         </div>
         <div className="battle-request-container">
           {this.displayBattleRequest()}
         </div>
-        {this.state.showDecline? <div className="decline-battle-request">Unfortunaly {this.state.userDecline} is too scared to play with you right for now</div>:null}
-        {this.state.requestError?<div className="request-error">You can not request yourself to be challenged silly bear, try solo mode in the destiny room if you want to play with yourself</div>:null}
+        {this.state.showDecline ?
+         <div className="decline-battle-request">Unfortunaly {this.state.userDecline} is too scared to play with you right for now</div>
+          :
+         null
+        }
+        {this.state.requestError ?
+          <div className="request-error">You can not request yourself to be challenged silly bear, try solo mode in the destiny room if you want to play with yourself</div>
+           :
+          null}
+        <div className="select-user-message">
+           select a user to challenge to a battle
+        </div>
         <div className="users">
           {this.users()}
         </div>

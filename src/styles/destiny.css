@@ -13,7 +13,8 @@
   border: 10px solid #000;
   display: flex;
   flex-direction: column;
-  height: 465px;
+  height: 590px;
+  justify-content: space-between;
   padding: 25px;
 }
 
@@ -46,6 +47,6 @@
 
 .destiny-body button:hover{
   background: #000;
-  border: 5px solid #423f3f;
+  border: 5px solid #e8cc2e;
   transition: all 1s;
 }
