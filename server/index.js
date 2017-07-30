@@ -87,7 +87,9 @@ io.on('connection', function(socket){
 
   socket.on('disconnect', function () {
     let disconnectUser = Object.keys(socketDb.users).filter(i => socketDb.users[i]===socket.id)
-    socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(disconnectUser[0]),1)
+      if(socketDb.warRoomUsers.indexOf(disconnectUser[0])!==-1){
+        socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(disconnectUser[0]),1)
+      }
     delete socketDb.users[disconnectUser[0]]
     io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
   })
