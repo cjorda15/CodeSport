@@ -105,6 +105,7 @@ class WarRoom extends Component{
   }
 
   handleRoute(e){
+    socket.emit('user left warroom', this.props.user.username)
     e.preventDefault()
     this.props.history.history.replace('/destiny')
   }
@@ -136,7 +137,7 @@ class WarRoom extends Component{
            :
           null}
         <div className="select-user-message">
-           select a user challenge to a battle
+           select a user to challenge to a battle
         </div>
         <div className="users">
           {this.users()}

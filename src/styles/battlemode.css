@@ -85,24 +85,24 @@
   left: 2%;
   padding: 30px;
   position: absolute;
+  text-align: center;
   top: 10%;
 }
 
-.gameover-message button{
+.gameover-message button, .challenger-code button{
   background: #e8cc2e;
   border: #000 5px solid;
   border-radius: 5px;
-  color:#000;
+  color: #000;
   font-family: 'Press Start 2P', cursive;
-  height: 80px;
-  margin: 0px auto;
-  width: 114px;
   font-size: 16px;
+  margin: 25px auto;
+  padding: 34px;
 }
 
 
 
-.gameover-message button:hover{
+.gameover-message button:hover, .challenger-code button:hover{
   background: #000;
   border: 5px solid #e8cc2e;
   color:#e8cc2e;
@@ -148,12 +148,6 @@
   z-index: 5;
 }
 
-.challenger-code button{
-  height: 55px;
-  margin: 0px auto;
-  width: 114px;
-  font-size: 16px;
-}
 
 @media (max-width:620px){
   .scores{

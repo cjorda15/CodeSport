@@ -43,17 +43,6 @@ io.on('connection', function(socket){
     io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
   })
 
-  socket.on('random match request', (msg) => {
-    if(socketDb.randomMatches.length>0){
-      io.sockets.connected[socketDb.randomMatches[0].socket].emit('connected random 1v1', msg)
-      io.sockets.connected[socketDb.users[msg]].emit('connected random 1v1',socketDb.randomMatches[0].username)
-      socketDb.randomMatches.shift()
-    }else{
-    socketDb.randomMatches.push({username:msg, socket:socketDb.users[msg]})
-    io.sockets.connected[socketDb.users[msg]].emit('awaiting random 1v1',"wait until another user joins random match")
-    }
-  })
-
   socket.on('requestBattle', (msg) => {
     if(!socketDb.users[msg.opponent])return
     io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequest', msg.user)
@@ -78,6 +67,20 @@ io.on('connection', function(socket){
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.opponent),1)
     io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
     io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequestAccepted', msg.user)
+  })
+
+  socket.on('random match request', (msg) => {
+    if(socketDb.randomMatches.length>0){
+      io.sockets.connected[socketDb.randomMatches[0].socket].emit('connected random 1v1', msg)
+      io.sockets.connected[socketDb.users[msg]].emit('connected random 1v1',socketDb.randomMatches[0].username)
+      socketDb.randomMatches.shift()
+    }else{
+      console.log(socketDb.users,"????????")
+      console.log(msg,"!!")
+      console.log(socketDb.users[msg])
+    socketDb.randomMatches.push({username:msg, socket:socketDb.users[msg]})
+    io.sockets.connected[socketDb.users[msg]].emit('awaiting random 1v1',"wait until another user joins random match")
+    }
   })
 
   socket.on('declineBattleRequest', (msg) => {
