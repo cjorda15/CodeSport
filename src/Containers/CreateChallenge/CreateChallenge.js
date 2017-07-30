@@ -17,7 +17,8 @@ class CreateChallenge extends Component{
     }
   }
 
-    if (!this.state.code) return 
+  runTests() {
+    if (!this.state.code) return
     this.setState({runButtonClicked: true})
     let results = []
     for (let i = 0; i < 5; i++) {
@@ -40,6 +41,7 @@ class CreateChallenge extends Component{
   handleReroute(e){
     e.preventDefault()
     this.props.history.history.replace('/destiny')
+  }
   createChallenge() {
     if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return // SHOW ERROR MESSAGE
     if(!this.checkDescriptions()) return // SHOW MESSAGE SAYING MISSING DESCRIPTION
@@ -61,10 +63,10 @@ class CreateChallenge extends Component{
 
   checkDescriptions() {
     return (
-      this.state.description1 !== '' && 
-      this.state.description2 !== '' && 
-      this.state.description3 !== '' && 
-      this.state.description4 !== '' && 
+      this.state.description1 !== '' &&
+      this.state.description2 !== '' &&
+      this.state.description3 !== '' &&
+      this.state.description4 !== '' &&
       this.state.description5 !== '')
   }
 
