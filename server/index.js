@@ -75,9 +75,7 @@ io.on('connection', function(socket){
       io.sockets.connected[socketDb.users[msg]].emit('connected random 1v1',socketDb.randomMatches[0].username)
       socketDb.randomMatches.shift()
     }else{
-      console.log(socketDb.users,"????????")
-      console.log(msg,"!!")
-      console.log(socketDb.users[msg])
+      //some issues here i noticed possibly when ppl just back on and off from gameover-message
     socketDb.randomMatches.push({username:msg, socket:socketDb.users[msg]})
     io.sockets.connected[socketDb.users[msg]].emit('awaiting random 1v1',"wait until another user joins random match")
     }
