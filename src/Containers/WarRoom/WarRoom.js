@@ -26,6 +26,10 @@ class WarRoom extends Component{
 
     })
 
+    socket.on('sendChallenge', (msg) => {
+      this.props.handleGetChallenge(msg)
+    })
+
     socket.on('battleRequestDeclined', (msg) => {
       this.setState({showDecline:true, userDecline:msg})
       setTimeout(() => { this.setState({showDecline:false})}, 4000)

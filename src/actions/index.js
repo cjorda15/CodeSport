@@ -29,3 +29,10 @@ export const acceptRequest = () => {
     type:"ACCEPT_REQUEST"
   }
 }
+
+export const getChallenge = (payload) => {
+  return {
+    type: "GET_CHALLENGE",
+    payload
+  }
+}
