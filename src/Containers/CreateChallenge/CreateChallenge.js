@@ -14,6 +14,7 @@ class CreateChallenge extends Component{
       description4:"",
       description5:"",
       failedTests: [],
+      testFail:false,
       runButtonClicked: false,
       value: 'beginner'
     }
@@ -29,7 +30,13 @@ class CreateChallenge extends Component{
     }
     let outcome = results.every(i => i)
     if (!outcome) {
-      let badTests = results.filter(i => !i)
+      this.setState({testFail:true})
+      let badTests = []
+      results.forEach((i,index) => {
+        if(!i){
+           badTests.push(index)
+        }
+      })
       this.setState({failedTests: badTests})
     }
   }
@@ -45,7 +52,7 @@ class CreateChallenge extends Component{
     this.props.history.history.replace('/destiny')
   }
   createChallenge() {
-    if (!this.state.challengeName) return 
+    if (!this.state.challengeName) return
     if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return // SHOW ERROR MESSAGE
     if(!this.checkDescriptions()) return // SHOW MESSAGE SAYING MISSING DESCRIPTION
     fetch('/api/v1/challenges', {
@@ -81,6 +88,26 @@ class CreateChallenge extends Component{
 
   handleSelection(event) {
     this.setState({value: event.target.value})
+  }
+
+  showError(){
+    if(this.state.testFail){
+      setTimeout(() =>this.setState({testFail:false}) ,4000)
+      return (
+        <div>
+          {this.state.failedTests.map((val, i) => {
+            return (
+              <div key={i}>
+                error found on test {val}
+              </div>
+            )
+          })
+        }
+        </div>
+      )
+    }else{
+      return null
+    }
   }
 
   render(){
@@ -203,6 +230,7 @@ class CreateChallenge extends Component{
         </code>
         <button onClick={() => this.runTests()}>Run Tests</button>
         <button onClick={() => this.createChallenge()}>Create Challenge</button>
+        {this.showError()}
         </section>
       </div>
     )
