@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-around;
   max-width: 1400px;
-  margin: 200px auto 40px;
+  margin: 260px auto 40px;
 }
 
 #title-page{
@@ -118,6 +118,26 @@
   border: #000 7px solid;
   color: #000;
   transition: all 2s;
+}
+
+.create-challenge-info{
+  height: 60px;
+  display: flex;
+  font-size: 18px;
+  position: absolute;
+  top: 180px;
+}
+.create-challenge-info input{
+  width: 210px;
+  padding: 10px;
+}
+.create-challenge-info input, .create-challenge-info select{
+  font-size: 18px;
+}
+
+.create-challenge-info select{
+  width: 105px;
+
 }
 
 @media (max-width:720px){
