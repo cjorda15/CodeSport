@@ -30,13 +30,13 @@ const getAll = (req, res) => {
   //   .then(result => {
   //     res.status(200).send('worked')
   //   })
-  // db.collection('challenges').find({}).toArray((err, results) => {
-  //   if (err) return res.status(404).send({ message: 'Nothing found?' })
-  //   res.status(200).json(results)
-  // })
-  db.collection('challenges').findOne({}, ((err, results) => {
-    res.send(results)
-  }))
+  db.collection('challenges').find({}).toArray((err, results) => {
+    if (err) return res.status(404).send({ message: 'Nothing found?' })
+    res.status(200).json(results)
+  })
+  // db.collection('challenges').find({}, ((err, results) => {
+  //   res.send(results)
+  // }))
 }
 
 module.exports = {

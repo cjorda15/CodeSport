@@ -38,7 +38,7 @@
 .form-container input{
   border: 5px solid #000;
   border-radius: 3px;  height: 60px;
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Press Start 2P', cursive;
   margin-bottom: 20px;
   max-width: 440px;
@@ -53,7 +53,7 @@
   border: 5px solid #000;
   border-radius: 5px;
   font-family: 'Press Start 2P', cursive;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 100;
   height: 60px;
   margin-top: 15px;
@@ -66,7 +66,7 @@
 .form-container button:hover, .options-container button:hover{
   background: #000;
   border: 5px solid #e8cc2e;
-  transition: all 1s;
+  transition: all 2s;
 }
 
 .error-message{
@@ -94,7 +94,7 @@
   border: 5px solid #000;
   border-radius: 5px;
   font-family: 'Press Start 2P', cursive;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 100;
   height: 60px;
   max-width: 275px;

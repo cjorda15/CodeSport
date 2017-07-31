@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../styles/App.css';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import SoloMode from '../SoloMode/SoloModeContainer'
 import Home from '../Home/HomeContainer'
@@ -17,7 +16,7 @@ class App extends Component {
             return !this.props.user.username?
             <Redirect to="/"/>
               :
-             <Destiny history={history}/>
+            <Destiny history={history}/>
             }}/>
           <Route exact path='/warroom' render={(history) => {
           return !this.props.user.username?

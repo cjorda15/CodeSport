@@ -69,7 +69,12 @@ class WarRoom extends Component{
   users() {
     if (this.state.users[0] != null) {
     let users = this.state.users.map((user, index) => {
-      return (<div onClick={() => this.handleSetMatch(`${user}`)} className="user" key={index}>{user}</div>)
+      return (<div className="user" key={index}>
+                <button onClick={() => this.handleSetMatch(`${user}`)}>
+                  {user}
+                </button>
+                <button id="stats-btn" onClick={()=>{console.log("bam")}}>see stats</button>
+              </div>)
     })
       return users
     }
@@ -140,8 +145,10 @@ class WarRoom extends Component{
           <div className="request-error">You can not request yourself to be challenged silly bear, try solo mode in the destiny room if you want to play with yourself</div>
            :
           null}
-        <div className="select-user-message">
+        <div className="select-user-message-container">
+          <div className="select-user-message">
            select a user to challenge to a battle
+          </div>
         </div>
         <div className="users">
           {this.users()}
