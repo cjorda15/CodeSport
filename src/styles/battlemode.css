@@ -65,7 +65,7 @@
   background: #e8cc2e;
   border: 5px solid #000;
   color: #000;
-  transition: all 1s;
+  transition: all 2s;
 }
 
 #scoreboard {
@@ -123,7 +123,7 @@
   background: #000;
   border: 5px solid #e8cc2e;
   color:#e8cc2e;
-  transition: all 1s;
+  transition: all 2s;
 }
 
 .scores {

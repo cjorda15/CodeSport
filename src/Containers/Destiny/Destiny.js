@@ -19,7 +19,7 @@ class Destiny extends Component {
   render() {
     return (
       <div className="destiny">
-        <h2>Choose Your Destiny</h2>
+        <h2><span id="destiny-fw">Choose</span> <span id="destiny-sw">Your</span> <span id="destiny-tw">Destiny</span></h2>
         <div className="destiny-body">
           <button
             onClick={()=>{this.handleClick("/solo")}}>

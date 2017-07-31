@@ -48,5 +48,78 @@
 .destiny-body button:hover{
   background: #000;
   border: 5px solid #e8cc2e;
-  transition: all 1s;
+  transition: all 2s;
+}
+
+#destiny-fw, #destiny-sw, #destiny-tw{
+  animation-delay:0s;
+  animation-fill-mode: forwards;
+  position: relative;
+  display: block;
+}
+
+#destiny-fw{
+  animation: first 2s;
+  /*min-width: 176px;*/
+  /*width: %;*/
+}
+
+#destiny-sw{
+  animation: second 2s;
+  color:#000;
+
+}
+
+#destiny-tw{
+  animation: third 3s;
+}
+
+@keyframes first {
+    0%   {
+          left:-100px;
+          opacity: 0;
+          /*width: 0%;*/
+
+         }
+
+
+    100% {
+          opacity: 1.0;
+          left:0px;
+
+         }
+}
+
+
+@keyframes second {
+    0%   {
+          color: #e8cc2e;
+          top:-300px;
+          opacity: 0;
+         }
+
+    50% {
+      color: #e8cc2e;
+        }
+
+
+    100% {
+          color:#000;
+          top:0px;
+          opacity: 1.0;
+
+         }
+}
+
+@keyframes third {
+    0%   {
+          right:-1200px;
+          opacity: 0;
+         }
+
+
+    100% {
+          right:0px;
+          opacity: 1.0;
+         }
 }

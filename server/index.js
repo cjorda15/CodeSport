@@ -77,8 +77,7 @@ io.on('connection', function(socket){
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.user),1)
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.opponent),1)
     io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
-    db.collection('challenges').aggregate({ $sample: { size: 1 } }).toArray((err, results) => {
-      if (err) return res.status(404).send(err)
+    db.collection('challenges').aggregate([{ $sample: { size: 1 } }]).toArray((err, results) => {
         io.sockets.connected[socketDb.users[msg.opponent]].emit('sendChallenge', results)
         io.sockets.connected[socketDb.users[msg.user]].emit('sendChallenge', results)
     })
@@ -87,12 +86,9 @@ io.on('connection', function(socket){
 
   socket.on('random match request', (msg) => {
     if(socketDb.randomMatches.length>0){
-      io.sockets.connected[socketDb.randomMatches[0].socket].emit('connected random 1v1', msg)
-      io.sockets.connected[socketDb.users[msg]].emit('connected random 1v1',socketDb.randomMatches[0].username)
-      db.collection('challenges').aggregate({ $sample: { size: 1 } }).toArray((err, results) => {
-        if (err) return res.status(404).send(err)
-          io.sockets.connected[socketDb.randomMatches[0].socket].emit('sendChallenge', results)
-          io.sockets.connected[socketDb.users[msg]].emit('sendChallenge', results)
+      db.collection('challenges').aggregate([{ $sample: { size: 1 } }]).toArray((err, results) => {
+          io.sockets.connected[socketDb.randomMatches[0].socket].emit('connected random 1v1', results)
+          io.sockets.connected[socketDb.users[msg]].emit('connected random 1v1',results)
           socketDb.randomMatches.shift()
       })
     }else{

@@ -19,8 +19,9 @@ class BattleMode extends Component {
       description: [],
       questions : []
     }
-    socket.on('connected random 1v1',()=>{
-      this.setState({startGame:true})
+    socket.on('connected random 1v1',(msg)=>{
+      const message = msg[0]
+      this.setState({startGame:true,description:message.descriptions,questions:message.tests})
     })
 
     socket.on('challenger left', () => {
@@ -29,6 +30,8 @@ class BattleMode extends Component {
 
     socket.on('challenger question',(msg) => {
       this.setState({opponentsPoints:msg})
+      console.log(msg,"ppont")
+      console.log(this.state.questions.length,"leng")
       if(msg==this.state.questions.length){
         this.setState({gameover:true})
         this.handleApiCall("+ 0")
@@ -46,8 +49,8 @@ class BattleMode extends Component {
 
   componentWillMount(){
     setTimeout(()=>{this.setState({
-      description:this.props.getChallenge[0].descriptions,
-      questions:this.props.getChallenge[0].tests})},10)
+      description:this.props.getChallenge[0].descriptions||[],
+      questions:this.props.getChallenge[0].tests||[]})},5000)
   }
 
   getCode(e) {

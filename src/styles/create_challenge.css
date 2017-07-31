@@ -37,7 +37,7 @@
   background: #e8cc2e;
   border: #000 3px solid;
   color: #000;
-  transition: all 1s;
+  transition: all 2s;
 
 }
 
@@ -117,7 +117,7 @@
   background: #e8cc2e;
   border: #000 7px solid;
   color: #000;
-  transition: all 1s;
+  transition: all 2s;
 }
 
 @media (max-width:720px){
