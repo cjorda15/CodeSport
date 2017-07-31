@@ -87,8 +87,6 @@ io.on('connection', function(socket){
   socket.on('random match request', (msg) => {
     if(socketDb.randomMatches.length>0){
       db.collection('challenges').aggregate([{ $sample: { size: 1 } }]).toArray((err, results) => {
-          // io.sockets.connected[socketDb.randomMatches[0].socket].emit('sendChallenge', results)
-          // io.sockets.connected[socketDb.users[msg]].emit('sendChallenge', results)
           io.sockets.connected[socketDb.randomMatches[0].socket].emit('connected random 1v1', results)
           io.sockets.connected[socketDb.users[msg]].emit('connected random 1v1',results)
           socketDb.randomMatches.shift()
