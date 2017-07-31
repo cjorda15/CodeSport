@@ -60,9 +60,9 @@ class BattleMode extends Component {
       this.setState({gameover:true,challengerLeft:true})
     })
 
-    socket.on('battleRequestAccepted',() => {
-      this.setState({startGame:true})
-    })
+    // socket.on('battleRequestAccepted',() => {
+    //   this.setState({startGame:true})
+    // })
 
     socket.on('challenger question',(msg) => {
       this.setState({opponentsPoints:msg})

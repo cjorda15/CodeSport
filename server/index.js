@@ -8,6 +8,19 @@ const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser')
 const socketDb =  require('./socketDB')
 
+var MongoClient = require('mongodb').MongoClient
+require('dotenv').config()
+let ObjectId = require('mongodb').ObjectID;
+let db
+MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
+  if (err) {
+    console.log(err)
+  }
+  db = database
+})
+
+
+
 app.use(bodyParser.json())
 
 app.use("/build", express.static(path.join(__dirname,"/../build")))
@@ -66,6 +79,11 @@ io.on('connection', function(socket){
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.user),1)
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.opponent),1)
     io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)
+    db.collection('challenges').aggregate({ $sample: { size: 1 } }).toArray((err, results) => {
+      if (err) return res.status(404).send(err)
+        io.sockets.connected[socketDb.users[msg.opponent]].emit('sendChallenge', results)
+        io.sockets.connected[socketDb.users[msg.user]].emit('sendChallenge', results)
+    })
     io.sockets.connected[socketDb.users[msg.opponent]].emit('battleRequestAccepted', msg.user)
   })
 
