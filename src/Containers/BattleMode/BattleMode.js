@@ -16,53 +16,16 @@ class BattleMode extends Component {
       gameover:false,
       showCode:false,
       challengerCode:"",
-      description: [
-        "make a function object constructor with the declared name being 'Person' with the property name having a value of chris",
-        "make a method for the function object constructor named shout that when called, will have the user shout his name followed by is shouting (ex:chris is shouting)",
-        "make a method named changeName that when run will allow the argument to reassign the object propety name's value",
-        "make it so that when a object is intinitated with this function object constructor, it can have the first argument be assigned to the name's property's value"
-      ],
-      questions : [
-     `let test = new Person()
-        if(test.name==="chris"){
-          return true
-        }else{
-          return false
-        }`,
-
-      ` let test2 = new Person()
-        if(test2.shout()==="chris is shouting"){
-          return true
-        }else{
-        return false
-        }`,
-      `
-        let test3 = new Person()
-        if(!test3.changeName) return false
-        test3.changeName("rob")
-        if(test3.name == "rob"){
-        return true
-        }else{
-        return false
-        }`,
-      ` let test4 = new Person("j")
-        if(test4.name=="j"){
-        return true
-        }else{
-        return  false
-        }`
-      ]
+      description: [],
+      questions : []
     }
     socket.on('connected random 1v1',()=>{
       this.setState({startGame:true})
     })
+
     socket.on('challenger left', () => {
       this.setState({gameover:true,challengerLeft:true})
     })
-
-    // socket.on('battleRequestAccepted',() => {
-    //   this.setState({startGame:true})
-    // })
 
     socket.on('challenger question',(msg) => {
       this.setState({opponentsPoints:msg})
@@ -79,6 +42,12 @@ class BattleMode extends Component {
     socket.on('challenger code', (msg) => {
       this.setState({challengerCode:msg})
     })
+  }
+
+  componentWillMount(){
+    setTimeout(()=>{this.setState({
+      description:this.props.getChallenge[0].descriptions,
+      questions:this.props.getChallenge[0].tests})},10)
   }
 
   getCode(e) {
@@ -198,6 +167,12 @@ class BattleMode extends Component {
        null
     }
 
+  handleEarlyExit(){
+    socket.emit('early exit',this.props.battle)
+    this.props.handleClearOpponent()
+    this.props.history.history.replace('/warroom')
+  }
+
   render(){
     return (
       <div className="app">
@@ -218,6 +193,7 @@ class BattleMode extends Component {
          <div id="right-side">
             <div id="repl">
              >
+             <button onClick={()=>{this.handleEarlyExit()}}>Exit to War Room</button>
             </div>
             <div id="scoreboard">
               <h4 className="scoreboard-title">Scoreboard</h4>
