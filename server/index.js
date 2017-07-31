@@ -19,8 +19,6 @@ MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   db = database
 })
 
-
-
 app.use(bodyParser.json())
 
 app.use("/build", express.static(path.join(__dirname,"/../build")))
@@ -91,9 +89,13 @@ io.on('connection', function(socket){
     if(socketDb.randomMatches.length>0){
       io.sockets.connected[socketDb.randomMatches[0].socket].emit('connected random 1v1', msg)
       io.sockets.connected[socketDb.users[msg]].emit('connected random 1v1',socketDb.randomMatches[0].username)
-      socketDb.randomMatches.shift()
+      db.collection('challenges').aggregate({ $sample: { size: 1 } }).toArray((err, results) => {
+        if (err) return res.status(404).send(err)
+          io.sockets.connected[socketDb.randomMatches[0].socket].emit('sendChallenge', results)
+          io.sockets.connected[socketDb.users[msg]].emit('sendChallenge', results)
+          socketDb.randomMatches.shift()
+      })
     }else{
-      //some issues here i noticed possibly when ppl just back on and off from gameover-message
     socketDb.randomMatches.push({username:msg, socket:socketDb.users[msg]})
     io.sockets.connected[socketDb.users[msg]].emit('awaiting random 1v1',"wait until another user joins random match")
     }

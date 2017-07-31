@@ -51,6 +51,23 @@
   color: #FFF;
 }
 
+#repl button{
+  background: #423f3f;
+  border: 5px solid #e8cc2e;
+  border-radius: 5px;
+  color: #e8cc2e;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#repl button:hover{
+  background: #e8cc2e;
+  border: 5px solid #000;
+  color: #000;
+  transition: all 1s;
+}
+
 #scoreboard {
   background-color: #aaa;
   font-family: 'Press Start 2P', cursive;
