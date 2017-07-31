@@ -167,12 +167,6 @@ class BattleMode extends Component {
        null
     }
 
-  handleEarlyExit(){
-    socket.emit('early exit',this.props.battle)
-    this.props.handleClearOpponent()
-    this.props.history.history.replace('/warroom')
-  }
-
   render(){
     return (
       <div className="app">
@@ -193,7 +187,7 @@ class BattleMode extends Component {
          <div id="right-side">
             <div id="repl">
              >
-             <button onClick={()=>{this.handleEarlyExit()}}>Exit to War Room</button>
+             <button onClick={(e)=>{this.handleRoute(e)}}>Exit to War Room</button>
             </div>
             <div id="scoreboard">
               <h4 className="scoreboard-title">Scoreboard</h4>

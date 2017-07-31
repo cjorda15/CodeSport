@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import '../../styles/solomode.css'
+// import '../../styles/solomode.css'
+import '../../styles/battlemode.css'
+//pretty much the same minus the additional elements in battleroom
 
 class SoloMode extends Component {
   constructor(props) {
