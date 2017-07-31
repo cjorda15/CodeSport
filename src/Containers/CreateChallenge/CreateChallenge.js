@@ -5,6 +5,7 @@ class CreateChallenge extends Component{
   constructor(props){
     super(props)
     this.state = {
+      challengeName: '',
       code:"",
       tests: ['','','','',''],
       description1:"",
@@ -13,7 +14,8 @@ class CreateChallenge extends Component{
       description4:"",
       description5:"",
       failedTests: [],
-      runButtonClicked: false
+      runButtonClicked: false,
+      value: 'beginner'
     }
   }
 
@@ -43,6 +45,7 @@ class CreateChallenge extends Component{
     this.props.history.history.replace('/destiny')
   }
   createChallenge() {
+    if (!this.state.challengeName) return 
     if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return // SHOW ERROR MESSAGE
     if(!this.checkDescriptions()) return // SHOW MESSAGE SAYING MISSING DESCRIPTION
     fetch('/api/v1/challenges', {
@@ -51,12 +54,18 @@ class CreateChallenge extends Component{
       body: JSON.stringify({
         "tests": this.state.tests,
         "descriptions": [this.state.description1, this.state.description2, this.state.description3, this.state.description4, this.state.description5],
-        "difficulty": "easy",
-        "challenge_name": "Boom",
+        "difficulty": this.state.value,
+        "challenge_name": this.state.challengeName,
         "language": "Javascript",
         "username": this.props.user.username
       })
-    }).catch(err => {
+    })
+    .then(res => res.json())
+    .then(data => {
+      // NOTE should we have this redirect automatically or should we give them an option to play their challenge?
+      // this.props.history.replace('/')
+    })
+    .catch(err => {
       console.log(err)
     })
   }
@@ -70,6 +79,10 @@ class CreateChallenge extends Component{
       this.state.description5 !== '')
   }
 
+  handleSelection(event) {
+    this.setState({value: event.target.value})
+  }
+
   render(){
     return(
       <div className="create-challenge-container">
@@ -77,6 +90,15 @@ class CreateChallenge extends Component{
           create test zone
          <button onClick={(e)=>{this.handleReroute(e)}}>back to destiny room</button>
         </h6>
+        <div className="create-challenge-info">
+          <input placeholder="Title of Challenge" onChange={(e) => this.setState({challengeName: e.target.value})}/>
+          <select value={this.state.value} onChange={(e) => this.handleSelection(e)}>
+            <option value="beginner">Beginner</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
         <section className="create-test-container">
        <code>
         <h6> test 1 code</h6>
