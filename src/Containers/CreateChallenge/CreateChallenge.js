@@ -94,11 +94,11 @@ class CreateChallenge extends Component{
     if(this.state.testFail){
       setTimeout(() =>this.setState({testFail:false}) ,4000)
       return (
-        <div>
+        <div className="error-msg-container">
           {this.state.failedTests.map((val, i) => {
             return (
-              <div key={i}>
-                error found on test {val}
+              <div className="error-msg-challenge" key={i}>
+                error found on test {val+1}
               </div>
             )
           })
