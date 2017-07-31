@@ -73,7 +73,7 @@ io.on('connection', function(socket){
   })
 
   socket.on('acceptBattleRequest', (msg) => {
-    if(!socketDb.users[msg.opponent])return
+    if(!socketDb.users[msg.opponent] && !)return
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.user),1)
     socketDb.warRoomUsers.splice(socketDb.warRoomUsers.indexOf(msg.opponent),1)
     io.sockets.emit('warRoomUsers',socketDb.warRoomUsers)

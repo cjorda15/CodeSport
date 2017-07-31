@@ -73,47 +73,46 @@ class CreateChallenge extends Component{
   render(){
     return(
       <div className="create-challenge-container">
-         <h6 id="title-page">
-         create test zone
+       <h6 id="title-page">
+          create test zone
          <button onClick={(e)=>{this.handleReroute(e)}}>back to destiny room</button>
-         </h6>
-
+        </h6>
         <section className="create-test-container">
-          <code>
-          <h6> test 1 code</h6>
-            <textarea
-              className="code-test"
-              type="text"
-              placeholder="type in your test 1"
-              value={this.state.tests[0]}
-              onChange={(e) => this.createTestState(e, 0)}
-              ></textarea>
-              <h6>write test 1 description here</h6>
-              <textarea
-                className="code-description"
-                type="text"
-                placeholder="test description"
-                value={this.state.description1}
-                onChange={(e) => {this.setState({description1:e.target.value})}}
-                ></textarea>
-          </code>
-          <code>
-          <h6> test 2 code</h6>
-            <textarea
-              className="code-test"
-              type="text"
-              placeholder="type in your test 2"
-              value={this.state.tests[1]}
-              onChange={(e) => this.createTestState(e, 1)}
-              ></textarea>
-            <h6>write test 2 description here</h6>
-            <textarea
-              className="code-description"
-              type="text"
-              placeholder="test description"
-              value={this.state.description2}
-              onChange={(e)=>{this.setState({description2:e.target.value})}}
-              ></textarea>
+       <code>
+        <h6> test 1 code</h6>
+         <textarea
+          className="code-test"
+          type="text"
+          placeholder="type in your test 1"
+          value={this.state.tests[0]}
+          onChange={(e) => this.createTestState(e, 0)}>
+         </textarea>
+          <h6>write test 1 description here</h6>
+        <textarea
+          className="code-description"
+          type="text"
+          placeholder="test description"
+          value={this.state.description1}
+          onChange={(e) => {this.setState({description1:e.target.value})}}>
+        </textarea>
+       </code>
+       <code>
+        <h6> test 2 code</h6>
+         <textarea
+           className="code-test"
+           type="text"
+           placeholder="type in your test 2"
+           value={this.state.tests[1]}
+           onChange={(e) => this.createTestState(e, 1)}>
+         </textarea>
+           <h6>write test 2 description here</h6>
+           <textarea
+             className="code-description"
+             type="text"
+             placeholder="test description"
+             value={this.state.description2}
+             onChange={(e)=>{this.setState({description2:e.target.value})}}>
+           </textarea>
           </code>
           <code>
           <h6> test 3 code</h6>
@@ -122,8 +121,8 @@ class CreateChallenge extends Component{
               type="text"
               placeholder="type in your test 3"
               value={this.state.tests[2]}
-              onChange={(e) => this.createTestState(e, 2)}
-              ></textarea>
+              onChange={(e) => this.createTestState(e, 2)}>
+            </textarea>
             <h6>write test 3 description here</h6>
             <textarea
               className="code-description"
@@ -166,8 +165,8 @@ class CreateChallenge extends Component{
               type="text"
               placeholder="test description"
               value={this.state.description5}
-              onChange={(e)=>{this.setState({description5:e.target.value})}}
-              ></textarea>
+              onChange={(e)=>{this.setState({description5:e.target.value})}}>
+            </textarea>
           </code>
         </section>
         <section className="example-code-container">
@@ -177,8 +176,7 @@ class CreateChallenge extends Component{
             type="text"
             placeholder="type in your example solutions for all your test here"
             value={this.state.code}
-            onChange={(e)=>{this.setState({code:e.target.value})}}
-            >
+            onChange={(e)=>{this.setState({code:e.target.value})}}>
             </textarea>
         </code>
         <button onClick={() => this.runTests()}>Run Tests</button>
