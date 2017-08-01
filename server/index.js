@@ -116,3 +116,6 @@ io.on('connection', function(socket){
     io.sockets.emit('warRoomUsers', socketDb.warRoomUsers)
   })
 });
+
+
+module.exports = app
