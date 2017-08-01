@@ -558,7 +558,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 var _prodInvariant = __webpack_require__(3);
 
-var DOMProperty = __webpack_require__(16);
+var DOMProperty = __webpack_require__(17);
 var ReactDOMComponentFlags = __webpack_require__(75);
 
 var invariant = __webpack_require__(1);
@@ -1884,6 +1884,24 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
 
 /***/ }),
 /* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__connect_connect__ = __webpack_require__(225);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
+/* unused harmony reexport createProvider */
+/* unused harmony reexport connectAdvanced */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__connect_connect__["a"]; });
+
+
+
+
+
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2096,24 +2114,6 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 17 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__connect_connect__ = __webpack_require__(225);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
-/* unused harmony reexport createProvider */
-/* unused harmony reexport connectAdvanced */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__connect_connect__["a"]; });
-
-
-
-
-
 
 /***/ }),
 /* 18 */
@@ -9818,7 +9818,7 @@ module.exports = CSSProperty;
 
 
 
-var DOMProperty = __webpack_require__(16);
+var DOMProperty = __webpack_require__(17);
 var ReactDOMComponentTree = __webpack_require__(6);
 var ReactInstrumentation = __webpack_require__(11);
 
@@ -11024,7 +11024,7 @@ module.exports = getActiveElement;
 var _prodInvariant = __webpack_require__(3);
 
 var DOMLazyTree = __webpack_require__(24);
-var DOMProperty = __webpack_require__(16);
+var DOMProperty = __webpack_require__(17);
 var React = __webpack_require__(21);
 var ReactBrowserEventEmitter = __webpack_require__(40);
 var ReactCurrentOwner = __webpack_require__(13);
@@ -13144,10 +13144,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_index_css__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_index_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Containers_App_AppContainer__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registerServiceWorker__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registerServiceWorker__ = __webpack_require__(295);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_router_dom__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__configStore__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_redux__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__configStore__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_redux__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_history_createBrowserHistory__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_history_createBrowserHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__websocket__ = __webpack_require__(42);
@@ -17169,7 +17169,7 @@ module.exports = EnterLeaveEventPlugin;
 
 
 
-var DOMProperty = __webpack_require__(16);
+var DOMProperty = __webpack_require__(17);
 
 var MUST_USE_PROPERTY = DOMProperty.injection.MUST_USE_PROPERTY;
 var HAS_BOOLEAN_VALUE = DOMProperty.injection.HAS_BOOLEAN_VALUE;
@@ -17866,7 +17866,7 @@ var AutoFocusUtils = __webpack_require__(158);
 var CSSPropertyOperations = __webpack_require__(159);
 var DOMLazyTree = __webpack_require__(24);
 var DOMNamespaces = __webpack_require__(51);
-var DOMProperty = __webpack_require__(16);
+var DOMProperty = __webpack_require__(17);
 var DOMPropertyOperations = __webpack_require__(87);
 var EventPluginHub = __webpack_require__(28);
 var EventPluginRegistry = __webpack_require__(35);
@@ -22881,7 +22881,7 @@ module.exports = getUnboundedScrollPosition;
 
 
 
-var DOMProperty = __webpack_require__(16);
+var DOMProperty = __webpack_require__(17);
 var EventPluginHub = __webpack_require__(28);
 var EventPluginUtils = __webpack_require__(45);
 var ReactComponentEnvironment = __webpack_require__(54);
@@ -25035,7 +25035,7 @@ module.exports = ReactMount.renderSubtreeIntoContainer;
 
 
 
-var DOMProperty = __webpack_require__(16);
+var DOMProperty = __webpack_require__(17);
 var EventPluginRegistry = __webpack_require__(35);
 var ReactComponentTreeHook = __webpack_require__(9);
 
@@ -25202,7 +25202,7 @@ module.exports = ReactDOMNullInputValuePropHook;
 
 
 
-var DOMProperty = __webpack_require__(16);
+var DOMProperty = __webpack_require__(17);
 var ReactComponentTreeHook = __webpack_require__(9);
 
 var warning = __webpack_require__(2);
@@ -25429,7 +25429,7 @@ module.exports = function (css) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(247);
 
 
@@ -26677,7 +26677,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Destiny_DestinyContainer__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__BattleMode_BattleModeContainer__ = __webpack_require__(287);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CreateChallenge_CreateChallengeContainer__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__RandomBattle_RandomBattleContainer__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__RandomBattle_RandomBattleContainer__ = __webpack_require__(293);
 
 
 
@@ -28614,7 +28614,7 @@ NavLink.defaultProps = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SoloMode__ = __webpack_require__(273);
 
 
@@ -28868,7 +28868,7 @@ exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#l
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Home__ = __webpack_require__(276);
 
@@ -29175,7 +29175,7 @@ exports.push([module.i, ".home-container{\n  align-items: center;\n  background:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__WarRoom__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(41);
 
@@ -29488,7 +29488,7 @@ exports.push([module.i, ".war-room-container {\n  align-items: center;\n  backgr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Destiny__ = __webpack_require__(284);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(41);
 
@@ -29669,7 +29669,7 @@ exports.push([module.i, ".destiny {\n  align-items: center;\n  background: #423f
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__BattleMode__ = __webpack_require__(288);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(41);
 
@@ -30029,7 +30029,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CreateChallenge__ = __webpack_require__(290);
 
 
@@ -30049,6 +30049,8 @@ const mapStateToProps = state => {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css__ = __webpack_require__(291);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__NewTest__ = __webpack_require__(302);
+
 
 
 
@@ -30153,6 +30155,26 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     }
   }
 
+  createDescriptionState(e, descriptionNum) {
+    let test = 'description' + descriptionNum;
+    this.setState({ [test]: e.target.value });
+  }
+
+  displayTests() {
+    let descriptions = [this.state.description1, this.state.description2, this.state.description3, this.state.description4, this.state.description5];
+    let newTests = this.state.tests.map((test, i) => {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__NewTest__["a" /* default */], { key: i,
+        createTestState: this.createTestState.bind(this),
+        testNumber: i,
+        setState: this.setState.bind(this),
+        testValue: this.state.tests[i],
+        descriptionValue: descriptions[i],
+        createDescriptionState: this.createDescriptionState.bind(this)
+      });
+    });
+    return newTests;
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
@@ -30201,150 +30223,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'section',
         { className: 'create-test-container' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'code',
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h6',
-            null,
-            ' test 1 code'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-test',
-            type: 'text',
-            placeholder: 'type in your test 1',
-            value: this.state.tests[0],
-            onChange: e => this.createTestState(e, 0) }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h6',
-            null,
-            'write test 1 description here'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-description',
-            type: 'text',
-            placeholder: 'test description',
-            value: this.state.description1,
-            onChange: e => {
-              this.setState({ description1: e.target.value });
-            } })
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'code',
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h6',
-            null,
-            ' test 2 code'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-test',
-            type: 'text',
-            placeholder: 'type in your test 2',
-            value: this.state.tests[1],
-            onChange: e => this.createTestState(e, 1) }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h6',
-            null,
-            'write test 2 description here'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-description',
-            type: 'text',
-            placeholder: 'test description',
-            value: this.state.description2,
-            onChange: e => {
-              this.setState({ description2: e.target.value });
-            } })
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'code',
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h6',
-            null,
-            ' test 3 code'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-test',
-            type: 'text',
-            placeholder: 'type in your test 3',
-            value: this.state.tests[2],
-            onChange: e => this.createTestState(e, 2) }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h6',
-            null,
-            'write test 3 description here'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-description',
-            type: 'text',
-            placeholder: 'test description',
-            value: this.state.description3,
-            onChange: e => {
-              this.setState({ description3: e.target.value });
-            }
-          })
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'code',
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h6',
-            null,
-            ' test 4 code'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-test',
-            type: 'text',
-            placeholder: 'type in your test 4',
-            value: this.state.tests[3],
-            onChange: e => this.createTestState(e, 3)
-          }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h6',
-            null,
-            'write test 4 description here'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-description',
-            type: 'text',
-            placeholder: 'test description',
-            value: this.state.description4,
-            onChange: e => {
-              this.setState({ description4: e.target.value });
-            }
-          })
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'code',
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h6',
-            null,
-            ' test 5 code'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-test',
-            type: 'text',
-            placeholder: 'type in your test 5',
-            value: this.state.tests[4],
-            onChange: e => this.createTestState(e, 4)
-          }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h6',
-            null,
-            'write test 5 description here'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-description',
-            type: 'text',
-            placeholder: 'test description',
-            value: this.state.description5,
-            onChange: e => {
-              this.setState({ description5: e.target.value });
-            } })
-        )
+        this.displayTests()
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'section',
@@ -30429,219 +30308,19 @@ exports.push([module.i, ".create-challenge-container{\n  display: flex;\n  flex-
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = register;
-/* unused harmony export unregister */
-// In production, we register a service worker to serve assets from local cache.
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__RandomBattle__ = __webpack_require__(294);
 
-// This lets the app load faster on subsequent visits in production, and gives
-// it offline capabilities. However, it also means that developers (and users)
-// will only see deployed updates on the "N+1" visit to a page, since previously
-// cached resources are updated in the background.
 
-// To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
-// This link also includes instructions on opting out of this behavior.
 
-const isLocalhost = Boolean(window.location.hostname === 'localhost' ||
-// [::1] is the IPv6 localhost address.
-window.location.hostname === '[::1]' ||
-// 127.0.0.1/8 is considered localhost for IPv4.
-window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
+const mapStateToProps = state => {
+  return state;
+};
 
-function register() {
-  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
-    // The URL constructor is available in all browsers that support SW.
-    const publicUrl = new URL(process.env.PUBLIC_URL, window.location);
-    if (publicUrl.origin !== window.location.origin) {
-      // Our service worker won't work if PUBLIC_URL is on a different origin
-      // from what our page is served on. This might happen if a CDN is used to
-      // serve assets; see https://github.com/facebookincubator/create-react-app/issues/2374
-      return;
-    }
-
-    window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
-      if (!isLocalhost) {
-        // Is not local host. Just register service worker
-        registerValidSW(swUrl);
-      } else {
-        // This is running on localhost. Lets check if a service worker still exists or not.
-        checkValidServiceWorker(swUrl);
-      }
-    });
-  }
-}
-
-function registerValidSW(swUrl) {
-  navigator.serviceWorker.register(swUrl).then(registration => {
-    registration.onupdatefound = () => {
-      const installingWorker = registration.installing;
-      installingWorker.onstatechange = () => {
-        if (installingWorker.state === 'installed') {
-          if (navigator.serviceWorker.controller) {
-            // At this point, the old content will have been purged and
-            // the fresh content will have been added to the cache.
-            // It's the perfect time to display a "New content is
-            // available; please refresh." message in your web app.
-            console.log('New content is available; please refresh.');
-          } else {
-            // At this point, everything has been precached.
-            // It's the perfect time to display a
-            // "Content is cached for offline use." message.
-            console.log('Content is cached for offline use.');
-          }
-        }
-      };
-    };
-  }).catch(error => {
-    console.error('Error during service worker registration:', error);
-  });
-}
-
-function checkValidServiceWorker(swUrl) {
-  // Check if the service worker can be found. If it can't reload the page.
-  fetch(swUrl).then(response => {
-    // Ensure service worker exists, and that we really are getting a JS file.
-    if (response.status === 404 || response.headers.get('content-type').indexOf('javascript') === -1) {
-      // No service worker found. Probably a different app. Reload the page.
-      navigator.serviceWorker.ready.then(registration => {
-        registration.unregister().then(() => {
-          window.location.reload();
-        });
-      });
-    } else {
-      // Service worker found. Proceed as normal.
-      registerValidSW(swUrl);
-    }
-  }).catch(() => {
-    console.log('No internet connection found. App is running in offline mode.');
-  });
-}
-
-function unregister() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
-      registration.unregister();
-    });
-  }
-}
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, null)(__WEBPACK_IMPORTED_MODULE_1__RandomBattle__["a" /* default */]));
 
 /***/ }),
 /* 294 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_rootReducer__ = __webpack_require__(295);
-
-
-
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-
-const configureStore = () => {
-  return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["c" /* createStore */])(__WEBPACK_IMPORTED_MODULE_1__reducers_rootReducer__["a" /* default */], devTools);
-};
-/* harmony export (immutable) */ __webpack_exports__["a"] = configureStore;
-
-
-/***/ }),
-/* 295 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__battle__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__battleRequest__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__getChallenge__ = __webpack_require__(299);
-
-
-
-
-
-
-const rootReducer = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* combineReducers */])({
-  battle: __WEBPACK_IMPORTED_MODULE_2__battle__["a" /* default */],
-  user: __WEBPACK_IMPORTED_MODULE_1__user__["a" /* default */],
-  battleRequest: __WEBPACK_IMPORTED_MODULE_3__battleRequest__["a" /* default */],
-  getChallenge: __WEBPACK_IMPORTED_MODULE_4__getChallenge__["a" /* default */]
-});
-
-/* harmony default export */ __webpack_exports__["a"] = (rootReducer);
-
-/***/ }),
-/* 296 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-const user = (state = "", action) => {
-  switch (action.type) {
-    case "LOGIN":
-      return action.payload;
-    case "LOGOUT":
-      return "";
-    default:
-      return state;
-  }
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (user);
-
-/***/ }),
-/* 297 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-const battle = (state = '', action) => {
-  switch (action.type) {
-    case 'OPPONENT_NAME':
-      return action.payload;
-    case 'CLEAR_OPPONENT':
-      return "";
-    default:
-      return state;
-  }
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (battle);
-
-/***/ }),
-/* 298 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-const battleRequest = (state = false, action) => {
-  switch (action.type) {
-    case 'ACCEPT_REQUEST':
-      return true;
-    case 'CLEAR_OPPONENT':
-      return false;
-    default:
-      return state;
-  }
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (battleRequest);
-
-/***/ }),
-/* 299 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-const getChallenge = (state = [], action) => {
-  switch (action.type) {
-    case 'GET_CHALLENGE':
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (getChallenge);
-
-/***/ }),
-/* 300 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30975,20 +30654,266 @@ class RandomBattle extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony default export */ __webpack_exports__["a"] = (RandomBattle);
 
 /***/ }),
+/* 295 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = register;
+/* unused harmony export unregister */
+// In production, we register a service worker to serve assets from local cache.
+
+// This lets the app load faster on subsequent visits in production, and gives
+// it offline capabilities. However, it also means that developers (and users)
+// will only see deployed updates on the "N+1" visit to a page, since previously
+// cached resources are updated in the background.
+
+// To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
+// This link also includes instructions on opting out of this behavior.
+
+const isLocalhost = Boolean(window.location.hostname === 'localhost' ||
+// [::1] is the IPv6 localhost address.
+window.location.hostname === '[::1]' ||
+// 127.0.0.1/8 is considered localhost for IPv4.
+window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
+
+function register() {
+  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+    // The URL constructor is available in all browsers that support SW.
+    const publicUrl = new URL(process.env.PUBLIC_URL, window.location);
+    if (publicUrl.origin !== window.location.origin) {
+      // Our service worker won't work if PUBLIC_URL is on a different origin
+      // from what our page is served on. This might happen if a CDN is used to
+      // serve assets; see https://github.com/facebookincubator/create-react-app/issues/2374
+      return;
+    }
+
+    window.addEventListener('load', () => {
+      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+
+      if (!isLocalhost) {
+        // Is not local host. Just register service worker
+        registerValidSW(swUrl);
+      } else {
+        // This is running on localhost. Lets check if a service worker still exists or not.
+        checkValidServiceWorker(swUrl);
+      }
+    });
+  }
+}
+
+function registerValidSW(swUrl) {
+  navigator.serviceWorker.register(swUrl).then(registration => {
+    registration.onupdatefound = () => {
+      const installingWorker = registration.installing;
+      installingWorker.onstatechange = () => {
+        if (installingWorker.state === 'installed') {
+          if (navigator.serviceWorker.controller) {
+            // At this point, the old content will have been purged and
+            // the fresh content will have been added to the cache.
+            // It's the perfect time to display a "New content is
+            // available; please refresh." message in your web app.
+            console.log('New content is available; please refresh.');
+          } else {
+            // At this point, everything has been precached.
+            // It's the perfect time to display a
+            // "Content is cached for offline use." message.
+            console.log('Content is cached for offline use.');
+          }
+        }
+      };
+    };
+  }).catch(error => {
+    console.error('Error during service worker registration:', error);
+  });
+}
+
+function checkValidServiceWorker(swUrl) {
+  // Check if the service worker can be found. If it can't reload the page.
+  fetch(swUrl).then(response => {
+    // Ensure service worker exists, and that we really are getting a JS file.
+    if (response.status === 404 || response.headers.get('content-type').indexOf('javascript') === -1) {
+      // No service worker found. Probably a different app. Reload the page.
+      navigator.serviceWorker.ready.then(registration => {
+        registration.unregister().then(() => {
+          window.location.reload();
+        });
+      });
+    } else {
+      // Service worker found. Proceed as normal.
+      registerValidSW(swUrl);
+    }
+  }).catch(() => {
+    console.log('No internet connection found. App is running in offline mode.');
+  });
+}
+
+function unregister() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.unregister();
+    });
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 296 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_rootReducer__ = __webpack_require__(297);
+
+
+
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+const configureStore = () => {
+  return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["c" /* createStore */])(__WEBPACK_IMPORTED_MODULE_1__reducers_rootReducer__["a" /* default */], devTools);
+};
+/* harmony export (immutable) */ __webpack_exports__["a"] = configureStore;
+
+
+/***/ }),
+/* 297 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__battle__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__battleRequest__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__getChallenge__ = __webpack_require__(301);
+
+
+
+
+
+
+const rootReducer = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* combineReducers */])({
+  battle: __WEBPACK_IMPORTED_MODULE_2__battle__["a" /* default */],
+  user: __WEBPACK_IMPORTED_MODULE_1__user__["a" /* default */],
+  battleRequest: __WEBPACK_IMPORTED_MODULE_3__battleRequest__["a" /* default */],
+  getChallenge: __WEBPACK_IMPORTED_MODULE_4__getChallenge__["a" /* default */]
+});
+
+/* harmony default export */ __webpack_exports__["a"] = (rootReducer);
+
+/***/ }),
+/* 298 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const user = (state = "", action) => {
+  switch (action.type) {
+    case "LOGIN":
+      return action.payload;
+    case "LOGOUT":
+      return "";
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (user);
+
+/***/ }),
+/* 299 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const battle = (state = '', action) => {
+  switch (action.type) {
+    case 'OPPONENT_NAME':
+      return action.payload;
+    case 'CLEAR_OPPONENT':
+      return "";
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (battle);
+
+/***/ }),
+/* 300 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const battleRequest = (state = false, action) => {
+  switch (action.type) {
+    case 'ACCEPT_REQUEST':
+      return true;
+    case 'CLEAR_OPPONENT':
+      return false;
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (battleRequest);
+
+/***/ }),
 /* 301 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__RandomBattle__ = __webpack_require__(300);
-
-
-
-const mapStateToProps = state => {
-  return state;
+const getChallenge = (state = [], action) => {
+  switch (action.type) {
+    case 'GET_CHALLENGE':
+      return action.payload;
+    default:
+      return state;
+  }
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, null)(__WEBPACK_IMPORTED_MODULE_1__RandomBattle__["a" /* default */]));
+/* harmony default export */ __webpack_exports__["a"] = (getChallenge);
+
+/***/ }),
+/* 302 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+const NewTest = props => {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    "code",
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "h6",
+      null,
+      " test ",
+      props.testNumber + 1,
+      " code"
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
+      className: "code-test",
+      type: "text",
+      value: props.testValue,
+      placeholder: `type in your test ${props.testNumber + 1}`,
+      onChange: e => props.createTestState(e, props.testNumber)
+    }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "h6",
+      null,
+      "write test ",
+      props.testNumber + 1,
+      " description here"
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
+      className: "code-description",
+      type: "text",
+      placeholder: "test description",
+      value: props.descriptionValue,
+      onChange: e => props.createDescriptionState(e, props.testNumber + 1)
+    })
+  );
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (NewTest);
 
 /***/ })
 /******/ ]);
