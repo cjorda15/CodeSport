@@ -17,7 +17,8 @@ class CreateChallenge extends Component{
       failedTests: [],
       testFail:false,
       runButtonClicked: false,
-      value: 'beginner'
+      value: 'beginner',
+      done: false
     }
   }
 
@@ -52,6 +53,7 @@ class CreateChallenge extends Component{
     e.preventDefault()
     this.props.history.history.replace('/destiny')
   }
+
   createChallenge() {
     if (!this.state.challengeName) return
     if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return // SHOW ERROR MESSAGE
@@ -69,9 +71,20 @@ class CreateChallenge extends Component{
       })
     })
     .then(res => res.json())
-    .then(data => {
-      // NOTE should we have this redirect automatically or should we give them an option to play their challenge?
-      // this.props.history.replace('/')
+    .then(() => {
+      this.setState({tests: ['','','','',''], 
+                    description1: '',
+                    description2: '', 
+                    description3: '', 
+                    description4: '', 
+                    description5: '',
+                    runButtonClicked: false,
+                    failedTests: [],
+                    code: '',
+                    challengeName: '',
+                    done: true
+                  })
+      
     })
     .catch(err => {
       console.log(err)
@@ -91,8 +104,8 @@ class CreateChallenge extends Component{
     this.setState({value: event.target.value})
   }
 
-  showError(){
-    if(this.state.testFail){
+  showError() {
+    if(this.state.testFail) {
       setTimeout(() =>this.setState({testFail:false}) ,4000)
       return (
         <div className="error-msg-container">
@@ -106,7 +119,21 @@ class CreateChallenge extends Component{
         }
         </div>
       )
-    }else{
+    } else {
+      return null
+    }
+  }
+
+  onPost() {
+    if (this.state.done) {
+      return (
+        <div className="complete">
+          <button className="complete-button" onClick={() => this.props.history.history.replace('/destiny')}>Return to Destiny</button>  
+          {/* <button>Play Your Challenge</button>   */}
+          <button className="complete-button" onClick={() => this.setState({done: false})}>Make Another Challenge</button>  
+        </div>
+      )
+    } else {
       return null
     }
   }
@@ -131,9 +158,10 @@ class CreateChallenge extends Component{
     return newTests
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className="create-challenge-container">
+        {this.onPost()}
        <h6 id="title-page">
           create test zone
          <button onClick={(e)=>{this.handleReroute(e)}}>back to destiny room</button>
@@ -157,7 +185,7 @@ class CreateChallenge extends Component{
             type="text"
             placeholder="type in your example solutions for all your test here"
             value={this.state.code}
-            onChange={(e)=>{this.setState({code:e.target.value})}}>
+            onChange={(e) => {this.setState({ code: e.target.value })}}>
             </textarea>
         </code>
         <button onClick={() => this.runTests()}>Run Tests</button>

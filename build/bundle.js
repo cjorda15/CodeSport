@@ -13114,8 +13114,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -25305,8 +25305,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29146,8 +29146,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./home.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./home.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./home.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./home.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29459,8 +29459,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./warroom.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./warroom.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./warroom.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./warroom.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29640,8 +29640,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./destiny.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./destiny.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./destiny.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./destiny.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -30069,7 +30069,8 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       failedTests: [],
       testFail: false,
       runButtonClicked: false,
-      value: 'beginner'
+      value: 'beginner',
+      done: false
     };
   }
 
@@ -30104,6 +30105,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     e.preventDefault();
     this.props.history.history.replace('/destiny');
   }
+
   createChallenge() {
     if (!this.state.challengeName) return;
     if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return; // SHOW ERROR MESSAGE
@@ -30119,9 +30121,19 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         "language": "Javascript",
         "username": this.props.user.username
       })
-    }).then(res => res.json()).then(data => {
-      // NOTE should we have this redirect automatically or should we give them an option to play their challenge?
-      // this.props.history.replace('/')
+    }).then(res => res.json()).then(() => {
+      this.setState({ tests: ['', '', '', '', ''],
+        description1: '',
+        description2: '',
+        description3: '',
+        description4: '',
+        description5: '',
+        runButtonClicked: false,
+        failedTests: [],
+        code: '',
+        challengeName: '',
+        done: true
+      });
     }).catch(err => {
       console.log(err);
     });
@@ -30155,6 +30167,27 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     }
   }
 
+  onPost() {
+    if (this.state.done) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'complete' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { className: 'complete-button', onClick: () => this.props.history.history.replace('/destiny') },
+          'Return to Destiny'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { className: 'complete-button', onClick: () => this.setState({ done: false }) },
+          'Make Another Challenge'
+        )
+      );
+    } else {
+      return null;
+    }
+  }
+
   createDescriptionState(e, descriptionNum) {
     let test = 'description' + descriptionNum;
     this.setState({ [test]: e.target.value });
@@ -30179,6 +30212,7 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'create-challenge-container' },
+      this.onPost(),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h6',
         { id: 'title-page' },
@@ -30279,8 +30313,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./create_challenge.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./create_challenge.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./create_challenge.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./create_challenge.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -30298,7 +30332,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".create-challenge-container{\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  max-width: 1400px;\n  margin: 260px auto 40px;\n}\n\n#title-page{\n  align-items: center;\n  background: #e8cc2e;\n  border: #000 9px solid;\n  border-radius: 16px;\n  display: flex;\n  flex-direction: column;\n  font-size: 26px;\n  justify-content: space-between;\n  margin: 0px;\n  padding: 18px;\n  position: absolute;\n  top: 10px;\n}\n\n#title-page button{\n  background: #000;\n  border: 2p;\n  border: #423f3f 3px solid;\n  border-radius: 6px;\n  color: #e8cc2e;\n  font-size: 17px;\n  margin-top: 15px;\n  padding: 7px;\n  width: 71%;\n}\n\n#title-page button:hover{\n  background: #e8cc2e;\n  border: #000 3px solid;\n  color: #000;\n  transition: all 2s;\n\n}\n\n.title-page, .create-challenge-container h6,\n.example-code-container button, #title-page button{\n font-family: 'Press Start 2P', cursive;\n}\n\n.create-challenge-container h6{\n  font-size: 16px;\n}\n\n.code-description, .code-test, .code-example{\n  border-radius: 3px;\n  font-family: monospace;\n  font-size: 21px;\n  resize:vertical;\n  padding: 10px;\n}\n\n.create-test-container, .example-code-container{\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  width: 50%;\n}\n\n.create-challenge-container code{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  margin: 10px;\n  padding: 10px;\n  width: 85%;\n}\n\n.create-test-container{\n\n}\n\n.example-code-container{\n\n}\n\n.example-code-container code{\n  /*max-height: 465px;\n  height: 65%;*/\n}\n\n\n.create-challenge-container code{\n  border-radius: 10px;\n  width: 85%;\n}\n\n.code-test, .code-example, .code-description{\n  width: 100%;\n  max-width: 500px;\n}\n\n.code-example{\n  height: 400px;\n  max-height: 100%;\n  padding: 10px;\n}\n\n.example-code-container button{\n  background: #000;\n  border: #e8cc2e 3px solid;\n  border-radius: 4px;\n  color: #e8cc2e;\n  height: 45px;\n  font-size: 16px;\n  margin: 10px;\n  width: 80%;\n}\n\n.example-code-container button:hover{\n  background: #e8cc2e;\n  border: #000 7px solid;\n  color: #000;\n  transition: all 2s;\n}\n\n.create-challenge-info{\n  height: 60px;\n  display: flex;\n  font-size: 18px;\n  position: absolute;\n  top: 180px;\n}\n.create-challenge-info input{\n  width: 210px;\n  padding: 10px;\n}\n.create-challenge-info input, .create-challenge-info select{\n  font-size: 18px;\n}\n\n.create-challenge-info select{\n  width: 105px;\n}\n\n.error-msg-challenge{\n  border: #000 3px solid;\n  border-radius: 10px;\n  background:#aaa;\n  color:#e8cc2e;\n  font-size: 18px;\n  margin: 5px;\n  padding: 10px;\n}\n\n.error-msg-container{\n  background: #000;\n  border: #423f3f 3px solid;\n  border-radius: 10px;\n  padding: 20px;\n\n}\n\n@media (max-width:720px){\n  .create-challenge-container{\n    align-items: center;\n    flex-direction: column;\n    /*margin-top: 120px;*/\n  }\n  .create-test-container, .example-code-container {\n    width: 99%\n  }\n}\n", ""]);
+exports.push([module.i, ".create-challenge-container{\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  max-width: 1400px;\n  margin: 260px auto 40px;\n}\n\n#title-page{\n  align-items: center;\n  background: #e8cc2e;\n  border: #000 9px solid;\n  border-radius: 16px;\n  display: flex;\n  flex-direction: column;\n  font-size: 26px;\n  justify-content: space-between;\n  margin: 0px;\n  padding: 18px;\n  position: absolute;\n  top: 10px;\n}\n\n#title-page button{\n  background: #000;\n  border: 2p;\n  border: #423f3f 3px solid;\n  border-radius: 6px;\n  color: #e8cc2e;\n  font-size: 17px;\n  margin-top: 15px;\n  padding: 7px;\n  width: 71%;\n}\n\n#title-page button:hover{\n  background: #e8cc2e;\n  border: #000 3px solid;\n  color: #000;\n  transition: all 2s;\n\n}\n\n.title-page, .create-challenge-container h6,\n.example-code-container button, #title-page button{\n font-family: 'Press Start 2P', cursive;\n}\n\n.create-challenge-container h6{\n  font-size: 16px;\n}\n\n.code-description, .code-test, .code-example{\n  border-radius: 3px;\n  font-family: monospace;\n  font-size: 21px;\n  resize:vertical;\n  padding: 10px;\n}\n\n.create-test-container, .example-code-container{\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  width: 50%;\n}\n\n.create-challenge-container code{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  margin: 10px;\n  padding: 10px;\n  width: 85%;\n}\n\n.create-test-container{\n\n}\n\n.example-code-container{\n\n}\n\n.example-code-container code{\n  /*max-height: 465px;\n  height: 65%;*/\n}\n\n\n.create-challenge-container code{\n  border-radius: 10px;\n  width: 85%;\n}\n\n.code-test, .code-example, .code-description{\n  width: 100%;\n  max-width: 500px;\n}\n\n.code-example{\n  height: 400px;\n  max-height: 100%;\n  padding: 10px;\n}\n\n.example-code-container button{\n  background: #000;\n  border: #e8cc2e 3px solid;\n  border-radius: 4px;\n  color: #e8cc2e;\n  height: 45px;\n  font-size: 16px;\n  margin: 10px;\n  width: 80%;\n}\n\n.example-code-container button:hover{\n  background: #e8cc2e;\n  border: #000 7px solid;\n  color: #000;\n  transition: all 2s;\n}\n\n.create-challenge-info{\n  height: 60px;\n  display: flex;\n  font-size: 18px;\n  position: absolute;\n  top: 180px;\n}\n.create-challenge-info input{\n  width: 210px;\n  padding: 10px;\n}\n.create-challenge-info input, .create-challenge-info select{\n  font-size: 18px;\n}\n\n.create-challenge-info select{\n  width: 105px;\n}\n\n.error-msg-challenge{\n  border: #000 3px solid;\n  border-radius: 10px;\n  background:#aaa;\n  color:#e8cc2e;\n  font-size: 18px;\n  margin: 5px;\n  padding: 10px;\n}\n\n.error-msg-container{\n  background: #000;\n  border: #423f3f 3px solid;\n  border-radius: 10px;\n  padding: 20px;\n\n}\n\n.complete {\n  background: #F44336;\n  border: #000 5px solid;\n  border-radius: 16px;\n  display: flex;\n  margin: 0px;\n  padding: 18px;\n  position: fixed;\n  top: 45%;\n}\n\n.complete-button {\n  height: 30px;\n  font-size: 20px;\n  border: 1px solid #000;\n  margin: 5px;\n}\n\n@media (max-width:720px){\n  .create-challenge-container{\n    align-items: center;\n    flex-direction: column;\n    /*margin-top: 120px;*/\n  }\n  .create-test-container, .example-code-container {\n    width: 99%\n  }\n}\n", ""]);
 
 // exports
 
