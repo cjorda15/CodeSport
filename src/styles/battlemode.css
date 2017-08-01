@@ -79,6 +79,8 @@
 
 .current-question{
   text-align: center;
+  font-family: Helvetica Neue;
+  font-size: 24px;
 }
 
 .scoreboard-title{
@@ -134,10 +136,12 @@
 .line-wrapper {
   display: flex;
   height: 100%;
+  padding-top: 10px;
 }
 
 .line-num {
   margin: 0;
+  padding-left: 15px;
 }
 
 .line-num p{
@@ -167,7 +171,7 @@
 
 .green {
   color: #00ff00;
-  font-size: 37px;
+  font-size: 25px;
   margin-top: 0px;
   text-align: center;
   padding-top: 19px;
@@ -175,7 +179,7 @@
 
 .red {
   color: red;
-  font-size: 37px;
+  font-size: 25px;
   margin-top: 0px;
   text-align: center;
   padding-top: 19px;

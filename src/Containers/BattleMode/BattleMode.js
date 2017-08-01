@@ -188,14 +188,6 @@ class BattleMode extends Component {
          </div>
          {this.state.startGame?null:<div className="waiting-msg">waiting on challenger</div>}
          <div id="right-side">
-            <div id="repl">
-             <button onClick={(e)=>{this.handleRoute(e)}}>Exit to War Room</button>
-             <p className={this.state.currentQuestion > 0 ? 'green': 'red'}>Test 1</p>
-             <p className={this.state.currentQuestion > 1 ? 'green' : 'red'}>Test 2</p>
-             <p className={this.state.currentQuestion > 2 ? 'green' : 'red'}>Test 3</p>
-             <p className={this.state.currentQuestion > 3 ? 'green' : 'red'}>Test 4</p>
-             <p className={this.state.gameover > 0 ? 'green' : 'red'}>Test 5</p>
-            </div>
             <div id="scoreboard">
               <h4 className="scoreboard-title">Scoreboard</h4>
               <div className="scores">
@@ -204,6 +196,14 @@ class BattleMode extends Component {
               </div>
               {!this.state.startGame?null:
               <p className="current-question">{this.state.description[this.state.currentQuestion]}</p>}
+            </div>
+            <div id="repl">
+             <button onClick={(e)=>{this.handleRoute(e)}}>Exit to War Room</button>
+             <p className={this.state.currentQuestion > 0 ? 'green': 'red'}>Test 1</p>
+             <p className={this.state.currentQuestion > 1 ? 'green' : 'red'}>Test 2</p>
+             <p className={this.state.currentQuestion > 2 ? 'green' : 'red'}>Test 3</p>
+             <p className={this.state.currentQuestion > 3 ? 'green' : 'red'}>Test 4</p>
+             <p className={this.state.challengerLeft !== true && this.state.gameover ? 'green' : 'red'}>Test 5</p>
             </div>
          </div>
          {this.gameover()}
