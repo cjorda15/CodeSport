@@ -6,6 +6,7 @@ import WarRoom from '../WarRoom/WarRoomContainer'
 import Destiny from '../Destiny/DestinyContainer'
 import BattleMode from '../BattleMode/BattleModeContainer'
 import CreateChallenge from '../CreateChallenge/CreateChallengeContainer'
+import RandomBattle from '../RandomBattle/RandomBattleContainer'
 
 class App extends Component {
   render() {
@@ -35,6 +36,12 @@ class App extends Component {
               <Redirect to="/"/>
               :
              <BattleMode history={history}/>
+          }}/>
+          <Route exact path='/random_battle' render={(history) => {
+            return !this.props.user.username?
+              <Redirect to="/"/>
+              :
+             <RandomBattle history={history}/>
           }}/>
           <Route exact path='/create_challenge' render={(history) => {
             return !this.props.user.username?

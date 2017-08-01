@@ -26677,6 +26677,8 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Destiny_DestinyContainer__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__BattleMode_BattleModeContainer__ = __webpack_require__(287);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CreateChallenge_CreateChallengeContainer__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__RandomBattle_RandomBattleContainer__ = __webpack_require__(301);
+
 
 
 
@@ -26705,6 +26707,9 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/battle', render: history => {
             return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__BattleMode_BattleModeContainer__["a" /* default */], { history: history });
+          } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/random_battle', render: history => {
+            return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__RandomBattle_RandomBattleContainer__["a" /* default */], { history: history });
           } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/create_challenge', render: history => {
             return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__CreateChallenge_CreateChallengeContainer__["a" /* default */], { history: history });
@@ -29267,10 +29272,11 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('user left warroom', this.props.user.username);
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('random match request', this.props.user.username);
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('connected random 1v1', msg => {
+      this.props.handleAcceptRequest();
       this.props.handleOpponentName(msg);
+      // this.props.history.history.replace('/random_battle')
+      this.props.history.history.replace('/battle');
     });
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('awaiting random 1v1', msg => {});
-    this.props.history.history.replace('/battle');
   }
 
   handleSetMatch(opponentUsername) {
@@ -29410,7 +29416,7 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       this.state.requestError ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'request-error' },
-        'You can not request yourself to be challenged silly bear, try solo mode in the destiny room if you want to play with yourself'
+        'You can not request yourself to be challenged, try solo mode in the destiny room if you want to play with yourself'
       ) : null,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
@@ -29702,7 +29708,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   constructor(props) {
     super(props);
     this.state = {
-      startGame: this.props.battleRequest || false,
+      startGame: true,
       lineNumber: 1,
       opponentsPoints: 0,
       text: "",
@@ -29715,10 +29721,6 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       description: [],
       questions: []
     };
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('connected random 1v1', msg => {
-      const message = msg[0];
-      this.setState({ startGame: true, description: message.descriptions, questions: message.tests });
-    });
 
     __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('challenger left', () => {
       this.setState({ gameover: true, challengerLeft: true });
@@ -29753,7 +29755,6 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
   getCode(e) {
     console.log(e.target.innerText);
-    // if (e.keyCode === 9) e.preventDefault()
     if (e.key === 'Enter') {
       if (this.state.lineNumber == 27) return; //NOTE WHY DO WE NEED THIS? COULDNT WE OVERFLOW SCROLL ANY EXTRA LENGTH?
       let addLine = this.state.lineNumber + 1;
@@ -29793,10 +29794,7 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       if (updateQuestion == this.state.questions.length) {
         this.setState({ gameover: true });
         this.handleApiCall("+ 1");
-        __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('send code', {
-          code: this.state.text,
-          challenger: this.props.battle
-        });
+        __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('send code', { code: this.state.text, challenger: this.props.battle });
       }
     }
   }
@@ -29920,32 +29918,6 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
                 if (e.keyCode === 9) {
                   e.preventDefault();
                   document.execCommand('indent', true, null);
-                  // NOTE KEEP THIS UNTIL WE DISCUSS WHAT IS HAPPENING
-                  {/* let test = document.getElementById('test').innerHTML;
-                    console.log('test before', test); 
-                    let test2 = position + '&nbsp&nbsp'; 
-                    test = test2;
-                    console.log(test); 
-                    document.getElementById('test').innerHTML = test  */}
-
-                  {/* function placeCaretAtEnd(el) {
-                     el.focus();
-                     if (typeof window.getSelection != "undefined"
-                     && typeof document.createRange != "undefined") {
-                       var range = document.createRange();
-                       range.selectNodeContents(el);
-                       range.collapse(false);
-                       var sel = window.getSelection();
-                       sel.removeAllRanges();
-                       sel.addRange(range);
-                     } else if (typeof document.body.createTextRange != "undefined") {
-                       var textRange = document.body.createTextRange();
-                       textRange.moveToElementText(el);
-                       textRange.collapse(false);
-                       textRange.select();
-                     }                     
-                    }
-                    placeCaretAtEnd( document.getElementById('test') ) */}
                 }
               },
               onKeyUp: e => {
@@ -30667,6 +30639,356 @@ const getChallenge = (state = [], action) => {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (getChallenge);
+
+/***/ }),
+/* 300 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+class RandomBattle extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      startGame: this.props.battleRequest || false,
+      lineNumber: 1,
+      opponentsPoints: 0,
+      text: "",
+      challengerLeft: false,
+      testsStatus: [],
+      currentQuestion: 0,
+      gameover: false,
+      showCode: false,
+      challengerCode: "",
+      description: [],
+      questions: []
+    };
+    socket.on('connected random 1v1', msg => {
+      const message = msg[0];
+      this.setState({ startGame: true, description: message.descriptions, questions: message.tests });
+    });
+
+    socket.on('challenger left', () => {
+      this.setState({ gameover: true, challengerLeft: true });
+    });
+
+    socket.on('challenger question', msg => {
+      this.setState({ opponentsPoints: msg });
+      console.log(msg, "ppont");
+      console.log(this.state.questions.length, "leng");
+      if (msg == this.state.questions.length) {
+        this.setState({ gameover: true });
+        this.handleApiCall("+ 0");
+        socket.emit('send code', {
+          code: this.state.text,
+          challenger: this.props.battle
+        });
+      }
+    });
+
+    socket.on('challenger code', msg => {
+      this.setState({ challengerCode: msg });
+    });
+  }
+
+  componentWillMount() {
+    setTimeout(() => {
+      this.setState({
+        description: this.props.getChallenge[0].descriptions || [],
+        questions: this.props.getChallenge[0].tests || []
+      });
+    }, 5000);
+  }
+
+  getCode(e) {
+    console.log(e.target.innerText);
+    if (e.key === 'Enter') {
+      if (this.state.lineNumber == 27) return; //NOTE WHY DO WE NEED THIS? COULDNT WE OVERFLOW SCROLL ANY EXTRA LENGTH?
+      let addLine = this.state.lineNumber + 1;
+      this.setState({ lineNumber: addLine });
+    }
+    //
+    if (!e) return;
+    let text = e.target.innerText;
+    this.setState({ text: text });
+  }
+
+  make() {
+    if (this.state.gameover || !this.state.text) return;
+    if (!this.props.battle || !this.state.startGame) return;
+
+    let results = [];
+    let runTill = this.state.currentQuestion;
+    runTill += 1;
+    for (let i = 0; i < runTill; i++) {
+      let tester = new Function(`${this.state.text} ; ${this.state.questions[i]}`)();
+      results.push(tester);
+    }
+    let outcome = results.every(i => i);
+    if (!outcome) {
+      let failedTest = [];
+      for (let i = 0; i < results.length; i++) {
+        if (!results[i]) {
+          this.setState({ currentQuestion: i });
+          socket.emit("current question", { question: i, challenger: this.props.battle });
+          break;
+        }
+      }
+    } else {
+      let updateQuestion = this.state.currentQuestion + 1;
+      this.setState({ currentQuestion: updateQuestion });
+      socket.emit("current question", { question: updateQuestion, challenger: this.props.battle });
+      if (updateQuestion == this.state.questions.length) {
+        this.setState({ gameover: true });
+        this.handleApiCall("+ 1");
+        socket.emit('send code', { code: this.state.text, challenger: this.props.battle });
+      }
+    }
+  }
+
+  addLine() {
+    let test = [];
+    for (let i = 1; i <= this.state.lineNumber; i++) {
+      let newLine = document.createElement('p');
+      newLine.innerText += i;
+      test.push(newLine);
+    }
+    let test2 = test.map((line, id) => {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "p",
+        { key: id },
+        line.innerHTML
+      );
+    });
+    return test2;
+  }
+
+  handleRoute(e) {
+    this.props.handleClearOpponent();
+    e.preventDefault();
+    this.props.history.history.replace('/warroom');
+  }
+
+  handleApiCall(win) {
+    const d = new Date();
+    const month = d.getMonth() + 1;
+    const day = d.getDate();
+    const year = d.getFullYear();
+    const score = this.state.currentQuestion == 0 ? 0 : this.state.currentQuestion + 1;
+
+    fetch('/api/v1/score', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: `${this.props.user.username}`,
+        score: score,
+        win: win,
+        date: month + " " + day + " " + year
+      })
+    });
+  }
+
+  gameover() {
+    if (this.state.gameover) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        { className: "gameover-message" },
+        "GAMEOVER",
+        this.state.challengerLeft ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          null,
+          "challenger has fled the battle"
+        ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "button",
+          { onClick: () => {
+              this.handleCodeShow(true);
+            } },
+          "I want to see that other code!"
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "button",
+          { onClick: e => {
+              this.handleRoute(e);
+            } },
+          "back to war"
+        )
+      );
+    }
+  }
+
+  handleCodeShow(input) {
+    this.setState({ showCode: input });
+  }
+
+  showCode() {
+    return this.state.showCode ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      { className: "challenger-code" },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        null,
+        this.state.challengerCode
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "button",
+        { onClick: () => {
+            this.handleCodeShow(false);
+          } },
+        "close"
+      )
+    ) : null;
+  }
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      { className: "app" },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        { id: "left-side" },
+        !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { id: "terminal" },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "div",
+            { className: "line-wrapper" },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "div",
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "line-num" },
+                this.addLine()
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", { id: "test", className: "line", onKeyDown: e => {
+                if (e.keyCode === 9) {
+                  e.preventDefault();
+                  document.execCommand('indent', true, null);
+                }
+              },
+              onKeyUp: e => {
+                this.getCode(e);
+              }, contentEditable: true })
+          )
+        ),
+        !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { id: "run-button-div" },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "button",
+            { id: "run-button", onClick: () => this.make() },
+            "Run"
+          )
+        )
+      ),
+      this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        { className: "waiting-msg" },
+        "waiting on challenger"
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        { id: "right-side" },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { id: "scoreboard" },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "h4",
+            { className: "scoreboard-title" },
+            "Scoreboard"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "div",
+            { className: "scores" },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "p",
+              null,
+              "Your Score: ",
+              this.state.currentQuestion
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "p",
+              null,
+              "Opponents Score: ",
+              this.state.opponentsPoints
+            )
+          ),
+          !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "p",
+            { className: "test-number" },
+            "Test ",
+            this.state.currentQuestion + 1
+          ),
+          !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "p",
+            { className: "current-question" },
+            this.state.description[this.state.currentQuestion]
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { id: "repl" },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "button",
+            { onClick: e => {
+                this.handleRoute(e);
+              } },
+            "Exit to War Room"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "p",
+            { className: this.state.currentQuestion > 0 ? 'green' : 'red' },
+            "Test 1"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "p",
+            { className: this.state.currentQuestion > 1 ? 'green' : 'red' },
+            "Test 2"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "p",
+            { className: this.state.currentQuestion > 2 ? 'green' : 'red' },
+            "Test 3"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "p",
+            { className: this.state.currentQuestion > 3 ? 'green' : 'red' },
+            "Test 4"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "p",
+            { className: this.state.challengerLeft !== true && this.state.gameover ? 'green' : 'red' },
+            "Test 5"
+          )
+        )
+      ),
+      this.gameover(),
+      this.showCode()
+    );
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (RandomBattle);
+
+/***/ }),
+/* 301 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__RandomBattle__ = __webpack_require__(300);
+
+
+
+const mapStateToProps = state => {
+  return state;
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, null)(__WEBPACK_IMPORTED_MODULE_1__RandomBattle__["a" /* default */]));
 
 /***/ })
 /******/ ]);

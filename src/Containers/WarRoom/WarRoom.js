@@ -51,11 +51,11 @@ class WarRoom extends Component{
     socket.emit('user left warroom', this.props.user.username)
     socket.emit('random match request',this.props.user.username)
     socket.on('connected random 1v1',(msg) => {
+      this.props.handleAcceptRequest()
       this.props.handleOpponentName(msg)
+      // this.props.history.history.replace('/random_battle')
+      this.props.history.history.replace('/battle')
     })
-    socket.on('awaiting random 1v1',(msg) => {
-    })
-    this.props.history.history.replace('/battle')
   }
 
   handleSetMatch(opponentUsername) {
@@ -88,7 +88,7 @@ class WarRoom extends Component{
       this.props.handleOpponentName(this.state.opponentRequestingBattle)
       this.props.history.history.replace('/battle')
       this.setState({opponentRequestingBattle:[]})
-     }else{
+     } else {
       socket.emit('declineBattleRequest',{ opponent: opponent, user: this.props.user.username })
       let updateOpponents = this.state.opponentRequestingBattle.slice(0,this.state.opponentRequestingBattle.length)
       updateOpponents.splice(updateOpponents.indexOf(opponent),1)
@@ -129,8 +129,8 @@ class WarRoom extends Component{
       <div className="war-room-container">
         <h3>Prepare yourself {this.props.user.username}!</h3>
         <div className="war-room-btn-container">
-          <button onClick={()=>{this.handleRandom()}}>random match</button>
-          <button onClick={(e)=>{this.handleRoute(e)}}>back to destiny room</button>
+          <button onClick={() => {this.handleRandom()}}>random match</button>
+          <button onClick={(e) => {this.handleRoute(e)}}>back to destiny room</button>
         </div>
         <div className="battle-request-container">
           {this.displayBattleRequest()}
@@ -141,7 +141,7 @@ class WarRoom extends Component{
          null
         }
         {this.state.requestError ?
-          <div className="request-error">You can not request yourself to be challenged silly bear, try solo mode in the destiny room if you want to play with yourself</div>
+          <div className="request-error">You can not request yourself to be challenged, try solo mode in the destiny room if you want to play with yourself</div>
            :
           null}
         <div className="select-user-message-container">
