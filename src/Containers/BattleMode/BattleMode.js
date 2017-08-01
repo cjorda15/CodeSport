@@ -54,11 +54,14 @@ class BattleMode extends Component {
   }
 
   getCode(e) {
+    console.log(e.target.innerText)
+    // if (e.keyCode === 9) e.preventDefault()
     if (e.key === 'Enter') {
-      if(this.state.lineNumber==27) return
+      if(this.state.lineNumber==27) return //NOTE WHY DO WE NEED THIS? COULDNT WE OVERFLOW SCROLL ANY EXTRA LENGTH?
       let addLine = this.state.lineNumber + 1
       this.setState({lineNumber: addLine})
     }
+      //
     if(!e) return
     let text = e.target.innerText
     this.setState({text: text})
@@ -168,17 +171,48 @@ class BattleMode extends Component {
       </div>
         :
        null
-    }
+  }
 
   render(){
     return (
       <div className="app">
         <div id="left-side">
          {!this.state.startGame?null:
-          <div id="terminal" >
+          <div id="terminal">
             <div className="line-wrapper">
-              <div><div className="line-num">{this.addLine()}</div></div>
-              <p className="line" onKeyUp={(e) => {this.getCode(e)}} contentEditable={true}></p>
+                <div><div className="line-num">{this.addLine()}</div></div>
+                <p id="test" className="line" onKeyDown={(e) => { if (e.keyCode === 9) {
+                  e.preventDefault(); 
+                  document.execCommand('indent', true, null);
+                  // NOTE KEEP THIS UNTIL WE DISCUSS WHAT IS HAPPENING
+                   {/* let test = document.getElementById('test').innerHTML;
+                   console.log('test before', test); 
+                  let test2 = position + '&nbsp&nbsp'; 
+                  test = test2;
+                  console.log(test); 
+                  document.getElementById('test').innerHTML = test  */}
+                   
+                  {/* function placeCaretAtEnd(el) {
+                    el.focus();
+                    if (typeof window.getSelection != "undefined"
+                    && typeof document.createRange != "undefined") {
+                      var range = document.createRange();
+                      range.selectNodeContents(el);
+                      range.collapse(false);
+                      var sel = window.getSelection();
+                      sel.removeAllRanges();
+                      sel.addRange(range);
+                    } else if (typeof document.body.createTextRange != "undefined") {
+                      var textRange = document.body.createTextRange();
+                      textRange.moveToElementText(el);
+                      textRange.collapse(false);
+                      textRange.select();
+                    }                     
+                  }
+
+                  placeCaretAtEnd( document.getElementById('test') ) */}
+                  }}} 
+                  onKeyUp={(e) => {this.getCode(e)}} contentEditable={true}></p>
             </div>
           </div>}
           {!this.state.startGame?null:
