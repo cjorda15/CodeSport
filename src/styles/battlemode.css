@@ -166,11 +166,19 @@
 }
 
 .green {
-  color: green;
+  color: #00ff00;
+  font-size: 37px;
+  margin-top: 0px;
+  text-align: center;
+  padding-top: 19px;
 }
 
 .red {
   color: red;
+  font-size: 37px;
+  margin-top: 0px;
+  text-align: center;
+  padding-top: 19px;
 }
 
 
