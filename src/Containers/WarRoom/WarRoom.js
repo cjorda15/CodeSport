@@ -130,7 +130,6 @@ class WarRoom extends Component{
         <h3>Prepare yourself {this.props.user.username}!</h3>
         <div className="war-room-btn-container">
           <button onClick={()=>{this.handleRandom()}}>random match</button>
-          <button  onClick={()=>{this.handleSetMatch()}}>setup match</button>
           <button onClick={(e)=>{this.handleRoute(e)}}>back to destiny room</button>
         </div>
         <div className="battle-request-container">

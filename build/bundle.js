@@ -13114,8 +13114,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -25305,8 +25305,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28853,7 +28853,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  background-color: #444;\n  color: #FFF;\n  font-size: 20px;\n  font-family: monospace;\n  height: 90%;\n  text-align: left;\n  width: 60vw;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#repl button{\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  position: absolute;\n  top: 0px;\n  right: 0px;\n}\n\n#repl button:hover{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  color: #000;\n  transition: all 2s;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  padding: 10px;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n}\n\n.scoreboard-title{\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #e8cc2e;\n}\n\n.gameover-message, .waiting-msg{\n  align-items: center;\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  text-align: center;\n  top: 10%;\n}\n\n.gameover-message button, .challenger-code button{\n  background: #e8cc2e;\n  border: #000 5px solid;\n  border-radius: 5px;\n  color: #000;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 16px;\n  margin: 25px auto;\n  padding: 34px;\n}\n\n\n\n.gameover-message button:hover, .challenger-code button:hover{\n  background: #000;\n  border: 5px solid #e8cc2e;\n  color:#e8cc2e;\n  transition: all 2s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n  height: 100%;\n}\n\n.line-num {\n  margin: 0;\n}\n\n.line-num p{\n  margin: 0px;\n}\n\n.line{\n  height: 100%;\n  margin: 0 0 0 30px;\n  outline: none;\n  width: 100%;\n}\n\n.challenger-code{\n  background: #000;\n  color: #fff;\n  display: flex;\n  height: 90%;\n  flex-direction: column;\n  font-size: 25px;\n  font-family: monospace;\n  padding: 10%;\n  position: absolute;\n  width: 100%;\n  z-index: 5;\n}\n\n\n@media (max-width:620px){\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
+exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  background-color: #444;\n  color: #FFF;\n  font-size: 20px;\n  font-family: monospace;\n  height: 90%;\n  text-align: left;\n  width: 60vw;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#repl button{\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  position: absolute;\n  top: 0px;\n  right: 0px;\n}\n\n#repl button:hover{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  color: #000;\n  transition: all 2s;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  padding: 10px;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n  font-family: Helvetica Neue;\n  font-size: 24px;\n}\n\n.scoreboard-title{\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #e8cc2e;\n}\n\n.gameover-message, .waiting-msg{\n  align-items: center;\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  text-align: center;\n  top: 10%;\n}\n\n.gameover-message button, .challenger-code button{\n  background: #e8cc2e;\n  border: #000 5px solid;\n  border-radius: 5px;\n  color: #000;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 16px;\n  margin: 25px auto;\n  padding: 34px;\n}\n\n\n\n.gameover-message button:hover, .challenger-code button:hover{\n  background: #000;\n  border: 5px solid #e8cc2e;\n  color:#e8cc2e;\n  transition: all 2s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n  height: 100%;\n  padding-top: 10px;\n}\n\n.line-num {\n  margin: 0;\n  padding-left: 15px;\n}\n\n.line-num p{\n  margin: 0px;\n}\n\n.line{\n  height: 100%;\n  margin: 0 0 0 30px;\n  outline: none;\n  width: 100%;\n}\n\n.challenger-code{\n  background: #000;\n  color: #fff;\n  display: flex;\n  height: 90%;\n  flex-direction: column;\n  font-size: 25px;\n  font-family: monospace;\n  padding: 10%;\n  position: absolute;\n  width: 100%;\n  z-index: 5;\n}\n\n.green {\n  color: #00ff00;\n  font-size: 25px;\n  margin-top: 0px;\n  text-align: center;\n  padding-top: 19px;\n}\n\n.red {\n  color: red;\n  font-size: 25px;\n  margin-top: 0px;\n  text-align: center;\n  padding-top: 19px;\n}\n\n\n@media (max-width:620px){\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -29141,8 +29141,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./home.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./home.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./home.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./home.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29389,13 +29389,6 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
-          { onClick: () => {
-              this.handleSetMatch();
-            } },
-          'setup match'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
           { onClick: e => {
               this.handleRoute(e);
             } },
@@ -29460,8 +29453,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./warroom.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./warroom.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./warroom.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./warroom.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29479,7 +29472,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 12px;\n  justify-content: center;\n  margin: 10px 5px;\n  padding: 15px;\n  position: relative;\n  text-align: center;\n}\n\n.user:hover{\n  background: #423f3f;\n  border:5px solid #afada3;\n  text-decoration: underline;\n  transition: all 2s;\n}\n.select-user-message{\n  background: #423f3f;\n  border: 3px solid #000;\n  border-radius: 4px;\n  font-size: 20px;\n  font-family: 'Press Start 2P', cursive;\n  padding: 10px;\n  color: #e8cc2e;\n}\n\n\n.war-room-container button:hover, .battle-request button:hover{\n  border: 5px solid #e8cc2e;\n  background: #000;\n  transition: all 2s;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  margin: 80px 0px 20px 0px;\n  min-height: 250px;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 90%;\n}\n\n.war-room-container h3{\n  position: absolute;\n  top: 20px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n\n.battle-request-container{\n  display: flex;\n  flex-direction: column;\n  left: 25%;\n  position: absolute;\n  top: 25%;\n  z-index: 10;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  margin: 10px;\n  padding: 40px;\n}\n\n.decline-battle-request, .request-error{\n  background: #afada3;\n  border: 5px solid #000;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n  padding: 30px;\n  position: absolute;\n  top:200px;\n  left:20px;\n}\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 14px;\n  text-align: center;\n}\n\n.select-user-message-container{\n  background: #afada3;\n  border-radius: 10px;\n  padding: 10px;\n}\n", ""]);
+exports.push([module.i, ".war-room-container {\n  align-items: center;\n  background: #423f3f;\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100vh;\n}\n\n.users {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin: 0px auto;\n  width: 95%;\n}\n\n.user {\n  align-items: center;\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 12px;\n  justify-content: center;\n  margin: 10px 5px;\n  padding: 15px;\n  position: relative;\n  text-align: center;\n}\n\n.user:hover{\n  background: #423f3f;\n  border:5px solid #afada3;\n  text-decoration: underline;\n  transition: all 2s;\n}\n.select-user-message{\n  background: #423f3f;\n  border: 3px solid #000;\n  border-radius: 4px;\n  font-size: 20px;\n  font-family: 'Press Start 2P', cursive;\n  padding: 10px;\n  color: #e8cc2e;\n}\n\n\n.war-room-container button:hover, .battle-request button:hover{\n  border: 5px solid #e8cc2e;\n  background: #000;\n  transition: all 2s;\n}\n\n.war-room-btn-container{\n  background: #afada3;\n  border-radius: 5px;\n  border: 5px solid #000;\n  display: flex;\n  margin: 80px 0px 20px 0px;\n  min-height: 170px;\n  text-align: center;\n  flex-direction: column;\n}\n\n.war-room-container button, .battle-request button{\n  background: #423f3f;\n  border: 5px solid #000;\n  border-radius: 5px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 17px;\n  font-weight: 100;\n  height: 60px;\n  max-width: 275px;\n  outline: none;\n  margin: 10px;\n  width: 100%;\n}\n\n.war-room-container h3{\n  position: absolute;\n  top: 20px;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n}\n\n.battle-request-container{\n  display: flex;\n  flex-direction: column;\n  left: 35%;\n  position: absolute;\n  top: 25%;\n  z-index: 10;\n}\n\n.battle-request{\n  background: #afada3;\n  border: 5px solid #000;\n  border-radius: 8px;\n  margin: 10px;\n  padding: 40px;\n}\n\n.decline-battle-request, .request-error{\n  background: #afada3;\n  border: 5px solid #000;\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  text-align: center;\n  padding: 30px;\n  position: absolute;\n  top:200px;\n  left:20px;\n}\n\n.battle-request h4{\n  color:#e8cc2e;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 14px;\n  text-align: center;\n}\n\n.select-user-message-container{\n  background: #afada3;\n  border-radius: 10px;\n  padding: 10px;\n}\n", ""]);
 
 // exports
 
@@ -29641,8 +29634,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./destiny.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./destiny.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./destiny.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./destiny.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29759,11 +29752,14 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
   }
 
   getCode(e) {
+    console.log(e.target.innerText);
+    // if (e.keyCode === 9) e.preventDefault()
     if (e.key === 'Enter') {
-      if (this.state.lineNumber == 27) return;
+      if (this.state.lineNumber == 27) return; //NOTE WHY DO WE NEED THIS? COULDNT WE OVERFLOW SCROLL ANY EXTRA LENGTH?
       let addLine = this.state.lineNumber + 1;
       this.setState({ lineNumber: addLine });
     }
+    //
     if (!e) return;
     let text = e.target.innerText;
     this.setState({ text: text });
@@ -29920,7 +29916,39 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
                 this.addLine()
               )
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', { className: 'line', onKeyUp: e => {
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', { id: 'test', className: 'line', onKeyDown: e => {
+                if (e.keyCode === 9) {
+                  e.preventDefault();
+                  document.execCommand('indent', true, null);
+                  // NOTE KEEP THIS UNTIL WE DISCUSS WHAT IS HAPPENING
+                  {/* let test = document.getElementById('test').innerHTML;
+                    console.log('test before', test); 
+                    let test2 = position + '&nbsp&nbsp'; 
+                    test = test2;
+                    console.log(test); 
+                    document.getElementById('test').innerHTML = test  */}
+
+                  {/* function placeCaretAtEnd(el) {
+                     el.focus();
+                     if (typeof window.getSelection != "undefined"
+                     && typeof document.createRange != "undefined") {
+                       var range = document.createRange();
+                       range.selectNodeContents(el);
+                       range.collapse(false);
+                       var sel = window.getSelection();
+                       sel.removeAllRanges();
+                       sel.addRange(range);
+                     } else if (typeof document.body.createTextRange != "undefined") {
+                       var textRange = document.body.createTextRange();
+                       textRange.moveToElementText(el);
+                       textRange.collapse(false);
+                       textRange.select();
+                     }                     
+                    }
+                    placeCaretAtEnd( document.getElementById('test') ) */}
+                }
+              },
+              onKeyUp: e => {
                 this.getCode(e);
               }, contentEditable: true })
           )
@@ -29943,18 +29971,6 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { id: 'right-side' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { id: 'repl' },
-          '>',
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            { onClick: e => {
-                this.handleRoute(e);
-              } },
-            'Exit to War Room'
-          )
-        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { id: 'scoreboard' },
@@ -29981,8 +29997,50 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           ),
           !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'p',
+            { className: 'test-number' },
+            'Test ',
+            this.state.currentQuestion + 1
+          ),
+          !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
             { className: 'current-question' },
             this.state.description[this.state.currentQuestion]
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { id: 'repl' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'button',
+            { onClick: e => {
+                this.handleRoute(e);
+              } },
+            'Exit to War Room'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: this.state.currentQuestion > 0 ? 'green' : 'red' },
+            'Test 1'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: this.state.currentQuestion > 1 ? 'green' : 'red' },
+            'Test 2'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: this.state.currentQuestion > 2 ? 'green' : 'red' },
+            'Test 3'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: this.state.currentQuestion > 3 ? 'green' : 'red' },
+            'Test 4'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: this.state.challengerLeft !== true && this.state.gameover ? 'green' : 'red' },
+            'Test 5'
           )
         )
       ),
@@ -30370,8 +30428,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./create_challenge.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./create_challenge.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./create_challenge.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./create_challenge.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

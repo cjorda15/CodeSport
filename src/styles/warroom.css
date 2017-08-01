@@ -62,7 +62,7 @@
   border: 5px solid #000;
   display: flex;
   margin: 80px 0px 20px 0px;
-  min-height: 250px;
+  min-height: 170px;
   text-align: center;
   flex-direction: column;
 }
@@ -79,7 +79,7 @@
   max-width: 275px;
   outline: none;
   margin: 10px;
-  width: 90%;
+  width: 100%;
 }
 
 .war-room-container h3{
@@ -93,7 +93,7 @@
 .battle-request-container{
   display: flex;
   flex-direction: column;
-  left: 25%;
+  left: 35%;
   position: absolute;
   top: 25%;
   z-index: 10;
