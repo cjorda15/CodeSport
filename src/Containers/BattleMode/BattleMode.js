@@ -6,7 +6,7 @@ class BattleMode extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      startGame: this.props.battleRequest ||false,
+      startGame:true,
       lineNumber: 1,
       opponentsPoints:0,
       text:"",
@@ -19,10 +19,6 @@ class BattleMode extends Component {
       description: [],
       questions : []
     }
-    socket.on('connected random 1v1',(msg)=>{
-      const message = msg[0]
-      this.setState({startGame:true,description:message.descriptions,questions:message.tests})
-    })
 
     socket.on('challenger left', () => {
       this.setState({gameover:true,challengerLeft:true})
@@ -55,7 +51,6 @@ class BattleMode extends Component {
 
   getCode(e) {
     console.log(e.target.innerText)
-    // if (e.keyCode === 9) e.preventDefault()
     if (e.key === 'Enter') {
       if(this.state.lineNumber==27) return //NOTE WHY DO WE NEED THIS? COULDNT WE OVERFLOW SCROLL ANY EXTRA LENGTH?
       let addLine = this.state.lineNumber + 1
@@ -88,20 +83,16 @@ class BattleMode extends Component {
             break;
           }
         }
-      }else{
-      let updateQuestion = this.state.currentQuestion+1
-      this.setState({currentQuestion:updateQuestion})
-      socket.emit("current question",{question:updateQuestion,challenger:this.props.battle})
-      if(updateQuestion==this.state.questions.length){
-        this.setState({gameover:true})
-        this.handleApiCall("+ 1")
-        socket.emit('send code',({
-          code:this.state.text,
-          challenger:this.props.battle
-        })
-       )
+      } else {
+        let updateQuestion = this.state.currentQuestion+1
+        this.setState({currentQuestion:updateQuestion})
+        socket.emit("current question",{question:updateQuestion,challenger:this.props.battle})
+        if(updateQuestion==this.state.questions.length){
+          this.setState({gameover:true})
+          this.handleApiCall("+ 1")
+          socket.emit('send code',({ code:this.state.text, challenger:this.props.battle}))
+        }
       }
-     }
    }
 
   addLine() {
@@ -184,33 +175,6 @@ class BattleMode extends Component {
                 <p id="test" className="line" onKeyDown={(e) => { if (e.keyCode === 9) {
                   e.preventDefault(); 
                   document.execCommand('indent', true, null);
-                  // NOTE KEEP THIS UNTIL WE DISCUSS WHAT IS HAPPENING
-                   {/* let test = document.getElementById('test').innerHTML;
-                   console.log('test before', test); 
-                  let test2 = position + '&nbsp&nbsp'; 
-                  test = test2;
-                  console.log(test); 
-                  document.getElementById('test').innerHTML = test  */}
-                   
-                  {/* function placeCaretAtEnd(el) {
-                    el.focus();
-                    if (typeof window.getSelection != "undefined"
-                    && typeof document.createRange != "undefined") {
-                      var range = document.createRange();
-                      range.selectNodeContents(el);
-                      range.collapse(false);
-                      var sel = window.getSelection();
-                      sel.removeAllRanges();
-                      sel.addRange(range);
-                    } else if (typeof document.body.createTextRange != "undefined") {
-                      var textRange = document.body.createTextRange();
-                      textRange.moveToElementText(el);
-                      textRange.collapse(false);
-                      textRange.select();
-                    }                     
-                  }
-
-                  placeCaretAtEnd( document.getElementById('test') ) */}
                   }}} 
                   onKeyUp={(e) => {this.getCode(e)}} contentEditable={true}></p>
             </div>
