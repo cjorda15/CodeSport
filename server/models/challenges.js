@@ -20,7 +20,7 @@ const create = (req, res) => {
                            language: challenge.language,
                            username: challenge.username})
   .then(() => {
-    res.status(201).send('created successfully')
+    res.status(201).json({msg: 'created successfully'})
   })
   .catch(err => res.status(500).send(err))
 }
