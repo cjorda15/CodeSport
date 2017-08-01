@@ -13114,8 +13114,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./battlemode.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./battlemode.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./battlemode.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./battlemode.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -25305,8 +25305,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28853,7 +28853,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  background-color: #444;\n  color: #FFF;\n  font-size: 20px;\n  font-family: monospace;\n  height: 90%;\n  text-align: left;\n  width: 60vw;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#repl button{\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  position: absolute;\n  top: 0px;\n  right: 0px;\n}\n\n#repl button:hover{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  color: #000;\n  transition: all 2s;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  padding: 10px;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n}\n\n.scoreboard-title{\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #e8cc2e;\n}\n\n.gameover-message, .waiting-msg{\n  align-items: center;\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  text-align: center;\n  top: 10%;\n}\n\n.gameover-message button, .challenger-code button{\n  background: #e8cc2e;\n  border: #000 5px solid;\n  border-radius: 5px;\n  color: #000;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 16px;\n  margin: 25px auto;\n  padding: 34px;\n}\n\n\n\n.gameover-message button:hover, .challenger-code button:hover{\n  background: #000;\n  border: 5px solid #e8cc2e;\n  color:#e8cc2e;\n  transition: all 2s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n  height: 100%;\n}\n\n.line-num {\n  margin: 0;\n}\n\n.line-num p{\n  margin: 0px;\n}\n\n.line{\n  height: 100%;\n  margin: 0 0 0 30px;\n  outline: none;\n  width: 100%;\n}\n\n.challenger-code{\n  background: #000;\n  color: #fff;\n  display: flex;\n  height: 90%;\n  flex-direction: column;\n  font-size: 25px;\n  font-family: monospace;\n  padding: 10%;\n  position: absolute;\n  width: 100%;\n  z-index: 5;\n}\n\n\n@media (max-width:620px){\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
+exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#left-side {\n  height: 100%;\n}\n\n#terminal {\n  background-color: #444;\n  color: #FFF;\n  font-size: 20px;\n  font-family: monospace;\n  height: 90%;\n  text-align: left;\n  width: 60vw;\n}\n\n#run-button-div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 10%;\n  background-color: #FF6347;\n  width: 60vw;\n}\n\n#run-button {\n  border: 5px solid #000;\n  border-radius: 10px;\n  font-family: 'Press Start 2P', cursive;\n  height: 40px;\n  width: 50%;\n}\n\n#run-button:hover{\n  border: 7px solid #000;\n  transition: all 1s;\n}\n\n#right-side {\n  height: 100%;\n  width: 40vw;\n\n}\n\n#repl {\n  height: 50%;\n  background-color: #000;\n  color: #FFF;\n}\n\n#repl button{\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  position: absolute;\n  top: 0px;\n  right: 0px;\n}\n\n#repl button:hover{\n  background: #e8cc2e;\n  border: 5px solid #000;\n  color: #000;\n  transition: all 2s;\n}\n\n#scoreboard {\n  background-color: #aaa;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 13px;\n  height: 50%;\n  padding: 10px;\n  text-align: center;\n}\n\n.current-question{\n  text-align: center;\n}\n\n.scoreboard-title{\n  margin: 0;\n  text-align: center;\n  padding-top: 20px;\n  font-size: 24px;\n  color: #e8cc2e;\n}\n\n.gameover-message, .waiting-msg{\n  align-items: center;\n  background: #423f3f;\n  border: 5px solid #e8cc2e;\n  border-radius: 5px;\n  color: #e8cc2e;\n  display: flex;\n  flex-direction: column;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 41px;\n  left: 2%;\n  padding: 30px;\n  position: absolute;\n  text-align: center;\n  top: 10%;\n}\n\n.gameover-message button, .challenger-code button{\n  background: #e8cc2e;\n  border: #000 5px solid;\n  border-radius: 5px;\n  color: #000;\n  font-family: 'Press Start 2P', cursive;\n  font-size: 16px;\n  margin: 25px auto;\n  padding: 34px;\n}\n\n\n\n.gameover-message button:hover, .challenger-code button:hover{\n  background: #000;\n  border: 5px solid #e8cc2e;\n  color:#e8cc2e;\n  transition: all 2s;\n}\n\n.scores {\n  display: flex;\n  justify-content: space-around;\n}\n\n.line-wrapper {\n  display: flex;\n  height: 100%;\n}\n\n.line-num {\n  margin: 0;\n}\n\n.line-num p{\n  margin: 0px;\n}\n\n.line{\n  height: 100%;\n  margin: 0 0 0 30px;\n  outline: none;\n  width: 100%;\n}\n\n.challenger-code{\n  background: #000;\n  color: #fff;\n  display: flex;\n  height: 90%;\n  flex-direction: column;\n  font-size: 25px;\n  font-family: monospace;\n  padding: 10%;\n  position: absolute;\n  width: 100%;\n  z-index: 5;\n}\n\n.green {\n  color: green;\n}\n\n.red {\n  color: red;\n}\n\n\n@media (max-width:620px){\n  .scores{\n    flex-direction: column;\n  }\n  .scoreboard-title{\n    font-size: 12px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -29141,8 +29141,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./home.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./home.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./home.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./home.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29460,8 +29460,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./warroom.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./warroom.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./warroom.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./warroom.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29641,8 +29641,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./destiny.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./destiny.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./destiny.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./destiny.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -29946,13 +29946,37 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { id: 'repl' },
-          '>',
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'button',
             { onClick: e => {
                 this.handleRoute(e);
               } },
             'Exit to War Room'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: this.state.currentQuestion > 0 ? 'green' : 'red' },
+            'Test 1'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: this.state.currentQuestion > 1 ? 'green' : 'red' },
+            'Test 2'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: this.state.currentQuestion > 2 ? 'green' : 'red' },
+            'Test 3'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: this.state.currentQuestion > 3 ? 'green' : 'red' },
+            'Test 4'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: this.state.gameover > 0 ? 'green' : 'red' },
+            'Test 5'
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -30370,8 +30394,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./create_challenge.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./create_challenge.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./create_challenge.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./create_challenge.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
