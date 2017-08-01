@@ -6,7 +6,7 @@ const login = (req, res) => {
   const { username,password } = JSON.parse(`${req.headers.authorization}`)
   database('users').where('username',username).andWhere('password',password).select()
   .then((user) => {
-    res.json({username: user[0].username})
+    res.status(200).json({username: user[0].username})
   })
   .catch(error => {
     //NOTE SEE ABOUT A 404 FOR USERS NOT FOUND
@@ -15,8 +15,12 @@ const login = (req, res) => {
 }
 
 const createAccount = (req, res) => {
+    const {username,email,password,total_score, total_matches,total_wins} =  req.body
+    let user = req.body
+if(!username||!email||!password){
+  res.status(403).send("bad insertion on creation of user, missing info")
+}
   //NOTE catch doesnt seem to be working
-  let user = req.body
   database('users').insert(user, 'username')
   .then(returnedUser => {
     res.status(201).json({username: returnedUser[0]})
