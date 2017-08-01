@@ -194,6 +194,7 @@ class BattleMode extends Component {
                 <p>Your Score: {this.state.currentQuestion}</p>
                 <p>Opponents Score: {this.state.opponentsPoints}</p>
               </div>
+              {!this.state.startGame ? null : <p className="test-number">Test {this.state.currentQuestion + 1}</p>}
               {!this.state.startGame?null:
               <p className="current-question">{this.state.description[this.state.currentQuestion]}</p>}
             </div>

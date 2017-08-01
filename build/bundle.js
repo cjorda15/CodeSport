@@ -29962,6 +29962,12 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           ),
           !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'p',
+            { className: 'test-number' },
+            'Test ',
+            this.state.currentQuestion + 1
+          ),
+          !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
             { className: 'current-question' },
             this.state.description[this.state.currentQuestion]
           )
