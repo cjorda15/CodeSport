@@ -12,7 +12,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --timeout 7000",
+   "test": "./node_modules/mocha/bin/mocha --timeout 9000",
     "start": "nodemon server/index.js",
     "watch": "webpack --watch",
     "jest": "jest --watch"
