@@ -28,11 +28,11 @@ describe('Client Routes', () => {
 describe('API Routes', () => {
 
     before((done) => {
-    knex.migrate.latest().then(()=> done())
+    database.migrate.latest().then(()=> done())
   });
 
   beforeEach((done) => {
-  knex.seed.run()
+  database.seed.run()
   .then(() => {
     done()
     });
