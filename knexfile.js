@@ -16,7 +16,7 @@ module.exports = {
 
   test: {
     client: 'pg',
-    connection: 'postgres://localhost/codesport_test',
+    connection: process.env.DATABASE_URL||'postgres://localhost/codesport_test',
     migrations: {
       directory: './db/migrations'
     },
