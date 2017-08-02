@@ -84,7 +84,7 @@ describe('API Routes', () => {
     })
   })
 
-  it('should not create a new user if username is already taken',(done) => {
+  it.skip('should not create a new user if username is already taken',(done) => {
   const info =  {
     username:"Reptar",
     email: "cj@yahoo.com",
