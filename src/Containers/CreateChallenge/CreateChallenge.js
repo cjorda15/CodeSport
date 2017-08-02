@@ -186,9 +186,9 @@ class CreateChallenge extends Component{
             placeholder="type in your example solutions for all your test here"
             value={this.state.code}
             onChange={(e) => {this.setState({ code: e.target.value })}}>
-            </textarea>
+          </textarea>
         </code>
-        <button onClick={() => this.runTests()}>Run Tests</button>
+        <button id="run-tests" onClick={() => this.runTests()}>Run Tests</button>
         <button onClick={() => this.createChallenge()}>Create Challenge</button>
         {this.showError()}
         </section>

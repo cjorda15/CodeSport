@@ -3,5 +3,6 @@
     "env",
     "es2017",
     "react"
-  ]
+  ],
+  "plugins": ["transform-regenerator", "transform-runtime"]
 }
