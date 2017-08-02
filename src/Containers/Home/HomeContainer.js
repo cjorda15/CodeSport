@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { login } from '../../actions'
 import Home from './Home'
 
+
 const mapStateToProps = (state) => {
   return state
 }

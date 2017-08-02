@@ -53,7 +53,7 @@ class Home extends Component{
     fetch('/api/v1/account', {
       method: "GET",
       headers: {Authorization:JSON.stringify({ username: this.state.username, password: this.state.password })}
-    })  
+    })
     .then(res => (res).json())
     .then(data => {this.props.handleLogin(data)
       socket.emit('logged in', data)
@@ -102,7 +102,7 @@ showLogin() {
   if (this.state.showLogin) {
   return(
     <form className="form-container">
-      <div className="error-message">{this.state.loginError?"Username/Password doesn't match":null}</div>      
+      <div className="error-message">{this.state.loginError?"Username/Password doesn't match":null}</div>
       <input
         value={this.state.username}
         placeholder="username"
