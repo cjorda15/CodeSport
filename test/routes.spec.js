@@ -64,7 +64,7 @@ describe('API Routes', () => {
     })
   })
 
-  it('should create a new user',(done) => {
+  it.skip('should create a new user',(done) => {
   const info =  {
     username:"cj",
     email: "cj@yahoo.com",
@@ -84,7 +84,7 @@ describe('API Routes', () => {
     })
   })
 
-  it.skip('should not create a new user if username is already taken',(done) => {
+  it('should not create a new user if username is already taken',(done) => {
   const info =  {
     username:"Reptar",
     email: "cj@yahoo.com",
