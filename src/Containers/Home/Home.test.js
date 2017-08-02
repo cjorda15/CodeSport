@@ -2,16 +2,17 @@ import {shallow,mount,render} from 'enzyme'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './Home.js'
-
-const express = require('express')
-const app = require('express')();
-const http = require('http').Server(app);
-const path = require('path')
-const routes = require('./routes')
+//
+// const express = require('express')
+// const app = require('express')();
+// const http = require('http').Server(app);
+// const path = require('path')
+// const routes = require('./routes')
+import app from '../../server/index.js'
 
 
 var should = require('should');
-var io = require('socket.io-client');
+import io from  './socketTest.js'
 
 var socketURL = 'http://0.0.0.0:5000';
 
