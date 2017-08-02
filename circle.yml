@@ -2,6 +2,9 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
+  environment:
+    DATABASE_URL: postgresql://ubuntu:@127.0.0.1:5432/circle_test
+
 version: 2
 jobs:
   build:
