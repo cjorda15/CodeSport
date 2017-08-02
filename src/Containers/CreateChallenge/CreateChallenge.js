@@ -163,11 +163,11 @@ class CreateChallenge extends Component{
       <div className="create-challenge-container">
         {this.onPost()}
        <h6 id="title-page">
-          create test zone
+          create challenge zone
          <button onClick={(e)=>{this.handleReroute(e)}}>back to destiny room</button>
         </h6>
         <div className="create-challenge-info">
-          <input placeholder="Title of Challenge" onChange={(e) => this.setState({challengeName: e.target.value})}/>
+          <input id='challenge-title' placeholder="Title of Challenge" onChange={(e) => this.setState({challengeName: e.target.value})}/>
           <select value={this.state.value} onChange={(e) => this.handleSelection(e)}>
             <option value="beginner">Beginner</option>
             <option value="easy">Easy</option>
