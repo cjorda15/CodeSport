@@ -1283,23 +1283,23 @@ module.exports = { debugTool: debugTool };
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MemoryRouter__ = __webpack_require__(251);
-/* unused harmony reexport MemoryRouter */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__MemoryRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Prompt__ = __webpack_require__(253);
-/* unused harmony reexport Prompt */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__Prompt__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Redirect__ = __webpack_require__(254);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__Redirect__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__Redirect__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(113);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__Route__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__Route__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(66);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_4__Router__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__Router__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__StaticRouter__ = __webpack_require__(257);
-/* unused harmony reexport StaticRouter */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_5__StaticRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Switch__ = __webpack_require__(258);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_6__Switch__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_6__Switch__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__matchPath__ = __webpack_require__(67);
-/* unused harmony reexport matchPath */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_7__matchPath__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__withRouter__ = __webpack_require__(259);
-/* unused harmony reexport withRouter */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_8__withRouter__["a"]; });
 
 
 
@@ -1887,13 +1887,14 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__connect_connect__ = __webpack_require__(225);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
-/* unused harmony reexport createProvider */
-/* unused harmony reexport connectAdvanced */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__connect_connect__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createProvider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connectAdvanced", function() { return __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connect", function() { return __WEBPACK_IMPORTED_MODULE_2__connect_connect__["a"]; });
 
 
 
@@ -5416,77 +5417,75 @@ module.exports = ReactBrowserEventEmitter;
 
 /***/ }),
 /* 41 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const login = input => {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var login = exports.login = function login(input) {
   return {
     type: "LOGIN",
     payload: input
   };
 };
-/* harmony export (immutable) */ __webpack_exports__["d"] = login;
 
-
-const logout = () => {
+var logout = exports.logout = function logout() {
   return {
     type: "LOGOUT"
   };
 };
-/* harmony export (immutable) */ __webpack_exports__["e"] = logout;
 
-
-const opponentName = name => {
+var opponentName = exports.opponentName = function opponentName(name) {
   return {
     type: "OPPONENT_NAME",
     payload: name
   };
 };
-/* harmony export (immutable) */ __webpack_exports__["f"] = opponentName;
 
-
-const clearOpponent = () => {
+var clearOpponent = exports.clearOpponent = function clearOpponent() {
   return {
     type: "CLEAR_OPPONENT"
   };
 };
-/* harmony export (immutable) */ __webpack_exports__["b"] = clearOpponent;
 
-
-const acceptRequest = () => {
+var acceptRequest = exports.acceptRequest = function acceptRequest() {
   return {
     type: "ACCEPT_REQUEST"
   };
 };
-/* harmony export (immutable) */ __webpack_exports__["a"] = acceptRequest;
 
-
-const getChallenge = payload => {
+var getChallenge = exports.getChallenge = function getChallenge(payload) {
   return {
     type: "GET_CHALLENGE",
-    payload
+    payload: payload
   };
 };
-/* harmony export (immutable) */ __webpack_exports__["c"] = getChallenge;
-
 
 /***/ }),
 /* 42 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const socket = io({ transports: ['websocket'], upgrade: false });
-socket.on('userConnection', msg => {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var socket = io({ transports: ['websocket'], upgrade: false });
+socket.on('userConnection', function (msg) {
   console.log(msg, "MESSAGE FROM SERVER!!!!!!");
   console.log(socket, "from socket file");
   socket.emit('hello', "sup from ");
 });
 
-socket.on('hi', msg => {
+socket.on('hi', function (msg) {
   console.log(msg, "MESSAGE FROM OTHER USER");
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (socket);
+exports.default = socket;
 
 /***/ }),
 /* 43 */
@@ -7424,17 +7423,18 @@ function warning(message) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__combineReducers__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(106);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["b"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__combineReducers__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__["a"]; });
-/* unused harmony reexport applyMiddleware */
-/* unused harmony reexport compose */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createStore", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "combineReducers", function() { return __WEBPACK_IMPORTED_MODULE_1__combineReducers__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "bindActionCreators", function() { return __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "applyMiddleware", function() { return __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "compose", function() { return __WEBPACK_IMPORTED_MODULE_4__compose__["a"]; });
 
 
 
@@ -12419,32 +12419,33 @@ function verifyPlainObject(value, displayName, methodName) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(248);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(260);
-/* unused harmony reexport HashRouter */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HashRouter", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(114);
-/* unused harmony reexport Link */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(262);
-/* unused harmony reexport MemoryRouter */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(263);
-/* unused harmony reexport NavLink */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "NavLink", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(264);
-/* unused harmony reexport Prompt */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_5__Prompt__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(265);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(266);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(267);
-/* unused harmony reexport Router */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(268);
-/* unused harmony reexport StaticRouter */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_9__StaticRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(269);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(270);
-/* unused harmony reexport matchPath */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_11__matchPath__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(271);
-/* unused harmony reexport withRouter */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_12__withRouter__["a"]; });
 
 
 
@@ -13136,47 +13137,56 @@ module.exports = __webpack_require__(117);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_index_css__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_index_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Containers_App_AppContainer__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registerServiceWorker__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_router_dom__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__configStore__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_redux__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_history_createBrowserHistory__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_history_createBrowserHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__websocket__ = __webpack_require__(42);
 
 
+var _react = __webpack_require__(4);
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = __webpack_require__(132);
 
+var _reactDom2 = _interopRequireDefault(_reactDom);
 
+__webpack_require__(218);
 
+var _AppContainer = __webpack_require__(221);
 
+var _AppContainer2 = _interopRequireDefault(_AppContainer);
 
+var _registerServiceWorker = __webpack_require__(296);
+
+var _registerServiceWorker2 = _interopRequireDefault(_registerServiceWorker);
+
+var _reactRouterDom = __webpack_require__(110);
+
+var _configStore = __webpack_require__(297);
+
+var _reactRedux = __webpack_require__(16);
+
+var _createBrowserHistory = __webpack_require__(111);
+
+var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
+
+__webpack_require__(42);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // const socket = io({transports: ['websocket'], upgrade: false});
 
 
-const history = __WEBPACK_IMPORTED_MODULE_8_history_createBrowserHistory___default()();
-const store = Object(__WEBPACK_IMPORTED_MODULE_6__configStore__["a" /* configureStore */])();
+var history = (0, _createBrowserHistory2.default)();
+var store = (0, _configStore.configureStore)();
 
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-  __WEBPACK_IMPORTED_MODULE_7_react_redux__["a" /* Provider */],
+_reactDom2.default.render(_react2.default.createElement(
+  _reactRedux.Provider,
   { store: store },
-  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["a" /* BrowserRouter */],
+  _react2.default.createElement(
+    _reactRouterDom.BrowserRouter,
     { history: history },
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_router_dom__["c" /* Route */], { path: '/', component: __WEBPACK_IMPORTED_MODULE_3__Containers_App_AppContainer__["a" /* default */] })
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _AppContainer2.default })
   )
 ), document.getElementById('root'));
-Object(__WEBPACK_IMPORTED_MODULE_4__registerServiceWorker__["a" /* default */])();
+(0, _registerServiceWorker2.default)();
 
 /***/ }),
 /* 118 */
@@ -25426,26 +25436,35 @@ module.exports = function (css) {
 
 /***/ }),
 /* 221 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(247);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-const mapStateToProps = state => {
+var _reactRedux = __webpack_require__(16);
+
+var _App = __webpack_require__(247);
+
+var _App2 = _interopRequireDefault(_App);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
   return state;
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps)(__WEBPACK_IMPORTED_MODULE_1__App__["a" /* default */]));
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_App2.default);
 
 /***/ }),
 /* 222 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export createProvider */
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = createProvider;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(8);
@@ -25524,7 +25543,7 @@ function createProvider() {
   return Provider;
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (createProvider());
+/* harmony default export */ __webpack_exports__["b"] = (createProvider());
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
@@ -25867,7 +25886,7 @@ function whenMapDispatchToPropsIsMissing(mapDispatchToProps) {
 
 function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
   return mapDispatchToProps && typeof mapDispatchToProps === 'object' ? Object(__WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__["a" /* wrapMapToPropsConstant */])(function (dispatch) {
-    return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["a" /* bindActionCreators */])(mapDispatchToProps, dispatch);
+    return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["bindActionCreators"])(mapDispatchToProps, dispatch);
   }) : undefined;
 }
 
@@ -26395,7 +26414,7 @@ function bindActionCreators(actionCreators, dispatch) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export default */
+/* harmony export (immutable) */ __webpack_exports__["a"] = applyMiddleware;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compose__ = __webpack_require__(107);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -26665,64 +26684,109 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 
 /***/ }),
 /* 247 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__SoloMode_SoloModeContainer__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Home_HomeContainer__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__WarRoom_WarRoomContainer__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Destiny_DestinyContainer__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__BattleMode_BattleModeContainer__ = __webpack_require__(287);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CreateChallenge_CreateChallengeContainer__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__RandomBattle_RandomBattleContainer__ = __webpack_require__(294);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = __webpack_require__(4);
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(110);
 
+var _SoloModeContainer = __webpack_require__(272);
 
+var _SoloModeContainer2 = _interopRequireDefault(_SoloModeContainer);
 
+var _HomeContainer = __webpack_require__(275);
 
-class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'section',
-      null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Switch */],
-        null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/destiny', render: history => {
-            return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Destiny_DestinyContainer__["a" /* default */], { history: history });
-          } }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/warroom', render: history => {
-            return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__WarRoom_WarRoomContainer__["a" /* default */], { history: history });
-          } }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/solo', render: history => {
-            return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__SoloMode_SoloModeContainer__["a" /* default */], { history: history });
-          } }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/battle', render: history => {
-            return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__BattleMode_BattleModeContainer__["a" /* default */], { history: history });
-          } }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/random_battle', render: history => {
-            return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__RandomBattle_RandomBattleContainer__["a" /* default */], { history: history });
-          } }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/create_challenge', render: history => {
-            return !this.props.user.username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: '/' }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__CreateChallenge_CreateChallengeContainer__["a" /* default */], { history: history });
-          } }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/', render: history => {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Home_HomeContainer__["a" /* default */], { history: history });
-          } })
-      )
-    );
+var _HomeContainer2 = _interopRequireDefault(_HomeContainer);
+
+var _WarRoomContainer = __webpack_require__(279);
+
+var _WarRoomContainer2 = _interopRequireDefault(_WarRoomContainer);
+
+var _DestinyContainer = __webpack_require__(283);
+
+var _DestinyContainer2 = _interopRequireDefault(_DestinyContainer);
+
+var _BattleModeContainer = __webpack_require__(287);
+
+var _BattleModeContainer2 = _interopRequireDefault(_BattleModeContainer);
+
+var _CreateChallengeContainer = __webpack_require__(289);
+
+var _CreateChallengeContainer2 = _interopRequireDefault(_CreateChallengeContainer);
+
+var _RandomBattleContainer = __webpack_require__(294);
+
+var _RandomBattleContainer2 = _interopRequireDefault(_RandomBattleContainer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_Component) {
+  _inherits(App, _Component);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
   }
-}
 
-/* harmony default export */ __webpack_exports__["a"] = (App);
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'section',
+        null,
+        _react2.default.createElement(
+          _reactRouterDom.Switch,
+          null,
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/destiny', render: function render(history) {
+              return !_this2.props.user.username ? _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' }) : _react2.default.createElement(_DestinyContainer2.default, { history: history });
+            } }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/warroom', render: function render(history) {
+              return !_this2.props.user.username ? _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' }) : _react2.default.createElement(_WarRoomContainer2.default, { history: history });
+            } }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/solo', render: function render(history) {
+              return !_this2.props.user.username ? _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' }) : _react2.default.createElement(_SoloModeContainer2.default, { history: history });
+            } }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/battle', render: function render(history) {
+              return !_this2.props.user.username ? _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' }) : _react2.default.createElement(_BattleModeContainer2.default, { history: history });
+            } }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/random_battle', render: function render(history) {
+              return !_this2.props.user.username ? _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' }) : _react2.default.createElement(_RandomBattleContainer2.default, { history: history });
+            } }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/create_challenge', render: function render(history) {
+              return !_this2.props.user.username ? _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' }) : _react2.default.createElement(_CreateChallengeContainer2.default, { history: history });
+            } }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', render: function render(history) {
+              return _react2.default.createElement(_HomeContainer2.default, { history: history });
+            } })
+        )
+      );
+    }
+  }]);
+
+  return App;
+}(_react.Component);
+
+exports.default = App;
 
 /***/ }),
 /* 248 */
@@ -26767,7 +26831,7 @@ var BrowserRouter = function (_React$Component) {
   }
 
   BrowserRouter.prototype.render = function render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router__["c" /* Router */], { history: this.history, children: this.props.children });
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router__["e" /* Router */], { history: this.history, children: this.props.children });
   };
 
   return BrowserRouter;
@@ -26964,7 +27028,7 @@ MemoryRouter.propTypes = {
 };
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = (MemoryRouter);
+/* harmony default export */ __webpack_exports__["a"] = (MemoryRouter);
 
 /***/ }),
 /* 252 */
@@ -27226,7 +27290,7 @@ Prompt.contextTypes = {
 };
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = (Prompt);
+/* harmony default export */ __webpack_exports__["a"] = (Prompt);
 
 /***/ }),
 /* 254 */
@@ -27495,7 +27559,7 @@ StaticRouter.childContextTypes = {
 };
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = (StaticRouter);
+/* harmony default export */ __webpack_exports__["a"] = (StaticRouter);
 
 /***/ }),
 /* 258 */
@@ -27626,7 +27690,7 @@ var withRouter = function withRouter(Component) {
   return __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default()(C, Component);
 };
 
-/* unused harmony default export */ var _unused_webpack_default_export = (withRouter);
+/* harmony default export */ __webpack_exports__["a"] = (withRouter);
 
 /***/ }),
 /* 260 */
@@ -27671,7 +27735,7 @@ var HashRouter = function (_React$Component) {
   }
 
   HashRouter.prototype.render = function render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router__["c" /* Router */], { history: this.history, children: this.props.children });
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router__["e" /* Router */], { history: this.history, children: this.props.children });
   };
 
   return HashRouter;
@@ -27685,7 +27749,7 @@ HashRouter.propTypes = {
 };
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = (HashRouter);
+/* harmony default export */ __webpack_exports__["a"] = (HashRouter);
 
 /***/ }),
 /* 261 */
@@ -28023,7 +28087,7 @@ exports.default = createHashHistory;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router__ = __webpack_require__(12);
-/* unused harmony reexport default */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0_react_router__["a"]; });
 
 
 /***/ }),
@@ -28063,7 +28127,7 @@ var NavLink = function NavLink(_ref) {
       getIsActive = _ref.isActive,
       rest = _objectWithoutProperties(_ref, ['to', 'exact', 'strict', 'location', 'activeClassName', 'className', 'activeStyle', 'style', 'isActive']);
 
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["b" /* Route */], {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["d" /* Route */], {
     path: (typeof to === 'undefined' ? 'undefined' : _typeof(to)) === 'object' ? to.pathname : to,
     exact: exact,
     strict: strict,
@@ -28101,28 +28165,10 @@ NavLink.defaultProps = {
   activeClassName: 'active'
 };
 
-/* unused harmony default export */ var _unused_webpack_default_export = (NavLink);
+/* harmony default export */ __webpack_exports__["a"] = (NavLink);
 
 /***/ }),
 /* 264 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router__ = __webpack_require__(12);
-/* unused harmony reexport default */
-
-
-/***/ }),
-/* 265 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router__ = __webpack_require__(12);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0_react_router__["a"]; });
-
-
-/***/ }),
-/* 266 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28131,25 +28177,16 @@ NavLink.defaultProps = {
 
 
 /***/ }),
-/* 267 */
+/* 265 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router__ = __webpack_require__(12);
-/* unused harmony reexport default */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0_react_router__["c"]; });
 
 
 /***/ }),
-/* 268 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router__ = __webpack_require__(12);
-/* unused harmony reexport default */
-
-
-/***/ }),
-/* 269 */
+/* 266 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28158,12 +28195,39 @@ NavLink.defaultProps = {
 
 
 /***/ }),
+/* 267 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router__ = __webpack_require__(12);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0_react_router__["e"]; });
+
+
+/***/ }),
+/* 268 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router__ = __webpack_require__(12);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0_react_router__["f"]; });
+
+
+/***/ }),
+/* 269 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router__ = __webpack_require__(12);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0_react_router__["g"]; });
+
+
+/***/ }),
 /* 270 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router__ = __webpack_require__(12);
-/* unused harmony reexport default */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0_react_router__["h"]; });
 
 
 /***/ }),
@@ -28172,43 +28236,74 @@ NavLink.defaultProps = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router__ = __webpack_require__(12);
-/* unused harmony reexport default */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0_react_router__["i"]; });
 
 
 /***/ }),
 /* 272 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SoloMode__ = __webpack_require__(273);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-const mapStateToProps = state => {
+var _reactRedux = __webpack_require__(16);
+
+var _SoloMode = __webpack_require__(273);
+
+var _SoloMode2 = _interopRequireDefault(_SoloMode);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
   return state;
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps)(__WEBPACK_IMPORTED_MODULE_1__SoloMode__["a" /* default */]));
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_SoloMode2.default);
 
 /***/ }),
 /* 273 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_battlemode_css__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_battlemode_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_battlemode_css__);
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(115);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 // import '../../styles/solomode.css'
+
 
 //pretty much the same minus the additional elements in battleroom
 
-class SoloMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-  constructor(props) {
-    super(props);
-    this.state = {
+var SoloMode = function (_Component) {
+  _inherits(SoloMode, _Component);
+
+  function SoloMode(props) {
+    _classCallCheck(this, SoloMode);
+
+    var _this = _possibleConstructorReturn(this, (SoloMode.__proto__ || Object.getPrototypeOf(SoloMode)).call(this, props));
+
+    _this.state = {
       startGame: true,
       lineNumber: 1,
       text: "",
@@ -28218,202 +28313,226 @@ class SoloMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       description: [],
       questions: []
     };
+
+    return _this;
   }
 
-  componentWillMount() {
-    setTimeout(() => {
-      this.setState({
-        description: this.props.getChallenge[0].descriptions,
-        questions: this.props.getChallenge[0].tests });
-    }, 10);
-  }
+  _createClass(SoloMode, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var _this2 = this;
 
-  getCode(e) {
-    if (e.key === 'Enter') {
-      if (this.state.lineNumber == 27) return;
-      let addLine = this.state.lineNumber + 1;
-      this.setState({ lineNumber: addLine });
+      setTimeout(function () {
+        _this2.setState({
+          description: _this2.props.getChallenge[0].descriptions,
+          questions: _this2.props.getChallenge[0].tests });
+      }, 10);
     }
-    if (!e) return;
-    let text = e.target.innerText;
-    this.setState({ text: text });
-  }
-
-  make() {
-    if (this.state.gameover || !this.state.text) return;
-    let results = [];
-    let runTill = this.state.currentQuestion;
-    runTill += 1;
-    for (let i = 0; i < runTill; i++) {
-      let tester = new Function(`${this.state.text} ; ${this.state.questions[i]}`)();
-      results.push(tester);
+  }, {
+    key: 'getCode',
+    value: function getCode(e) {
+      if (e.key === 'Enter') {
+        if (this.state.lineNumber == 27) return;
+        var addLine = this.state.lineNumber + 1;
+        this.setState({ lineNumber: addLine });
+      }
+      if (!e) return;
+      var text = e.target.innerText;
+      this.setState({ text: text });
     }
-    let outcome = results.every(i => i);
-    if (!outcome) {
-      let failedTest = [];
-      for (let i = 0; i < results.length; i++) {
-        if (!results[i]) {
-          this.setState({ currentQuestion: i });
-          break;
+  }, {
+    key: 'make',
+    value: function make() {
+      if (this.state.gameover || !this.state.text) return;
+      var results = [];
+      var runTill = this.state.currentQuestion;
+      runTill += 1;
+      for (var i = 0; i < runTill; i++) {
+        var tester = new Function(this.state.text + ' ; ' + this.state.questions[i])();
+        results.push(tester);
+      }
+      var outcome = results.every(function (i) {
+        return i;
+      });
+      if (!outcome) {
+        var failedTest = [];
+        for (var _i = 0; _i < results.length; _i++) {
+          if (!results[_i]) {
+            this.setState({ currentQuestion: _i });
+            break;
+          }
+        }
+      } else {
+        var updateQuestion = this.state.currentQuestion + 1;
+        this.setState({ currentQuestion: updateQuestion });
+        if (updateQuestion == this.state.questions.length) {
+          this.setState({ gameover: true });
+          //make api call here to update score
         }
       }
-    } else {
-      let updateQuestion = this.state.currentQuestion + 1;
-      this.setState({ currentQuestion: updateQuestion });
-      if (updateQuestion == this.state.questions.length) {
-        this.setState({ gameover: true });
-        //make api call here to update score
+    }
+  }, {
+    key: 'addLine',
+    value: function addLine() {
+      var test = [];
+      for (var i = 1; i <= this.state.lineNumber; i++) {
+        var newLine = document.createElement('p');
+        newLine.innerText += i;
+        test.push(newLine);
+      }
+      var test2 = test.map(function (line, id) {
+        return _react2.default.createElement(
+          'p',
+          { key: id },
+          line.innerHTML
+        );
+      });
+      return test2;
+    }
+  }, {
+    key: 'handleRoute',
+    value: function handleRoute(e) {
+      e.preventDefault();
+      this.props.history.history.replace('/solo');
+    }
+
+    // handleApiCall(win){
+    //   const d     = new Date()
+    //   const month = d.getMonth()+1
+    //   const day   = d.getDate()
+    //   const year  = d.getFullYear()
+    //   const score = this.state.currentQuestion==0?
+    //         0 :this.state.currentQuestion+1
+    //
+    //   fetch('/api/v1/score', {
+    //     method:'PUT',
+    //     headers:{'Content-Type':'application/json'},
+    //     body:JSON.stringify({
+    //         username:`${this.props.user.username}`,
+    //         score: score,
+    //         win: win,
+    //         date: month + " " + day + " " + year
+    //     })
+    //   })
+    // }
+
+  }, {
+    key: 'gameover',
+    value: function gameover() {
+      var _this3 = this;
+
+      if (this.state.gameover) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'gameover-message' },
+          'GAMEOVER',
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick(e) {
+                _this3.handleRoute(e);
+              } },
+            'back to solo'
+          )
+        );
       }
     }
-  }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this4 = this;
 
-  addLine() {
-    let test = [];
-    for (let i = 1; i <= this.state.lineNumber; i++) {
-      let newLine = document.createElement('p');
-      newLine.innerText += i;
-      test.push(newLine);
-    }
-    let test2 = test.map((line, id) => {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'p',
-        { key: id },
-        line.innerHTML
-      );
-    });
-    return test2;
-  }
-
-  handleRoute(e) {
-    e.preventDefault();
-    this.props.history.history.replace('/solo');
-  }
-
-  // handleApiCall(win){
-  //   const d     = new Date()
-  //   const month = d.getMonth()+1
-  //   const day   = d.getDate()
-  //   const year  = d.getFullYear()
-  //   const score = this.state.currentQuestion==0?
-  //         0 :this.state.currentQuestion+1
-  //
-  //   fetch('/api/v1/score', {
-  //     method:'PUT',
-  //     headers:{'Content-Type':'application/json'},
-  //     body:JSON.stringify({
-  //         username:`${this.props.user.username}`,
-  //         score: score,
-  //         win: win,
-  //         date: month + " " + day + " " + year
-  //     })
-  //   })
-  // }
-
-  gameover() {
-    if (this.state.gameover) {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      return _react2.default.createElement(
         'div',
-        { className: 'gameover-message' },
-        'GAMEOVER',
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: e => {
-              this.handleRoute(e);
-            } },
-          'back to solo'
-        )
-      );
-    }
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'app' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { id: 'left-side' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        { className: 'app' },
+        _react2.default.createElement(
           'div',
-          { id: 'terminal' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          { id: 'left-side' },
+          _react2.default.createElement(
             'div',
-            { className: 'line-wrapper' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            { id: 'terminal' },
+            _react2.default.createElement(
               'div',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              { className: 'line-wrapper' },
+              _react2.default.createElement(
                 'div',
-                { className: 'line-num' },
-                this.addLine()
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', { className: 'line', onKeyUp: e => {
-                this.getCode(e);
-              }, contentEditable: true })
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { id: 'run-button-div' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            { id: 'run-button', onClick: () => this.make() },
-            'Run'
-          )
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'waiting-msg' },
-        'waiting on challenger'
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { id: 'right-side' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { id: 'repl' },
-          '>',
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            { onClick: () => {
-                this.handleRoute();
-              } },
-            'Exit to War Room'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { id: 'scoreboard' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h4',
-            { className: 'scoreboard-title' },
-            'Scoreboard'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'scores' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'p',
-              null,
-              'Your Score: ',
-              this.state.currentQuestion
+                null,
+                _react2.default.createElement(
+                  'div',
+                  { className: 'line-num' },
+                  this.addLine()
+                )
+              ),
+              _react2.default.createElement('p', { className: 'line', onKeyUp: function onKeyUp(e) {
+                  _this4.getCode(e);
+                }, contentEditable: true })
             )
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            { className: 'current-question' },
-            this.state.description[this.state.currentQuestion]
+          _react2.default.createElement(
+            'div',
+            { id: 'run-button-div' },
+            _react2.default.createElement(
+              'button',
+              { id: 'run-button', onClick: function onClick() {
+                  return _this4.make();
+                } },
+              'Run'
+            )
           )
-        )
-      ),
-      this.gameover()
-    );
-  }
-}
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'waiting-msg' },
+          'waiting on challenger'
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'right-side' },
+          _react2.default.createElement(
+            'div',
+            { id: 'repl' },
+            '>',
+            _react2.default.createElement(
+              'button',
+              { onClick: function onClick() {
+                  _this4.handleRoute();
+                } },
+              'Exit to War Room'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { id: 'scoreboard' },
+            _react2.default.createElement(
+              'h4',
+              { className: 'scoreboard-title' },
+              'Scoreboard'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'scores' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Your Score: ',
+                this.state.currentQuestion
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'current-question' },
+              this.state.description[this.state.currentQuestion]
+            )
+          )
+        ),
+        this.gameover()
+      );
+    }
+  }]);
 
-/* harmony default export */ __webpack_exports__["a"] = (SoloMode);
+  return SoloMode;
+}(_react.Component);
+
+exports.default = SoloMode;
 
 /***/ }),
 /* 274 */
@@ -28431,48 +28550,79 @@ exports.push([module.i, ".app {\n    display: flex;\n    height: 100vh;\n}\n\n#l
 
 /***/ }),
 /* 275 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Home__ = __webpack_require__(276);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _reactRedux = __webpack_require__(16);
 
-const mapStateToProps = state => {
+var _actions = __webpack_require__(41);
+
+var _Home = __webpack_require__(276);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
   return state;
 };
 
-const mapDispatchToProps = dispatch => {
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    handleLogin: input => {
-      dispatch(Object(__WEBPACK_IMPORTED_MODULE_1__actions__["d" /* login */])(input));
+    handleLogin: function handleLogin(input) {
+      dispatch((0, _actions.login)(input));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, mapDispatchToProps)(__WEBPACK_IMPORTED_MODULE_2__Home__["a" /* default */]));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Home2.default);
 
 /***/ }),
 /* 276 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_home_css__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_home_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__websocket__ = __webpack_require__(42);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-  constructor(props) {
-    super(props);
-    this.state = {
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(277);
+
+var _websocket = __webpack_require__(42);
+
+var _websocket2 = _interopRequireDefault(_websocket);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function (_Component) {
+  _inherits(Home, _Component);
+
+  function Home(props) {
+    _classCallCheck(this, Home);
+
+    var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+    _this.state = {
       showSignup: false,
       showLogin: false,
       showOptions: true,
@@ -28483,213 +28633,244 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       errorUserNameTaken: false,
       loginError: false
     };
+    return _this;
   }
 
-  handleClick(input, e) {
-    e.preventDefault();
-    if (input === "create") {
-      if (this.state.password.length < 6) {
-        this.showError();
-        return;
+  _createClass(Home, [{
+    key: 'handleClick',
+    value: function handleClick(input, e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      if (input === "create") {
+        if (this.state.password.length < 6) {
+          this.showError();
+          return;
+        }
+        fetch('/api/v1/account', {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password,
+            total_score: 0,
+            total_matches: 0,
+            total_wins: 0
+
+          })
+        }).then(function (res) {
+          return res.json();
+        }).then(function (data) {
+          _this2.props.handleLogin(data);
+          console.log(data, "username");
+          _websocket2.default.emit('logged in', data);
+          _this2.props.history.history.replace('/destiny');
+        }).catch(function (err) {
+          console.log(err, "error");
+          _this2.nameOrEmailTaken();
+        });
+      } else {
+        fetch('/api/v1/account', {
+          method: "GET",
+          headers: { Authorization: JSON.stringify({ username: this.state.username, password: this.state.password }) }
+        }).then(function (res) {
+          return res.json();
+        }).then(function (data) {
+          _this2.props.handleLogin(data);
+          _websocket2.default.emit('logged in', data);
+          _this2.props.history.history.replace('/destiny');
+        }).catch(function (err) {
+          _this2.loginError();
+          console.log(err, "error");
+        });
       }
-      fetch('/api/v1/account', {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: this.state.username,
-          email: this.state.email,
-          password: this.state.password,
-          total_score: 0,
-          total_matches: 0,
-          total_wins: 0
-
-        })
-      }).then(res => res.json()).then(data => {
-        this.props.handleLogin(data);
-        console.log(data, "username");
-        __WEBPACK_IMPORTED_MODULE_2__websocket__["a" /* default */].emit('logged in', data);
-        this.props.history.history.replace('/destiny');
-      }).catch(err => {
-        console.log(err, "error");
-        this.nameOrEmailTaken();
-      });
-    } else {
-      fetch('/api/v1/account', {
-        method: "GET",
-        headers: { Authorization: JSON.stringify({ username: this.state.username, password: this.state.password }) }
-      }).then(res => res.json()).then(data => {
-        this.props.handleLogin(data);
-        __WEBPACK_IMPORTED_MODULE_2__websocket__["a" /* default */].emit('logged in', data);
-        this.props.history.history.replace('/destiny');
-      }).catch(err => {
-        this.loginError();
-        console.log(err, "error");
-      });
     }
-  }
-
-  handleGoBack() {
-    this.setState({ showLogin: false, showSignup: false, showOptions: true, username: "", email: "", password: "" });
-  }
-
-  signUp() {
-    if (this.state.showSignup) {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'form',
-        { className: 'form-container' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'error-message' },
-          this.state.errorUserNameTaken ? "Username or email taken" : null
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-          value: this.state.username,
-          placeholder: 'username',
-          onChange: e => {
-            this.setState({ username: e.target.value });
-          }
-        }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-          value: this.state.email,
-          placeholder: 'email',
-          onChange: e => {
-            this.setState({ email: e.target.value });
-          }
-        }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-          value: this.state.password,
-          placeholder: 'password',
-          onChange: e => {
-            this.setState({ password: e.target.value });
-          }
-        }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: e => {
-              this.handleClick("create", e);
-            } },
-          'submit'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: () => {
-              this.handleGoBack();
-            } },
-          'go back'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'error-message' },
-          this.state.showError ? "password must be at least 6 characters long" : null
-        )
-      );
+  }, {
+    key: 'handleGoBack',
+    value: function handleGoBack() {
+      this.setState({ showLogin: false, showSignup: false, showOptions: true, username: "", email: "", password: "" });
     }
-  }
+  }, {
+    key: 'signUp',
+    value: function signUp() {
+      var _this3 = this;
 
-  showLogin() {
-    if (this.state.showLogin) {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'form',
-        { className: 'form-container' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'error-message' },
-          this.state.loginError ? "Username/Password doesn't match" : null
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-          value: this.state.username,
-          placeholder: 'username',
-          onChange: e => {
-            this.setState({ username: e.target.value });
-          }
-        }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-          value: this.state.password,
-          placeholder: 'password',
-          onChange: e => {
-            this.setState({ password: e.target.value });
-          }
-        }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: e => {
-              this.handleClick("login", e);
-            } },
-          'submit'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: () => {
-              this.handleGoBack();
-            } },
-          'go back'
-        )
-      );
+      if (this.state.showSignup) {
+        return _react2.default.createElement(
+          'form',
+          { className: 'form-container' },
+          _react2.default.createElement(
+            'div',
+            { className: 'error-message' },
+            this.state.errorUserNameTaken ? "Username or email taken" : null
+          ),
+          _react2.default.createElement('input', {
+            value: this.state.username,
+            placeholder: 'username',
+            onChange: function onChange(e) {
+              _this3.setState({ username: e.target.value });
+            }
+          }),
+          _react2.default.createElement('input', {
+            value: this.state.email,
+            placeholder: 'email',
+            onChange: function onChange(e) {
+              _this3.setState({ email: e.target.value });
+            }
+          }),
+          _react2.default.createElement('input', {
+            value: this.state.password,
+            placeholder: 'password',
+            onChange: function onChange(e) {
+              _this3.setState({ password: e.target.value });
+            }
+          }),
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick(e) {
+                _this3.handleClick("create", e);
+              } },
+            'submit'
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick() {
+                _this3.handleGoBack();
+              } },
+            'go back'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'error-message' },
+            this.state.showError ? "password must be at least 6 characters long" : null
+          )
+        );
+      }
     }
-  }
+  }, {
+    key: 'showLogin',
+    value: function showLogin() {
+      var _this4 = this;
 
-  showOptions() {
-    if (this.state.showOptions) {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      if (this.state.showLogin) {
+        return _react2.default.createElement(
+          'form',
+          { className: 'form-container' },
+          _react2.default.createElement(
+            'div',
+            { className: 'error-message' },
+            this.state.loginError ? "Username/Password doesn't match" : null
+          ),
+          _react2.default.createElement('input', {
+            value: this.state.username,
+            placeholder: 'username',
+            onChange: function onChange(e) {
+              _this4.setState({ username: e.target.value });
+            }
+          }),
+          _react2.default.createElement('input', {
+            value: this.state.password,
+            placeholder: 'password',
+            onChange: function onChange(e) {
+              _this4.setState({ password: e.target.value });
+            }
+          }),
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick(e) {
+                _this4.handleClick("login", e);
+              } },
+            'submit'
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick() {
+                _this4.handleGoBack();
+              } },
+            'go back'
+          )
+        );
+      }
+    }
+  }, {
+    key: 'showOptions',
+    value: function showOptions() {
+      var _this5 = this;
+
+      if (this.state.showOptions) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'options-container' },
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick() {
+                _this5.setState({ showSignup: true, showOptions: false });
+              } },
+            'sign up'
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick() {
+                _this5.setState({ showLogin: true, showOptions: false });
+              } },
+            'log in'
+          )
+        );
+      }
+    }
+  }, {
+    key: 'showError',
+    value: function showError() {
+      var _this6 = this;
+
+      this.setState({ showError: true });
+      setTimeout(function () {
+        _this6.setState({ showError: false });
+      }, 4000);
+    }
+  }, {
+    key: 'nameOrEmailTaken',
+    value: function nameOrEmailTaken() {
+      var _this7 = this;
+
+      this.setState({ errorUserNameTaken: true });
+      setTimeout(function () {
+        _this7.setState({ errorUserNameTaken: false });
+      }, 4000);
+    }
+  }, {
+    key: 'loginError',
+    value: function loginError() {
+      var _this8 = this;
+
+      this.setState({ loginError: true });
+      setTimeout(function () {
+        _this8.setState({ loginError: false });
+      }, 4000);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
         'div',
-        { className: 'options-container' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: () => {
-              this.setState({ showSignup: true, showOptions: false });
-            } },
-          'sign up'
+        { className: 'home-container' },
+        _react2.default.createElement(
+          'p',
+          null,
+          'WELCOME TO THE SPORT OF CODE'
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: () => {
-              this.setState({ showLogin: true, showOptions: false });
-            } },
-          'log in'
-        )
+        this.showLogin(),
+        this.signUp(),
+        this.showOptions()
       );
     }
-  }
+  }]);
 
-  showError() {
-    this.setState({ showError: true });
-    setTimeout(() => {
-      this.setState({ showError: false });
-    }, 4000);
-  }
+  return Home;
+}(_react.Component);
 
-  nameOrEmailTaken() {
-    this.setState({ errorUserNameTaken: true });
-    setTimeout(() => {
-      this.setState({ errorUserNameTaken: false });
-    }, 4000);
-  }
-
-  loginError() {
-    this.setState({ loginError: true });
-    setTimeout(() => {
-      this.setState({ loginError: false });
-    }, 4000);
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'home-container' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'p',
-        null,
-        'WELCOME TO THE SPORT OF CODE'
-      ),
-      this.showLogin(),
-      this.signUp(),
-      this.showOptions()
-    );
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Home);
+exports.default = Home;
 
 /***/ }),
 /* 277 */
@@ -28738,56 +28919,87 @@ exports.push([module.i, ".home-container{\n  align-items: center;\n  background:
 
 /***/ }),
 /* 279 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__WarRoom__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(41);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _reactRedux = __webpack_require__(16);
 
-const mapStateToProps = state => {
+var _WarRoom = __webpack_require__(280);
+
+var _WarRoom2 = _interopRequireDefault(_WarRoom);
+
+var _actions = __webpack_require__(41);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
   return state;
 };
 
-const mapDispatchToProps = dispatch => {
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    handleOpponentName: input => {
-      dispatch(Object(__WEBPACK_IMPORTED_MODULE_2__actions__["f" /* opponentName */])(input));
+    handleOpponentName: function handleOpponentName(input) {
+      dispatch((0, _actions.opponentName)(input));
     },
-    handleAcceptRequest: () => {
-      dispatch(Object(__WEBPACK_IMPORTED_MODULE_2__actions__["a" /* acceptRequest */])());
+    handleAcceptRequest: function handleAcceptRequest() {
+      dispatch((0, _actions.acceptRequest)());
     },
-    handleGetChallenge: input => {
-      dispatch(Object(__WEBPACK_IMPORTED_MODULE_2__actions__["c" /* getChallenge */])(input));
+    handleGetChallenge: function handleGetChallenge(input) {
+      dispatch((0, _actions.getChallenge)(input));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, mapDispatchToProps)(__WEBPACK_IMPORTED_MODULE_1__WarRoom__["a" /* default */]));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_WarRoom2.default);
 
 /***/ }),
 /* 280 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__websocket__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_warroom_css__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_warroom_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_warroom_css__);
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _websocket = __webpack_require__(42);
+
+var _websocket2 = _interopRequireDefault(_websocket);
+
+__webpack_require__(281);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var WarRoom = function (_Component) {
+  _inherits(WarRoom, _Component);
 
-class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-  constructor(props) {
-    super(props);
-    this.state = {
+  function WarRoom(props) {
+    _classCallCheck(this, WarRoom);
+
+    var _this = _possibleConstructorReturn(this, (WarRoom.__proto__ || Object.getPrototypeOf(WarRoom)).call(this, props));
+
+    _this.state = {
       challenge: "",
       users: [],
       opponentRequestingBattle: [],
@@ -28796,213 +29008,264 @@ class WarRoom extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       requestError: false
     };
 
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('warRoomUsers', msg => {
-      this.setState({ users: msg });
+    _websocket2.default.on('warRoomUsers', function (msg) {
+      _this.setState({ users: msg });
       console.log(msg, "msg in warrom on users available");
     });
 
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestAccepted', msg => {
-      this.props.handleAcceptRequest();
-      this.props.handleOpponentName(msg);
-      this.props.history.history.replace('/battle');
+    _websocket2.default.on('battleRequestAccepted', function (msg) {
+      _this.props.handleAcceptRequest();
+      _this.props.handleOpponentName(msg);
+      _this.props.history.history.replace('/battle');
     });
 
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('sendChallenge', msg => {
-      this.props.handleGetChallenge(msg);
+    _websocket2.default.on('sendChallenge', function (msg) {
+      _this.props.handleGetChallenge(msg);
     });
 
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequestDeclined', msg => {
-      this.setState({ showDecline: true, userDecline: msg });
-      setTimeout(() => {
-        this.setState({ showDecline: false });
+    _websocket2.default.on('battleRequestDeclined', function (msg) {
+      _this.setState({ showDecline: true, userDecline: msg });
+      setTimeout(function () {
+        _this.setState({ showDecline: false });
       }, 4000);
     });
 
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('battleRequest', msg => {
-      let opponent = this.state.opponentRequestingBattle.slice(0, this.state.opponentRequestingBattle.length);
+    _websocket2.default.on('battleRequest', function (msg) {
+      var opponent = _this.state.opponentRequestingBattle.slice(0, _this.state.opponentRequestingBattle.length);
       opponent.unshift(msg);
-      this.setState({ opponentRequestingBattle: opponent });
+      _this.setState({ opponentRequestingBattle: opponent });
     });
+    return _this;
   }
 
-  componentWillMount() {
-    var _this = this;
+  _createClass(WarRoom, [{
+    key: 'componentWillMount',
+    value: function () {
+      var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee() {
+        var username;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return this.props.user.username;
 
-    return _asyncToGenerator(function* () {
-      let username = yield _this.props.user.username;
-      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('user entering warroom', username);
-    })();
-  }
+              case 2:
+                username = _context.sent;
 
-  handleRandom() {
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('user left warroom', this.props.user.username);
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('random match request', this.props.user.username);
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('connected random 1v1', msg => {
-      this.props.handleAcceptRequest();
-      this.props.handleOpponentName(msg);
-      // this.props.history.history.replace('/random_battle')
-      this.props.history.history.replace('/battle');
-    });
-  }
+                _websocket2.default.emit('user entering warroom', username);
 
-  handleSetMatch(opponentUsername) {
-    if (opponentUsername === this.props.user.username) {
-      this.errorMessage();
+              case 4:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentWillMount() {
+        return _ref.apply(this, arguments);
+      }
+
+      return componentWillMount;
+    }()
+  }, {
+    key: 'handleRandom',
+    value: function handleRandom() {
+      var _this2 = this;
+
+      _websocket2.default.emit('user left warroom', this.props.user.username);
+      _websocket2.default.emit('random match request', this.props.user.username);
+      _websocket2.default.on('connected random 1v1', function (msg) {
+        _this2.props.handleAcceptRequest();
+        _this2.props.handleOpponentName(msg);
+        // this.props.history.history.replace('/random_battle')
+        _this2.props.history.history.replace('/battle');
+      });
+    }
+  }, {
+    key: 'handleSetMatch',
+    value: function handleSetMatch(opponentUsername) {
+      if (opponentUsername === this.props.user.username) {
+        this.errorMessage();
+        return;
+      }
+      _websocket2.default.emit('requestBattle', { opponent: opponentUsername, user: this.props.user.username });
+    }
+  }, {
+    key: 'users',
+    value: function users() {
+      var _this3 = this;
+
+      if (this.state.users[0] != null) {
+        var users = this.state.users.map(function (user, index) {
+          return _react2.default.createElement(
+            'div',
+            { className: 'user', key: index },
+            _react2.default.createElement(
+              'button',
+              { onClick: function onClick() {
+                  return _this3.handleSetMatch('' + user);
+                } },
+              user
+            ),
+            _react2.default.createElement(
+              'button',
+              { id: 'stats-btn', onClick: function onClick() {
+                  console.log("bam");
+                } },
+              'see stats'
+            )
+          );
+        });
+        return users;
+      }
       return;
     }
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('requestBattle', { opponent: opponentUsername, user: this.props.user.username });
-  }
-
-  users() {
-    if (this.state.users[0] != null) {
-      let users = this.state.users.map((user, index) => {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'user', key: index },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            { onClick: () => this.handleSetMatch(`${user}`) },
-            user
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            { id: 'stats-btn', onClick: () => {
-                console.log("bam");
-              } },
-            'see stats'
-          )
-        );
-      });
-      return users;
+  }, {
+    key: 'respondToBattleRequest',
+    value: function respondToBattleRequest(input, opponent) {
+      if (input) {
+        this.props.handleAcceptRequest();
+        _websocket2.default.emit('acceptBattleRequest', { opponent: opponent, user: this.props.user.username });
+        this.props.handleOpponentName(this.state.opponentRequestingBattle);
+        this.props.history.history.replace('/battle');
+        this.setState({ opponentRequestingBattle: [] });
+      } else {
+        _websocket2.default.emit('declineBattleRequest', { opponent: opponent, user: this.props.user.username });
+        var updateOpponents = this.state.opponentRequestingBattle.slice(0, this.state.opponentRequestingBattle.length);
+        updateOpponents.splice(updateOpponents.indexOf(opponent), 1);
+        this.setState({ opponentRequestingBattle: updateOpponents });
+      }
     }
-    return;
-  }
+  }, {
+    key: 'displayBattleRequest',
+    value: function displayBattleRequest() {
+      var _this4 = this;
 
-  respondToBattleRequest(input, opponent) {
-    if (input) {
-      this.props.handleAcceptRequest();
-      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('acceptBattleRequest', { opponent: opponent, user: this.props.user.username });
-      this.props.handleOpponentName(this.state.opponentRequestingBattle);
-      this.props.history.history.replace('/battle');
-      this.setState({ opponentRequestingBattle: [] });
-    } else {
-      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('declineBattleRequest', { opponent: opponent, user: this.props.user.username });
-      let updateOpponents = this.state.opponentRequestingBattle.slice(0, this.state.opponentRequestingBattle.length);
-      updateOpponents.splice(updateOpponents.indexOf(opponent), 1);
-      this.setState({ opponentRequestingBattle: updateOpponents });
-    }
-  }
-
-  displayBattleRequest() {
-    if (this.state.opponentRequestingBattle.length) {
-      return this.state.opponentRequestingBattle.map((opponent, i) => {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { key: i, className: 'battle-request' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h4',
-            null,
-            opponent,
-            ' wants to battle!'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      if (this.state.opponentRequestingBattle.length) {
+        return this.state.opponentRequestingBattle.map(function (opponent, i) {
+          return _react2.default.createElement(
             'div',
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'button',
-              { onClick: () => this.respondToBattleRequest(true, opponent) },
-              'Accept'
+            { key: i, className: 'battle-request' },
+            _react2.default.createElement(
+              'h4',
+              null,
+              opponent,
+              ' wants to battle!'
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'button',
-              { onClick: () => this.respondToBattleRequest(false, opponent) },
-              'Reject'
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'button',
+                { onClick: function onClick() {
+                    return _this4.respondToBattleRequest(true, opponent);
+                  } },
+                'Accept'
+              ),
+              _react2.default.createElement(
+                'button',
+                { onClick: function onClick() {
+                    return _this4.respondToBattleRequest(false, opponent);
+                  } },
+                'Reject'
+              )
             )
-          )
-        );
-      });
+          );
+        });
+      }
+      return;
     }
-    return;
-  }
+  }, {
+    key: 'handleRoute',
+    value: function handleRoute(e) {
+      _websocket2.default.emit('user left warroom', this.props.user.username);
+      e.preventDefault();
+      this.props.history.history.replace('/destiny');
+    }
+  }, {
+    key: 'errorMessage',
+    value: function errorMessage() {
+      var _this5 = this;
 
-  handleRoute(e) {
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('user left warroom', this.props.user.username);
-    e.preventDefault();
-    this.props.history.history.replace('/destiny');
-  }
+      this.setState({ requestError: true });
+      setTimeout(function () {
+        _this5.setState({ requestError: false });
+      }, 4000);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this6 = this;
 
-  errorMessage() {
-    this.setState({ requestError: true });
-    setTimeout(() => {
-      this.setState({ requestError: false });
-    }, 4000);
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'war-room-container' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h3',
-        null,
-        'Prepare yourself ',
-        this.props.user.username,
-        '!'
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      return _react2.default.createElement(
         'div',
-        { className: 'war-room-btn-container' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: () => {
-              this.handleRandom();
-            } },
-          'random match'
+        { className: 'war-room-container' },
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Prepare yourself ',
+          this.props.user.username,
+          '!'
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: e => {
-              this.handleRoute(e);
-            } },
-          'back to destiny room'
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'battle-request-container' },
-        this.displayBattleRequest()
-      ),
-      this.state.showDecline ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'decline-battle-request' },
-        'Unfortunaly ',
-        this.state.userDecline,
-        ' is too scared to play with you right for now'
-      ) : null,
-      this.state.requestError ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'request-error' },
-        'You can not request yourself to be challenged, try solo mode in the destiny room if you want to play with yourself'
-      ) : null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'select-user-message-container' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        _react2.default.createElement(
           'div',
-          { className: 'select-user-message' },
-          'select a user to challenge to a battle'
+          { className: 'war-room-btn-container' },
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick() {
+                _this6.handleRandom();
+              } },
+            'random match'
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick(e) {
+                _this6.handleRoute(e);
+              } },
+            'back to destiny room'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'battle-request-container' },
+          this.displayBattleRequest()
+        ),
+        this.state.showDecline ? _react2.default.createElement(
+          'div',
+          { className: 'decline-battle-request' },
+          'Unfortunaly ',
+          this.state.userDecline,
+          ' is too scared to play with you right for now'
+        ) : null,
+        this.state.requestError ? _react2.default.createElement(
+          'div',
+          { className: 'request-error' },
+          'You can not request yourself to be challenged, try solo mode in the destiny room if you want to play with yourself'
+        ) : null,
+        _react2.default.createElement(
+          'div',
+          { className: 'select-user-message-container' },
+          _react2.default.createElement(
+            'div',
+            { className: 'select-user-message' },
+            'select a user to challenge to a battle'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'users' },
+          this.users()
         )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'users' },
-        this.users()
-      )
-    );
-  }
-}
+      );
+    }
+  }]);
 
-/* harmony default export */ __webpack_exports__["a"] = (WarRoom);
+  return WarRoom;
+}(_react.Component);
+
+exports.default = WarRoom;
 
 /***/ }),
 /* 281 */
@@ -29051,139 +29314,178 @@ exports.push([module.i, ".war-room-container {\n  align-items: center;\n  backgr
 
 /***/ }),
 /* 283 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Destiny__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(41);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _reactRedux = __webpack_require__(16);
 
-const mapStateToProps = state => {
+var _Destiny = __webpack_require__(284);
+
+var _Destiny2 = _interopRequireDefault(_Destiny);
+
+var _actions = __webpack_require__(41);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
   return state;
 };
 
-const mapDispatchToProps = dispatch => {
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    handleLogOut: () => {
-      dispatch(Object(__WEBPACK_IMPORTED_MODULE_2__actions__["e" /* logout */])());
+    handleLogOut: function handleLogOut() {
+      dispatch((0, _actions.logout)());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, mapDispatchToProps)(__WEBPACK_IMPORTED_MODULE_1__Destiny__["a" /* default */]));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Destiny2.default);
 
 /***/ }),
 /* 284 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_destiny_css__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_destiny_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_destiny_css__);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-class Destiny extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-  constructor(props) {
-    super(props);
-    this.state = {};
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(285);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Destiny = function (_Component) {
+  _inherits(Destiny, _Component);
+
+  function Destiny(props) {
+    _classCallCheck(this, Destiny);
+
+    var _this = _possibleConstructorReturn(this, (Destiny.__proto__ || Object.getPrototypeOf(Destiny)).call(this, props));
+
+    _this.state = {};
+    return _this;
   }
 
-  handleClick(input) {
-    this.props.history.history.replace(input);
-  }
+  _createClass(Destiny, [{
+    key: 'handleClick',
+    value: function handleClick(input) {
+      this.props.history.history.replace(input);
+    }
+  }, {
+    key: 'logOut',
+    value: function logOut() {
+      this.props.handleLogOut();
+      this.handleClick('/');
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
 
-  logOut() {
-    this.props.handleLogOut();
-    this.handleClick('/');
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'destiny' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h2',
-        null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'span',
-          { id: 'destiny-fw' },
-          'Choose'
-        ),
-        ' ',
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'span',
-          { id: 'destiny-sw' },
-          'Your'
-        ),
-        ' ',
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'span',
-          { id: 'destiny-tw' },
-          'Destiny'
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      return _react2.default.createElement(
         'div',
-        { className: 'destiny-body' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          {
-            onClick: () => {
-              this.handleClick("/solo");
-            } },
-          'Interview Prep'
+        { className: 'destiny' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          _react2.default.createElement(
+            'span',
+            { id: 'destiny-fw' },
+            'Choose'
+          ),
+          ' ',
+          _react2.default.createElement(
+            'span',
+            { id: 'destiny-sw' },
+            'Your'
+          ),
+          ' ',
+          _react2.default.createElement(
+            'span',
+            { id: 'destiny-tw' },
+            'Destiny'
+          )
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          {
-            onClick: () => {
-              this.handleClick("/warroom");
-            } },
-          'Battle'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          {
-            onClick: () => {
-              this.handleClick("/pair");
-            } },
-          'Pair'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          {
-            onClick: () => {
-              this.handleClick("/learn");
-            } },
-          'Learn'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          {
-            onClick: () => {
-              this.handleClick("/create_challenge");
-            } },
-          'Create Challenge'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          {
-            onClick: () => {
-              this.logOut();
-            } },
-          'Log Out'
+        _react2.default.createElement(
+          'div',
+          { className: 'destiny-body' },
+          _react2.default.createElement(
+            'button',
+            {
+              onClick: function onClick() {
+                _this2.handleClick("/solo");
+              } },
+            'Interview Prep'
+          ),
+          _react2.default.createElement(
+            'button',
+            {
+              onClick: function onClick() {
+                _this2.handleClick("/warroom");
+              } },
+            'Battle'
+          ),
+          _react2.default.createElement(
+            'button',
+            {
+              onClick: function onClick() {
+                _this2.handleClick("/pair");
+              } },
+            'Pair'
+          ),
+          _react2.default.createElement(
+            'button',
+            {
+              onClick: function onClick() {
+                _this2.handleClick("/learn");
+              } },
+            'Learn'
+          ),
+          _react2.default.createElement(
+            'button',
+            {
+              onClick: function onClick() {
+                _this2.handleClick("/create_challenge");
+              } },
+            'Create Challenge'
+          ),
+          _react2.default.createElement(
+            'button',
+            {
+              onClick: function onClick() {
+                _this2.logOut();
+              } },
+            'Log Out'
+          )
         )
-      )
-    );
-  }
-}
+      );
+    }
+  }]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Destiny);
+  return Destiny;
+}(_react.Component);
+
+exports.default = Destiny;
 
 /***/ }),
 /* 285 */
@@ -29232,48 +29534,79 @@ exports.push([module.i, ".destiny {\n  align-items: center;\n  background: #423f
 
 /***/ }),
 /* 287 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__BattleMode__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(41);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _reactRedux = __webpack_require__(16);
 
-const mapStateToProps = state => {
+var _BattleMode = __webpack_require__(288);
+
+var _BattleMode2 = _interopRequireDefault(_BattleMode);
+
+var _actions = __webpack_require__(41);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
   return state;
 };
 
-const mapDispatchToProps = dispatch => {
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    handleClearOpponent: input => {
-      dispatch(Object(__WEBPACK_IMPORTED_MODULE_2__actions__["b" /* clearOpponent */])(input));
+    handleClearOpponent: function handleClearOpponent(input) {
+      dispatch((0, _actions.clearOpponent)(input));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, mapDispatchToProps)(__WEBPACK_IMPORTED_MODULE_1__BattleMode__["a" /* default */]));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_BattleMode2.default);
 
 /***/ }),
 /* 288 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__websocket__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_battlemode_css__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_battlemode_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_battlemode_css__);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-  constructor(props) {
-    super(props);
-    this.state = {
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _websocket = __webpack_require__(42);
+
+var _websocket2 = _interopRequireDefault(_websocket);
+
+__webpack_require__(115);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BattleMode = function (_Component) {
+  _inherits(BattleMode, _Component);
+
+  function BattleMode(props) {
+    _classCallCheck(this, BattleMode);
+
+    var _this = _possibleConstructorReturn(this, (BattleMode.__proto__ || Object.getPrototypeOf(BattleMode)).call(this, props));
+
+    _this.state = {
       startGame: true,
       lineNumber: 1,
       opponentsPoints: 0,
@@ -29288,342 +29621,402 @@ class BattleMode extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       questions: []
     };
 
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('challenger left', () => {
-      this.setState({ gameover: true, challengerLeft: true });
+    _websocket2.default.on('challenger left', function () {
+      _this.setState({ gameover: true, challengerLeft: true });
     });
 
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('challenger question', msg => {
-      this.setState({ opponentsPoints: msg });
+    _websocket2.default.on('challenger question', function (msg) {
+      _this.setState({ opponentsPoints: msg });
       console.log(msg, "ppont");
-      console.log(this.state.questions.length, "leng");
-      if (msg == this.state.questions.length) {
-        this.setState({ gameover: true });
-        this.handleApiCall("+ 0");
-        __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('send code', {
-          code: this.state.text,
-          challenger: this.props.battle
+      console.log(_this.state.questions.length, "leng");
+      if (msg == _this.state.questions.length) {
+        _this.setState({ gameover: true });
+        _this.handleApiCall("+ 0");
+        _websocket2.default.emit('send code', {
+          code: _this.state.text,
+          challenger: _this.props.battle
         });
       }
     });
 
-    __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].on('challenger code', msg => {
-      this.setState({ challengerCode: msg });
+    _websocket2.default.on('challenger code', function (msg) {
+      _this.setState({ challengerCode: msg });
     });
+    return _this;
   }
 
-  componentWillMount() {
-    setTimeout(() => {
-      this.setState({
-        description: this.props.getChallenge[0].descriptions || [],
-        questions: this.props.getChallenge[0].tests || [] });
-    }, 5000);
-  }
+  _createClass(BattleMode, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var _this2 = this;
 
-  getCode(e) {
-    console.log(e.target.innerText);
-    if (e.key === 'Enter') {
-      if (this.state.lineNumber == 27) return; //NOTE WHY DO WE NEED THIS? COULDNT WE OVERFLOW SCROLL ANY EXTRA LENGTH?
-      let addLine = this.state.lineNumber + 1;
-      this.setState({ lineNumber: addLine });
+      setTimeout(function () {
+        _this2.setState({
+          description: _this2.props.getChallenge[0].descriptions || [],
+          questions: _this2.props.getChallenge[0].tests || [] });
+      }, 5000);
     }
-    //
-    if (!e) return;
-    let text = e.target.innerText;
-    this.setState({ text: text });
-  }
-
-  make() {
-    if (this.state.gameover || !this.state.text) return;
-    if (!this.props.battle || !this.state.startGame) return;
-
-    let results = [];
-    let runTill = this.state.currentQuestion;
-    runTill += 1;
-    for (let i = 0; i < runTill; i++) {
-      let tester = new Function(`${this.state.text} ; ${this.state.questions[i]}`)();
-      results.push(tester);
+  }, {
+    key: 'getCode',
+    value: function getCode(e) {
+      console.log(e.target.innerText);
+      if (e.key === 'Enter') {
+        if (this.state.lineNumber == 27) return; //NOTE WHY DO WE NEED THIS? COULDNT WE OVERFLOW SCROLL ANY EXTRA LENGTH?
+        var addLine = this.state.lineNumber + 1;
+        this.setState({ lineNumber: addLine });
+      }
+      //
+      if (!e) return;
+      var text = e.target.innerText;
+      this.setState({ text: text });
     }
-    let outcome = results.every(i => i);
-    if (!outcome) {
-      let failedTest = [];
-      for (let i = 0; i < results.length; i++) {
-        if (!results[i]) {
-          this.setState({ currentQuestion: i });
-          __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit("current question", { question: i, challenger: this.props.battle });
-          break;
+  }, {
+    key: 'make',
+    value: function make() {
+      if (this.state.gameover || !this.state.text) return;
+      if (!this.props.battle || !this.state.startGame) return;
+
+      var results = [];
+      var runTill = this.state.currentQuestion;
+      runTill += 1;
+      for (var i = 0; i < runTill; i++) {
+        var tester = new Function(this.state.text + ' ; ' + this.state.questions[i])();
+        results.push(tester);
+      }
+      var outcome = results.every(function (i) {
+        return i;
+      });
+      if (!outcome) {
+        var failedTest = [];
+        for (var _i = 0; _i < results.length; _i++) {
+          if (!results[_i]) {
+            this.setState({ currentQuestion: _i });
+            _websocket2.default.emit("current question", { question: _i, challenger: this.props.battle });
+            break;
+          }
+        }
+      } else {
+        var updateQuestion = this.state.currentQuestion + 1;
+        this.setState({ currentQuestion: updateQuestion });
+        _websocket2.default.emit("current question", { question: updateQuestion, challenger: this.props.battle });
+        if (updateQuestion == this.state.questions.length) {
+          this.setState({ gameover: true });
+          this.handleApiCall("+ 1");
+          _websocket2.default.emit('send code', { code: this.state.text, challenger: this.props.battle });
         }
       }
-    } else {
-      let updateQuestion = this.state.currentQuestion + 1;
-      this.setState({ currentQuestion: updateQuestion });
-      __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit("current question", { question: updateQuestion, challenger: this.props.battle });
-      if (updateQuestion == this.state.questions.length) {
-        this.setState({ gameover: true });
-        this.handleApiCall("+ 1");
-        __WEBPACK_IMPORTED_MODULE_1__websocket__["a" /* default */].emit('send code', { code: this.state.text, challenger: this.props.battle });
+    }
+  }, {
+    key: 'addLine',
+    value: function addLine() {
+      var test = [];
+      for (var i = 1; i <= this.state.lineNumber; i++) {
+        var newLine = document.createElement('p');
+        newLine.innerText += i;
+        test.push(newLine);
+      }
+      var test2 = test.map(function (line, id) {
+        return _react2.default.createElement(
+          'p',
+          { key: id },
+          line.innerHTML
+        );
+      });
+      return test2;
+    }
+  }, {
+    key: 'handleRoute',
+    value: function handleRoute(e) {
+      this.props.handleClearOpponent();
+      e.preventDefault();
+      this.props.history.history.replace('/warroom');
+    }
+  }, {
+    key: 'handleApiCall',
+    value: function handleApiCall(win) {
+      var d = new Date();
+      var month = d.getMonth() + 1;
+      var day = d.getDate();
+      var year = d.getFullYear();
+      var score = this.state.currentQuestion == 0 ? 0 : this.state.currentQuestion + 1;
+
+      fetch('/api/v1/score', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: '' + this.props.user.username,
+          score: score,
+          win: win,
+          date: month + " " + day + " " + year
+        })
+      });
+    }
+  }, {
+    key: 'gameover',
+    value: function gameover() {
+      var _this3 = this;
+
+      if (this.state.gameover) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'gameover-message' },
+          'GAMEOVER',
+          this.state.challengerLeft ? _react2.default.createElement(
+            'div',
+            null,
+            'challenger has fled the battle'
+          ) : _react2.default.createElement(
+            'button',
+            { onClick: function onClick() {
+                _this3.handleCodeShow(true);
+              } },
+            'I want to see that other code!'
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick(e) {
+                _this3.handleRoute(e);
+              } },
+            'back to war'
+          )
+        );
       }
     }
-  }
-
-  addLine() {
-    let test = [];
-    for (let i = 1; i <= this.state.lineNumber; i++) {
-      let newLine = document.createElement('p');
-      newLine.innerText += i;
-      test.push(newLine);
+  }, {
+    key: 'handleCodeShow',
+    value: function handleCodeShow(input) {
+      this.setState({ showCode: input });
     }
-    let test2 = test.map((line, id) => {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'p',
-        { key: id },
-        line.innerHTML
-      );
-    });
-    return test2;
-  }
+  }, {
+    key: 'showCode',
+    value: function showCode() {
+      var _this4 = this;
 
-  handleRoute(e) {
-    this.props.handleClearOpponent();
-    e.preventDefault();
-    this.props.history.history.replace('/warroom');
-  }
-
-  handleApiCall(win) {
-    const d = new Date();
-    const month = d.getMonth() + 1;
-    const day = d.getDate();
-    const year = d.getFullYear();
-    const score = this.state.currentQuestion == 0 ? 0 : this.state.currentQuestion + 1;
-
-    fetch('/api/v1/score', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        username: `${this.props.user.username}`,
-        score: score,
-        win: win,
-        date: month + " " + day + " " + year
-      })
-    });
-  }
-
-  gameover() {
-    if (this.state.gameover) {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      return this.state.showCode ? _react2.default.createElement(
         'div',
-        { className: 'gameover-message' },
-        'GAMEOVER',
-        this.state.challengerLeft ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        { className: 'challenger-code' },
+        _react2.default.createElement(
           'div',
           null,
-          'challenger has fled the battle'
-        ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: () => {
-              this.handleCodeShow(true);
-            } },
-          'I want to see that other code!'
+          this.state.challengerCode
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        _react2.default.createElement(
           'button',
-          { onClick: e => {
-              this.handleRoute(e);
+          { onClick: function onClick() {
+              _this4.handleCodeShow(false);
             } },
-          'back to war'
+          'close'
         )
-      );
+      ) : null;
     }
-  }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this5 = this;
 
-  handleCodeShow(input) {
-    this.setState({ showCode: input });
-  }
-
-  showCode() {
-    return this.state.showCode ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'challenger-code' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      return _react2.default.createElement(
         'div',
-        null,
-        this.state.challengerCode
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'button',
-        { onClick: () => {
-            this.handleCodeShow(false);
-          } },
-        'close'
-      )
-    ) : null;
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'app' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { id: 'left-side' },
-        !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        { className: 'app' },
+        _react2.default.createElement(
           'div',
-          { id: 'terminal' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          { id: 'left-side' },
+          !this.state.startGame ? null : _react2.default.createElement(
             'div',
-            { className: 'line-wrapper' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            { id: 'terminal' },
+            _react2.default.createElement(
               'div',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              { className: 'line-wrapper' },
+              _react2.default.createElement(
                 'div',
-                { className: 'line-num' },
-                this.addLine()
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', { id: 'test', className: 'line', onKeyDown: e => {
-                if (e.keyCode === 9) {
-                  e.preventDefault();
-                  document.execCommand('indent', true, null);
-                }
-              },
-              onKeyUp: e => {
-                this.getCode(e);
-              }, contentEditable: true })
-          )
-        ),
-        !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { id: 'run-button-div' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            { id: 'run-button', onClick: () => this.make() },
-            'Run'
-          )
-        )
-      ),
-      this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'waiting-msg' },
-        'waiting on challenger'
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { id: 'right-side' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { id: 'scoreboard' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h4',
-            { className: 'scoreboard-title' },
-            'Scoreboard'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'scores' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'p',
-              null,
-              'Your Score: ',
-              this.state.currentQuestion
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'p',
-              null,
-              'Opponents Score: ',
-              this.state.opponentsPoints
+                null,
+                _react2.default.createElement(
+                  'div',
+                  { className: 'line-num' },
+                  this.addLine()
+                )
+              ),
+              _react2.default.createElement('p', { id: 'test', className: 'line', onKeyDown: function onKeyDown(e) {
+                  if (e.keyCode === 9) {
+                    e.preventDefault();
+                    document.execCommand('indent', true, null);
+                  }
+                },
+                onKeyUp: function onKeyUp(e) {
+                  _this5.getCode(e);
+                }, contentEditable: true })
             )
           ),
-          !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            { className: 'test-number' },
-            'Test ',
-            this.state.currentQuestion + 1
-          ),
-          !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            { className: 'current-question' },
-            this.state.description[this.state.currentQuestion]
+          !this.state.startGame ? null : _react2.default.createElement(
+            'div',
+            { id: 'run-button-div' },
+            _react2.default.createElement(
+              'button',
+              { id: 'run-button', onClick: function onClick() {
+                  return _this5.make();
+                } },
+              'Run'
+            )
           )
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        this.state.startGame ? null : _react2.default.createElement(
           'div',
-          { id: 'repl' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            { onClick: e => {
-                this.handleRoute(e);
-              } },
-            'Exit to War Room'
+          { className: 'waiting-msg' },
+          'waiting on challenger'
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'right-side' },
+          _react2.default.createElement(
+            'div',
+            { id: 'scoreboard' },
+            _react2.default.createElement(
+              'h4',
+              { className: 'scoreboard-title' },
+              'Scoreboard'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'scores' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Your Score: ',
+                this.state.currentQuestion
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Opponents Score: ',
+                this.state.opponentsPoints
+              )
+            ),
+            !this.state.startGame ? null : _react2.default.createElement(
+              'p',
+              { className: 'test-number' },
+              'Test ',
+              this.state.currentQuestion + 1
+            ),
+            !this.state.startGame ? null : _react2.default.createElement(
+              'p',
+              { className: 'current-question' },
+              this.state.description[this.state.currentQuestion]
+            )
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            { className: this.state.currentQuestion > 0 ? 'green' : 'red' },
-            'Test 1'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            { className: this.state.currentQuestion > 1 ? 'green' : 'red' },
-            'Test 2'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            { className: this.state.currentQuestion > 2 ? 'green' : 'red' },
-            'Test 3'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            { className: this.state.currentQuestion > 3 ? 'green' : 'red' },
-            'Test 4'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            { className: this.state.challengerLeft !== true && this.state.gameover ? 'green' : 'red' },
-            'Test 5'
+          _react2.default.createElement(
+            'div',
+            { id: 'repl' },
+            _react2.default.createElement(
+              'button',
+              { onClick: function onClick(e) {
+                  _this5.handleRoute(e);
+                } },
+              'Exit to War Room'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: this.state.currentQuestion > 0 ? 'green' : 'red' },
+              'Test 1'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: this.state.currentQuestion > 1 ? 'green' : 'red' },
+              'Test 2'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: this.state.currentQuestion > 2 ? 'green' : 'red' },
+              'Test 3'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: this.state.currentQuestion > 3 ? 'green' : 'red' },
+              'Test 4'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: this.state.challengerLeft !== true && this.state.gameover ? 'green' : 'red' },
+              'Test 5'
+            )
           )
-        )
-      ),
-      this.gameover(),
-      this.showCode()
-    );
-  }
-}
+        ),
+        this.gameover(),
+        this.showCode()
+      );
+    }
+  }]);
 
-/* harmony default export */ __webpack_exports__["a"] = (BattleMode);
+  return BattleMode;
+}(_react.Component);
+
+exports.default = BattleMode;
 
 /***/ }),
 /* 289 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CreateChallenge__ = __webpack_require__(290);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-const mapStateToProps = state => {
+var _reactRedux = __webpack_require__(16);
+
+var _CreateChallenge = __webpack_require__(290);
+
+var _CreateChallenge2 = _interopRequireDefault(_CreateChallenge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
   return state;
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, null)(__WEBPACK_IMPORTED_MODULE_1__CreateChallenge__["a" /* default */]));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, null)(_CreateChallenge2.default);
 
 /***/ }),
 /* 290 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_create_challenge_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__NewTest__ = __webpack_require__(293);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-  constructor(props) {
-    super(props);
-    this.state = {
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(291);
+
+var _NewTest = __webpack_require__(293);
+
+var _NewTest2 = _interopRequireDefault(_NewTest);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CreateChallenge = function (_Component) {
+  _inherits(CreateChallenge, _Component);
+
+  function CreateChallenge(props) {
+    _classCallCheck(this, CreateChallenge);
+
+    var _this = _possibleConstructorReturn(this, (CreateChallenge.__proto__ || Object.getPrototypeOf(CreateChallenge)).call(this, props));
+
+    _this.state = {
       challengeName: '',
       code: "",
       tests: ['', '', '', '', ''],
@@ -29638,225 +30031,269 @@ class CreateChallenge extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       value: 'beginner',
       done: false
     };
+    return _this;
   }
 
-  runTests() {
-    if (!this.state.code) return;
-    this.setState({ runButtonClicked: true });
-    let results = [];
-    for (let i = 0; i < 5; i++) {
-      let tester = new Function(`${this.state.code} ; ${this.state.tests[i]}`)();
-      results.push(tester);
-    }
-    let outcome = results.every(i => i);
-    if (!outcome) {
-      this.setState({ testFail: true });
-      let badTests = [];
-      results.forEach((i, index) => {
-        if (!i) {
-          badTests.push(index);
-        }
+  _createClass(CreateChallenge, [{
+    key: 'runTests',
+    value: function runTests() {
+      if (!this.state.code) return;
+      this.setState({ runButtonClicked: true });
+      var results = [];
+      for (var i = 0; i < 5; i++) {
+        var tester = new Function(this.state.code + ' ; ' + this.state.tests[i])();
+        results.push(tester);
+      }
+      var outcome = results.every(function (i) {
+        return i;
       });
-      this.setState({ failedTests: badTests });
+      if (!outcome) {
+        this.setState({ testFail: true });
+        var badTests = [];
+        results.forEach(function (i, index) {
+          if (!i) {
+            badTests.push(index);
+          }
+        });
+        this.setState({ failedTests: badTests });
+      }
     }
-  }
+  }, {
+    key: 'createTestState',
+    value: function createTestState(event, test) {
+      var tests = this.state.tests;
+      tests[test] = event.target.value;
+      this.setState({ tests: tests });
+    }
+  }, {
+    key: 'handleReroute',
+    value: function handleReroute(e) {
+      e.preventDefault();
+      this.props.history.history.replace('/destiny');
+    }
+  }, {
+    key: 'createChallenge',
+    value: function createChallenge() {
+      var _this2 = this;
 
-  createTestState(event, test) {
-    let tests = this.state.tests;
-    tests[test] = event.target.value;
-    this.setState({ tests });
-  }
-
-  handleReroute(e) {
-    e.preventDefault();
-    this.props.history.history.replace('/destiny');
-  }
-
-  createChallenge() {
-    if (!this.state.challengeName) return;
-    if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return; // SHOW ERROR MESSAGE
-    if (!this.checkDescriptions()) return; // SHOW MESSAGE SAYING MISSING DESCRIPTION
-    fetch('/api/v1/challenges', {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        "tests": this.state.tests,
-        "descriptions": [this.state.description1, this.state.description2, this.state.description3, this.state.description4, this.state.description5],
-        "difficulty": this.state.value,
-        "challenge_name": this.state.challengeName,
-        "language": "Javascript",
-        "username": this.props.user.username
-      })
-    }).then(res => res.json()).then(() => {
-      this.setState({ tests: ['', '', '', '', ''],
-        description1: '',
-        description2: '',
-        description3: '',
-        description4: '',
-        description5: '',
-        runButtonClicked: false,
-        failedTests: [],
-        code: '',
-        challengeName: '',
-        done: true
-      });
-    }).catch(err => {
-      console.log(err);
-    });
-  }
-
-  checkDescriptions() {
-    return this.state.description1 !== '' && this.state.description2 !== '' && this.state.description3 !== '' && this.state.description4 !== '' && this.state.description5 !== '';
-  }
-
-  handleSelection(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  showError() {
-    if (this.state.testFail) {
-      setTimeout(() => this.setState({ testFail: false }), 4000);
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'error-msg-container' },
-        this.state.failedTests.map((val, i) => {
-          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'error-msg-challenge', key: i },
-            'error found on test ',
-            val + 1
-          );
+      if (!this.state.challengeName) return;
+      if (this.state.failedTests.length > 1 || !this.state.runButtonClicked) return; // SHOW ERROR MESSAGE
+      if (!this.checkDescriptions()) return; // SHOW MESSAGE SAYING MISSING DESCRIPTION
+      fetch('/api/v1/challenges', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          "tests": this.state.tests,
+          "descriptions": [this.state.description1, this.state.description2, this.state.description3, this.state.description4, this.state.description5],
+          "difficulty": this.state.value,
+          "challenge_name": this.state.challengeName,
+          "language": "Javascript",
+          "username": this.props.user.username
         })
-      );
-    } else {
-      return null;
-    }
-  }
-
-  onPost() {
-    if (this.state.done) {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'complete' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { className: 'complete-button', onClick: () => this.props.history.history.replace('/destiny') },
-          'Return to Destiny'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { className: 'complete-button', onClick: () => this.setState({ done: false }) },
-          'Make Another Challenge'
-        )
-      );
-    } else {
-      return null;
-    }
-  }
-
-  createDescriptionState(e, descriptionNum) {
-    let test = 'description' + descriptionNum;
-    this.setState({ [test]: e.target.value });
-  }
-
-  displayTests() {
-    let descriptions = [this.state.description1, this.state.description2, this.state.description3, this.state.description4, this.state.description5];
-    let newTests = this.state.tests.map((test, i) => {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__NewTest__["a" /* default */], { key: i,
-        createTestState: this.createTestState.bind(this),
-        testNumber: i,
-        setState: this.setState.bind(this),
-        testValue: this.state.tests[i],
-        descriptionValue: descriptions[i],
-        createDescriptionState: this.createDescriptionState.bind(this)
+      }).then(function (res) {
+        return res.json();
+      }).then(function () {
+        _this2.setState({ tests: ['', '', '', '', ''],
+          description1: '',
+          description2: '',
+          description3: '',
+          description4: '',
+          description5: '',
+          runButtonClicked: false,
+          failedTests: [],
+          code: '',
+          challengeName: '',
+          done: true
+        });
+      }).catch(function (err) {
+        console.log(err);
       });
-    });
-    return newTests;
-  }
+    }
+  }, {
+    key: 'checkDescriptions',
+    value: function checkDescriptions() {
+      return this.state.description1 !== '' && this.state.description2 !== '' && this.state.description3 !== '' && this.state.description4 !== '' && this.state.description5 !== '';
+    }
+  }, {
+    key: 'handleSelection',
+    value: function handleSelection(event) {
+      this.setState({ value: event.target.value });
+    }
+  }, {
+    key: 'showError',
+    value: function showError() {
+      var _this3 = this;
 
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'create-challenge-container' },
-      this.onPost(),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h6',
-        { id: 'title-page' },
-        'create test zone',
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: e => {
-              this.handleReroute(e);
-            } },
-          'back to destiny room'
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'create-challenge-info' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { placeholder: 'Title of Challenge', onChange: e => this.setState({ challengeName: e.target.value }) }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'select',
-          { value: this.state.value, onChange: e => this.handleSelection(e) },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'option',
-            { value: 'beginner' },
-            'Beginner'
+      if (this.state.testFail) {
+        setTimeout(function () {
+          return _this3.setState({ testFail: false });
+        }, 4000);
+        return _react2.default.createElement(
+          'div',
+          { className: 'error-msg-container' },
+          this.state.failedTests.map(function (val, i) {
+            return _react2.default.createElement(
+              'div',
+              { className: 'error-msg-challenge', key: i },
+              'error found on test ',
+              val + 1
+            );
+          })
+        );
+      } else {
+        return null;
+      }
+    }
+  }, {
+    key: 'onPost',
+    value: function onPost() {
+      var _this4 = this;
+
+      if (this.state.done) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'complete' },
+          _react2.default.createElement(
+            'button',
+            { className: 'complete-button', onClick: function onClick() {
+                return _this4.props.history.history.replace('/destiny');
+              } },
+            'Return to Destiny'
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'option',
-            { value: 'easy' },
-            'Easy'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'option',
-            { value: 'medium' },
-            'Medium'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'option',
-            { value: 'hard' },
-            'Hard'
+          _react2.default.createElement(
+            'button',
+            { className: 'complete-button', onClick: function onClick() {
+                return _this4.setState({ done: false });
+              } },
+            'Make Another Challenge'
           )
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'section',
-        { className: 'create-test-container' },
-        this.displayTests()
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'section',
-        { className: 'example-code-container' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'code',
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
-            className: 'code-example',
-            type: 'text',
-            placeholder: 'type in your example solutions for all your test here',
-            value: this.state.code,
-            onChange: e => {
-              this.setState({ code: e.target.value });
-            } })
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: () => this.runTests() },
-          'Run Tests'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { onClick: () => this.createChallenge() },
-          'Create Challenge'
-        ),
-        this.showError()
-      )
-    );
-  }
-}
+        );
+      } else {
+        return null;
+      }
+    }
+  }, {
+    key: 'createDescriptionState',
+    value: function createDescriptionState(e, descriptionNum) {
+      var test = 'description' + descriptionNum;
+      this.setState(_defineProperty({}, test, e.target.value));
+    }
+  }, {
+    key: 'displayTests',
+    value: function displayTests() {
+      var _this5 = this;
 
-/* harmony default export */ __webpack_exports__["a"] = (CreateChallenge);
+      var descriptions = [this.state.description1, this.state.description2, this.state.description3, this.state.description4, this.state.description5];
+      var newTests = this.state.tests.map(function (test, i) {
+        return _react2.default.createElement(_NewTest2.default, { key: i,
+          createTestState: _this5.createTestState.bind(_this5),
+          testNumber: i,
+          setState: _this5.setState.bind(_this5),
+          testValue: _this5.state.tests[i],
+          descriptionValue: descriptions[i],
+          createDescriptionState: _this5.createDescriptionState.bind(_this5)
+        });
+      });
+      return newTests;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this6 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'create-challenge-container' },
+        this.onPost(),
+        _react2.default.createElement(
+          'h6',
+          { id: 'title-page' },
+          'create test zone',
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick(e) {
+                _this6.handleReroute(e);
+              } },
+            'back to destiny room'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'create-challenge-info' },
+          _react2.default.createElement('input', { placeholder: 'Title of Challenge', onChange: function onChange(e) {
+              return _this6.setState({ challengeName: e.target.value });
+            } }),
+          _react2.default.createElement(
+            'select',
+            { value: this.state.value, onChange: function onChange(e) {
+                return _this6.handleSelection(e);
+              } },
+            _react2.default.createElement(
+              'option',
+              { value: 'beginner' },
+              'Beginner'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'easy' },
+              'Easy'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'medium' },
+              'Medium'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'hard' },
+              'Hard'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'section',
+          { className: 'create-test-container' },
+          this.displayTests()
+        ),
+        _react2.default.createElement(
+          'section',
+          { className: 'example-code-container' },
+          _react2.default.createElement(
+            'code',
+            null,
+            _react2.default.createElement('textarea', {
+              className: 'code-example',
+              type: 'text',
+              placeholder: 'type in your example solutions for all your test here',
+              value: this.state.code,
+              onChange: function onChange(e) {
+                _this6.setState({ code: e.target.value });
+              } })
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick() {
+                return _this6.runTests();
+              } },
+            'Run Tests'
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick() {
+                return _this6.createChallenge();
+              } },
+            'Create Challenge'
+          ),
+          this.showError()
+        )
+      );
+    }
+  }]);
+
+  return CreateChallenge;
+}(_react.Component);
+
+exports.default = CreateChallenge;
 
 /***/ }),
 /* 291 */
@@ -29905,80 +30342,122 @@ exports.push([module.i, ".create-challenge-container{\n  display: flex;\n  flex-
 
 /***/ }),
 /* 293 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-const NewTest = props => {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NewTest = function NewTest(props) {
+  return _react2.default.createElement(
     "code",
     null,
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    _react2.default.createElement(
       "h6",
       null,
       " test ",
       props.testNumber + 1,
       " code"
     ),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
+    _react2.default.createElement("textarea", {
       className: "code-test",
       type: "text",
       value: props.testValue,
-      placeholder: `type in your test ${props.testNumber + 1}`,
-      onChange: e => props.createTestState(e, props.testNumber)
+      placeholder: "type in your test " + (props.testNumber + 1),
+      onChange: function onChange(e) {
+        return props.createTestState(e, props.testNumber);
+      }
     }),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    _react2.default.createElement(
       "h6",
       null,
       "write test ",
       props.testNumber + 1,
       " description here"
     ),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
+    _react2.default.createElement("textarea", {
       className: "code-description",
       type: "text",
       placeholder: "test description",
       value: props.descriptionValue,
-      onChange: e => props.createDescriptionState(e, props.testNumber + 1)
+      onChange: function onChange(e) {
+        return props.createDescriptionState(e, props.testNumber + 1);
+      }
     })
   );
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (NewTest);
+exports.default = NewTest;
 
 /***/ }),
 /* 294 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__RandomBattle__ = __webpack_require__(295);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-const mapStateToProps = state => {
+var _reactRedux = __webpack_require__(16);
+
+var _RandomBattle = __webpack_require__(295);
+
+var _RandomBattle2 = _interopRequireDefault(_RandomBattle);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
   return state;
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(mapStateToProps, null)(__WEBPACK_IMPORTED_MODULE_1__RandomBattle__["a" /* default */]));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, null)(_RandomBattle2.default);
 
 /***/ }),
 /* 295 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-class RandomBattle extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-  constructor(props) {
-    super(props);
-    this.state = {
-      startGame: this.props.battleRequest || false,
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RandomBattle = function (_Component) {
+  _inherits(RandomBattle, _Component);
+
+  function RandomBattle(props) {
+    _classCallCheck(this, RandomBattle);
+
+    var _this = _possibleConstructorReturn(this, (RandomBattle.__proto__ || Object.getPrototypeOf(RandomBattle)).call(this, props));
+
+    _this.state = {
+      startGame: _this.props.battleRequest || false,
       lineNumber: 1,
       opponentsPoints: 0,
       text: "",
@@ -29991,321 +30470,353 @@ class RandomBattle extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       description: [],
       questions: []
     };
-    socket.on('connected random 1v1', msg => {
-      const message = msg[0];
-      this.setState({ startGame: true, description: message.descriptions, questions: message.tests });
+    socket.on('connected random 1v1', function (msg) {
+      var message = msg[0];
+      _this.setState({ startGame: true, description: message.descriptions, questions: message.tests });
     });
 
-    socket.on('challenger left', () => {
-      this.setState({ gameover: true, challengerLeft: true });
+    socket.on('challenger left', function () {
+      _this.setState({ gameover: true, challengerLeft: true });
     });
 
-    socket.on('challenger question', msg => {
-      this.setState({ opponentsPoints: msg });
+    socket.on('challenger question', function (msg) {
+      _this.setState({ opponentsPoints: msg });
       console.log(msg, "ppont");
-      console.log(this.state.questions.length, "leng");
-      if (msg == this.state.questions.length) {
-        this.setState({ gameover: true });
-        this.handleApiCall("+ 0");
+      console.log(_this.state.questions.length, "leng");
+      if (msg == _this.state.questions.length) {
+        _this.setState({ gameover: true });
+        _this.handleApiCall("+ 0");
         socket.emit('send code', {
-          code: this.state.text,
-          challenger: this.props.battle
+          code: _this.state.text,
+          challenger: _this.props.battle
         });
       }
     });
 
-    socket.on('challenger code', msg => {
-      this.setState({ challengerCode: msg });
+    socket.on('challenger code', function (msg) {
+      _this.setState({ challengerCode: msg });
     });
+    return _this;
   }
 
-  componentWillMount() {
-    setTimeout(() => {
-      this.setState({
-        description: this.props.getChallenge[0].descriptions || [],
-        questions: this.props.getChallenge[0].tests || []
+  _createClass(RandomBattle, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        _this2.setState({
+          description: _this2.props.getChallenge[0].descriptions || [],
+          questions: _this2.props.getChallenge[0].tests || []
+        });
+      }, 5000);
+    }
+  }, {
+    key: "getCode",
+    value: function getCode(e) {
+      console.log(e.target.innerText);
+      if (e.key === 'Enter') {
+        if (this.state.lineNumber == 27) return; //NOTE WHY DO WE NEED THIS? COULDNT WE OVERFLOW SCROLL ANY EXTRA LENGTH?
+        var addLine = this.state.lineNumber + 1;
+        this.setState({ lineNumber: addLine });
+      }
+      //
+      if (!e) return;
+      var text = e.target.innerText;
+      this.setState({ text: text });
+    }
+  }, {
+    key: "make",
+    value: function make() {
+      if (this.state.gameover || !this.state.text) return;
+      if (!this.props.battle || !this.state.startGame) return;
+
+      var results = [];
+      var runTill = this.state.currentQuestion;
+      runTill += 1;
+      for (var i = 0; i < runTill; i++) {
+        var tester = new Function(this.state.text + " ; " + this.state.questions[i])();
+        results.push(tester);
+      }
+      var outcome = results.every(function (i) {
+        return i;
       });
-    }, 5000);
-  }
-
-  getCode(e) {
-    console.log(e.target.innerText);
-    if (e.key === 'Enter') {
-      if (this.state.lineNumber == 27) return; //NOTE WHY DO WE NEED THIS? COULDNT WE OVERFLOW SCROLL ANY EXTRA LENGTH?
-      let addLine = this.state.lineNumber + 1;
-      this.setState({ lineNumber: addLine });
-    }
-    //
-    if (!e) return;
-    let text = e.target.innerText;
-    this.setState({ text: text });
-  }
-
-  make() {
-    if (this.state.gameover || !this.state.text) return;
-    if (!this.props.battle || !this.state.startGame) return;
-
-    let results = [];
-    let runTill = this.state.currentQuestion;
-    runTill += 1;
-    for (let i = 0; i < runTill; i++) {
-      let tester = new Function(`${this.state.text} ; ${this.state.questions[i]}`)();
-      results.push(tester);
-    }
-    let outcome = results.every(i => i);
-    if (!outcome) {
-      let failedTest = [];
-      for (let i = 0; i < results.length; i++) {
-        if (!results[i]) {
-          this.setState({ currentQuestion: i });
-          socket.emit("current question", { question: i, challenger: this.props.battle });
-          break;
+      if (!outcome) {
+        var failedTest = [];
+        for (var _i = 0; _i < results.length; _i++) {
+          if (!results[_i]) {
+            this.setState({ currentQuestion: _i });
+            socket.emit("current question", { question: _i, challenger: this.props.battle });
+            break;
+          }
+        }
+      } else {
+        var updateQuestion = this.state.currentQuestion + 1;
+        this.setState({ currentQuestion: updateQuestion });
+        socket.emit("current question", { question: updateQuestion, challenger: this.props.battle });
+        if (updateQuestion == this.state.questions.length) {
+          this.setState({ gameover: true });
+          this.handleApiCall("+ 1");
+          socket.emit('send code', { code: this.state.text, challenger: this.props.battle });
         }
       }
-    } else {
-      let updateQuestion = this.state.currentQuestion + 1;
-      this.setState({ currentQuestion: updateQuestion });
-      socket.emit("current question", { question: updateQuestion, challenger: this.props.battle });
-      if (updateQuestion == this.state.questions.length) {
-        this.setState({ gameover: true });
-        this.handleApiCall("+ 1");
-        socket.emit('send code', { code: this.state.text, challenger: this.props.battle });
+    }
+  }, {
+    key: "addLine",
+    value: function addLine() {
+      var test = [];
+      for (var i = 1; i <= this.state.lineNumber; i++) {
+        var newLine = document.createElement('p');
+        newLine.innerText += i;
+        test.push(newLine);
+      }
+      var test2 = test.map(function (line, id) {
+        return _react2.default.createElement(
+          "p",
+          { key: id },
+          line.innerHTML
+        );
+      });
+      return test2;
+    }
+  }, {
+    key: "handleRoute",
+    value: function handleRoute(e) {
+      this.props.handleClearOpponent();
+      e.preventDefault();
+      this.props.history.history.replace('/warroom');
+    }
+  }, {
+    key: "handleApiCall",
+    value: function handleApiCall(win) {
+      var d = new Date();
+      var month = d.getMonth() + 1;
+      var day = d.getDate();
+      var year = d.getFullYear();
+      var score = this.state.currentQuestion == 0 ? 0 : this.state.currentQuestion + 1;
+
+      fetch('/api/v1/score', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: "" + this.props.user.username,
+          score: score,
+          win: win,
+          date: month + " " + day + " " + year
+        })
+      });
+    }
+  }, {
+    key: "gameover",
+    value: function gameover() {
+      var _this3 = this;
+
+      if (this.state.gameover) {
+        return _react2.default.createElement(
+          "div",
+          { className: "gameover-message" },
+          "GAMEOVER",
+          this.state.challengerLeft ? _react2.default.createElement(
+            "div",
+            null,
+            "challenger has fled the battle"
+          ) : _react2.default.createElement(
+            "button",
+            { onClick: function onClick() {
+                _this3.handleCodeShow(true);
+              } },
+            "I want to see that other code!"
+          ),
+          _react2.default.createElement(
+            "button",
+            { onClick: function onClick(e) {
+                _this3.handleRoute(e);
+              } },
+            "back to war"
+          )
+        );
       }
     }
-  }
-
-  addLine() {
-    let test = [];
-    for (let i = 1; i <= this.state.lineNumber; i++) {
-      let newLine = document.createElement('p');
-      newLine.innerText += i;
-      test.push(newLine);
+  }, {
+    key: "handleCodeShow",
+    value: function handleCodeShow(input) {
+      this.setState({ showCode: input });
     }
-    let test2 = test.map((line, id) => {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "p",
-        { key: id },
-        line.innerHTML
-      );
-    });
-    return test2;
-  }
+  }, {
+    key: "showCode",
+    value: function showCode() {
+      var _this4 = this;
 
-  handleRoute(e) {
-    this.props.handleClearOpponent();
-    e.preventDefault();
-    this.props.history.history.replace('/warroom');
-  }
-
-  handleApiCall(win) {
-    const d = new Date();
-    const month = d.getMonth() + 1;
-    const day = d.getDate();
-    const year = d.getFullYear();
-    const score = this.state.currentQuestion == 0 ? 0 : this.state.currentQuestion + 1;
-
-    fetch('/api/v1/score', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        username: `${this.props.user.username}`,
-        score: score,
-        win: win,
-        date: month + " " + day + " " + year
-      })
-    });
-  }
-
-  gameover() {
-    if (this.state.gameover) {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      return this.state.showCode ? _react2.default.createElement(
         "div",
-        { className: "gameover-message" },
-        "GAMEOVER",
-        this.state.challengerLeft ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        { className: "challenger-code" },
+        _react2.default.createElement(
           "div",
           null,
-          "challenger has fled the battle"
-        ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "button",
-          { onClick: () => {
-              this.handleCodeShow(true);
-            } },
-          "I want to see that other code!"
+          this.state.challengerCode
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        _react2.default.createElement(
           "button",
-          { onClick: e => {
-              this.handleRoute(e);
+          { onClick: function onClick() {
+              _this4.handleCodeShow(false);
             } },
-          "back to war"
+          "close"
         )
-      );
+      ) : null;
     }
-  }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this5 = this;
 
-  handleCodeShow(input) {
-    this.setState({ showCode: input });
-  }
-
-  showCode() {
-    return this.state.showCode ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      "div",
-      { className: "challenger-code" },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      return _react2.default.createElement(
         "div",
-        null,
-        this.state.challengerCode
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "button",
-        { onClick: () => {
-            this.handleCodeShow(false);
-          } },
-        "close"
-      )
-    ) : null;
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      "div",
-      { className: "app" },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
-        { id: "left-side" },
-        !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        { className: "app" },
+        _react2.default.createElement(
           "div",
-          { id: "terminal" },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          { id: "left-side" },
+          !this.state.startGame ? null : _react2.default.createElement(
             "div",
-            { className: "line-wrapper" },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            { id: "terminal" },
+            _react2.default.createElement(
               "div",
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              { className: "line-wrapper" },
+              _react2.default.createElement(
                 "div",
-                { className: "line-num" },
-                this.addLine()
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", { id: "test", className: "line", onKeyDown: e => {
-                if (e.keyCode === 9) {
-                  e.preventDefault();
-                  document.execCommand('indent', true, null);
-                }
-              },
-              onKeyUp: e => {
-                this.getCode(e);
-              }, contentEditable: true })
-          )
-        ),
-        !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "div",
-          { id: "run-button-div" },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "button",
-            { id: "run-button", onClick: () => this.make() },
-            "Run"
-          )
-        )
-      ),
-      this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
-        { className: "waiting-msg" },
-        "waiting on challenger"
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
-        { id: "right-side" },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "div",
-          { id: "scoreboard" },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "h4",
-            { className: "scoreboard-title" },
-            "Scoreboard"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "div",
-            { className: "scores" },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "p",
-              null,
-              "Your Score: ",
-              this.state.currentQuestion
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "p",
-              null,
-              "Opponents Score: ",
-              this.state.opponentsPoints
+                null,
+                _react2.default.createElement(
+                  "div",
+                  { className: "line-num" },
+                  this.addLine()
+                )
+              ),
+              _react2.default.createElement("p", { id: "test", className: "line", onKeyDown: function onKeyDown(e) {
+                  if (e.keyCode === 9) {
+                    e.preventDefault();
+                    document.execCommand('indent', true, null);
+                  }
+                },
+                onKeyUp: function onKeyUp(e) {
+                  _this5.getCode(e);
+                }, contentEditable: true })
             )
           ),
-          !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "p",
-            { className: "test-number" },
-            "Test ",
-            this.state.currentQuestion + 1
-          ),
-          !this.state.startGame ? null : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "p",
-            { className: "current-question" },
-            this.state.description[this.state.currentQuestion]
+          !this.state.startGame ? null : _react2.default.createElement(
+            "div",
+            { id: "run-button-div" },
+            _react2.default.createElement(
+              "button",
+              { id: "run-button", onClick: function onClick() {
+                  return _this5.make();
+                } },
+              "Run"
+            )
           )
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        this.state.startGame ? null : _react2.default.createElement(
           "div",
-          { id: "repl" },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "button",
-            { onClick: e => {
-                this.handleRoute(e);
-              } },
-            "Exit to War Room"
+          { className: "waiting-msg" },
+          "waiting on challenger"
+        ),
+        _react2.default.createElement(
+          "div",
+          { id: "right-side" },
+          _react2.default.createElement(
+            "div",
+            { id: "scoreboard" },
+            _react2.default.createElement(
+              "h4",
+              { className: "scoreboard-title" },
+              "Scoreboard"
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "scores" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Your Score: ",
+                this.state.currentQuestion
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Opponents Score: ",
+                this.state.opponentsPoints
+              )
+            ),
+            !this.state.startGame ? null : _react2.default.createElement(
+              "p",
+              { className: "test-number" },
+              "Test ",
+              this.state.currentQuestion + 1
+            ),
+            !this.state.startGame ? null : _react2.default.createElement(
+              "p",
+              { className: "current-question" },
+              this.state.description[this.state.currentQuestion]
+            )
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "p",
-            { className: this.state.currentQuestion > 0 ? 'green' : 'red' },
-            "Test 1"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "p",
-            { className: this.state.currentQuestion > 1 ? 'green' : 'red' },
-            "Test 2"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "p",
-            { className: this.state.currentQuestion > 2 ? 'green' : 'red' },
-            "Test 3"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "p",
-            { className: this.state.currentQuestion > 3 ? 'green' : 'red' },
-            "Test 4"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "p",
-            { className: this.state.challengerLeft !== true && this.state.gameover ? 'green' : 'red' },
-            "Test 5"
+          _react2.default.createElement(
+            "div",
+            { id: "repl" },
+            _react2.default.createElement(
+              "button",
+              { onClick: function onClick(e) {
+                  _this5.handleRoute(e);
+                } },
+              "Exit to War Room"
+            ),
+            _react2.default.createElement(
+              "p",
+              { className: this.state.currentQuestion > 0 ? 'green' : 'red' },
+              "Test 1"
+            ),
+            _react2.default.createElement(
+              "p",
+              { className: this.state.currentQuestion > 1 ? 'green' : 'red' },
+              "Test 2"
+            ),
+            _react2.default.createElement(
+              "p",
+              { className: this.state.currentQuestion > 2 ? 'green' : 'red' },
+              "Test 3"
+            ),
+            _react2.default.createElement(
+              "p",
+              { className: this.state.currentQuestion > 3 ? 'green' : 'red' },
+              "Test 4"
+            ),
+            _react2.default.createElement(
+              "p",
+              { className: this.state.challengerLeft !== true && this.state.gameover ? 'green' : 'red' },
+              "Test 5"
+            )
           )
-        )
-      ),
-      this.gameover(),
-      this.showCode()
-    );
-  }
-}
+        ),
+        this.gameover(),
+        this.showCode()
+      );
+    }
+  }]);
 
-/* harmony default export */ __webpack_exports__["a"] = (RandomBattle);
+  return RandomBattle;
+}(_react.Component);
+
+exports.default = RandomBattle;
 
 /***/ }),
 /* 296 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = register;
-/* unused harmony export unregister */
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = register;
+exports.unregister = unregister;
 // In production, we register a service worker to serve assets from local cache.
 
 // This lets the app load faster on subsequent visits in production, and gives
@@ -30316,7 +30827,7 @@ class RandomBattle extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 // To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
 // This link also includes instructions on opting out of this behavior.
 
-const isLocalhost = Boolean(window.location.hostname === 'localhost' ||
+var isLocalhost = Boolean(window.location.hostname === 'localhost' ||
 // [::1] is the IPv6 localhost address.
 window.location.hostname === '[::1]' ||
 // 127.0.0.1/8 is considered localhost for IPv4.
@@ -30325,7 +30836,7 @@ window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?
 function register() {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
-    const publicUrl = new URL(process.env.PUBLIC_URL, window.location);
+    var publicUrl = new URL(process.env.PUBLIC_URL, window.location);
     if (publicUrl.origin !== window.location.origin) {
       // Our service worker won't work if PUBLIC_URL is on a different origin
       // from what our page is served on. This might happen if a CDN is used to
@@ -30333,8 +30844,8 @@ function register() {
       return;
     }
 
-    window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+    window.addEventListener('load', function () {
+      var swUrl = process.env.PUBLIC_URL + '/service-worker.js';
 
       if (!isLocalhost) {
         // Is not local host. Just register service worker
@@ -30348,10 +30859,10 @@ function register() {
 }
 
 function registerValidSW(swUrl) {
-  navigator.serviceWorker.register(swUrl).then(registration => {
-    registration.onupdatefound = () => {
-      const installingWorker = registration.installing;
-      installingWorker.onstatechange = () => {
+  navigator.serviceWorker.register(swUrl).then(function (registration) {
+    registration.onupdatefound = function () {
+      var installingWorker = registration.installing;
+      installingWorker.onstatechange = function () {
         if (installingWorker.state === 'installed') {
           if (navigator.serviceWorker.controller) {
             // At this point, the old content will have been purged and
@@ -30368,19 +30879,19 @@ function registerValidSW(swUrl) {
         }
       };
     };
-  }).catch(error => {
+  }).catch(function (error) {
     console.error('Error during service worker registration:', error);
   });
 }
 
 function checkValidServiceWorker(swUrl) {
   // Check if the service worker can be found. If it can't reload the page.
-  fetch(swUrl).then(response => {
+  fetch(swUrl).then(function (response) {
     // Ensure service worker exists, and that we really are getting a JS file.
     if (response.status === 404 || response.headers.get('content-type').indexOf('javascript') === -1) {
       // No service worker found. Probably a different app. Reload the page.
-      navigator.serviceWorker.ready.then(registration => {
-        registration.unregister().then(() => {
+      navigator.serviceWorker.ready.then(function (registration) {
+        registration.unregister().then(function () {
           window.location.reload();
         });
       });
@@ -30388,69 +30899,100 @@ function checkValidServiceWorker(swUrl) {
       // Service worker found. Proceed as normal.
       registerValidSW(swUrl);
     }
-  }).catch(() => {
+  }).catch(function () {
     console.log('No internet connection found. App is running in offline mode.');
   });
 }
 
 function unregister() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
+    navigator.serviceWorker.ready.then(function (registration) {
       registration.unregister();
     });
   }
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 297 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_rootReducer__ = __webpack_require__(298);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.configureStore = undefined;
 
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+var _redux = __webpack_require__(62);
 
-const configureStore = () => {
-  return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["c" /* createStore */])(__WEBPACK_IMPORTED_MODULE_1__reducers_rootReducer__["a" /* default */], devTools);
+var _rootReducer = __webpack_require__(298);
+
+var _rootReducer2 = _interopRequireDefault(_rootReducer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+var configureStore = exports.configureStore = function configureStore() {
+  return (0, _redux.createStore)(_rootReducer2.default, devTools);
 };
-/* harmony export (immutable) */ __webpack_exports__["a"] = configureStore;
-
 
 /***/ }),
 /* 298 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__battle__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__battleRequest__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__getChallenge__ = __webpack_require__(302);
 
 
-
-
-
-
-const rootReducer = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* combineReducers */])({
-  battle: __WEBPACK_IMPORTED_MODULE_2__battle__["a" /* default */],
-  user: __WEBPACK_IMPORTED_MODULE_1__user__["a" /* default */],
-  battleRequest: __WEBPACK_IMPORTED_MODULE_3__battleRequest__["a" /* default */],
-  getChallenge: __WEBPACK_IMPORTED_MODULE_4__getChallenge__["a" /* default */]
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (rootReducer);
+var _redux = __webpack_require__(62);
+
+var _user = __webpack_require__(299);
+
+var _user2 = _interopRequireDefault(_user);
+
+var _battle = __webpack_require__(300);
+
+var _battle2 = _interopRequireDefault(_battle);
+
+var _battleRequest = __webpack_require__(301);
+
+var _battleRequest2 = _interopRequireDefault(_battleRequest);
+
+var _getChallenge = __webpack_require__(302);
+
+var _getChallenge2 = _interopRequireDefault(_getChallenge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var rootReducer = (0, _redux.combineReducers)({
+  battle: _battle2.default,
+  user: _user2.default,
+  battleRequest: _battleRequest2.default,
+  getChallenge: _getChallenge2.default
+});
+
+exports.default = rootReducer;
 
 /***/ }),
 /* 299 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const user = (state = "", action) => {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var user = function user() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+  var action = arguments[1];
+
   switch (action.type) {
     case "LOGIN":
       return action.payload;
@@ -30461,14 +31003,22 @@ const user = (state = "", action) => {
   }
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (user);
+exports.default = user;
 
 /***/ }),
 /* 300 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const battle = (state = '', action) => {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var battle = function battle() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var action = arguments[1];
+
   switch (action.type) {
     case 'OPPONENT_NAME':
       return action.payload;
@@ -30479,14 +31029,22 @@ const battle = (state = '', action) => {
   }
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (battle);
+exports.default = battle;
 
 /***/ }),
 /* 301 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const battleRequest = (state = false, action) => {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var battleRequest = function battleRequest() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  var action = arguments[1];
+
   switch (action.type) {
     case 'ACCEPT_REQUEST':
       return true;
@@ -30497,14 +31055,22 @@ const battleRequest = (state = false, action) => {
   }
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (battleRequest);
+exports.default = battleRequest;
 
 /***/ }),
 /* 302 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const getChallenge = (state = [], action) => {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var getChallenge = function getChallenge() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+
   switch (action.type) {
     case 'GET_CHALLENGE':
       return action.payload;
@@ -30513,7 +31079,7 @@ const getChallenge = (state = [], action) => {
   }
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (getChallenge);
+exports.default = getChallenge;
 
 /***/ })
 /******/ ]);
