@@ -12,8 +12,8 @@ describe('Client Routes', () => {
   it('should return the home page on the root', (done) => {
     chai.request(server)
     .get('/')
-    .end((err, res) => {
-      res.should.have.status(200)
+    .end((err, response) => {
+      response.should.have.status(200)
       done()
     })
   })

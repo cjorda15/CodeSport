@@ -1,12 +1,16 @@
 {
   "name": "CodeSport",
+  "jest": {
+    "testPathIgnorePatterns": ["<rootDir>/test/"]
+  },
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ",
+    "test": "./node_modules/.bin/mocha",
     "start": "nodemon server/index.js",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "jest": "jest --watch"
   },
   "keywords": [],
   "author": "",
