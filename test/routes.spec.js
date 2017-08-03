@@ -64,7 +64,7 @@ describe('API Routes', () => {
     })
   })
 
-  it('should create a new user',(done) => {
+  it.skip('should create a new user',(done) => {
   const info =  {
     username:"cj",
     email: "cj@yahoo.com",
